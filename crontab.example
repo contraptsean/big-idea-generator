@@ -1,0 +1,17 @@
+# Opportunity Radar – run daily at 7:00 AM (local time)
+#
+# Install with:
+#   crontab -e            (opens editor, paste the line below)
+#
+# Or merge into your existing crontab:
+#   crontab -l > /tmp/crontab.bak
+#   cat crontab.example >> /tmp/crontab.bak
+#   crontab /tmp/crontab.bak
+#
+# Verify with:
+#   crontab -l
+#
+# Logs are written to ~/opportunity-radar.log.  Rotate or tail as needed:
+#   tail -f ~/opportunity-radar.log
+
+0 7 * * * cd /opt/opportunity-radar && /opt/opportunity-radar/venv/bin/python main.py --save >> ~/opportunity-radar.log 2>&1

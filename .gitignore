@@ -1,0 +1,22 @@
+# Environment variables (secrets)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+
+# Runtime data
+data/
+digests/
+
+# OS
+.DS_Store
+
+#Claude
+CLAUDE.md
