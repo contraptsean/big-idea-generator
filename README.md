@@ -55,35 +55,25 @@ A read-only dashboard for browsing saved digests in the browser.
 
 ### Local dev
 
-Run the API and a static file server in two terminals:
-
 ```bash
-# Terminal 1 — API server (serves digest JSON from digests/)
-source venv/bin/activate
-uvicorn api.server:app --reload --port 8000
+# Generate manifest and copy digests into frontend/
+python build_manifest.py
 
-# Terminal 2 — Frontend (any static server works)
+# Serve the frontend
 python -m http.server 5500 -d frontend
 ```
 
-Open http://localhost:5500. The frontend auto-detects `localhost` and points API calls to `http://localhost:8000`.
+Open http://localhost:5500.
+
+You can also run the FastAPI server (`uvicorn api.server:app --reload --port 8000`) if you prefer the API-based workflow locally.
 
 ### Netlify deployment
 
-The frontend is a static single-file app — no build step needed.
+The frontend is a fully static site — no backend server needed.
 
-1. Push the repo to GitHub.
-2. Connect the repo in Netlify. The `netlify.toml` sets the publish directory to `frontend/`.
-3. **Important:** Edit the redirect rule in `netlify.toml` (or `frontend/_redirects`) and replace `https://api.example.com` with your actual backend URL. Deploy the FastAPI app on Railway, Render, or Fly.io and use that URL.
-
-#### Alternative: Netlify Functions
-
-Instead of hosting the FastAPI app separately, you could convert the API endpoints into Netlify Functions (JS/TS) that read from an external store (e.g. S3 or a database). Tradeoffs:
-
-- **Pro:** Single deployment, no separate backend to manage, free tier covers light usage.
-- **Con:** Must rewrite the Python API in JS/TS, can't read local `digests/` files (need external storage), cold starts on free tier.
-
-For most cases, deploying FastAPI on Railway/Render ($0-5/mo) is simpler than rewriting the API.
+1. Push the repo to GitHub (make sure `digests/` is not in `.gitignore`).
+2. Connect the repo in Netlify. The `netlify.toml` runs `python build_manifest.py` as the build command and publishes `frontend/`.
+3. That's it. Each time you push new digests, Netlify rebuilds automatically.
 
 ## Project structure
 
@@ -94,9 +84,9 @@ opportunity-radar/
   analyzer.py          Claude-powered opportunity analysis
   digest_sender.py     HTML email builder and SMTP sender
   config.py            Loads environment variables
-  api/server.py        FastAPI read-only dashboard API
+  api/server.py        FastAPI read-only dashboard API (optional, for local dev)
   frontend/index.html  Vue 3 + Bootstrap 5 dashboard (single-file, no build)
-  frontend/_redirects  Netlify API proxy rule
+  build_manifest.py    Copies digests into frontend/ and generates manifest.json
   netlify.toml         Netlify deployment config
   requirements.txt     Python dependencies
   .env.example         Template for environment variables

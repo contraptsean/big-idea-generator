@@ -742,11 +742,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@3.4.27/dist/vue.global.prod.js"></script>
   <script>
-    // ── Change this to your backend URL ──
-    const API_BASE = window.location.hostname === 'localhost'
-      ? 'http://localhost:8000'
-      : '';
-
     const { createApp, ref, computed, onMounted } = Vue;
 
     createApp({
@@ -765,7 +760,7 @@
         const COMPLEXITY_ORDER = { low: 1, medium: 2, high: 3 };
 
         async function fetchJSON(path) {
-          const res = await fetch(API_BASE + path);
+          const res = await fetch(path);
           if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
           return res.json();
         }
@@ -773,15 +768,12 @@
         async function init() {
           loading.value = true;
           try {
-            const [s, d] = await Promise.all([
-              fetchJSON('/api/stats'),
-              fetchJSON('/api/digests'),
-            ]);
-            stats.value = s;
-            dates.value = d;
-            if (d.length > 0) {
-              selectedDate.value = d[0].date;
-              opportunities.value = await fetchJSON(`/api/digests/${d[0].date}`);
+            const manifest = await fetchJSON('digests/manifest.json');
+            stats.value = manifest.stats;
+            dates.value = manifest.digests;
+            if (manifest.digests.length > 0) {
+              selectedDate.value = manifest.digests[0].date;
+              opportunities.value = await fetchJSON(`digests/${manifest.digests[0].date}.json`);
             }
           } catch (e) {
             console.error('Failed to load data:', e);
@@ -795,7 +787,7 @@
           loading.value = true;
           expandedCard.value = null;
           try {
-            opportunities.value = await fetchJSON(`/api/digests/${selectedDate.value}`);
+            opportunities.value = await fetchJSON(`digests/${selectedDate.value}.json`);
           } catch (e) {
             console.error('Failed to load digest:', e);
             opportunities.value = [];

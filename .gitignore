@@ -13,7 +13,8 @@ venv/
 
 # Runtime data
 data/
-digests/
+# digests/ — tracked so Netlify build can generate the manifest
+frontend/digests/
 
 # OS
 .DS_Store
