@@ -9,6 +9,6 @@
 # (e.g. a Railway, Render, or Fly.io deployment of the FastAPI app).
 [[redirects]]
   from = "/api/*"
-  to = "https://api.example.com/api/:splat"
+  to = "big-idea-generator-production.up.railway.app"
   status = 200
   force = true
