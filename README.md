@@ -1,4 +1,4 @@
-# Opportunity Radar
+# Big Idea Generator
 
 Fetches news from multiple sources, sends them to Claude for business-opportunity analysis, and delivers a formatted digest via email.
 
@@ -49,6 +49,42 @@ All settings are loaded from environment variables (or a `.env` file). See `.env
 | `NEWS_QUERY` | no | Search query for NewsAPI `/v2/everything` (default: `technology startup funding`) |
 | `NEWS_PAGE_SIZE` | no | Articles per NewsAPI request (default: `10`) |
 
+## Web Dashboard
+
+A read-only dashboard for browsing saved digests in the browser.
+
+### Local dev
+
+Run the API and a static file server in two terminals:
+
+```bash
+# Terminal 1 — API server (serves digest JSON from digests/)
+source venv/bin/activate
+uvicorn api.server:app --reload --port 8000
+
+# Terminal 2 — Frontend (any static server works)
+python -m http.server 5500 -d frontend
+```
+
+Open http://localhost:5500. The frontend auto-detects `localhost` and points API calls to `http://localhost:8000`.
+
+### Netlify deployment
+
+The frontend is a static single-file app — no build step needed.
+
+1. Push the repo to GitHub.
+2. Connect the repo in Netlify. The `netlify.toml` sets the publish directory to `frontend/`.
+3. **Important:** Edit the redirect rule in `netlify.toml` (or `frontend/_redirects`) and replace `https://api.example.com` with your actual backend URL. Deploy the FastAPI app on Railway, Render, or Fly.io and use that URL.
+
+#### Alternative: Netlify Functions
+
+Instead of hosting the FastAPI app separately, you could convert the API endpoints into Netlify Functions (JS/TS) that read from an external store (e.g. S3 or a database). Tradeoffs:
+
+- **Pro:** Single deployment, no separate backend to manage, free tier covers light usage.
+- **Con:** Must rewrite the Python API in JS/TS, can't read local `digests/` files (need external storage), cold starts on free tier.
+
+For most cases, deploying FastAPI on Railway/Render ($0-5/mo) is simpler than rewriting the API.
+
 ## Project structure
 
 ```
@@ -58,6 +94,10 @@ opportunity-radar/
   analyzer.py          Claude-powered opportunity analysis
   digest_sender.py     HTML email builder and SMTP sender
   config.py            Loads environment variables
+  api/server.py        FastAPI read-only dashboard API
+  frontend/index.html  Vue 3 + Bootstrap 5 dashboard (single-file, no build)
+  frontend/_redirects  Netlify API proxy rule
+  netlify.toml         Netlify deployment config
   requirements.txt     Python dependencies
   .env.example         Template for environment variables
   crontab.example      Cron schedule example

@@ -1,0 +1,4 @@
+# Proxy API requests to backend server.
+# Replace https://api.example.com with your actual backend URL
+# (e.g. a Railway, Render, or Fly.io deployment of the FastAPI app).
+/api/*  https://api.example.com/api/:splat  200

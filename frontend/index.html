@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunity Radar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --radar-cyan: #00e5cc;
+      --radar-cyan-dim: #00e5cc33;
+      --radar-cyan-glow: #00e5cc66;
+      --radar-magenta: #ff3d8e;
+      --radar-amber: #ffb020;
+      --radar-green: #22dd88;
+      --radar-red: #ff4455;
+      --bg-deep: #080c12;
+      --bg-panel: #0d1420;
+      --bg-card: #111a2a;
+      --bg-card-hover: #152035;
+      --border-dim: #1a2540;
+      --border-active: #1e3050;
+      --text-primary: #e0e8f0;
+      --text-secondary: #6a7a90;
+      --text-muted: #3a4a60;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Scanline overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 229, 204, 0.008) 2px,
+        rgba(0, 229, 204, 0.008) 4px
+      );
+    }
+
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* Top bar */
+    .top-bar {
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 0.75rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--radar-cyan);
+      text-shadow: 0 0 20px var(--radar-cyan-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--radar-cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--radar-cyan-glow);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--radar-cyan-glow); }
+      50% { opacity: 0.5; box-shadow: 0 0 16px var(--radar-cyan); }
+    }
+
+    /* Stats strip */
+    .stats-strip {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .stat-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--radar-cyan);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 28px;
+      background: var(--border-dim);
+    }
+
+    /* Controls bar */
+    .controls-bar {
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 0.6rem 0;
+    }
+
+    .search-input {
+      background: var(--bg-deep) !important;
+      border: 1px solid var(--border-dim) !important;
+      color: var(--text-primary) !important;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      padding: 0.45rem 0.75rem 0.45rem 2.2rem;
+      border-radius: 6px;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--radar-cyan) !important;
+      box-shadow: 0 0 0 2px var(--radar-cyan-dim) !important;
+      outline: none;
+    }
+
+    .search-input::placeholder { color: var(--text-muted); }
+
+    .search-wrap {
+      position: relative;
+    }
+
+    .search-wrap::before {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .filter-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.85rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-dim);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--text-secondary);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--radar-cyan);
+      border-color: var(--radar-cyan);
+      color: var(--bg-deep);
+    }
+
+    .ctrl-select {
+      background: var(--bg-deep);
+      border: 1px solid var(--border-dim);
+      color: var(--text-secondary);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .ctrl-select:focus {
+      border-color: var(--radar-cyan);
+      box-shadow: 0 0 0 2px var(--radar-cyan-dim);
+      outline: none;
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 1rem;
+      padding: 1.25rem 0 3rem;
+    }
+
+    @media (max-width: 500px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Opportunity card */
+    .opp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dim);
+      border-radius: 8px;
+      padding: 1.15rem 1.25rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .opp-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--radar-cyan);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .opp-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-active);
+    }
+
+    .opp-card:hover::before { opacity: 1; }
+
+    .opp-card.expanded {
+      border-color: var(--radar-cyan-dim);
+    }
+
+    .opp-card.expanded::before { opacity: 1; }
+
+    .card-header-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .rank-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      min-width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--radar-cyan-dim);
+      color: var(--radar-cyan);
+      border-radius: 6px;
+      flex-shrink: 0;
+      border: 1px solid var(--radar-cyan-dim);
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.3;
+      flex: 1;
+    }
+
+    .complexity-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .complexity-low {
+      background: rgba(34, 221, 136, 0.12);
+      color: var(--radar-green);
+      border: 1px solid rgba(34, 221, 136, 0.2);
+    }
+
+    .complexity-medium {
+      background: rgba(255, 176, 32, 0.12);
+      color: var(--radar-amber);
+      border: 1px solid rgba(255, 176, 32, 0.2);
+    }
+
+    .complexity-high {
+      background: rgba(255, 68, 85, 0.12);
+      color: var(--radar-red);
+      border: 1px solid rgba(255, 68, 85, 0.2);
+    }
+
+    .one-liner {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Score bars */
+    .scores-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .score-item {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .score-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .score-label span { color: var(--text-secondary); }
+
+    .score-track {
+      height: 4px;
+      background: var(--bg-deep);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .score-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.6s ease;
+    }
+
+    .score-fill.feasibility { background: var(--radar-cyan); }
+    .score-fill.demand { background: var(--radar-magenta); }
+    .score-fill.uniqueness { background: var(--radar-amber); }
+
+    .card-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .meta-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag .val { color: var(--text-secondary); }
+
+    .avg-score-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      background: var(--bg-deep);
+      border: 1px solid var(--border-dim);
+    }
+
+    .avg-high { color: var(--radar-green); border-color: rgba(34, 221, 136, 0.2); }
+    .avg-mid { color: var(--radar-amber); border-color: rgba(255, 176, 32, 0.2); }
+    .avg-low { color: var(--radar-red); border-color: rgba(255, 68, 85, 0.2); }
+
+    /* Expanded detail */
+    .card-detail {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-dim);
+      animation: slideDown 0.25s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .detail-section {
+      margin-bottom: 1rem;
+    }
+
+    .detail-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--radar-cyan);
+      margin-bottom: 0.35rem;
+    }
+
+    .detail-text {
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .build-step {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 0.45rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .step-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--radar-cyan);
+      min-width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--radar-cyan-dim);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .tech-stack-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.25rem;
+    }
+
+    .tech-chip {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.18rem 0.5rem;
+      background: var(--bg-deep);
+      border: 1px solid var(--border-dim);
+      border-radius: 3px;
+      color: var(--text-secondary);
+    }
+
+    /* Loading */
+    .loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .radar-spinner {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--border-dim);
+      border-top-color: var(--radar-cyan);
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .empty-state {
+      text-align: center;
+      padding: 5rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .empty-state .icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      opacity: 0.4;
+    }
+
+    /* Card entrance animation */
+    .card-enter {
+      animation: cardIn 0.35s ease both;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Expand chevron */
+    .expand-hint {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+
+    .opp-card.expanded .expand-hint { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--border-dim); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <div class="brand">
+            <span class="brand-dot"></span>
+            Big Idea Radar
+          </div>
+          <div class="stats-strip" v-if="stats">
+            <div class="stat-block">
+              <div class="stat-value">{{ stats.total_digests }}</div>
+              <div class="stat-label">Digests</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block">
+              <div class="stat-value">{{ stats.total_opportunities }}</div>
+              <div class="stat-label">Opportunities</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block">
+              <div class="stat-value">{{ stats.avg_score ?? '—' }}</div>
+              <div class="stat-label">Avg Score</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-bar">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <!-- Date picker -->
+          <select class="ctrl-select" v-model="selectedDate" @change="loadDigest">
+            <option v-for="d in dates" :key="d.date" :value="d.date">
+              {{ d.date }} ({{ d.count }})
+            </option>
+          </select>
+
+          <!-- Search -->
+          <div class="search-wrap flex-grow-1" style="max-width: 320px;">
+            <input
+              type="text"
+              class="search-input w-100"
+              placeholder="Search opportunities..."
+              v-model="searchQuery"
+            >
+          </div>
+
+          <!-- Complexity filters -->
+          <div class="d-flex gap-1">
+            <button
+              v-for="f in complexityFilters"
+              :key="f"
+              class="filter-btn"
+              :class="{ active: activeComplexity === f }"
+              @click="activeComplexity = f"
+            >{{ f }}</button>
+          </div>
+
+          <!-- Sort -->
+          <select class="ctrl-select ms-auto" v-model="sortBy">
+            <option value="rank">Sort: Rank</option>
+            <option value="score">Sort: Score</option>
+            <option value="complexity">Sort: Complexity</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-fluid px-4">
+      <!-- Loading -->
+      <div v-if="loading" class="loading-state">
+        <div class="radar-spinner"></div>
+        <div class="mono" style="font-size: 0.8rem;">SCANNING...</div>
+      </div>
+
+      <!-- Empty state -->
+      <div v-else-if="filteredOpportunities.length === 0" class="empty-state">
+        <div class="icon">&#x2300;</div>
+        <div class="mono" style="font-size: 0.85rem; margin-bottom: 0.3rem;">NO SIGNALS DETECTED</div>
+        <div style="font-size: 0.8rem;">Try adjusting your filters or search query.</div>
+      </div>
+
+      <!-- Cards -->
+      <div v-else class="cards-grid">
+        <div
+          v-for="(opp, i) in filteredOpportunities"
+          :key="opp.rank + '-' + opp.name"
+          class="opp-card card-enter"
+          :class="{ expanded: expandedCard === i }"
+          :style="{ animationDelay: (i * 0.04) + 's' }"
+          @click="toggleCard(i)"
+        >
+          <!-- Card Header -->
+          <div class="card-header-row">
+            <div class="rank-badge">#{{ opp.rank }}</div>
+            <div class="card-title">{{ opp.name }}</div>
+            <span class="complexity-badge" :class="'complexity-' + opp.complexity">
+              {{ opp.complexity }}
+            </span>
+            <span class="expand-hint">&#x25BC;</span>
+          </div>
+
+          <!-- One-liner -->
+          <div class="one-liner">{{ opp.one_liner }}</div>
+
+          <!-- Score bars -->
+          <div class="scores-row">
+            <div class="score-item">
+              <div class="score-label">Feasibility <span>{{ opp.feasibility }}/10</span></div>
+              <div class="score-track">
+                <div class="score-fill feasibility" :style="{ width: (opp.feasibility * 10) + '%' }"></div>
+              </div>
+            </div>
+            <div class="score-item">
+              <div class="score-label">Demand <span>{{ opp.demand_confidence }}/10</span></div>
+              <div class="score-track">
+                <div class="score-fill demand" :style="{ width: (opp.demand_confidence * 10) + '%' }"></div>
+              </div>
+            </div>
+            <div class="score-item">
+              <div class="score-label">Uniqueness <span>{{ opp.uniqueness }}/10</span></div>
+              <div class="score-track">
+                <div class="score-fill uniqueness" :style="{ width: (opp.uniqueness * 10) + '%' }"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meta -->
+          <div class="card-meta">
+            <span class="avg-score-pill" :class="scoreClass(opp.avg_score)">
+              {{ opp.avg_score.toFixed(1) }}
+            </span>
+            <span class="meta-tag">
+              &#x23F1; <span class="val">{{ opp.estimated_build_time }}</span>
+            </span>
+            <span class="meta-tag" v-if="opp.tech_stack">
+              &#x2699; <span class="val">{{ truncate(opp.tech_stack, 60) }}</span>
+            </span>
+          </div>
+
+          <!-- Expanded Detail -->
+          <div v-if="expandedCard === i" class="card-detail" @click.stop>
+            <div class="detail-section">
+              <div class="detail-label">News Trigger</div>
+              <div class="detail-text">{{ opp.news_trigger }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">The Problem</div>
+              <div class="detail-text">{{ opp.the_problem }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Target Audience</div>
+              <div class="detail-text">{{ opp.target_audience }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Product Description</div>
+              <div class="detail-text">{{ opp.product_description }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Revenue Model</div>
+              <div class="detail-text">{{ opp.revenue_model }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Market Signal</div>
+              <div class="detail-text">{{ opp.market_signal }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Competitive Landscape</div>
+              <div class="detail-text">{{ opp.competitive_landscape }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Risks & Challenges</div>
+              <div class="detail-text">{{ opp.risks_and_challenges }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Growth Hook</div>
+              <div class="detail-text">{{ opp.growth_hook }}</div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Tech Stack</div>
+              <div class="tech-stack-chips">
+                <span class="tech-chip" v-for="t in parseTechStack(opp.tech_stack)" :key="t">{{ t }}</span>
+              </div>
+            </div>
+            <div class="detail-section">
+              <div class="detail-label">Build Plan</div>
+              <div
+                v-for="(step, si) in opp.build_plan"
+                :key="si"
+                class="build-step"
+              >
+                <span class="step-num">{{ si + 1 }}</span>
+                <span>{{ step }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.27/dist/vue.global.prod.js"></script>
+  <script>
+    // ── Change this to your backend URL ──
+    const API_BASE = window.location.hostname === 'localhost'
+      ? 'http://localhost:8000'
+      : '';
+
+    const { createApp, ref, computed, onMounted } = Vue;
+
+    createApp({
+      setup() {
+        const loading = ref(true);
+        const stats = ref(null);
+        const dates = ref([]);
+        const selectedDate = ref('');
+        const opportunities = ref([]);
+        const searchQuery = ref('');
+        const activeComplexity = ref('All');
+        const sortBy = ref('rank');
+        const expandedCard = ref(null);
+        const complexityFilters = ['All', 'Low', 'Medium', 'High'];
+
+        const COMPLEXITY_ORDER = { low: 1, medium: 2, high: 3 };
+
+        async function fetchJSON(path) {
+          const res = await fetch(API_BASE + path);
+          if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+          return res.json();
+        }
+
+        async function init() {
+          loading.value = true;
+          try {
+            const [s, d] = await Promise.all([
+              fetchJSON('/api/stats'),
+              fetchJSON('/api/digests'),
+            ]);
+            stats.value = s;
+            dates.value = d;
+            if (d.length > 0) {
+              selectedDate.value = d[0].date;
+              opportunities.value = await fetchJSON(`/api/digests/${d[0].date}`);
+            }
+          } catch (e) {
+            console.error('Failed to load data:', e);
+          } finally {
+            loading.value = false;
+          }
+        }
+
+        async function loadDigest() {
+          if (!selectedDate.value) return;
+          loading.value = true;
+          expandedCard.value = null;
+          try {
+            opportunities.value = await fetchJSON(`/api/digests/${selectedDate.value}`);
+          } catch (e) {
+            console.error('Failed to load digest:', e);
+            opportunities.value = [];
+          } finally {
+            loading.value = false;
+          }
+        }
+
+        const filteredOpportunities = computed(() => {
+          let list = [...opportunities.value];
+
+          // Search filter
+          if (searchQuery.value.trim()) {
+            const q = searchQuery.value.toLowerCase();
+            list = list.filter(o =>
+              o.name.toLowerCase().includes(q) ||
+              o.one_liner.toLowerCase().includes(q)
+            );
+          }
+
+          // Complexity filter
+          if (activeComplexity.value !== 'All') {
+            list = list.filter(o => o.complexity === activeComplexity.value.toLowerCase());
+          }
+
+          // Sort
+          if (sortBy.value === 'score') {
+            list.sort((a, b) => (b.avg_score ?? 0) - (a.avg_score ?? 0));
+          } else if (sortBy.value === 'complexity') {
+            list.sort((a, b) => (COMPLEXITY_ORDER[a.complexity] ?? 0) - (COMPLEXITY_ORDER[b.complexity] ?? 0));
+          } else {
+            list.sort((a, b) => a.rank - b.rank);
+          }
+
+          return list;
+        });
+
+        function toggleCard(i) {
+          expandedCard.value = expandedCard.value === i ? null : i;
+        }
+
+        function scoreClass(score) {
+          if (score >= 7) return 'avg-high';
+          if (score >= 4) return 'avg-mid';
+          return 'avg-low';
+        }
+
+        function truncate(str, len) {
+          if (!str) return '';
+          return str.length > len ? str.slice(0, len) + '...' : str;
+        }
+
+        function parseTechStack(str) {
+          if (!str) return [];
+          return str.split(',').map(s => s.trim()).filter(Boolean);
+        }
+
+        onMounted(init);
+
+        return {
+          loading, stats, dates, selectedDate, opportunities,
+          searchQuery, activeComplexity, sortBy, expandedCard,
+          complexityFilters, filteredOpportunities,
+          loadDigest, toggleCard, scoreClass, truncate, parseTechStack,
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

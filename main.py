@@ -42,6 +42,16 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Save raw JSON output to digests/<date>.json.",
     )
+    parser.add_argument(
+        "--resend",
+        type=str,
+        nargs="?",
+        const="latest",
+        metavar="FILE",
+        help="Send email from a saved digest JSON (skips fetch & analysis). "
+             "Pass a path or date (e.g. 2026-02-14); defaults to the most "
+             "recent file in digests/. Combine with --dry-run to preview.",
+    )
     return parser.parse_args(argv)
 
 
@@ -53,9 +63,57 @@ def _save_json(opportunities: list[dict]) -> Path:
     return path
 
 
+def _resolve_digest_path(ref: str) -> Path:
+    """Turn a --resend value into a concrete file path.
+
+    Accepts:
+      - "latest"        → newest .json in digests/
+      - a date string   → digests/<date>.json
+      - a file path     → used as-is
+    """
+    if ref == "latest":
+        files = sorted(DIGESTS_DIR.glob("*.json"))
+        if not files:
+            raise FileNotFoundError(f"No digest files found in {DIGESTS_DIR}")
+        return files[-1]
+
+    as_path = Path(ref)
+    if as_path.is_file():
+        return as_path
+
+    # Treat as a date string, e.g. "2026-02-14"
+    candidate = DIGESTS_DIR / f"{ref}.json"
+    if candidate.is_file():
+        return candidate
+
+    raise FileNotFoundError(f"Cannot find digest: tried {as_path} and {candidate}")
+
+
+def resend_from_file(path: Path, *, dry_run: bool = False) -> None:
+    """Load a saved digest JSON and send (or preview) the email."""
+    opportunities = json.loads(path.read_text())
+    logger.info("Loaded %d opportunities from %s", len(opportunities), path)
+
+    if dry_run:
+        print()
+        print(_build_plain_text(opportunities))
+    else:
+        logger.info("Sending digest email to %s...",
+                     __import__("config").DIGEST_RECIPIENT)
+        send_opportunities_digest(opportunities)
+        logger.info("Digest email sent.")
+
+
 def main(argv: list[str] | None = None) -> None:
     _configure_logging()
     args = _parse_args(argv)
+
+    # --- Resend from saved digest (skips fetch & analysis) ---
+    if args.resend is not None:
+        path = _resolve_digest_path(args.resend)
+        resend_from_file(path, dry_run=args.dry_run)
+        logger.info("Done.")
+        return
 
     # --- Fetch ---
     logger.info("Fetching news from all sources...")

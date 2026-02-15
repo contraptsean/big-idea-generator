@@ -1,0 +1,14 @@
+# Netlify configuration for Opportunity Radar dashboard
+# The frontend is static (no build step required).
+
+[build]
+  publish = "frontend/"
+
+# Proxy /api/* requests to your backend server.
+# Replace https://api.example.com with your actual backend URL
+# (e.g. a Railway, Render, or Fly.io deployment of the FastAPI app).
+[[redirects]]
+  from = "/api/*"
+  to = "https://api.example.com/api/:splat"
+  status = 200
+  force = true
