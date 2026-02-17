@@ -313,21 +313,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .rank-badge {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 700;
-      min-width: 28px; height: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--radar-cyan-dim);
-      color: var(--radar-cyan);
-      border-radius: 6px;
-      flex-shrink: 0;
-      border: 1px solid var(--radar-cyan-dim);
-    }
-
     .card-title {
       font-weight: 700;
       font-size: 1rem;
@@ -733,12 +718,21 @@
           </select>
 
           <!-- Domain filter -->
-          <select class="ctrl-select" v-model="activeDomain" v-if="domainList.length > 0">
-            <option value="All">All Domains</option>
-            <option v-for="d in domainList" :key="d.id" :value="d.id">
-              {{ d.icon }} {{ d.name }}
-            </option>
-          </select>
+          <div class="d-flex align-items-center gap-1 flex-wrap" v-if="domainList.length > 0">
+            <span class="filter-group-label">Domain:</span>
+            <button
+              class="filter-btn"
+              :class="{ active: activeDomain === 'All' }"
+              @click="activeDomain = 'All'"
+            >All</button>
+            <button
+              v-for="d in domainList"
+              :key="d.id"
+              class="filter-btn"
+              :class="{ active: activeDomain === d.id }"
+              @click="activeDomain = d.id"
+            >{{ d.icon }} {{ d.name.split(' / ')[0] }}</button>
+          </div>
 
           <!-- Search -->
           <div class="flex-grow-1" style="max-width: 280px;">
@@ -791,7 +785,11 @@
           <div class="domain-section-header" v-if="group.domain">
             <span class="domain-section-icon">{{ group.domain.icon }}</span>
             <span class="domain-section-name">{{ group.domain.name }}</span>
-            <span class="domain-section-count">{{ group.items.length }} ideas</span>
+            <span class="domain-section-count">{{ group.items.length }} {{ group.items.length === 1 ? 'idea' : 'ideas' }}</span>
+          </div>
+          <div class="domain-section-header" v-else-if="domainList.length > 0">
+            <span class="domain-section-name">Uncategorised</span>
+            <span class="domain-section-count">{{ group.items.length }} {{ group.items.length === 1 ? 'idea' : 'ideas' }}</span>
           </div>
 
           <!-- Cards grid for this domain -->
@@ -804,7 +802,6 @@
               @click="openModal(opp)"
             >
               <div class="card-header-row">
-                <div class="rank-badge">#{{ opp.rank }}</div>
                 <div class="card-title">{{ opp.name }}</div>
                 <span class="complexity-badge" :class="'complexity-' + opp.complexity">
                   {{ opp.complexity }}
@@ -813,7 +810,7 @@
 
               <div class="one-liner">{{ opp.one_liner }}</div>
 
-              <!-- Domain chips on card -->
+              <!-- Domain badges -->
               <div style="display:flex; gap:0.3rem; flex-wrap:wrap; margin-bottom:0.6rem;" v-if="opp.domains && opp.domains.length">
                 <span
                   v-for="(did, di) in opp.domains"
@@ -866,7 +863,6 @@
         <button class="modal-close" @click="closeModal">&#x2715;</button>
 
         <div class="modal-header-row">
-          <div class="rank-badge">#{{ modalOpp.rank }}</div>
           <div class="modal-title">{{ modalOpp.name }}</div>
           <span class="complexity-badge" :class="'complexity-' + modalOpp.complexity">
             {{ modalOpp.complexity }}
@@ -882,7 +878,7 @@
             :key="did"
             class="modal-domain-chip"
             :class="{ secondary: di > 0 }"
-          >{{ domainIcon(did) }} {{ domainName(did) }}</span>
+          >{{ domainIcon(did) }} {{ domainShortName(did) }}</span>
         </div>
 
         <div class="modal-scores">
@@ -1111,18 +1107,13 @@
           return list;
         });
 
-        // Group filtered opportunities by primary_domain, preserving domain order
+        // Group filtered opportunities by primary_domain, preserving domain order.
+        // Within each group, items are sorted by rank.
         const groupedOpportunities = computed(() => {
           const list = filteredOpportunities.value;
           if (!domainList.value.length) {
             // No domains configured — single flat group
             return [{ domain: null, items: list }];
-          }
-
-          // If filtering to a specific domain, show flat (no section headers needed)
-          if (activeDomain.value !== 'All') {
-            const d = domainMap.value[activeDomain.value] || null;
-            return [{ domain: d, items: list }];
           }
 
           const byDomain = {};
@@ -1135,6 +1126,11 @@
             } else {
               uncategorised.push(opp);
             }
+          }
+
+          // Sort each group by rank
+          for (const key of Object.keys(byDomain)) {
+            byDomain[key].sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999));
           }
 
           const groups = [];
