@@ -17,11 +17,33 @@ _DIGESTS_DST = _FRONTEND / "digests"
 
 
 def _load_domains() -> list[dict]:
-    """Import DOMAINS from config, returning [] on failure."""
+    """Load DOMAINS from config.py without triggering env-var loading.
+
+    config.py loads env vars at import time (which fails in CI/Netlify
+    where python-dotenv isn't installed and env vars are missing).
+    Instead, we parse out just the DOMAINS list using ast.literal_eval.
+    """
+    import ast
+    import re
+
+    config_path = _ROOT / "config.py"
+    if not config_path.is_file():
+        return []
+
     try:
-        import config
-        return getattr(config, "DOMAINS", []) or []
-    except Exception:
+        source = config_path.read_text()
+    except OSError:
+        return []
+
+    # Find the DOMAINS = [...] assignment and extract the list literal
+    match = re.search(r"^DOMAINS\s*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
+    if not match:
+        return []
+
+    try:
+        domains = ast.literal_eval(match.group(1))
+        return domains if isinstance(domains, list) else []
+    except (ValueError, SyntaxError):
         return []
 
 
