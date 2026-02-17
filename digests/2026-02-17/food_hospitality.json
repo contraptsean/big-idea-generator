@@ -1,0 +1,164 @@
+[
+  {
+    "rank": 4,
+    "name": "EmergencySupplyLink",
+    "one_liner": "Instant emergency restaurant supply ordering platform that connects restaurants with local backup suppliers when their primary distributor runs out or delivers late.",
+    "domains": [
+      "food_hospitality",
+      "ecommerce_retail"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Toast and Instacart partnership to tackle emergency restaurant supply challenges, indicating major pain point in restaurant supply chain continuity and last-minute ordering needs.",
+    "the_problem": "Restaurants face critical supply emergencies when primary distributors (Sysco, US Foods) run out of key items or deliver late, forcing managers to drive to multiple cash-and-carry stores or restaurant supply shops, wasting 2-4 hours and often paying 30-50% markup. No centralized platform exists for same-day emergency ordering from local backup suppliers.",
+    "target_audience": "Independent restaurant operators, sous chefs, and kitchen managers at restaurants with 5-50 locations who need emergency ingredients or supplies to avoid menu 86ing or service delays.",
+    "product_description": "Mobile-first marketplace that pre-qualifies local restaurant supply stores, cash-and-carry wholesalers, and specialty distributors. Restaurants post urgent needs (e.g., '20 lbs chicken breast needed by 3pm'); nearby suppliers respond with price and availability within 15 minutes. Platform handles payment, creates delivery/pickup options, and tracks fulfillment. Includes smart inventory tagging so restaurants can quickly reorder from successful emergency suppliers. GPS-based supplier discovery and restaurant verification prevents consumer abuse.",
+    "revenue_model": "Transaction fee: 12% commission on supplier side, $0 to restaurants for first 90 days to build network effects, then $49/month subscription for restaurants (unlimited orders). Average emergency order is $150-$400, generating $18-$48 per transaction. Target: 200 orders/month at $30 avg commission = $6K/month by month 6.",
+    "market_signal": "Toast (massive restaurant POS company) partnering with Instacart specifically to solve this problem validates urgent need. Restaurant managers already spend hours and premium prices solving this manually. Emergency supply runs cost restaurants $200-$500 in lost labor and markup—paying $49/month + 12% fee is cheaper and faster.",
+    "competitive_landscape": "Primary distributors (Sysco, US Foods) don't do same-day emergency orders. Instacart is entering but focused on grocery substitutes, not restaurant-grade supplies. Cash-and-carry stores like Restaurant Depot require membership and in-person shopping. EmergencySupplyLink is first marketplace specifically for restaurant emergency B2B supply needs with vetted commercial suppliers.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "React Native (iOS/Android), Node.js/Express backend, PostgreSQL, Stripe Connect for split payments, Twilio for SMS notifications, Google Maps API for location/routing, Auth0 for authentication.",
+    "build_plan": [
+      "Week 1: Build supplier onboarding flow with verification (business license, resale cert), product catalog setup, and availability calendar",
+      "Week 2: Create restaurant mobile app with urgent request posting, supplier matching algorithm based on location/product/availability",
+      "Week 3: Implement real-time bidding/response system for suppliers, payment processing via Stripe Connect, and order tracking",
+      "Week 4: Add delivery/pickup scheduling, push notifications for time-sensitive orders, and in-app messaging between restaurants and suppliers",
+      "Week 5: Build admin dashboard for dispute resolution, supplier performance scoring, and launch with 10 suppliers + 20 restaurants in one metro"
+    ],
+    "risks_and_challenges": "Chicken-and-egg problem: need suppliers and restaurants simultaneously. Food safety liability if suppliers deliver bad product. Restaurants may stick with known suppliers even if prices higher. Supplier margins are thin, so 12% commission might be too high. Need to start hyper-local (one city) to build density.",
+    "growth_hook": "Launch in one metro (e.g., Austin, Denver). Manually onboard 10-15 local restaurant supply stores and cash-and-carry suppliers by offering first month free. Then visit 50 busy independent restaurants during lunch rush and offer free trial: 'Next time you run out of something, text us instead of driving to Restaurant Depot.' Capture one successful emergency order per restaurant to prove value. Partner with local restaurant associations and culinary schools. Expand city-by-city using proven playbook.",
+    "feasibility": 6,
+    "demand_confidence": 7,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 11,
+    "name": "CoreMenuAI",
+    "one_liner": "AI-powered menu optimization tool that identifies when menu innovation is cannibalizing core offerings and recommends data-driven SKU rationalization for QSR and fast-casual chains.",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Multiple major chains (Wendy's, Popeyes) experiencing significant same-store sales declines (11.3% for Wendy's) due to over-innovation and loss of focus on core menu items, triggering urgent 'back to basics' turnarounds.",
+    "the_problem": "Restaurant chains are hemorrhaging sales because menu innovation has diluted their brand identity and operational focus. Wendy's lost 11.3% same-store sales in Q4, and Popeyes is scrambling with 75% expansion of field teams. They lack data-driven tools to tell them when to stop innovating and refocus on core menu items that built their brand.",
+    "target_audience": "Regional QSR and fast-casual restaurant chains (10-500 locations), franchise operators, and restaurant operations directors struggling with menu complexity and declining sales.",
+    "product_description": "CoreMenuAI integrates with existing POS systems (Toast, Square, etc.) to analyze sales data, operational complexity scores, and customer sentiment. It uses AI to identify which menu items are cannibalizing core offerings and provides a 'Menu Health Score' with specific recommendations on which SKUs to cut, which core items to promote, and optimal menu size for profitability. Dashboard shows real-time impact of menu bloat on kitchen speed, food costs, and customer satisfaction. Includes A/B testing framework to validate menu changes before full rollout.",
+    "revenue_model": "SaaS subscription: $299/month for single-location operators, $999/month for 5-20 locations, $2,999/month for enterprise (20+ locations). Additional $199/month for competitive benchmarking module. Target first-year revenue: $50K with 15 paying customers.",
+    "market_signal": "Major chains are publicly announcing 'back to core' strategies and expanding operations teams by 75% to fix the problem. Industry publications are running multiple articles on menu innovation going too far. These chains are already paying consultants $50K-$200K for one-time menu audits—recurring software at $1K-$3K/month is a bargain.",
+    "competitive_landscape": "Existing menu engineering tools (MenuCalc, MarginEdge) focus on food cost and profitability but don't identify when innovation hurts the brand. Restaurant consultants charge $50K-$200K for one-time audits. CoreMenuAI is the first continuous monitoring tool specifically focused on menu complexity vs. core brand strength, with AI-powered recommendations.",
+    "complexity": "medium",
+    "estimated_build_time": "4-5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Python/FastAPI backend, PostgreSQL, OpenAI API for analysis and recommendations, Recharts for dashboards, integration adapters for Toast/Square/Lightspeed POS systems via their APIs.",
+    "build_plan": [
+      "Week 1: Build POS integration layer for Toast API (most common), create data ingestion pipeline for sales, item mix, and timing data",
+      "Week 2: Develop 'Menu Health Score' algorithm (complexity index, core item performance, cannibalization detection) and recommendation engine",
+      "Week 3: Build dashboard with key metrics (menu complexity score, core vs. innovation performance, SKU rationalization recommendations)",
+      "Week 4: Implement AI-powered insights using GPT-4 for natural language recommendations and add export/reporting features",
+      "Week 5: Beta test with 3-5 local restaurant chains, refine algorithm based on feedback, add A/B testing framework"
+    ],
+    "risks_and_challenges": "Getting accurate POS data integration is hard—start with Toast which has the best API. Restaurants may resist cutting menu items even when data shows they should. Need strong case studies from beta customers showing revenue improvement. Competition from existing menu engineering tools if they add this feature.",
+    "growth_hook": "Cold outreach to franchise operators and regional chains currently experiencing sales declines (find them via industry news and earnings reports). Offer free 30-day menu audit showing exactly which items are hurting their business. Partner with restaurant consulting firms who can white-label the tool. Target restaurant conferences and QSR-focused LinkedIn groups. Publish weekly case studies showing '10% sales improvement by cutting 30% of menu items.'",
+    "feasibility": 6,
+    "demand_confidence": 7,
+    "uniqueness": 6,
+    "avg_score": 6.3
+  },
+  {
+    "rank": 18,
+    "name": "FieldOpsHub",
+    "one_liner": "Mobile-first field operations management platform for restaurant chains to coordinate field managers, track store visits, and fix operational issues in real-time.",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Popeyes expanding field engagement teams by 75% to fix operations and turn around negative trends, highlighting urgent need for better field operations coordination tools as chains scale support teams.",
+    "the_problem": "Restaurant chains expanding field operations teams (like Popeyes' 75% increase) lack modern tools to coordinate visits, track action items, and measure impact. Field managers use spreadsheets, email, and paper checklists, making it impossible to know which stores need help, what issues are recurring, and whether interventions are working. Operations VPs have no visibility into field team productivity.",
+    "target_audience": "Multi-unit restaurant chains (20-500 locations) with district managers, area coaches, and field operations teams responsible for restaurant performance, quality, and compliance.",
+    "product_description": "Mobile app for field managers with digital checklists, photo documentation, and real-time issue reporting during store visits. Web dashboard for operations directors showing heatmaps of problem stores, recurring issues, and field team productivity. AI-powered insights identify patterns (e.g., 'Stores with Manager John have 30% more quality issues'). Integrates with POS systems to correlate field visits with sales, speed of service, and customer satisfaction changes. Includes shift handoff notes and follow-up task tracking to ensure issues get fixed.",
+    "revenue_model": "SaaS: $199/month per field manager seat, $499/month for operations dashboard (unlimited viewers). Average chain with 10 field managers pays $2,490/month. Upsell: $999/month for POS integration and advanced analytics. Target: 8 customers by month 6 = $20K MRR.",
+    "market_signal": "Major chains publicly announcing massive field team expansions to fix operations. Industry norm is $80K-$120K salary per field manager—even small productivity improvements (5-10%) from better tools justify $2K-$3K/month software cost. Chains currently using expensive custom solutions or outdated legacy systems.",
+    "competitive_landscape": "Legacy systems like HotSchedules/Fourth focus on labor scheduling, not field operations. Compliance tools like Zenput focus on audits/checklists but lack performance correlation. Restaurant365 is accounting-focused. FieldOpsHub combines visit management, issue tracking, and performance analytics specifically for restaurant field teams—a white space.",
+    "complexity": "medium",
+    "estimated_build_time": "5-6 weeks for MVP",
+    "tech_stack": "React Native for field manager mobile app, Next.js for operations dashboard, Node.js/Express backend, PostgreSQL, AWS S3 for photo storage, MapBox for store location heatmaps, OpenAI API for pattern detection insights.",
+    "build_plan": [
+      "Week 1-2: Build mobile app core: user auth, store list, customizable digital checklists with photo capture, and offline-first sync",
+      "Week 3: Create issue reporting and tracking system with severity levels, assignment to store managers, and follow-up workflows",
+      "Week 4: Develop web dashboard showing field team activity, store visit history, open issues by location, and basic analytics",
+      "Week 5: Add AI-powered insights engine that identifies recurring patterns and problem stores/managers",
+      "Week 6: Build POS integration adapter (starting with Toast API) to correlate field visits with performance metrics, beta test with 2-3 chains"
+    ],
+    "risks_and_challenges": "Field managers may resist new tools if they're not intuitive—UI must be dead simple. Need buy-in from operations VPs, not just field teams. Customization requests will vary by brand. POS integration is complex and may require custom work per chain. Competitor entrenchment if they add these features.",
+    "growth_hook": "Target regional QSR and fast-casual chains (50-200 locations) currently hiring/expanding field teams. Cold outreach to operations VPs on LinkedIn highlighting Popeyes' 75% team expansion as trend. Offer free 60-day pilot with one district (5-10 stores) to prove ROI. Create case study showing 'Field team productivity up 40%, issue resolution time down 60%.' Sponsor sessions at restaurant operations conferences. Partner with restaurant consulting firms who advise on operations turnarounds.",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 24,
+    "name": "PersonalMenuAI",
+    "one_liner": "Customer data platform that helps restaurants deliver personalized menu recommendations, offers, and ordering experiences using purchase history and dietary preferences.",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Industry article declaring '2026: The year of personalized dining experiences' emphasizing that personalization starts with the right technology, signaling shift toward customer data utilization.",
+    "the_problem": "Restaurants collect customer data through loyalty programs, online ordering, and POS systems but can't use it to personalize experiences. Customers get generic menus and offers instead of recommendations based on their preferences, dietary restrictions, and past orders. Restaurants leave money on the table by not upselling intelligently or retaining customers with personalized engagement.",
+    "target_audience": "Fast-casual restaurants, ghost kitchens, and small chains (3-30 locations) with online ordering or loyalty programs who want to increase average check size and repeat visit frequency.",
+    "product_description": "Plug-in widget for restaurant websites and mobile apps that serves personalized menu recommendations based on customer order history, time of day, weather, and dietary tags. Integrates with Toast, Square, and other POS systems to pull purchase data. AI engine learns preferences and suggests upsells ('You usually order a salad—try our new grilled chicken add-on'). Includes automated email/SMS campaigns with personalized offers ('Your favorite dish is back'). Dashboard shows personalization impact on AOV and repeat rate.",
+    "revenue_model": "SaaS: $149/month for single location (up to 1,000 customers), $399/month for 3-10 locations (up to 10K customers), $999/month for 10-30 locations (unlimited). Revenue share option: $0 base + 3% of incremental revenue from personalized upsells. Target: 20 customers at $299 avg = $6K/month by month 6.",
+    "market_signal": "Industry is explicitly calling 2026 'the year of personalized dining' and emphasizing technology as the enabler. Dutch Bros' 7.7% same-store sales growth driven by expanded food program and customer engagement shows personalization drives revenue. Restaurants already pay for loyalty platforms ($200-$500/month) that don't deliver personalization—PersonalMenuAI adds the missing layer.",
+    "competitive_landscape": "Loyalty platforms (SpotOn, Toast Loyalty) collect data but don't personalize menus or ordering. Email tools (Mailchimp, Klaviyo) aren't restaurant-specific. Recommendation engines exist for e-commerce but not restaurant menus. PersonalMenuAI is first turnkey personalization engine specifically for restaurant ordering experiences.",
+    "complexity": "medium",
+    "estimated_build_time": "4-5 weeks for MVP",
+    "tech_stack": "React for embeddable widget, Python/FastAPI backend, PostgreSQL, Redis for real-time recommendations, OpenAI API for natural language preference extraction, integration SDKs for Toast/Square POS, SendGrid for email campaigns.",
+    "build_plan": [
+      "Week 1: Build POS integration layer to pull customer order history from Toast and Square APIs",
+      "Week 2: Develop recommendation engine with basic collaborative filtering (similar customers) and rules-based personalization (time, weather, past orders)",
+      "Week 3: Create embeddable menu widget with personalized item highlighting, upsell suggestions, and dietary filter UI",
+      "Week 4: Add automated campaign system for personalized email/SMS ('Your favorite is back', 'Try this based on your last order')",
+      "Week 5: Build restaurant dashboard showing personalization performance (AOV lift, repeat rate increase), beta test with 3-5 restaurants"
+    ],
+    "risks_and_challenges": "Data privacy concerns—need clear opt-in and GDPR/CCPA compliance. Smaller restaurants may not have enough order history for accurate recommendations. Widget must load fast and not break existing ordering flows. Need to prove measurable ROI (AOV lift, repeat rate) or restaurants won't renew.",
+    "growth_hook": "Target fast-casual restaurants with existing online ordering (easy integration). Offer free 30-day trial with dashboard showing current personalization gap ('You could increase AOV by 15% with personalized upsells'). Cold outreach to restaurants using Toast or Square with loyalty programs—these already have customer data ready to use. Create case studies showing '22% increase in AOV from personalized recommendations.' Partner with POS companies as add-on app in their marketplaces. Run LinkedIn ads targeting restaurant owners in 'personalized dining' and 'customer experience' groups.",
+    "feasibility": 4,
+    "demand_confidence": 6,
+    "uniqueness": 7,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 29,
+    "name": "HotelImmigrationHub",
+    "one_liner": "Compliance and workforce management platform helping hotels navigate immigration enforcement, verify worker status, and build contingency staffing plans amid increased federal scrutiny.",
+    "domains": [
+      "food_hospitality",
+      "government_compliance"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Largest U.S. hotel union reporting that Trump administration immigration actions are costing jobs and creating workforce uncertainty, triggering urgent need for compliance and contingency planning tools.",
+    "the_problem": "Hotels face workforce disruption from increased immigration enforcement with no clear playbook for compliance, worker verification, or staffing contingency. Losing workers to deportation or raids creates immediate labor shortages. Hotels risk ICE audits, fines, and operational chaos if they can't verify employment eligibility or backfill critical positions. Existing HR systems don't address immigration-specific compliance or workforce planning.",
+    "target_audience": "Independent hotels, boutique hotel chains, and hospitality groups (10-100 properties) with significant immigrant workforce, particularly in housekeeping, food service, and maintenance roles.",
+    "product_description": "Dashboard that tracks I-9 compliance status, flags expiring work authorizations, and provides step-by-step guidance on responding to ICE visits or audits. Includes workforce risk scoring (what percentage of staff might be affected by enforcement) and contingency staffing playbooks. Automated reminders for E-Verify checks and document reverification. Connects hotels with immigration attorneys and staffing agencies for emergency backfill. Includes multilingual worker portal where employees can update documents and understand their rights.",
+    "revenue_model": "SaaS: $499/month for single property, $1,499/month for 5-20 properties, $3,999/month for enterprise (20+ properties). Additional $299/month for priority legal hotline. Upsell: $199 per ICE audit response kit. Target: 15 customers at $799 avg = $12K/month by month 6.",
+    "market_signal": "Major hotel union publicly stating immigration actions are costing jobs—this means hotels are scrambling for solutions. ICE worksite enforcement audits up significantly. Hotels already pay employment attorneys $300-$500/hour for reactive advice—preventive software at $500-$1,500/month is cheaper and proactive. Regulatory environment creates sustained demand.",
+    "competitive_landscape": "General HR compliance tools (BambooHR, Gusto) have I-9 management but don't address immigration enforcement scenarios. Immigration law firms provide consulting but not software. No turnkey platform specifically helps hotels prepare for and respond to immigration enforcement while maintaining operations.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Node.js backend, PostgreSQL, Twilio for SMS alerts, DocuSign API for document management, integration with major hotel PMS systems (Opera, Mews), Stripe for payments.",
+    "build_plan": [
+      "Week 1: Build I-9 compliance tracker with document upload, expiration alerts, and E-Verify integration guidance",
+      "Week 2: Create workforce risk scoring algorithm based on visa types, expiration dates, and enforcement data; develop ICE visit response checklist and action plan templates",
+      "Week 3: Build contingency staffing module with emergency contact lists, cross-training matrices, and staffing agency integrations",
+      "Week 4: Add multilingual worker self-service portal for document updates and 'know your rights' resources (Spanish, Mandarin, Vietnamese)",
+      "Week 5: Develop hotel manager dashboard with real-time compliance status, risk alerts, and audit preparedness score; beta test with 3-5 hotels"
+    ],
+    "risks_and_challenges": "Highly sensitive topic—positioning must be 'compliance and workforce continuity,' not anti-immigrant. Legal liability if platform advice is wrong—needs disclaimer and legal review. Market may be politically polarized. Competitors (ADP, Paychex) could add features quickly if market grows. Fast-changing regulations require constant updates.",
+    "growth_hook": "Target hotels in metros with high immigrant workforce (Miami, Houston, Las Vegas, NYC). Cold outreach to hotel GMs and HR directors with subject line: 'Is your hotel prepared for ICE audits?' Offer free workforce risk assessment showing compliance gaps and potential fines. Partner with hospitality associations and HR consultants who advise hotels. Run webinars on 'Immigration enforcement: What hotels need to know.' Publish weekly newsletter with enforcement updates and compliance tips. Get featured in hotel industry publications covering workforce challenges.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 4,
+    "avg_score": 5.0
+  }
+]

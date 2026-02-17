@@ -213,12 +213,65 @@
       outline: none;
     }
 
+    /* ── Domain section headers ── */
+    .domain-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.5rem 0 0.5rem;
+      border-bottom: 1px solid var(--border-dim);
+      margin-bottom: 1rem;
+    }
+
+    .domain-section-header:first-child {
+      padding-top: 1.25rem;
+    }
+
+    .domain-section-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .domain-section-name {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+    }
+
+    .domain-section-count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    /* ── Domain chip (on cards) ── */
+    .domain-chip {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      padding: 0.12rem 0.45rem;
+      background: rgba(0, 229, 204, 0.08);
+      border: 1px solid rgba(0, 229, 204, 0.15);
+      border-radius: 3px;
+      color: var(--radar-cyan);
+      white-space: nowrap;
+    }
+
+    .domain-chip.secondary {
+      background: rgba(255, 176, 32, 0.08);
+      border-color: rgba(255, 176, 32, 0.15);
+      color: var(--radar-amber);
+    }
+
     /* ── Cards grid ── */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
       gap: 1rem;
-      padding: 1.25rem 0 3rem;
+      padding: 0 0 1.5rem;
     }
 
     @media (max-width: 500px) {
@@ -358,7 +411,7 @@
 
     .card-meta {
       display: flex;
-      gap: 1rem;
+      gap: 0.5rem;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -472,6 +525,29 @@
       color: var(--text-secondary);
       line-height: 1.6;
       margin-bottom: 1.25rem;
+    }
+
+    .modal-domains {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-domain-chip {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      background: rgba(0, 229, 204, 0.1);
+      border: 1px solid rgba(0, 229, 204, 0.2);
+      border-radius: 4px;
+      color: var(--radar-cyan);
+    }
+
+    .modal-domain-chip.secondary {
+      background: rgba(255, 176, 32, 0.08);
+      border-color: rgba(255, 176, 32, 0.2);
+      color: var(--radar-amber);
     }
 
     .modal-scores {
@@ -617,7 +693,7 @@
         Big Idea Radar
       </div>
       <p class="hero-desc">
-        <Thead></Thead> radar sweeps hundreds of news feeds, Hacker News threads, and trending repos daily,
+        The radar sweeps hundreds of news feeds, Hacker News threads, and trending repos daily,
         locking onto emerging opportunities before they hit the mainstream.
         Each signal comes with feasibility scores, build plans, and full market analysis.
       </p>
@@ -630,6 +706,11 @@
         <div class="stat-block">
           <div class="stat-value">{{ stats.total_opportunities }}</div>
           <div class="stat-label">Ideas</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block">
+          <div class="stat-value">{{ domainList.length }}</div>
+          <div class="stat-label">Domains</div>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-block">
@@ -651,8 +732,16 @@
             </option>
           </select>
 
+          <!-- Domain filter -->
+          <select class="ctrl-select" v-model="activeDomain" v-if="domainList.length > 0">
+            <option value="All">All Domains</option>
+            <option v-for="d in domainList" :key="d.id" :value="d.id">
+              {{ d.icon }} {{ d.name }}
+            </option>
+          </select>
+
           <!-- Search -->
-          <div class="flex-grow-1" style="max-width: 320px;">
+          <div class="flex-grow-1" style="max-width: 280px;">
             <input
               type="text"
               class="search-input w-100"
@@ -696,55 +785,77 @@
         <div style="font-size: 0.8rem;">Try adjusting your filters or search query.</div>
       </div>
 
-      <div v-else class="cards-grid">
-        <div
-          v-for="(opp, i) in filteredOpportunities"
-          :key="opp._id"
-          class="opp-card card-enter"
-          :style="{ animationDelay: (i * 0.04) + 's' }"
-          @click="openModal(opp)"
-        >
-          <div class="card-header-row">
-            <div class="rank-badge">#{{ opp.rank }}</div>
-            <div class="card-title">{{ opp.name }}</div>
-            <span class="complexity-badge" :class="'complexity-' + opp.complexity">
-              {{ opp.complexity }}
-            </span>
+      <div v-else>
+        <template v-for="group in groupedOpportunities" :key="group.domain ? group.domain.id : '_none'">
+          <!-- Domain section header -->
+          <div class="domain-section-header" v-if="group.domain">
+            <span class="domain-section-icon">{{ group.domain.icon }}</span>
+            <span class="domain-section-name">{{ group.domain.name }}</span>
+            <span class="domain-section-count">{{ group.items.length }} ideas</span>
           </div>
 
-          <div class="one-liner">{{ opp.one_liner }}</div>
+          <!-- Cards grid for this domain -->
+          <div class="cards-grid">
+            <div
+              v-for="(opp, i) in group.items"
+              :key="opp._id"
+              class="opp-card card-enter"
+              :style="{ animationDelay: (i * 0.04) + 's' }"
+              @click="openModal(opp)"
+            >
+              <div class="card-header-row">
+                <div class="rank-badge">#{{ opp.rank }}</div>
+                <div class="card-title">{{ opp.name }}</div>
+                <span class="complexity-badge" :class="'complexity-' + opp.complexity">
+                  {{ opp.complexity }}
+                </span>
+              </div>
 
-          <div class="scores-row">
-            <div class="score-item">
-              <div class="score-label">Feasibility <span>{{ opp.feasibility }}/10</span></div>
-              <div class="score-track">
-                <div class="score-fill feasibility" :style="{ width: (opp.feasibility * 10) + '%' }"></div>
+              <div class="one-liner">{{ opp.one_liner }}</div>
+
+              <!-- Domain chips on card -->
+              <div style="display:flex; gap:0.3rem; flex-wrap:wrap; margin-bottom:0.6rem;" v-if="opp.domains && opp.domains.length">
+                <span
+                  v-for="(did, di) in opp.domains"
+                  :key="did"
+                  class="domain-chip"
+                  :class="{ secondary: di > 0 }"
+                >{{ domainIcon(did) }} {{ domainShortName(did) }}</span>
               </div>
-            </div>
-            <div class="score-item">
-              <div class="score-label">Demand <span>{{ opp.demand_confidence }}/10</span></div>
-              <div class="score-track">
-                <div class="score-fill demand" :style="{ width: (opp.demand_confidence * 10) + '%' }"></div>
+
+              <div class="scores-row">
+                <div class="score-item">
+                  <div class="score-label">Feasibility <span>{{ opp.feasibility }}/10</span></div>
+                  <div class="score-track">
+                    <div class="score-fill feasibility" :style="{ width: (opp.feasibility * 10) + '%' }"></div>
+                  </div>
+                </div>
+                <div class="score-item">
+                  <div class="score-label">Demand <span>{{ opp.demand_confidence }}/10</span></div>
+                  <div class="score-track">
+                    <div class="score-fill demand" :style="{ width: (opp.demand_confidence * 10) + '%' }"></div>
+                  </div>
+                </div>
+                <div class="score-item">
+                  <div class="score-label">Uniqueness <span>{{ opp.uniqueness }}/10</span></div>
+                  <div class="score-track">
+                    <div class="score-fill uniqueness" :style="{ width: (opp.uniqueness * 10) + '%' }"></div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="score-item">
-              <div class="score-label">Uniqueness <span>{{ opp.uniqueness }}/10</span></div>
-              <div class="score-track">
-                <div class="score-fill uniqueness" :style="{ width: (opp.uniqueness * 10) + '%' }"></div>
+
+              <div class="card-meta">
+                <span class="avg-score-pill" :class="scoreClass(opp.avg_score)">
+                  {{ opp.avg_score.toFixed(1) }}
+                </span>
+                <span class="meta-tag">
+                  &#x23F1; <span class="val">{{ opp.estimated_build_time }}</span>
+                </span>
+                <span class="date-tag" v-if="selectedDate === 'week'">{{ opp._date }}</span>
               </div>
             </div>
           </div>
-
-          <div class="card-meta">
-            <span class="avg-score-pill" :class="scoreClass(opp.avg_score)">
-              {{ opp.avg_score.toFixed(1) }}
-            </span>
-            <span class="meta-tag">
-              &#x23F1; <span class="val">{{ opp.estimated_build_time }}</span>
-            </span>
-            <span class="date-tag" v-if="selectedDate === 'week'">{{ opp._date }}</span>
-          </div>
-        </div>
+        </template>
       </div>
     </div>
 
@@ -763,6 +874,16 @@
         </div>
 
         <div class="modal-oneliner">{{ modalOpp.one_liner }}</div>
+
+        <!-- Domain chips in modal -->
+        <div class="modal-domains" v-if="modalOpp.domains && modalOpp.domains.length">
+          <span
+            v-for="(did, di) in modalOpp.domains"
+            :key="did"
+            class="modal-domain-chip"
+            :class="{ secondary: di > 0 }"
+          >{{ domainIcon(did) }} {{ domainName(did) }}</span>
+        </div>
 
         <div class="modal-scores">
           <div class="score-item">
@@ -861,11 +982,14 @@
         const loading = ref(true);
         const stats = ref(null);
         const dates = ref([]);
+        const domainList = ref([]);
+        const domainMap = ref({});
         const allDigests = {};
         const selectedDate = ref('week');
         const opportunities = ref([]);
         const searchQuery = ref('');
         const activeComplexity = ref('All');
+        const activeDomain = ref('All');
         const sortBy = ref('rank');
         const modalOpp = ref(null);
         const complexityFilters = ['All', 'Low', 'Medium', 'High'];
@@ -910,6 +1034,17 @@
             const manifest = await fetchJSON('digests/manifest.json');
             stats.value = manifest.stats;
             dates.value = manifest.digests;
+
+            // Load domain metadata from manifest
+            if (manifest.domains && manifest.domains.length) {
+              domainList.value = manifest.domains;
+              const map = {};
+              for (const d of manifest.domains) {
+                map[d.id] = d;
+              }
+              domainMap.value = map;
+            }
+
             if (manifest.digests.length > 0) {
               await loadWeek();
             }
@@ -957,6 +1092,14 @@
             list = list.filter(o => o.complexity === activeComplexity.value.toLowerCase());
           }
 
+          if (activeDomain.value !== 'All') {
+            const did = activeDomain.value;
+            list = list.filter(o =>
+              o.primary_domain === did ||
+              (o.domains && o.domains.includes(did))
+            );
+          }
+
           if (sortBy.value === 'score') {
             list.sort((a, b) => (b.avg_score ?? 0) - (a.avg_score ?? 0));
           } else if (sortBy.value === 'complexity') {
@@ -967,6 +1110,62 @@
 
           return list;
         });
+
+        // Group filtered opportunities by primary_domain, preserving domain order
+        const groupedOpportunities = computed(() => {
+          const list = filteredOpportunities.value;
+          if (!domainList.value.length) {
+            // No domains configured — single flat group
+            return [{ domain: null, items: list }];
+          }
+
+          // If filtering to a specific domain, show flat (no section headers needed)
+          if (activeDomain.value !== 'All') {
+            const d = domainMap.value[activeDomain.value] || null;
+            return [{ domain: d, items: list }];
+          }
+
+          const byDomain = {};
+          const uncategorised = [];
+          for (const opp of list) {
+            const pd = opp.primary_domain;
+            if (pd && domainMap.value[pd]) {
+              if (!byDomain[pd]) byDomain[pd] = [];
+              byDomain[pd].push(opp);
+            } else {
+              uncategorised.push(opp);
+            }
+          }
+
+          const groups = [];
+          for (const d of domainList.value) {
+            if (byDomain[d.id] && byDomain[d.id].length) {
+              groups.push({ domain: d, items: byDomain[d.id] });
+            }
+          }
+          if (uncategorised.length) {
+            groups.push({ domain: null, items: uncategorised });
+          }
+          return groups;
+        });
+
+        // Domain helpers
+        function domainName(did) {
+          const d = domainMap.value[did];
+          return d ? d.name : did;
+        }
+
+        function domainShortName(did) {
+          const d = domainMap.value[did];
+          if (!d) return did;
+          // Use first part before " / " for compact card display
+          return d.name.split(' / ')[0];
+        }
+
+        function domainIcon(did) {
+          const d = domainMap.value[did];
+          return d ? d.icon : '';
+        }
 
         function openModal(opp) {
           modalOpp.value = opp;
@@ -988,11 +1187,6 @@
           return 'avg-low';
         }
 
-        function truncate(str, len) {
-          if (!str) return '';
-          return str.length > len ? str.slice(0, len) + '...' : str;
-        }
-
         function parseTechStack(str) {
           if (!str) return [];
           return str.split(',').map(s => s.trim()).filter(Boolean);
@@ -1008,11 +1202,13 @@
         });
 
         return {
-          loading, stats, dates, selectedDate, opportunities,
-          searchQuery, activeComplexity, sortBy, modalOpp,
-          complexityFilters, filteredOpportunities,
+          loading, stats, dates, domainList, domainMap,
+          selectedDate, opportunities,
+          searchQuery, activeComplexity, activeDomain, sortBy, modalOpp,
+          complexityFilters, filteredOpportunities, groupedOpportunities,
           loadDigest, openModal, closeModal,
-          scoreClass, truncate, parseTechStack,
+          scoreClass, parseTechStack,
+          domainName, domainShortName, domainIcon,
         };
       }
     }).mount('#app');

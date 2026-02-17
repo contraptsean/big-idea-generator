@@ -1,0 +1,98 @@
+[
+  {
+    "rank": 5,
+    "name": "PatchAudit Pro",
+    "one_liner": "Automated compliance audit report generator for government agencies that proves they patched critical vulnerabilities like the Chrome CVE within regulatory deadlines.",
+    "domains": [
+      "government_compliance"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "Active exploitation of Chrome zero-day CVE-2026-2441 requiring government agencies to demonstrate timely patching for audits and compliance reviews",
+    "the_problem": "Government agencies face regular cybersecurity audits (FISMA, FedRAMP, state audits) where they must prove they patched critical vulnerabilities within mandated timeframes. Creating these audit reports manually is time-consuming—IT teams must cross-reference vulnerability databases, patch logs, and system inventories to show when each CVE was identified and remediated. A single audit can require 40+ hours of manual documentation. Failure to demonstrate timely patching results in compliance findings, budget impacts, and potential loss of federal funding.",
+    "target_audience": "Government IT compliance officers, CISO offices at federal/state/local agencies, audit response teams, IT service providers (MSPs) serving government clients",
+    "product_description": "PatchAudit Pro connects to your existing patch management system (WSUS, SCCM, Jamf, etc.) and vulnerability scanners, then automatically generates audit-ready compliance reports showing when critical CVEs were identified, which systems were affected, and when patches were deployed. For specific incidents like the Chrome zero-day, it creates detailed timelines with evidence (scan results, patch deployment logs, system screenshots) formatted to meet FISMA, NIST 800-53, and CISA requirements. Users can customize report templates for different auditors, export to PDF, and maintain a historical archive for multi-year compliance tracking.",
+    "revenue_model": "SaaS subscription: $299/month for agencies with up to 200 systems, $599/month for up to 1,000 systems, $1,199/month enterprise. One-time audit report generation for non-subscribers at $499 per report. Target: 10 subscribers at avg $500/month = $5,000/month by month 6.",
+    "market_signal": "Every federal agency undergoes annual FISMA audits. State and local governments face similar requirements. Government audit preparation is a known pain point with entire consulting firms (Deloitte, KPMG) billing $200-500/hour for audit support. The Chrome zero-day demonstrates the ongoing need for vulnerability response documentation. IT directors would pay $300-600/month to avoid 40 hours of manual work per audit.",
+    "competitive_landscape": "Large GRC platforms (ServiceNow GRC, RSA Archer) exist but cost $50K+/year and require months of implementation. Consulting firms charge hourly but don't provide ongoing automation. Gap: affordable, focused tool that automates the specific documentation needs of government cybersecurity audits without requiring a full GRC platform deployment.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase for data storage, Python backend for integrations with patch management APIs, PDF generation via Puppeteer or PDFKit, OAuth2 for system integrations, Vercel hosting",
+    "build_plan": [
+      "Week 1: Build core data model and CSV import system for vulnerability scan results and patch logs. Create basic timeline visualization showing when CVEs were detected vs. patched.",
+      "Week 2: Build PDF report generator with FISMA/NIST 800-53 compliant templates. Include executive summary, detailed CVE timelines, affected systems inventory, and remediation evidence sections.",
+      "Week 3: Add integrations for common patch management systems (WSUS REST API, SCCM PowerShell connector, Jamf API). Automate data ingestion from these systems so reports update automatically.",
+      "Week 4: Build historical archive and multi-audit tracking. Add customizable report templates for different audit types. Create dashboard showing compliance status and upcoming audit deadlines.",
+      "Week 5: Add notification system for upcoming patch deadlines based on CVE severity and regulatory requirements. Polish UI, add role-based access control, test with 3 beta customers."
+    ],
+    "risks_and_challenges": "Integration complexity with legacy government systems. Each agency may use different patch management tools, requiring custom connectors. Government procurement processes are slow. Selling into federal agencies may require FedRAMP authorization ($100K+ cost). Mitigation: start with state/local governments and focus on manual CSV import before building extensive integrations. Offer professional services for custom integrations at $2K-5K per system.",
+    "growth_hook": "Cold email IT directors at 200 state and local government agencies offering a free audit report generation for their most recent compliance review. Partner with MSPs serving government clients who can resell the tool. Write case studies showing '40 hours saved per audit' and submit to GovTech publications. Attend NASCIO and state IT conferences with booth demos. Leverage LinkedIn ads targeting government compliance and audit professionals.",
+    "feasibility": 6,
+    "demand_confidence": 7,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 12,
+    "name": "ZeroDayWatch",
+    "one_liner": "Real-time zero-day vulnerability monitoring and compliance tracking that alerts government IT teams the moment critical CVEs like Chrome zero-days are announced, with automated patch deployment workflows.",
+    "domains": [
+      "government_compliance",
+      "health_wellness"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "Google's active exploitation of Chrome zero-day CVE-2026-2441 requiring immediate patching across government systems",
+    "the_problem": "Government agencies and regulated organizations are required to patch critical vulnerabilities within strict timeframes (often 24-72 hours), but most lack real-time alerting systems that tie CVE announcements to their specific software inventory. IT teams find out about zero-days through manual checking or too late, risking compliance violations and security breaches. Manual tracking across hundreds of systems is impossible at scale.",
+    "target_audience": "Government IT administrators, compliance officers at federal/state/local agencies, defense contractors, healthcare systems with HIPAA requirements, and critical infrastructure operators",
+    "product_description": "ZeroDayWatch continuously monitors CVE databases, vendor security bulletins, and GitHub security advisories, cross-referencing them against your organization's software inventory (auto-discovered or manually uploaded). When a critical zero-day drops, it instantly sends alerts via Slack/email/SMS with severity scores, affected systems, and links to vendor patches. The dashboard shows compliance status, tracks patch deployment deadlines based on your regulatory requirements (FISMA, FedRAMP, CISA directives), and generates audit-ready reports. Integration with common patch management tools (WSUS, Jamf, Ansible) allows one-click patch deployment initiation.",
+    "revenue_model": "Tiered SaaS subscription: $199/month for small agencies (up to 100 endpoints), $499/month for mid-size (up to 500 endpoints), $1,499/month for enterprise (unlimited). Annual contracts offer 20% discount. Revenue target: 15 customers at avg $500/month = $7,500/month by month 6.",
+    "market_signal": "CISA's Known Exploited Vulnerabilities catalog mandates federal agencies patch critical vulnerabilities within 14 days. Government IT procurement databases show millions spent annually on vulnerability management. Existing enterprise tools (Tenable, Qualys) are expensive ($50K+/year) and overkill for smaller agencies. The Chrome zero-day news shows the ongoing need for immediate response systems.",
+    "competitive_landscape": "Enterprise players like Tenable.io, Qualys, and Rapid7 dominate large agencies but are prohibitively expensive and complex for smaller government entities. Free tools like NIST NVD exist but require manual monitoring. Gap: affordable, government-focused solution with compliance reporting built in that doesn't require a dedicated security team to operate.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase for database and auth, Python backend for CVE feed parsing (NVD API, vendor RSS feeds), Inngest for scheduled jobs and alerting workflow, Resend for email, Twilio for SMS, Vercel for hosting",
+    "build_plan": [
+      "Week 1: Build CVE feed aggregator that polls NVD, vendor bulletins (Microsoft, Google, Apple) every 15 minutes and stores in Supabase. Create basic dashboard showing latest CVEs.",
+      "Week 2: Build software inventory upload system (CSV import + basic auto-discovery via agent script). Implement matching logic to cross-reference inventory against CVE database and flag affected systems.",
+      "Week 3: Build alert system with customizable severity thresholds. Add Slack/email/SMS notifications. Create compliance deadline tracker based on user's regulatory framework (FISMA, CISA BOD).",
+      "Week 4: Build audit report generator (PDF exports showing patch status, timeline, affected systems). Add integration hooks for WSUS/Ansible. Polish dashboard and onboarding flow. Launch beta to 5 pilot agencies."
+    ],
+    "risks_and_challenges": "False positives if CVE-to-software matching is inaccurate. Government sales cycles are slow (3-6 months). Compliance with FedRAMP or StateRAMP may be required for federal contracts, adding 6-12 months and $100K+ in costs. Competing with free CISA alerts and existing vendor tools. Mitigation: start with state/local governments and non-federal regulated entities (healthcare, utilities) who face similar requirements but have faster procurement.",
+    "growth_hook": "Launch by posting in govtech Slack communities and emailing IT directors at 100 small-to-midsize government agencies with a free 30-day trial. Create SEO content targeting '[state] government zero-day response' and 'CISA BOD compliance tools'. Partner with GovTech conferences for booth presence. Offer free version for agencies under 50 endpoints to build testimonials and word-of-mouth.",
+    "feasibility": 6,
+    "demand_confidence": 7,
+    "uniqueness": 6,
+    "avg_score": 6.3
+  },
+  {
+    "rank": 19,
+    "name": "SoftwareInventoryAI",
+    "one_liner": "AI-powered software asset discovery tool for government agencies that automatically identifies all installed software across networks to ensure compliance and vulnerability management.",
+    "domains": [
+      "government_compliance"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "Chrome zero-day CVE-2026-2441 requiring agencies to quickly identify all affected systems, but many lack accurate software inventories",
+    "the_problem": "When a critical zero-day like the Chrome CVE drops, government IT teams scramble to identify which systems are affected. Most agencies lack comprehensive, up-to-date software inventories because manual tracking is impossible across hundreds or thousands of endpoints (laptops, servers, mobile devices, VMs). Existing asset management tools require agents to be installed on every device and don't catch shadow IT or unmanaged systems. Without knowing what software is where, agencies can't assess vulnerability exposure, violate FISMA asset inventory requirements, and waste hours during incident response manually checking systems.",
+    "target_audience": "Government IT asset managers, cybersecurity teams at federal/state/local agencies, compliance officers responsible for FISMA asset inventories, defense contractors managing CMMC requirements",
+    "product_description": "SoftwareInventoryAI uses agentless network scanning combined with endpoint scripts to discover all software installed across your organization—including shadow IT, browser extensions, and unmanaged devices. It automatically categorizes software by vendor, version, and criticality, then maps it to CVE databases so you instantly know exposure when vulnerabilities are announced. The AI identifies duplicate or outdated software, flags license violations, and generates compliance reports for FISMA asset inventory requirements. Users can query the system in natural language ('show all systems with Chrome version 120 or below') and get instant results. Integration with Active Directory and Azure AD provides user ownership tracking.",
+    "revenue_model": "SaaS subscription: $399/month for up to 250 endpoints, $799/month for up to 1,000 endpoints, $1,999/month for enterprise (unlimited). One-time implementation/scanning service at $1,499 for agencies wanting initial inventory setup. Target: 8 customers at avg $600/month = $4,800/month by month 6.",
+    "market_signal": "FISMA requires all federal agencies to maintain accurate software asset inventories and report annually. Government audits routinely cite inaccurate inventories as a major finding. The Chrome zero-day shows the operational need for knowing 'who has what' instantly. Commercial tools like Snow Software and Flexera cost $50K-200K/year. Smaller agencies need affordable alternatives that don't require full CMDB implementations.",
+    "competitive_landscape": "Enterprise SAM tools (Snow, Flexera, ServiceNow ITAM) dominate large agencies but are extremely expensive and complex. Free network scanners (Nmap, OpenVAS) exist but require deep technical expertise and don't provide management interfaces. SaaS alternatives like Lansweeper charge per-device and still require agents. Gap: affordable, easy-to-deploy solution specifically designed for government compliance needs with built-in CVE mapping.",
+    "complexity": "high",
+    "estimated_build_time": "6 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase for database, Python backend using Nmap and WMI/SSH for scanning, OpenAI API for natural language queries, node-cron for scheduled scans, optional lightweight agent (Electron or Go binary) for endpoints behind firewalls",
+    "build_plan": [
+      "Week 1-2: Build network scanner that discovers devices via Nmap. Create WMI/PowerShell script for Windows endpoints and SSH script for Linux to enumerate installed software. Store results in normalized database schema.",
+      "Week 3: Build web dashboard showing discovered software inventory with filtering by vendor, version, OS. Add CVE mapping by querying NVD database and flagging vulnerable software versions.",
+      "Week 4: Add AI-powered natural language search using OpenAI function calling to query inventory ('find all unpatched Chrome browsers'). Build scheduled scanning with change detection alerts.",
+      "Week 5: Create compliance report templates for FISMA asset inventory requirements. Add Active Directory integration to map software to users and departments.",
+      "Week 6: Build optional lightweight agent for endpoints not accessible via network scanning. Add export functionality (CSV, PDF). Polish onboarding flow and documentation. Beta test with 3 agencies."
+    ],
+    "risks_and_challenges": "Network scanning may be blocked by firewalls or security policies in high-security environments. Agentless scanning can't see all software (e.g., portable apps, browser extensions). Government networks are often segmented, requiring multiple scanning appliances. Privacy concerns around collecting software inventory data. Mitigation: offer hybrid agent/agentless approach, emphasize data stays within customer's network (no cloud storage required), build on-premise deployment option.",
+    "growth_hook": "Offer free 30-day trial with one-time network scan report showing current software inventory and vulnerability exposure. Target IT directors at 100 mid-size state agencies via LinkedIn and email. Create content marketing around 'FISMA asset inventory compliance' and 'zero-day response readiness.' Partner with government IT service providers who can resell. Submit case studies to GovTech and StateScoop publications showing time/cost savings vs. manual inventory processes.",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 6.0
+  }
+]

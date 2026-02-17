@@ -1,0 +1,161 @@
+[
+  {
+    "rank": 6,
+    "name": "DrugShortageNavigator",
+    "one_liner": "Real-time hospital drug shortage tracker with automated alternative therapy protocols for pharmacists and clinicians",
+    "domains": [
+      "health_wellness",
+      "government_compliance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "News about IV opioid shortages forcing hospitals to make impossible ethical decisions about pain relief allocation; broader pattern of medication shortages affecting patient care",
+    "the_problem": "Hospitals face constant drug shortages (currently 300+ drugs on shortage list) but have no streamlined system to find alternatives, adjust protocols, or communicate changes to clinical teams. Pharmacists waste 10-15 hours per week manually researching alternatives and updating protocols. Clinicians often don't know about shortages until they try to order, delaying care.",
+    "target_audience": "Hospital pharmacists, pharmacy directors, clinical decision support teams at mid-size hospitals (100-500 beds) without enterprise-level systems",
+    "product_description": "A SaaS dashboard that ingests FDA drug shortage data, hospital formulary systems, and clinical guidelines to automatically generate alternative therapy protocols when drugs go on shortage. When a shortage is detected, the system suggests therapeutically equivalent alternatives, dose adjustments, and route changes based on clinical evidence. Push notifications alert relevant clinicians. Includes pre-built protocol templates for common scenarios (IV opioid shortage → oral alternatives + dosing calculator). Tracks usage and outcomes to improve suggestions over time.",
+    "revenue_model": "Subscription: $299/month for hospitals under 200 beds, $599/month for 200-500 beds, $999/month for enterprise. Target 20 hospitals in 6 months = $6K-$12K/month. Optional add-on: Custom protocol builder at $199/month.",
+    "market_signal": "7,000+ hospitals in US, all affected by shortages. ASHP (pharmacist association) identifies drug shortages as top concern. No affordable solution for mid-size hospitals. Existing clinical decision support systems don't integrate shortage data effectively.",
+    "competitive_landscape": "UpToDate and clinical references are manual lookups. Epic/Cerner have basic shortage alerts but no automated protocols. ASHP Drug Shortages database is static. Gap: Real-time automation of alternative protocol generation specifically for shortages.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js, PostgreSQL, FDA Drug Shortage API, Supabase for real-time updates, Twilio for SMS alerts, Stripe for billing, Anthropic Claude API for protocol generation from clinical guidelines",
+    "build_plan": [
+      "Week 1: Build FDA shortage data ingestion pipeline and database schema for drugs, alternatives, and protocols",
+      "Week 2: Create dashboard UI with shortage alerts, search, and notification preferences",
+      "Week 3: Build protocol generation engine using Claude + clinical guidelines database (start with pain management, antibiotics, sedatives)",
+      "Week 4: Add hospital formulary integration (API or CSV upload), usage tracking, and outcome reporting",
+      "Week 5: Implement team collaboration features (comments, protocol approvals) and onboarding flow"
+    ],
+    "risks_and_challenges": "Liability if alternative recommendations cause harm (need strong disclaimers + pharmacist review workflow). FDA data lags real shortages. Hospital IT integration complexity. Need clinical advisory board for credibility. Competitive moat is weak—large EMR vendors could copy.",
+    "growth_hook": "Free tier for independent pharmacists to test and advocate internally. Case study partnerships with 3-5 early adopter hospitals willing to share outcomes data. Speak at ASHP conferences. SEO content targeting 'IV opioid shortage alternatives' and similar high-intent searches.",
+    "feasibility": 6,
+    "demand_confidence": 7,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 13,
+    "name": "DeepfakeDefender",
+    "one_liner": "Browser extension and mobile app that detects and flags deepfake medical influencers on social media before they can scam health consumers",
+    "domains": [
+      "health_wellness"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "AMA CEO warning about deepfake doctors endorsing questionable medical products on social media as a serious public health threat",
+    "the_problem": "Deepfake doctors on TikTok, Instagram, and YouTube are endorsing fake supplements, dangerous treatments, and unverified health products to millions of followers. Consumers can't tell real medical professionals from AI-generated imposters, leading to dangerous health decisions. With 60% of Americans getting health information from social media, this is a growing crisis.",
+    "target_audience": "Health-conscious consumers ages 25-55 who follow medical influencers, parents researching child health issues, chronic disease patients seeking treatment information",
+    "product_description": "A browser extension and mobile app that scans social media feeds for medical content and flags likely deepfakes using facial movement analysis, voice pattern detection, and credential verification. When a user encounters a medical influencer, the tool shows a trust score based on: verified medical credentials, consistency of facial features across videos, natural speech patterns, and known deepfake markers. Users can report suspected fakes to build a crowdsourced database. Premium version includes real-time scanning as you scroll and alerts when followed accounts are flagged.",
+    "revenue_model": "Freemium: Free browser extension with basic detection. Premium at $4.99/month adds real-time scanning, unlimited credential checks, and priority alerts. White-label API for health platforms at $499-$2,499/month. Estimated 10,000 free users → 1,000 premium subscribers = $5K/month within 6 months.",
+    "market_signal": "AMA is publicly calling this a crisis. Health misinformation is a $78B problem. Similar deepfake detection tools in finance (identity verification) are already profitable. Facebook and Instagram have faced lawsuits over medical misinformation.",
+    "competitive_landscape": "TrueMedia.org offers deepfake detection but isn't health-specific. Social platforms have inadequate moderation. No consumer-facing tool exists specifically for medical deepfakes. Gap: Need domain-specific detection trained on medical influencer patterns.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Chrome Extension API, React Native for mobile, Python + OpenCV for facial analysis, Whisper API for voice detection, Supabase for database, Stripe for payments, LinkedIn/medical board APIs for credential verification",
+    "build_plan": [
+      "Week 1: Build Chrome extension shell with basic UI and credential lookup via medical board APIs",
+      "Week 2: Integrate OpenAI Vision API or Hive AI for deepfake probability scoring on video frames",
+      "Week 3: Add voice analysis using Whisper, build user reporting system and flagged account database",
+      "Week 4: Create mobile app with camera/gallery scanning, implement freemium paywall and onboarding flow"
+    ],
+    "risks_and_challenges": "False positives could harm legitimate doctors. Deepfake tech evolves quickly. Medical boards may not have public APIs. Legal risk if accused of defaming real doctors. Platform resistance to third-party extensions.",
+    "growth_hook": "Partner with health advocacy groups and medical associations for launch. Create viral TikTok series exposing famous deepfake doctors. PR push around specific high-profile fake doctor cases. Offer free licenses to medical schools and patient advocacy groups.",
+    "feasibility": 6,
+    "demand_confidence": 7,
+    "uniqueness": 6,
+    "avg_score": 6.3
+  },
+  {
+    "rank": 20,
+    "name": "GLP-1 Monitor",
+    "one_liner": "Price tracking and safety monitoring dashboard for patients buying compounded GLP-1 drugs from telehealth providers",
+    "domains": [
+      "health_wellness",
+      "ecommerce_retail"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Lawsuit against white-label telehealth providers over ineffective compounded oral GLP-1s; China's accelerating GLP-1 drug development; compounding pharmacies filling gap during shortages",
+    "the_problem": "Millions of patients are buying compounded semaglutide/tirzepatide from dozens of online telehealth companies at wildly different prices ($150-$600/month). They can't compare safety, effectiveness, or value. Many compounded versions are ineffective or unsafe, but patients have no way to vet providers. Insurance doesn't cover most, so cost comparison is critical.",
+    "target_audience": "Adults ages 30-60 using or considering GLP-1 drugs for weight loss or diabetes, especially those priced out of brand-name options, 3M+ current compounded GLP-1 users",
+    "product_description": "A web app that aggregates pricing, user reviews, and safety data across 50+ telehealth GLP-1 providers. Users input their dose and location to see a ranked comparison of options with real monthly costs (including shipping/consultation fees), pharmacy accreditation status, reported side effects, and effectiveness ratings from verified users. Includes a 'safe provider' badge for pharmacies that meet FDA/state licensing standards. Email alerts when cheaper options become available or when a provider gets warning letters. Premium features: Compounded vs. brand-name cost calculator over 12 months, insurance coverage checker, and telehealth appointment booking.",
+    "revenue_model": "Freemium: Free price comparison and basic reviews. Premium at $9.99/month for alerts, insurance checking, and appointment booking. Affiliate revenue from telehealth providers (10-15% commission on referred patients). Target 5,000 free users + 500 premium + 200 affiliate conversions/month = $5K/month in 6 months.",
+    "market_signal": "GLP-1 market expected to hit $100B by 2030. Compounded versions growing 300% YoY during Ozempic shortages. Reddit communities like r/Semaglutide have 200K+ members desperately seeking provider recommendations. Lawsuit validates need for consumer protection.",
+    "competitive_landscape": "GoodRx doesn't cover compounded or telehealth. Comparison sites exist for brand-name pharmacies but not telehealth GLP-1s. Trustpilot/BBB have reviews but no price comparison. Gap: No unified source for compounded telehealth GLP-1 comparison.",
+    "complexity": "low",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "Next.js, Airtable or Supabase for provider database, Scraping (Puppeteer) for price updates, Stripe for premium subscriptions, Google Maps API for location-based results, Impact Radius for affiliate tracking",
+    "build_plan": [
+      "Week 1: Build provider database (manual entry of top 20 telehealth GLP-1 providers with pricing, licensing info, reviews)",
+      "Week 2: Create comparison UI with filters (price, dose, delivery time, safety ratings) and location-based sorting",
+      "Week 3: Add user review system with verification (require proof of purchase), email alerts, and freemium paywall",
+      "Optional Week 4: Build web scraper to auto-update pricing from provider websites, integrate affiliate links"
+    ],
+    "risks_and_challenges": "Liability if you recommend unsafe provider. Providers may not want to be compared or may send cease-and-desist. Maintaining accurate pricing is labor-intensive. Regulatory crackdown on compounding could kill market. Need to avoid appearing to endorse unregulated drugs.",
+    "growth_hook": "SEO targeting 'cheapest compounded semaglutide,' 'telehealth Ozempic alternatives.' Post comparison tables to Reddit communities with disclaimer. Partner with weight loss influencers for sponsored content. Facebook ads targeting Ozempic/GLP-1 interest groups.",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 25,
+    "name": "MentalHealthFormularyNavigator",
+    "one_liner": "Insurance coverage prediction tool that tells psychiatrists and patients which mental health medications will be covered before prescribing",
+    "domains": [
+      "health_wellness",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Kaiser Permanente settlement over mental health access issues; health insurers accelerating AI adoption while provider trust erodes; Medicare Advantage growth slowdown amid plan changes",
+    "the_problem": "Psychiatrists prescribe medications only to have patients discover at the pharmacy that their insurance won't cover it, requires prior authorization, or has a $200 copay. This leads to treatment delays, medication non-adherence, and wasted appointments. Psychiatrists can't memorize formularies for 20+ insurance plans. Prior authorization takes 2-3 business days per request, during which the patient is untreated.",
+    "target_audience": "Psychiatrists in private practice or small group practices, mental health clinics, psychiatric nurse practitioners",
+    "product_description": "A web-based formulary lookup tool specifically for mental health medications. Providers enter patient insurance and medication to instantly see: coverage status, copay estimate, prior authorization requirements, and therapeutically similar alternatives that are covered. Includes real-time updates as insurers change formularies. Pre-built protocols suggest covered alternatives for common scenarios (e.g., if Vyvanse isn't covered, suggest Adderall XR). Integration with EHR via API or browser extension that auto-populates during e-prescribing workflow.",
+    "revenue_model": "Subscription: $79/month per provider for unlimited lookups, $299/month for small practice (up to 5 providers), $999/month for clinics (unlimited providers). Target 100 solo providers in 6 months = $8K/month.",
+    "market_signal": "45,000+ psychiatrists in US, 85% report insurance authorization issues as top practice burden. Mental health parity laws increasing enforcement. Prior authorization for mental health meds takes 3-5 hours per week per provider. Kaiser settlement proves insurers are failing on mental health access.",
+    "competitive_landscape": "CoverMyMeds handles prior authorization but doesn't predict coverage upfront. Formulary lookup tools exist but aren't mental-health-specific or real-time. EHR formulary checks are incomplete. Gap: Real-time, psych-specific coverage prediction before prescribing.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "React, Node.js, PostgreSQL, Stripe, insurance formulary APIs (CoverMyMeds API, Surescripts), RxNorm for drug mappings, Chrome extension for EHR integration",
+    "build_plan": [
+      "Week 1: Build formulary database for top 10 insurers (Medicare, Medicaid, UnitedHealthcare, Anthem, Aetna) + mental health drugs",
+      "Week 2: Create lookup UI with insurance plan search, medication search, and alternative suggestions",
+      "Week 3: Add copay estimation using insurance APIs or crowdsourced data, prior auth flag, and PDF export for patient",
+      "Week 4: Build Chrome extension that integrates with Epic/Cerner e-prescribing workflow, add user onboarding and subscription"
+    ],
+    "risks_and_challenges": "Insurance formulary APIs may not be accessible or may charge fees. Formularies change monthly—requires constant updates. Copay estimates may be inaccurate due to deductibles/plan complexity. EHR integration is technically complex. Providers may not pay for 'nice to have' tool.",
+    "growth_hook": "Free trial targeting psychiatrists in Kaiser Permanente network (timely due to settlement). Partner with psychiatric professional associations for member discount. Content marketing: 'How to reduce prior authorization burden' guides. Cold email campaigns to private practice psychiatrists with free month offer.",
+    "feasibility": 4,
+    "demand_confidence": 6,
+    "uniqueness": 7,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 30,
+    "name": "AIScribeCostROI Calculator",
+    "one_liner": "Interactive ROI calculator that shows health systems exactly how much revenue they'll gain from deploying AI medical scribes like Suki",
+    "domains": [
+      "health_wellness",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Rush, McLeod Health, and FMOL Health reporting measurable revenue gains and improved acuity coding from Suki AI scribe implementation",
+    "the_problem": "Health system CFOs and CMIOs are being pitched AI scribe vendors but have no way to model ROI before committing to 6-figure contracts. Vendors claim time savings but don't quantify revenue impact. Decision-makers need to justify budget to boards with concrete numbers showing increased RVUs, improved coding accuracy, and reduced physician burnout costs.",
+    "target_audience": "Health system CFOs, CMIOs, physician practice administrators at mid-size health systems (5-50 physicians) evaluating AI scribe vendors",
+    "product_description": "A free, embeddable ROI calculator that health systems use to model AI scribe impact on their revenue. Users input: number of physicians, average daily patient volume, current documentation time, payer mix, and physician hourly cost. The tool outputs: projected incremental revenue from higher acuity coding (based on published case studies), time savings in hours/week, cost of physician burnout avoided, payback period for vendor contract, and 3-year NPV. Includes comparison mode to evaluate multiple vendors (Suki, Nuance DAX, Abridge). Premium version ($499/month) includes customized benchmarking against similar health systems and implementation planning templates.",
+    "revenue_model": "Freemium lead gen tool: Free calculator drives inbound leads. Revenue from: (1) Premium version at $499/month for advanced modeling, (2) Consulting packages for health systems to run full vendor evaluation at $5K-$15K, (3) White-label licensing to AI scribe vendors at $2K/month. Target 50 free users + 5 premium subscribers + 2 consulting projects in 6 months = $3K-$5K/month.",
+    "market_signal": "7,000+ hospitals and 15,000+ medical groups in US. AI scribe market projected to hit $800M by 2028. Suki, Nuance, and Abridge raising hundreds of millions. Health systems are actively evaluating but lack decision frameworks. Suki case studies proving ROI creates urgency for competitors.",
+    "competitive_landscape": "AI scribe vendors provide their own ROI calculators but are biased. No independent, vendor-neutral calculator exists. Consulting firms charge $50K+ for evaluation. Gap: Free, credible, independent ROI modeling tool for health systems.",
+    "complexity": "low",
+    "estimated_build_time": "2 weeks for MVP",
+    "tech_stack": "Next.js, Tailwind CSS, Recharts for data visualization, Supabase for storing calculator sessions, Stripe for premium tier, Typeform for lead capture, Anthropic Claude for generating custom recommendations",
+    "build_plan": [
+      "Week 1: Build calculator logic and UI with inputs (physician count, patient volume, payer mix), outputs (revenue gain, time savings, ROI), and vendor comparison mode",
+      "Week 2: Add case study database (Rush, McLeod, etc.), PDF report export, lead capture form, and premium upgrade flow",
+      "Optional Week 3: Build AI-powered insights using Claude to generate custom recommendations based on calculator inputs"
+    ],
+    "risks_and_challenges": "Hard to get accurate revenue lift data without proprietary case studies. Health systems may distrust free tool from unknown source—need credibility signals (advisors, case studies, press). AI scribe vendors may see this as competitive threat. Low conversion from free to paid if calculator is 'good enough.'",
+    "growth_hook": "SEO targeting 'AI scribe ROI,' 'Suki cost savings,' 'medical documentation AI comparison.' Partner with healthcare consulting firms as white-label tool. Sponsor healthcare CFO conferences and offer free ROI assessments. Cold outreach to health system CFOs with free calculator + case study benchmarking.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 4,
+    "avg_score": 5.0
+  }
+]

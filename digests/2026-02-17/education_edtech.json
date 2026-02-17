@@ -1,0 +1,159 @@
+[
+  {
+    "rank": 2,
+    "name": "PhonePolicy Toolkit",
+    "one_liner": "Compliance and implementation software that helps K-12 schools design, deploy, and enforce phone-free policies aligned with new state legislation.",
+    "domains": [
+      "education_edtech",
+      "government_compliance"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "EdSurge article 'New Report Card Grades States on Laws Banning Phones in Schools' reveals that phone ban legislation is sweeping the nation, but implementation quality varies dramatically—implying schools need help executing these policies correctly.",
+    "the_problem": "As states pass phone ban laws, schools must rapidly implement compliant policies but lack expertise, templates, and enforcement tools. Many laws have nuanced requirements (emergency exceptions, parent communication protocols, storage solutions) that schools misinterpret, risking non-compliance or parent backlash. Teachers report spending 15+ minutes per class managing phone violations, and schools struggle to communicate policies clearly to parents.",
+    "target_audience": "K-12 school administrators, principals, district technology directors, compliance officers in states with phone ban legislation (currently 10+ states, growing rapidly).",
+    "product_description": "PhonePolicy Toolkit provides state-specific policy templates, parent communication scripts, student handbook language, and teacher training materials for implementing phone bans. The dashboard shows your state's legal requirements with a compliance checklist, generates customized policies based on school demographics, and includes pre-written letters to parents in English and Spanish. Premium tier adds phone storage locker vendor recommendations, incident tracking for violations, and automated parent notifications via SMS when students have phone confiscations.",
+    "revenue_model": "SaaS for schools: $299/year per school building (up to 500 students), $599/year for 500-1500 students, $999/year for 1500+ students. $2,999/year for district-wide license (10+ schools). Target $4K MRR within 6 months from 15-20 schools. Upsell: $99 one-time fee for on-site training webinar.",
+    "market_signal": "The EdSurge report card indicates significant legislative momentum—schools are legally required to comply. School administrators will pay to avoid non-compliance risk and parent complaints. Similar compliance tools (FERPA training platforms, Title IX software) charge $500-2000 annually per school.",
+    "competitive_landscape": "General school policy management systems like BoardDocs or Eduphoria don't offer phone ban-specific guidance. Law firms charge $5K-15K for policy consulting. No turnkey software exists that combines legal compliance, implementation templates, and enforcement tracking specifically for phone bans.",
+    "complexity": "low",
+    "estimated_build_time": "2-3 weeks for MVP",
+    "tech_stack": "Next.js + Tailwind for frontend, Supabase for database/auth, Resend for email/SMS notifications, Stripe for payments, Cloudflare Pages for static content. Legal content researched from public state legislation databases.",
+    "build_plan": [
+      "Week 1: Research and document phone ban laws for top 10 states with legislation; create policy templates and compliance checklists",
+      "Week 2: Build web app with school onboarding flow, policy generator based on state/school inputs, and downloadable PDF templates",
+      "Week 3: Add incident tracking module for phone violations and parent notification system via Resend; implement payment flow",
+      "Week 4 (optional polish): Add training video library and phone storage locker vendor directory"
+    ],
+    "risks_and_challenges": "Laws change frequently—requires ongoing legal research (mitigation: quarterly updates, clearly disclaim that schools should verify with counsel). Schools have long sales cycles (mitigation: target smaller private schools first, offer free trials through summer before fall implementation). Liability concerns if schools blame software for non-compliance (mitigation: strong terms of service, position as guidance tool not legal advice).",
+    "growth_hook": "Create 'State-by-State Phone Ban Compliance Guide 2026' as free downloadable resource, promoted in principal Facebook groups and via Google Ads targeting 'phone ban policy template' searches. Cold email principals in states with new legislation (public contact info) offering free 30-day trial. Partner with school insurance providers to offer as risk mitigation tool.",
+    "feasibility": 6,
+    "demand_confidence": 7,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 9,
+    "name": "CareerCompass AI",
+    "one_liner": "AI-powered career navigation platform that helps college students and recent grads identify AI-proof career paths and required skills based on real-time labor market data.",
+    "domains": [
+      "education_edtech",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "EdSurge article 'Can AI Help Students Navigate the Career Chaos It's Creating?' highlights that college and career counseling is increasingly difficult as AI disrupts traditional career paths, with schools exploring AI solutions.",
+    "the_problem": "Students face unprecedented uncertainty about which careers will survive AI automation, while college career counselors are overwhelmed and lack real-time data on emerging roles. Traditional career assessments don't account for AI's rapid transformation of the job market, leaving students making expensive educational investments without knowing if their chosen field will exist in 5 years.",
+    "target_audience": "College students (18-24), recent graduates, career counselors at universities and community colleges, career services departments.",
+    "product_description": "CareerCompass AI combines labor market APIs (LinkedIn, Indeed, BLS data) with AI job displacement forecasting to show students which careers are growing, shrinking, or transforming. Users answer a brief skills/interests survey, then get a personalized dashboard showing 10-15 AI-resilient career paths ranked by automation risk, salary growth, and skills gap. Each path includes a concrete learning roadmap with course recommendations, credential requirements, and estimated time-to-employability. The platform updates monthly with new labor market data and sends alerts when a user's chosen field shows displacement risk.",
+    "revenue_model": "Freemium SaaS: Free basic career assessment, $19/month for students (unlimited assessments, learning roadmaps, job alerts), $499/year for career services departments (unlimited student seats, analytics dashboard, white-label option). Target $3K MRR within 6 months from 150 paid students plus 2-3 institutional clients.",
+    "market_signal": "EdSurge reports schools are 'banking on AI' for career guidance, indicating institutional willingness to pay. Career anxiety is at all-time highs—students already pay $50-200 for career coaches and assessment tools like StrengthsFinder. Universities spend $150K+ annually on career services staff who are overwhelmed.",
+    "competitive_landscape": "Traditional tools like Myers-Briggs and StrengthsFinder don't address AI disruption. Newer platforms like Forage and Parker Dewey focus on skills-building but don't forecast career viability. No existing tool combines real-time labor market data with AI displacement risk scoring specifically for students navigating career chaos.",
+    "complexity": "medium",
+    "estimated_build_time": "4-5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase backend/auth, OpenAI API for career matching logic, Oxylabs or Bright Data for labor market scraping, Stripe for payments, Resend for email alerts. Deploy on Vercel.",
+    "build_plan": [
+      "Week 1: Build skills/interests assessment quiz (15-20 questions) and basic matching algorithm using OpenAI function calling",
+      "Week 2: Integrate labor market APIs (LinkedIn Jobs API, Indeed API, BLS data) and build automation risk scoring model using public research data",
+      "Week 3: Create career path dashboard with learning roadmaps, implement user auth and payment flow (Stripe)",
+      "Week 4: Build institutional admin dashboard for career services departments with analytics",
+      "Week 5: Add email alert system for career displacement warnings, polish UI, launch beta with 2-3 university partners"
+    ],
+    "risks_and_challenges": "Labor market data APIs can be expensive or rate-limited (mitigation: start with free BLS data, add premium sources as revenue grows). Automation risk predictions could be wrong, damaging credibility (mitigation: clearly label as forecasts, cite sources, update quarterly). Students may not trust AI to guide such important decisions (mitigation: position as supplement to human counselors, not replacement).",
+    "growth_hook": "Partner with 3-5 university career services offices for pilot programs in exchange for testimonials. Post free 'AI-Proof Careers 2026' report on Reddit r/careeradvice and r/college to drive organic traffic. Run LinkedIn ads targeting parents of college students with messaging around ROI anxiety. Offer free institutional trials to community colleges serving first-gen students.",
+    "feasibility": 6,
+    "demand_confidence": 7,
+    "uniqueness": 6,
+    "avg_score": 6.3
+  },
+  {
+    "rank": 16,
+    "name": "EdtechKidTest",
+    "one_liner": "Student user-testing marketplace connecting edtech companies with real K-12 students and teachers for rapid product feedback and iteration.",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "EdSurge article 'How Researchers Are Putting Students at the Center of Edtech Design' reveals that edtech tools often fail with students despite impressing adults in demos, and researchers are advocating for student-centered testing—but most edtech companies lack access to student testers.",
+    "the_problem": "Edtech startups build products based on adult assumptions and get blindsided when students find them confusing, boring, or unusable. Traditional user research requires IRB approval, parent consent, and school partnerships—taking months and costing $10K-30K. Most seed-stage edtech startups skip student testing entirely, leading to product-market fit failures and wasted development time. Teachers who want to provide feedback have no structured way to monetize their insights.",
+    "target_audience": "Edtech founders and product managers at seed to Series A startups building K-12 products; secondary audience is teachers and parents willing to facilitate student testing for pay.",
+    "product_description": "EdtechKidTest is a two-sided marketplace: edtech companies post testing requests (prototype reviews, feature feedback, usability tests) with grade-level requirements, and teachers/parents sign up their students (with consent forms built-in) to participate in 15-30 minute remote or in-person sessions. Platform handles consent management, scheduling, session recording, and payment distribution ($50-100 per student per session, $25 facilitator fee for teachers). Companies get video recordings, transcripts, and synthesized insights within 72 hours. Teachers earn supplemental income, students get Amazon gift cards.",
+    "revenue_model": "Marketplace commission: Take 25% of each transaction. Companies pay $250-400 per student testing session (1-hour usability test with 3 students = $750-1200). Target $3K MRR within 6 months from 15-20 testing sessions per month. Upsell: $499/month subscription for unlimited test posting and prioritized matching.",
+    "market_signal": "EdSurge research shows student testing dramatically improves product success, implying edtech companies would pay for access. Edtech is a $340B market with thousands of startups desperate for product-market fit. Teachers already side-hustle via TeachersPayTeachers and Outschool, showing willingness to monetize classroom access. UserTesting.com charges $49-99 per tester—schools are high-value niche.",
+    "competitive_landscape": "UserTesting.com and Respondent.io offer general user research but lack K-12 focus and don't handle parental consent. Academic research labs (like those mentioned in EdSurge article) do student testing but aren't accessible to startups. No marketplace exists specifically for rapid edtech student feedback with consent/logistics handled.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js + Tailwind, Supabase for database/auth, Stripe Connect for marketplace payments, Calendly API for scheduling, Zoom API for session recording, DocuSign API for consent forms, Resend for notifications.",
+    "build_plan": [
+      "Week 1: Build dual signup flows (companies and teacher/parent testers) with onboarding and profile creation; create consent form templates using DocuSign",
+      "Week 2: Build test posting interface for companies (requirements, questions, payment) and browse/apply interface for testers",
+      "Week 3: Implement scheduling (Calendly integration), automated Zoom link generation, and recording storage in Supabase",
+      "Week 4: Add payment flow (Stripe Connect split payments), review/rating system, and basic insight synthesis dashboard for companies"
+    ],
+    "risks_and_challenges": "Parental consent is legally complex and varies by state (mitigation: require signed consent forms for every session, offer templated forms reviewed by education attorney). Child safety concerns during remote sessions (mitigation: require teacher/parent to be present, record all sessions, strict vetting of companies). Chicken-and-egg marketplace problem (mitigation: recruit 20-30 teacher testers before launch via Facebook groups, offer first 10 tests at 50% discount to seed demand).",
+    "growth_hook": "Launch with 'Free Student Feedback Week' promotion on Product Hunt and Indie Hackers, targeting edtech founders. Cold outreach to YC-backed edtech startups (public data) offering first test free. Post case study on EdSurge showing before/after product improvements from student testing. Recruit teacher testers via Facebook groups, Reddit r/Teachers, and TeachersPayTeachers forums with '$500+/month side hustle' messaging.",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 22,
+    "name": "HigherThinkingLab",
+    "one_liner": "AI-powered higher-order thinking skills assessment and lesson plan generator that helps teachers design assignments requiring analysis, synthesis, and creativity beyond what AI can do.",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "EdSurge article 'When Machines Think, Human Thinking Must Go Higher' argues that as AI handles lower-order thinking tasks, educators must redesign curricula to emphasize uniquely human higher-order thinking skills—but teachers lack tools and training to do this at scale.",
+    "the_problem": "Teachers know traditional assignments (essays, multiple choice tests) are now vulnerable to AI cheating, but redesigning curricula for higher-order thinking (analysis, synthesis, evaluation) requires pedagogical expertise most teachers lack. Creating Bloom's Taxonomy-aligned lessons that require metacognition, creativity, and critical thinking is time-consuming—taking 3-5 hours per lesson. Teachers need practical, AI-resistant assignment templates and rubrics they can adapt quickly.",
+    "target_audience": "Middle school and high school teachers (grades 6-12) across all subjects, curriculum coordinators, instructional coaches, and professional development facilitators.",
+    "product_description": "HigherThinkingLab uses AI to generate higher-order thinking assignments and rubrics that are intentionally AI-resistant. Teachers input their subject, grade level, and learning objective, and get 3-5 lesson plan options emphasizing Bloom's higher levels (analyze, evaluate, create). Each includes: student-facing assignment prompt, step-by-step scaffolding, peer review protocols, and rubrics measuring metacognition/process over content. The platform includes an 'AI Resistance Score' showing how difficult the assignment would be for ChatGPT to complete authentically. Bonus: library of 500+ pre-made assignments crowdsourced from master teachers.",
+    "revenue_model": "Freemium for teachers: Free basic generator (5 assignments/month), $9/month for unlimited generation and template library access, $29/month for premium (includes rubric customization, student progress tracking, professional development certificates). School/district licenses: $499/year per school. Target $2K MRR within 6 months from 200 paid teachers plus 1-2 school licenses.",
+    "market_signal": "Teachers are desperate for AI-cheating solutions—Reddit r/Teachers is filled with posts about this. Professional development around AI in education is exploding; districts will pay for PD tools. Similar tools like CommonLit and Newsela charge $10-15/teacher/month. The EdSurge thought leadership indicates demand for solutions to this exact problem.",
+    "competitive_landscape": "Lesson planning tools like Teachers Pay Teachers and Planboard exist but don't specifically address AI-resistance or higher-order thinking. AI detection tools like Turnitin catch cheating after the fact but don't help teachers design better assignments. No tool combines pedagogical frameworks with AI to generate thinking-focused, AI-resistant lessons.",
+    "complexity": "medium",
+    "estimated_build_time": "3-4 weeks for MVP",
+    "tech_stack": "Next.js + Tailwind, Supabase for database/auth/storage, OpenAI API (GPT-4) for lesson generation with custom prompts based on Bloom's Taxonomy research, Stripe for payments. Content curated from open educational resources and public domain lesson plans.",
+    "build_plan": [
+      "Week 1: Research Bloom's Taxonomy higher levels and AI-resistant assignment design; build structured prompts for GPT-4 to generate assignments with scaffolding and rubrics",
+      "Week 2: Create web app with teacher onboarding, subject/grade/objective input form, and lesson plan generation interface",
+      "Week 3: Build template library with search/filter, add 'AI Resistance Score' calculator (analyzes assignment against common AI capabilities), implement freemium paywall",
+      "Week 4: Add rubric customization tool, PDF export for lesson plans, and basic analytics showing teacher usage patterns"
+    ],
+    "risks_and_challenges": "AI-generated lesson plans may lack pedagogical rigor despite good prompts (mitigation: have 3-5 experienced teachers review and curate first 100 generated lessons, use their feedback to improve prompts). 'AI Resistance Score' could be gamed or inaccurate (mitigation: test against multiple AI models, update quarterly as AI improves). Teachers may be skeptical of using AI to fight AI (mitigation: position as 'AI augmentation' for teachers, emphasize human review and customization).",
+    "growth_hook": "Create viral 'Top 10 AI-Proof Assignments for [Subject]' posts on Reddit r/Teachers and teacher Facebook groups. Offer free 'AI-Resistant Teaching' certificate course (1-hour, email-gated) that drives teachers to the platform. Partner with education Twitter influencers to showcase before/after assignments. Cold email curriculum coordinators at top 100 school districts with case study showing time savings.",
+    "feasibility": 4,
+    "demand_confidence": 6,
+    "uniqueness": 7,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 27,
+    "name": "CulturalLens Library",
+    "one_liner": "Curated marketplace of culturally relevant reading materials and lesson supplements for multilingual K-12 students, tagged by language, culture, and reading level.",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "EdSurge article 'I Can Read, But I Don't Know What It Means: Rethinking Literacy for Multilingual Kids' highlights that multilingual students comprehend better when teaching materials are culturally relevant, but teachers struggle to find these resources—particularly outside major languages.",
+    "the_problem": "Multilingual students (20% of US K-12 population, 5+ million students) struggle with reading comprehension when materials lack cultural context they understand. Teachers want culturally relevant books and lessons but spend hours searching fragmented sources (Amazon, Teachers Pay Teachers, niche publishers) and often can't find materials for less-common languages or cultures. Existing resources are poorly organized, rarely tagged by cultural context, and lack educator reviews from teachers who work with similar student populations.",
+    "target_audience": "ESL/ELL teachers, bilingual education teachers, Title III coordinators, librarians at schools with 15%+ multilingual student population, parents of multilingual children.",
+    "product_description": "CulturalLens Library is a curated marketplace and search engine for culturally relevant educational materials (books, articles, lesson plans, videos) for multilingual students. Every resource is tagged by: language(s), cultural context (Mexican, Somali, Vietnamese, etc.), reading level, subject, and theme. Teachers can filter by their students' specific demographics and get resources that match. Each listing includes sample pages, educator reviews from teachers with similar students, and implementation guides. Sellers include publishers, teacher-authors, and cultural organizations. Platform takes 15% commission on sales.",
+    "revenue_model": "Marketplace commission model (15% of sales) plus $19/month premium subscription for teachers (unlimited downloads of free resources, saved search alerts, lesson planning tools). Average resource costs $3-25. Target $2K MRR within 6 months from 100 paid subscribers plus $1K in monthly commission revenue (assumes $6-7K in monthly marketplace GMV).",
+    "market_signal": "EdSurge highlights this as a known problem with proven solution (culturally relevant materials improve outcomes). Teachers Pay Teachers generates $200M+ annually, proving teachers pay for supplemental materials. Title III budgets nationwide total $800M+ annually, often used for cultural materials. Multilingual ed is policy priority post-pandemic learning loss.",
+    "competitive_landscape": "Teachers Pay Teachers has cultural resources but poor discovery and no cultural metadata. Newsela and ReadWorks offer multilingual content but focus on translated materials, not culturally native content. Niche publishers exist (Piñata Books, Lee & Low) but aren't aggregated. No unified marketplace focused specifically on culturally relevant resources with robust tagging.",
+    "complexity": "low",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "Next.js + Tailwind, Supabase for database/auth/storage, Stripe Connect for marketplace payments, Algolia for search with faceted filtering, Cloudinary for asset preview (book covers, sample pages). Start with manually curated listings, add seller self-service later.",
+    "build_plan": [
+      "Week 1: Build resource listing database schema with cultural/language tags; curate 200-300 initial resources from open educational sources and public domain books",
+      "Week 2: Create search interface with filters (language, culture, reading level, subject); build resource detail pages with previews and reviews",
+      "Week 3: Add seller onboarding and listing submission flow; implement Stripe Connect for payments and commission splits; add teacher subscription tier with saved searches"
+    ],
+    "risks_and_challenges": "Cultural categorization is complex and risks stereotyping (mitigation: allow multiple culture tags, include 'created by [culture] authors/educators' filter, have cultural consultants review taxonomy). Chicken-and-egg marketplace problem (mitigation: start with curated free resources to build teacher traffic before recruiting sellers). Copyright issues with curated materials (mitigation: start with public domain and Creative Commons licensed materials, require sellers to verify rights).",
+    "growth_hook": "Partner with 3-5 cultural education nonprofits (e.g., National Association for Bilingual Education) to feature their resources and drive teacher traffic. Create free 'Top 50 Culturally Relevant Books for [Language] Learners' downloadable guides promoted in ESL teacher Facebook groups. Offer first 20 teacher-authors free premium seller accounts to seed supply. Run targeted Facebook ads to Title III coordinators offering free 30-day trials.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 4,
+    "avg_score": 5.0
+  }
+]

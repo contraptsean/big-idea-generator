@@ -6,7 +6,9 @@ import json
 import logging
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, timedelta
+from difflib import SequenceMatcher
 from pathlib import Path
 
 import anthropic
@@ -21,6 +23,7 @@ _MODEL = "claude-sonnet-4-5-20250929"
 _MAX_TOKENS = 16_384
 _MAX_RETRIES = 3
 _RETRY_BACKOFF = 2  # seconds, doubled each retry
+_DOMAIN_WORKERS = 3  # max parallel domain API calls
 
 REQUIRED_FIELDS = {
     "rank", "name", "one_liner", "news_trigger", "the_problem",
@@ -31,7 +34,7 @@ REQUIRED_FIELDS = {
 }
 
 # ---------------------------------------------------------------------------
-# System prompt
+# System prompts
 # ---------------------------------------------------------------------------
 
 SYSTEM_PROMPT = """\
@@ -153,6 +156,87 @@ developer tools, marketplaces, and AI-powered products across the set.\
 """
 
 
+_DOMAIN_SYSTEM_PROMPT_TEMPLATE = """\
+You are an elite product strategist and indie hacker advisor specializing in \
+the {domain_name} space.
+
+Your job is to analyze today's news and surface concrete, actionable app and \
+software business opportunities in the {domain_name} domain that a skilled \
+solo full-stack developer could realistically build and monetize.
+
+## Domain Scope
+{domain_description}
+
+## Available Domains for Tagging
+{domains_list_with_descriptions}
+
+## Your Analytical Framework
+
+For each news item or cluster of related news, think through these lenses:
+
+1. **Pain Point Detection**: What new problem, friction, or unmet need does \
+this news reveal or amplify for people in the {domain_name} space?
+
+2. **Behavioral Shift Spotting**: Is this news signaling a change in how \
+people in this domain work, buy, learn, or operate?
+
+3. **Regulatory & Policy Arbitrage**: Does this news involve new rules, \
+compliance needs, or policy changes affecting this domain?
+
+4. **Existing Market Gaps**: Does this news highlight failing or missing \
+software in this domain?
+
+5. **Picks-and-Shovels Thinking**: What tools and infrastructure do people \
+riding this trend need?
+
+6. **Cross-Domain Opportunities**: Could this news create an opportunity \
+that spans {domain_name} and another domain? If so, tag it with \
+multiple domains.
+
+## Quality Filters
+
+ONLY include opportunities that meet ALL of these criteria:
+- Buildable solo in 1-6 weeks as an MVP
+- Clear path to $1K-$5K/month within 6 months
+- Specific and concrete — not vague category descriptions
+- Solves a problem people already know they have
+- Technically feasible with current APIs, models, and web tech
+
+## Output Format
+
+Return a JSON array of {min_ideas} to {max_ideas} opportunities, ranked \
+by combined feasibility and impact. Each object must have:
+
+{{
+  "rank": 1,
+  "name": "Short, memorable product name",
+  "one_liner": "One sentence: what it does and for whom",
+  "domains": ["{domain_id}", "other_domain_id_if_applicable"],
+  "primary_domain": "{domain_id}",
+  "news_trigger": "Which specific news item(s) inspired this",
+  "the_problem": "2-3 sentences on the specific pain point",
+  "target_audience": "Specific persona(s)",
+  "product_description": "3-5 sentences describing the MVP",
+  "revenue_model": "How it makes money with suggested price point",
+  "market_signal": "Evidence people would pay for this",
+  "competitive_landscape": "Closest existing solutions and the gap",
+  "complexity": "low | medium | high",
+  "estimated_build_time": "e.g., '2 weeks for MVP'",
+  "tech_stack": "Recommended technologies",
+  "build_plan": ["Step 1: ...", "Step 2: ...", "Step 3: ..."],
+  "risks_and_challenges": "What could go wrong",
+  "growth_hook": "How to acquire the first 100 users"
+}}
+
+IMPORTANT:
+- The "domains" field is a list. The primary domain should be "{domain_id}". \
+If the idea also fits another domain, include that domain's ID too. \
+Valid domain IDs are: {valid_domain_ids}
+- ONLY output the JSON array. No other text.
+- Generate at least {min_ideas} and at most {max_ideas} ideas.\
+"""
+
+
 _DATA_DIR = Path(__file__).resolve().parent / "data"
 _PREVIOUS_IDEAS_FILE = _DATA_DIR / "previous_ideas.json"
 _MEMORY_LOOKBACK_DAYS = 7
@@ -178,6 +262,8 @@ Return ONLY a JSON array (no markdown, no commentary). Each element must have:
   "uniqueness": <1-10>
 }\
 """
+
+_CROSS_DOMAIN_TITLE_SIMILARITY = 0.70
 
 
 # ---------------------------------------------------------------------------
@@ -386,7 +472,24 @@ def _validate(opportunities: list[dict]) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# Public API
+# Token usage tracking
+# ---------------------------------------------------------------------------
+
+_total_input_tokens = 0
+_total_output_tokens = 0
+
+
+def get_token_usage() -> dict[str, int]:
+    """Return cumulative token usage across all API calls this session."""
+    return {
+        "input_tokens": _total_input_tokens,
+        "output_tokens": _total_output_tokens,
+        "total_tokens": _total_input_tokens + _total_output_tokens,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Core API caller
 # ---------------------------------------------------------------------------
 
 def _call_claude_with_retry(
@@ -400,6 +503,8 @@ def _call_claude_with_retry(
     This is the shared retry/parse engine used by both the main analysis call
     and the re-scoring call.
     """
+    global _total_input_tokens, _total_output_tokens
+
     delay = _RETRY_BACKOFF
     last_raw: str = ""
     last_exc: Exception | None = None
@@ -416,6 +521,11 @@ def _call_claude_with_retry(
                 system=system,
                 messages=messages,
             )
+
+            # Track token usage
+            usage = response.usage
+            _total_input_tokens += usage.input_tokens
+            _total_output_tokens += usage.output_tokens
 
             raw_text = response.content[0].text
             last_raw = (messages[-1]["content"] + raw_text) if prefilled else raw_text
@@ -473,6 +583,10 @@ def _call_claude_with_retry(
         f"Could not extract JSON after {_MAX_RETRIES} attempts"
     )
 
+
+# ---------------------------------------------------------------------------
+# Re-scoring
+# ---------------------------------------------------------------------------
 
 def _rescore(opportunities: list[dict]) -> list[dict]:
     """Call Claude a second time to independently score each opportunity.
@@ -558,27 +672,233 @@ def _rescore(opportunities: list[dict]) -> list[dict]:
     return merged
 
 
-def analyze_opportunities(news_items: list[dict]) -> list[dict]:
+# ---------------------------------------------------------------------------
+# Domain-aware prompt building
+# ---------------------------------------------------------------------------
+
+def _build_domain_system_prompt(
+    domain: dict,
+    all_domains: list[dict],
+    dedup_block: str,
+) -> str:
+    """Build a domain-specific system prompt from the template."""
+    domains_list = "\n".join(
+        f"- **{d['id']}**: {d['name']} — {d['description']}"
+        for d in all_domains
+    )
+    valid_ids = ", ".join(d["id"] for d in all_domains)
+
+    prompt = _DOMAIN_SYSTEM_PROMPT_TEMPLATE.format(
+        domain_name=domain["name"],
+        domain_description=domain["description"],
+        domains_list_with_descriptions=domains_list,
+        domain_id=domain["id"],
+        valid_domain_ids=valid_ids,
+        min_ideas=domain["min_ideas"],
+        max_ideas=domain["max_ideas"],
+    )
+
+    if dedup_block:
+        prompt = prompt + "\n\n" + dedup_block
+
+    return prompt
+
+
+def _analyze_single_domain(
+    domain: dict,
+    news_items: list[dict],
+    all_domains: list[dict],
+    dedup_block: str,
+    domain_index: int,
+    total_domains: int,
+) -> list[dict]:
+    """Analyse news for a single domain. Called from thread pool."""
+    logger.info(
+        "Analyzing %s... (%d/%d)",
+        domain["name"], domain_index, total_domains,
+    )
+
+    system = _build_domain_system_prompt(domain, all_domains, dedup_block)
+    articles_text = _format_articles(news_items)
+
+    user_message = (
+        f"Here are {len(news_items)} recent news articles relevant to the "
+        f"{domain['name']} space. Identify the best app/SaaS business "
+        f"opportunities in this domain.\n\n{articles_text}"
+    )
+
+    messages = [
+        {"role": "user", "content": user_message},
+        {"role": "assistant", "content": "["},
+    ]
+
+    try:
+        opportunities = _call_claude_with_retry(
+            system=system, messages=messages,
+        )
+    except (anthropic.APIError, ValueError) as exc:
+        logger.error("Failed to analyze domain %s: %s", domain["id"], exc)
+        return []
+
+    # Tag each opportunity with domain info
+    for opp in opportunities:
+        if "domains" not in opp:
+            opp["domains"] = [domain["id"]]
+        if "primary_domain" not in opp:
+            opp["primary_domain"] = domain["id"]
+        # Ensure primary domain is in the domains list
+        if domain["id"] not in opp.get("domains", []):
+            opp["domains"].insert(0, domain["id"])
+
+    validated = _validate(opportunities)
+    logger.info(
+        "Domain %s: parsed %d opportunities (%d valid).",
+        domain["id"], len(opportunities), len(validated),
+    )
+    return validated
+
+
+def _deduplicate_across_domains(opportunities: list[dict]) -> list[dict]:
+    """Deduplicate opportunities across domains by title similarity.
+
+    When merging duplicates, the first occurrence wins but domain tags are
+    combined into the ``domains`` list.
+    """
+    unique: list[dict] = []
+    seen_titles: list[str] = []
+
+    for opp in opportunities:
+        title = opp.get("name", "")
+        if not title:
+            unique.append(opp)
+            continue
+
+        merged = False
+        for i, seen in enumerate(seen_titles):
+            ratio = SequenceMatcher(None, title.lower(), seen.lower()).ratio()
+            if ratio > _CROSS_DOMAIN_TITLE_SIMILARITY:
+                # Merge domain tags into the existing opportunity
+                existing = unique[i]
+                for d in opp.get("domains", []):
+                    if d not in existing.get("domains", []):
+                        existing.setdefault("domains", []).append(d)
+                merged = True
+                break
+
+        if not merged:
+            seen_titles.append(title)
+            unique.append(opp)
+
+    if len(opportunities) != len(unique):
+        logger.info(
+            "Cross-domain dedup: %d → %d opportunities",
+            len(opportunities), len(unique),
+        )
+
+    return unique
+
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
+
+def analyze_opportunities(
+    news_items: list[dict] | dict[str, list[dict]],
+    domains: list[dict] | None = None,
+) -> list[dict]:
     """Analyse news articles and return structured business opportunities.
+
+    Supports two modes:
+    - **Legacy** (no domains): ``news_items`` is a flat list, single LLM call.
+    - **Domain-aware**: ``news_items`` is a dict from
+      ``prepare_news_for_analysis()``, keyed by domain ID. One LLM call per
+      domain, parallelised with ThreadPoolExecutor.
 
     Pipeline:
       1. Load DailyMemory and inject recent ideas as a "do not repeat" list.
-      2. Call Claude with the strategist system prompt (with retries).
+      2. Call Claude (once per domain, or once total for legacy).
       3. Validate results.
-      4. Re-score each opportunity on feasibility / demand / uniqueness.
-      5. Record today's ideas in memory and save.
+      4. Deduplicate across domains (domain-aware mode only).
+      5. Re-score each opportunity on feasibility / demand / uniqueness.
+      6. Record today's ideas in memory and save.
     """
     memory = DailyMemory()
+    dedup_block = memory.format_for_prompt()
+    if dedup_block:
+        logger.info("Injected %d previous ideas into prompt for dedup.",
+                     len(memory.recent_ideas()))
 
-    # -- Build prompt --------------------------------------------------------
+    # -- Legacy mode (no domains) --------------------------------------------
+    if not domains or isinstance(news_items, list):
+        items = news_items if isinstance(news_items, list) else []
+        return _analyze_legacy(items, memory, dedup_block)
+
+    # -- Domain-aware mode ---------------------------------------------------
+    news_by_domain: dict[str, list[dict]] = news_items
+    all_opportunities: list[dict] = []
+
+    total = len(domains)
+
+    with ThreadPoolExecutor(max_workers=_DOMAIN_WORKERS) as executor:
+        futures = {}
+        for idx, domain in enumerate(domains, 1):
+            domain_news = news_by_domain.get(domain["id"], [])
+            if not domain_news:
+                logger.warning("No news items for domain %s — skipping.",
+                               domain["id"])
+                continue
+            future = executor.submit(
+                _analyze_single_domain,
+                domain, domain_news, domains, dedup_block, idx, total,
+            )
+            futures[future] = domain
+
+        for future in as_completed(futures):
+            domain = futures[future]
+            try:
+                result = future.result()
+                all_opportunities.extend(result)
+            except Exception as exc:
+                logger.error("Domain %s failed: %s", domain["id"], exc)
+
+    if not all_opportunities:
+        return []
+
+    # Deduplicate across domains
+    all_opportunities = _deduplicate_across_domains(all_opportunities)
+
+    # Sort within each primary_domain by rank
+    all_opportunities.sort(
+        key=lambda o: (o.get("primary_domain", ""), o.get("rank", 999)),
+    )
+
+    # Re-score
+    all_opportunities = _rescore(all_opportunities)
+
+    # Log token usage
+    usage = get_token_usage()
+    logger.info(
+        "Total token usage: %d input, %d output, %d total",
+        usage["input_tokens"], usage["output_tokens"], usage["total_tokens"],
+    )
+
+    # Remember today's ideas
+    memory.record(all_opportunities)
+
+    return all_opportunities
+
+
+def _analyze_legacy(
+    news_items: list[dict],
+    memory: DailyMemory,
+    dedup_block: str,
+) -> list[dict]:
+    """Original single-prompt analysis (backward compatibility)."""
     articles_text = _format_articles(news_items)
 
-    dedup_block = memory.format_for_prompt()
     system = SYSTEM_PROMPT
     if dedup_block:
         system = system + "\n\n" + dedup_block
-        logger.info("Injected %d previous ideas into prompt for dedup.",
-                     len(memory.recent_ideas()))
 
     user_message = (
         f"Here are {len(news_items)} recent news articles. Identify the best "
@@ -590,7 +910,6 @@ def analyze_opportunities(news_items: list[dict]) -> list[dict]:
         {"role": "assistant", "content": "["},
     ]
 
-    # -- Call Claude ---------------------------------------------------------
     opportunities = _call_claude_with_retry(
         system=system, messages=messages,
     )
@@ -601,10 +920,14 @@ def analyze_opportunities(news_items: list[dict]) -> list[dict]:
     if not validated:
         return []
 
-    # -- Re-score ------------------------------------------------------------
     validated = _rescore(validated)
 
-    # -- Remember today's ideas ----------------------------------------------
-    memory.record(validated)
+    # Log token usage
+    usage = get_token_usage()
+    logger.info(
+        "Total token usage: %d input, %d output, %d total",
+        usage["input_tokens"], usage["output_tokens"], usage["total_tokens"],
+    )
 
+    memory.record(validated)
     return validated

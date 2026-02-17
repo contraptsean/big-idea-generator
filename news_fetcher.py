@@ -64,6 +64,7 @@ _FEDERAL_REGISTER_API = "https://www.federalregister.gov/api/v1/documents.json"
 _GITHUB_TRENDING_URL = "https://github.com/trending"
 
 _TITLE_SIMILARITY_THRESHOLD = 0.80
+_CROSS_DOMAIN_TITLE_SIMILARITY = 0.70  # used for cross-domain dedup in analyzer
 
 
 # ---------------------------------------------------------------------------
@@ -377,12 +378,106 @@ def fetch_rss_feeds() -> list[dict]:
     return articles
 
 
+def fetch_domain_rss_feeds() -> list[dict]:
+    """Fetch articles from domain-specific RSS feeds defined in config.DOMAIN_NEWS_SOURCES.
+
+    Each article is tagged with a ``domain_hint`` field indicating which domain
+    the feed belongs to. This is a hint — the LLM makes the final assignment.
+    """
+    try:
+        import feedparser
+    except ImportError:
+        logger.warning("feedparser not installed — skipping domain RSS feeds")
+        return []
+
+    domain_sources = getattr(config, "DOMAIN_NEWS_SOURCES", None)
+    if not domain_sources:
+        return []
+
+    articles: list[dict] = []
+
+    for domain_id, sources in domain_sources.items():
+        for feed_info in sources.get("rss", []):
+            feed_url = feed_info["url"]
+            feed_name = feed_info["name"]
+            try:
+                feed = feedparser.parse(feed_url)
+            except Exception as exc:
+                logger.warning("Failed to parse domain RSS feed %s (%s): %s",
+                               feed_name, domain_id, exc)
+                continue
+
+            if feed.bozo and not feed.entries:
+                logger.warning("Domain RSS feed %s returned no entries (bozo: %s)",
+                               feed_name, feed.bozo_exception)
+                continue
+
+            for entry in feed.entries[:10]:
+                published = ""
+                if hasattr(entry, "published_parsed") and entry.published_parsed:
+                    try:
+                        published = datetime(*entry.published_parsed[:6],
+                                             tzinfo=timezone.utc).isoformat()
+                    except (TypeError, ValueError):
+                        pass
+                elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
+                    try:
+                        published = datetime(*entry.updated_parsed[:6],
+                                             tzinfo=timezone.utc).isoformat()
+                    except (TypeError, ValueError):
+                        pass
+
+                articles.append({
+                    "title": entry.get("title", ""),
+                    "description": entry.get("summary", ""),
+                    "source": feed_name,
+                    "url": entry.get("link", ""),
+                    "published_at": published,
+                    "category": "tech_news",
+                    "domain_hint": domain_id,
+                    "metadata": {"feed_url": feed_url},
+                })
+
+        logger.info("Domain RSS (%s): fetched from %d feeds",
+                     domain_id, len(sources.get("rss", [])))
+
+    logger.info("Domain RSS feeds total: %d articles", len(articles))
+    return articles
+
+
 # ---------------------------------------------------------------------------
 # Source 4: Reddit (OAuth API)
 # ---------------------------------------------------------------------------
 
+def _build_subreddit_domain_map() -> dict[str, str | None]:
+    """Build a mapping of subreddit name → domain_id (or None for general).
+
+    Merges the general _REDDIT_SUBREDDITS list with domain-specific subreddits
+    from DOMAIN_NEWS_SOURCES, deduplicating by subreddit name (case-insensitive).
+    """
+    sub_map: dict[str, str | None] = {}
+
+    # General subreddits have no domain hint
+    for sub in _REDDIT_SUBREDDITS:
+        sub_map[sub.lower()] = None
+
+    # Domain-specific subreddits
+    domain_sources = getattr(config, "DOMAIN_NEWS_SOURCES", None) or {}
+    for domain_id, sources in domain_sources.items():
+        for sub in sources.get("subreddits", []):
+            key = sub.lower()
+            if key not in sub_map:
+                sub_map[key] = domain_id
+
+    return sub_map
+
+
 def fetch_reddit() -> list[dict]:
-    """Fetch top posts from technology/startup subreddits via Reddit OAuth."""
+    """Fetch top posts from technology/startup subreddits via Reddit OAuth.
+
+    Includes domain-specific subreddits from DOMAIN_NEWS_SOURCES, tagged with
+    ``domain_hint`` for domain-categorised analysis.
+    """
     client_id = getattr(config, "REDDIT_CLIENT_ID", None)
     client_secret = getattr(config, "REDDIT_CLIENT_SECRET", None)
     username = getattr(config, "REDDIT_USERNAME", None)
@@ -420,8 +515,11 @@ def fetch_reddit() -> list[dict]:
         "User-Agent": "OpportunityRadar/1.0",
     }
 
+    sub_domain_map = _build_subreddit_domain_map()
+    all_subreddits = list(sub_domain_map.keys())
+
     articles: list[dict] = []
-    for subreddit in _REDDIT_SUBREDDITS:
+    for subreddit in all_subreddits:
         api_url = f"https://oauth.reddit.com/r/{subreddit}/hot"
         try:
             resp = _request_with_retry(
@@ -432,6 +530,8 @@ def fetch_reddit() -> list[dict]:
         except (requests.RequestException, requests.HTTPError) as exc:
             logger.warning("Failed to fetch r/%s: %s", subreddit, exc)
             continue
+
+        domain_hint = sub_domain_map.get(subreddit.lower())
 
         data = resp.json().get("data", {}).get("children", [])
         for post in data:
@@ -452,6 +552,7 @@ def fetch_reddit() -> list[dict]:
                 "url": p.get("url") or f"https://reddit.com{p.get('permalink', '')}",
                 "published_at": published_at,
                 "category": "reddit",
+                "domain_hint": domain_hint,
                 "metadata": {
                     "score": p.get("score", 0),
                     "comments": p.get("num_comments", 0),
@@ -460,7 +561,7 @@ def fetch_reddit() -> list[dict]:
             })
 
     logger.info("Reddit: %d articles from %d subreddits",
-                len(articles), len(_REDDIT_SUBREDDITS))
+                len(articles), len(all_subreddits))
     return articles
 
 
@@ -653,29 +754,80 @@ def fetch_all_news() -> list[dict]:
 
     Sources are fetched sequentially (each is already fast or parallelised
     internally). Articles are deduplicated by normalized URL and title
-    similarity.
+    similarity. Domain-specific RSS feeds are included and ``domain_hint``
+    fields are preserved through deduplication.
     """
     headlines = fetch_top_headlines()
     everything = fetch_everything()
     hn = fetch_hacker_news()
     rss = fetch_rss_feeds()
+    domain_rss = fetch_domain_rss_feeds()
     reddit = fetch_reddit()
     federal = fetch_federal_register()
     trends = fetch_google_trends()
     github = fetch_github_trending()
 
-    combined = headlines + everything + hn + rss + reddit + federal + trends + github
+    combined = (headlines + everything + hn + rss + domain_rss
+                + reddit + federal + trends + github)
     unique = _deduplicate(combined)
 
+    # Log per-domain_hint counts
+    from collections import Counter
+    hint_counts = Counter(a.get("domain_hint") for a in unique)
+    general_count = hint_counts.pop(None, 0)
     logger.info(
         "Fetched %d articles total (%d headlines, %d everything, %d HN, "
-        "%d RSS, %d Reddit, %d Federal Register, %d trends, %d GitHub) "
-        "→ %d after dedup",
+        "%d RSS, %d domain RSS, %d Reddit, %d Federal Register, %d trends, "
+        "%d GitHub) → %d after dedup",
         len(combined), len(headlines), len(everything), len(hn),
-        len(rss), len(reddit), len(federal), len(trends), len(github),
-        len(unique),
+        len(rss), len(domain_rss), len(reddit), len(federal),
+        len(trends), len(github), len(unique),
+    )
+    logger.info(
+        "Domain hints: %d general, %s",
+        general_count,
+        ", ".join(f"{k}={v}" for k, v in sorted(hint_counts.items())),
     )
     return unique
+
+
+def prepare_news_for_analysis(
+    news_items: list[dict],
+    domains: list[dict],
+) -> dict[str, list[dict]]:
+    """Organise news items into per-domain buckets for analysis.
+
+    Items with a ``domain_hint`` go to their hinted domain. Items without a
+    hint (general news) are available to supplement any domain that has fewer
+    than 10 domain-specific items.
+
+    Returns ``{"domain_id": [list of news items], ...}``.
+    """
+    domain_ids = {d["id"] for d in domains}
+    domain_specific: dict[str, list[dict]] = {did: [] for did in domain_ids}
+    general: list[dict] = []
+
+    for item in news_items:
+        hint = item.get("domain_hint")
+        if hint and hint in domain_ids:
+            domain_specific[hint].append(item)
+        else:
+            general.append(item)
+
+    result: dict[str, list[dict]] = {}
+    for domain_id in domain_ids:
+        specific = domain_specific[domain_id]
+        if len(specific) >= 10:
+            result[domain_id] = specific
+        else:
+            # Supplement with general news to reach at least 10
+            needed = 10 - len(specific)
+            result[domain_id] = specific + general[:needed]
+
+    for domain_id, items in result.items():
+        logger.info("Domain %s: %d items for analysis", domain_id, len(items))
+
+    return result
 
 
 # Backward-compatible alias so existing callers keep working.
@@ -697,6 +849,7 @@ if __name__ == "__main__":
     print(f"Total articles: {len(articles)}")
     print(f"{'='*60}")
     for a in articles[:5]:
-        print(f"  [{a['category']}] {a['source']}: {a['title'][:80]}")
+        hint = a.get("domain_hint", "general")
+        print(f"  [{a['category']}] [{hint}] {a['source']}: {a['title'][:70]}")
     if len(articles) > 5:
         print(f"  ... and {len(articles) - 5} more")
