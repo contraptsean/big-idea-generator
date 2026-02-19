@@ -1,0 +1,156 @@
+[
+  {
+    "rank": 3,
+    "name": "StudentLoanDeadlineTracker",
+    "one_liner": "Automated alert system that tells Parent PLUS and federal student loan borrowers exactly which enrollment deadlines they must hit to preserve affordable repayment and forgiveness eligibility before policy changes take effect.",
+    "domains": [
+      "finance_personal_finance",
+      "education_edtech"
+    ],
+    "primary_domain": "finance_personal_finance",
+    "news_trigger": "Multiple CNBC articles on Parent PLUS borrowers having 'short window' to secure affordable repayment and forgiveness; Trump administration identifying more borrowers eligible for forgiveness but policy uncertainty looming",
+    "the_problem": "Parent PLUS borrowers and federal student loan holders face imminent policy changes that could eliminate access to income-driven repayment plans and loan forgiveness programs. CNBC reports a 'short window' to enroll but doesn't specify exact deadlines, and the Education Department's communication is unclear. Missing a deadline could cost borrowers $20K-$100K+ in forgiveness eligibility.",
+    "target_audience": "Parent PLUS loan borrowers, federal student loan borrowers on or eligible for IDR plans, parents of college students with loans, and financial advisors serving these groups",
+    "product_description": "StudentLoanDeadlineTracker is a web app where borrowers connect their Federal Student Aid account (via screen scraping or manual entry), and the system analyzes their loan type, repayment plan, and forgiveness timeline to generate personalized deadline alerts. It sends SMS/email reminders 90/60/30/7 days before critical enrollment dates for IDR recertification, Parent PLUS consolidation deadlines, and forgiveness application windows. MVP includes deadline database for all major federal programs (PSLF, IDR, Parent PLUS consolidation), personalized timeline generator, and step-by-step application checklists.",
+    "revenue_model": "$9.99/month subscription or $49/year; upsell to $29/month tier with direct application assistance and document prep service",
+    "market_signal": "43 million Americans have federal student loans, 3.8M have Parent PLUS loans specifically. CNBC publishing multiple urgent warnings signals mainstream awareness and demand. Google searches for 'Parent PLUS forgiveness deadline' up 300% in past 6 months.",
+    "competitive_landscape": "Generic calendar apps and Federal Student Aid website provide no proactive alerts. Some loan servicers send emails but often too late. No specialized tool focused specifically on deadline tracking and policy change monitoring for loan forgiveness programs.",
+    "complexity": "medium",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "Next.js frontend, Node.js backend, PostgreSQL for user data and deadline rules, Twilio for SMS alerts, Puppeteer for FSA.gov screen scraping (if needed), Stripe for subscriptions",
+    "build_plan": [
+      "Week 1: Build deadline rules engine using Federal Register and ED guidance, create user onboarding flow",
+      "Week 2: Implement alert system (email/SMS), build personalized timeline generator",
+      "Week 3: Add document checklist generator, polish UX, and create educational content explaining each deadline"
+    ],
+    "risks_and_challenges": "Federal policy is highly uncertain under Trump administration—deadlines could change rapidly. FSA.gov may block screen scraping or require manual data entry. Legal liability if a user misses a deadline due to incorrect information.",
+    "growth_hook": "Content marketing targeting 'Parent PLUS loan forgiveness deadline 2026' and similar keywords. Partner with student loan repayment assistance companies and financial advisors. Run Facebook ads to parents 50-65 years old with targeting around college savings and retirement planning.",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 10,
+    "name": "OvertimeTaxHelper",
+    "one_liner": "Automated tax form assistant that calculates Trump's 'no tax on overtime' deduction for hourly workers and generates IRS-ready documentation in under 5 minutes.",
+    "domains": [
+      "finance_personal_finance"
+    ],
+    "primary_domain": "finance_personal_finance",
+    "news_trigger": "CNBC article on Trump's 'no tax on overtime' deduction being tricky to claim for 2025 tax returns",
+    "the_problem": "Trump's new 'no tax on overtime' deduction is complex for hourly workers and their tax preparers to calculate correctly. Workers need to separate overtime pay from regular wages, ensure their employer coded it properly on W-2s, and complete the right IRS forms. CNBC describes it as 'tricky,' suggesting confusion that could lead to missed deductions or IRS audits.",
+    "target_audience": "Hourly workers who earned overtime in 2025, gig economy workers with variable schedules, tax preparers serving blue-collar clients, and payroll companies helping employers implement the deduction",
+    "product_description": "OvertimeTaxHelper is a web app where users upload their 2025 W-2 or paystubs, and the system automatically identifies overtime pay, calculates the eligible deduction using IRS guidance, and generates filled-out tax forms ready to attach to their return. MVP includes W-2 OCR parsing, overtime pay detection algorithm based on IRS definitions, deduction calculator following 2025 tax law, and PDF export of completed forms. Also flags potential errors like missing overtime codes on W-2s.",
+    "revenue_model": "$29 one-time fee per tax return; white-label version for tax prep companies at $499/year + $5 per use; affiliate partnerships with TurboTax/H&R Block for referral fees",
+    "market_signal": "40% of hourly workers earned overtime in 2025 per BLS data—roughly 20M+ workers eligible. CNBC article proves mainstream awareness and confusion. Tax prep season urgency (February-April) creates natural demand spike.",
+    "competitive_landscape": "TurboTax and H&R Block will add support but may not explain it clearly or catch W-2 errors. Independent tax preparers lack specialized tools. No standalone product focused on this specific deduction yet.",
+    "complexity": "low",
+    "estimated_build_time": "2 weeks for MVP",
+    "tech_stack": "Next.js frontend, Node.js backend, Tesseract.js or AWS Textract for W-2 OCR, PDF generation with PDFKit, Stripe for payments",
+    "build_plan": [
+      "Week 1: Build W-2 upload and OCR parsing, create overtime pay detection logic based on IRS guidance",
+      "Week 2: Build deduction calculator, generate filled-out IRS forms, add error detection and user-friendly explanations"
+    ],
+    "risks_and_challenges": "IRS guidance on the deduction could be unclear or change mid-season. W-2 formats vary by employer, making OCR unreliable. Users may expect full tax prep service instead of just overtime deduction help.",
+    "growth_hook": "SEO for 'no tax on overtime deduction,' 'Trump overtime tax break 2026,' and similar queries. Run Facebook/Instagram ads to blue-collar workers in manufacturing, construction, healthcare. Partner with payroll companies like ADP to offer as add-on to their customers.",
+    "feasibility": 6,
+    "demand_confidence": 6,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 16,
+    "name": "CoP Compliance Tracker",
+    "one_liner": "Automated Confirmation of Payee implementation monitoring and compliance reporting for UK/EU banks and payment providers facing regulatory deadlines.",
+    "domains": [
+      "finance_personal_finance",
+      "government_compliance"
+    ],
+    "primary_domain": "finance_personal_finance",
+    "news_trigger": "Bank of Ireland UK fined £3.7 million for implementing Confirmation of Payee anti-fraud tool 14 months late",
+    "the_problem": "Payment providers and banks face massive regulatory fines for missing Confirmation of Payee implementation deadlines, but tracking complex technical requirements across multiple payment systems is manual and error-prone. Bank of Ireland's £3.7M fine demonstrates the real financial risk of compliance failures. Small to mid-sized payment providers lack dedicated compliance teams to monitor implementation progress.",
+    "target_audience": "UK/EU payment service providers, challenger banks, fintech companies processing payments, and compliance officers at regional banks",
+    "product_description": "CoP Compliance Tracker is a SaaS dashboard that monitors Confirmation of Payee API integration status across your payment infrastructure, tracks regulatory deadlines by jurisdiction, and generates audit-ready compliance reports. It connects to your payment systems via API, runs automated tests to verify CoP is working correctly, and alerts you 90/60/30 days before regulatory deadlines. The MVP includes UK Payment Systems Regulator requirements, automated test suite for CoP functionality, compliance report generator, and Slack/email deadline alerts.",
+    "revenue_model": "$299/month per payment provider with tiered pricing based on transaction volume; $99/month for small fintechs processing under 100K transactions/month",
+    "market_signal": "Bank of Ireland's £3.7M fine proves regulators will enforce aggressively. UK has 400+ payment institutions and EMIs that must comply with PSR requirements. Similar requirements rolling out across EU under PSD2.",
+    "competitive_landscape": "Generic compliance management tools exist (ComplyAdvantage, CUBE) but none focus specifically on payment anti-fraud requirements like CoP. Most banks build internal tools or rely on spreadsheets, creating a gap for specialized software.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js frontend, Node.js backend, PostgreSQL for compliance data, Bull for scheduling automated tests, integrations with common payment APIs (Stripe, TrueLayer, Modulr)",
+    "build_plan": [
+      "Week 1: Build compliance deadline tracker with UK PSR requirements and alert system",
+      "Week 2: Create automated CoP API testing framework that validates implementation",
+      "Week 3: Build dashboard showing implementation status and compliance report generator",
+      "Week 4: Add payment system integrations (Stripe, TrueLayer) and polish UX"
+    ],
+    "risks_and_challenges": "Regulatory requirements vary by jurisdiction and change frequently. Payment provider APIs may not expose enough data to verify CoP implementation. Liability concerns if software misses a deadline.",
+    "growth_hook": "Target UK payment providers directly via LinkedIn with case study of Bank of Ireland fine. Partner with payment infrastructure providers (Stripe, TrueLayer) to offer as compliance add-on. Run webinar on 'Avoiding £3.7M Fines: CoP Implementation Checklist.'",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 22,
+    "name": "StablecoinPSP Bridge",
+    "one_liner": "Embeddable payment widget that lets SaaS and e-commerce platforms accept both fiat and stablecoin payments with automatic conversion and unified reporting.",
+    "domains": [
+      "finance_personal_finance",
+      "ecommerce_retail"
+    ],
+    "primary_domain": "finance_personal_finance",
+    "news_trigger": "Modern Treasury launching integrated PSP for fiat and stablecoins; Stripe-owned Bridge winning approval for national trust bank to handle crypto",
+    "the_problem": "SaaS companies and online merchants want to accept stablecoin payments to reduce fees and attract crypto-native customers, but integrating separate fiat and crypto payment processors creates fragmented reconciliation, tax reporting nightmares, and complex refund workflows. Modern Treasury's new PSP proves demand exists but targets enterprise. SMBs need a simpler solution.",
+    "target_audience": "SaaS founders serving global customers, e-commerce stores in high-growth markets (LatAm, Southeast Asia), freelance marketplaces, and API-first startups already using Stripe or similar",
+    "product_description": "StablecoinPSP Bridge is an embeddable payment widget (similar to Stripe Checkout) that lets businesses accept Stripe/card payments AND stablecoin payments (USDC, USDT) in a single checkout flow. Customers choose payment method, stablecoins auto-convert to fiat in merchant's bank account, and all transactions appear in one unified dashboard with reconciliation-ready reports. MVP includes Stripe integration for fiat, Circle API for USDC, automatic fiat conversion via liquidity partners, and webhook-based refund handling.",
+    "revenue_model": "1.5% transaction fee on stablecoin payments (vs. Stripe's 2.9% on cards) + $49/month platform fee; free tier for first $5K in stablecoin volume to drive adoption",
+    "market_signal": "Modern Treasury raising $385M and Stripe acquiring Bridge proves institutional demand. USDC transaction volume grew 3x in 2025. SaaS companies already using Stripe want crypto optionality without rebuilding payments infrastructure.",
+    "competitive_landscape": "Stripe and Modern Treasury targeting enterprise. Coinbase Commerce exists but crypto-only and poor UX. No hybrid fiat+stablecoin widget for SMBs with unified reporting and auto-conversion.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "React for embeddable widget, Node.js backend, Stripe API for fiat, Circle API for USDC, PostgreSQL for transaction ledger, webhook infrastructure for payment confirmations",
+    "build_plan": [
+      "Week 1: Build embeddable payment widget UI with fiat and stablecoin payment options",
+      "Week 2: Integrate Stripe API for fiat and Circle API for USDC payments",
+      "Week 3: Build auto-conversion logic using Circle or Coinbase as liquidity provider, implement webhook-based settlement",
+      "Week 4: Create unified dashboard showing all transactions, add reconciliation reports and refund handling"
+    ],
+    "risks_and_challenges": "Crypto regulatory uncertainty, especially in US. Stablecoin liquidity providers may have high conversion fees, eating into margins. Customer adoption may be slow if crypto checkout creates friction.",
+    "growth_hook": "Target SaaS founders on Twitter/X with 'Accept crypto payments in 5 minutes without leaving Stripe' messaging. Partner with no-code tools like Webflow and Bubble to offer native integration. Sponsor crypto-native SaaS communities like On Deck and indie hacker forums.",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 28,
+    "name": "Pay by Bank ROI Calculator",
+    "one_liner": "Interactive cost comparison tool showing e-commerce merchants exactly how much they'll save switching from card payments to open banking 'Pay by Bank' solutions.",
+    "domains": [
+      "finance_personal_finance",
+      "ecommerce_retail"
+    ],
+    "primary_domain": "finance_personal_finance",
+    "news_trigger": "eBay investing in TrueLayer and rolling out Pay by Bank technology; Modern Treasury launching integrated PSP for fiat and stablecoins",
+    "the_problem": "E-commerce merchants pay 2-3% in card processing fees but don't know if switching to 'Pay by Bank' open banking payments will actually save them money after implementation costs, refund complexity, and customer friction. eBay's investment in TrueLayer signals mainstream adoption is coming, but SMB merchants lack tools to model the financial impact on their specific business.",
+    "target_audience": "E-commerce store owners processing $50K-$5M/month in revenue, Shopify/WooCommerce merchants, marketplace operators, and subscription businesses looking to reduce payment costs",
+    "product_description": "Pay by Bank ROI Calculator is a web-based tool where merchants input their monthly revenue, average order value, refund rate, and current card processing fees. The calculator shows side-by-side comparison of card vs. Pay by Bank costs including processing fees, chargeback costs, implementation complexity score, and projected annual savings. MVP includes UK/EU open banking providers (TrueLayer, GoCardless, Plaid), generates PDF reports merchants can share with CFOs, and shows implementation timeline. Monetize through lead generation for open banking providers and premium features.",
+    "revenue_model": "Free basic calculator with lead gen ($50-150 per qualified merchant lead from TrueLayer, GoCardless); $29/month for advanced features (multi-currency, custom refund policy modeling, integration cost estimator)",
+    "market_signal": "eBay's investment and rollout proves Pay by Bank is ready for mainstream e-commerce. UK has 600K+ online merchants. Open banking payments growing 80% YoY in UK per OBIE data. Merchants already search 'open banking vs card fees' 8K+ times/month.",
+    "competitive_landscape": "Generic payment cost calculators exist but don't model open banking specifically. TrueLayer and GoCardless have basic ROI tools on their sites but biased and limited. No independent third-party calculator focused on e-commerce use cases.",
+    "complexity": "low",
+    "estimated_build_time": "2 weeks for MVP",
+    "tech_stack": "Next.js with TypeScript, Tailwind for UI, Stripe/PayPal pricing APIs to pull current merchant fees, PDF generation with react-pdf, Airtable for lead capture",
+    "build_plan": [
+      "Week 1: Build calculator logic, input form, and comparison output with real provider pricing data",
+      "Week 2: Add PDF report generation, SEO landing page, and lead capture flow for provider partnerships"
+    ],
+    "risks_and_challenges": "Pay by Bank adoption may be slower than expected if customer friction is high. Refund complexity and bank-specific implementation quirks could make real costs higher than calculator suggests. Payment providers may not pay competitive lead gen rates.",
+    "growth_hook": "SEO for 'open banking cost calculator,' 'Pay by Bank vs card fees,' and 'TrueLayer pricing.' Partner with e-commerce Slack communities and subreddits (/r/ecommerce, /r/shopify). Run LinkedIn ads to e-commerce CFOs with headline 'eBay is switching to Pay by Bank—should you?'",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 4.7
+  }
+]

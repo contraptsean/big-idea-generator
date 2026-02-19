@@ -1,0 +1,161 @@
+[
+  {
+    "rank": 4,
+    "name": "FranchiseRisk Monitor",
+    "one_liner": "Automated financial health monitoring and early warning system for hotel and restaurant franchisors to detect franchisee insolvency before it wipes out millions in fees.",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Wyndham took a $160 million hit after a European franchisee filed for insolvency, described as a 'blind spot' in the asset-light model. This reveals that franchisors lack real-time visibility into franchisee financial health and only discover problems when it's too late to intervene.",
+    "the_problem": "Franchisors in hospitality and restaurants operate under asset-light models where they don't own properties but collect fees from franchisees. When a major franchisee becomes insolvent, the franchisor loses millions in unpaid fees, reputation damage, and operational chaos. Current monitoring relies on quarterly financial statements that arrive 45-90 days after the period ends—far too late to prevent insolvency. Franchisors need real-time early warning signals to intervene with support or transition plans before franchisees collapse.",
+    "target_audience": "Franchise development and risk management teams at mid-sized to large hospitality and restaurant franchisors (100+ franchise locations), especially brands expanding internationally where financial transparency is lower.",
+    "product_description": "FranchiseRisk connects to franchisee bank accounts (via Plaid), POS systems, and accounting software to calculate daily financial health scores based on cash burn rate, revenue trends, debt service coverage, and covenant compliance. The dashboard shows a risk-ranked list of all franchisees with red/yellow/green indicators, predictive insolvency alerts 90-180 days before likely default, and automated email reports to franchise development teams. MVP focuses on three metrics: Liquidity Score (cash runway), Revenue Velocity (same-store sales trend), and Debt Service Coverage Ratio. Includes secure franchisee portal where operators grant read-only financial data access.",
+    "revenue_model": "SaaS charged per franchised location monitored: $15/location/month for brands with 100-500 locations, $10/location/month for 500-1000 locations, enterprise pricing above 1000. Target $25K MRR within 6 months by signing 5 franchisors with average 350 locations each (5 × 350 × $15 = $26,250).",
+    "market_signal": "Wyndham's $160M writedown proves franchisors are desperate for better risk management tools. The franchise model is dominant in both hotels (75% of U.S. hotel rooms) and restaurants (45% of restaurants). International expansion increases risk exposure as franchisors have less visibility abroad. Franchisors already require financial reporting but lack automated monitoring and predictive analytics. Industry forums and conferences regularly discuss franchisee failure rates.",
+    "competitive_landscape": "Franchise management systems (FranConnect, Naranga) focus on operations and compliance, not financial health monitoring. Credit monitoring services (Dun & Bradstreet, Experian) provide static snapshots, not real-time cash flow tracking. Enterprise risk management tools are too complex and expensive for mid-market franchisors. Gap: affordable, automated financial monitoring specifically designed for franchise relationships.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js dashboard, Plaid for bank account connections, POS API integrations (Toast, Square, NCR, Oracle), Supabase for database, Recharts for visualization, Resend for email alerts, deploy on Vercel.",
+    "build_plan": [
+      "Week 1: Build secure franchisee onboarding portal with Plaid integration for bank account connection and OAuth for POS systems; create data ingestion pipeline normalizing financial data",
+      "Week 2: Build scoring algorithms for Liquidity Score (cash runway in days), Revenue Velocity (7/30/90-day trend), and Debt Service Coverage Ratio; create franchisor dashboard showing risk-ranked franchisee list",
+      "Week 3: Implement alerting engine that flags franchisees crossing risk thresholds (e.g., cash runway <60 days, revenue declining >10% for 60 days); add email/Slack notifications",
+      "Week 4: Add detailed franchisee drill-down view with historical trends, benchmark comparisons, and CSV export; create white-label option for franchisors to brand the franchisee portal"
+    ],
+    "risks_and_challenges": "Franchisees may resist sharing real-time financial data with franchisors even though franchise agreements typically require financial reporting. Data integration complexity with international banking systems and POS providers. Risk that financial metrics don't predict insolvency accurately enough. Mitigation: position as value-add service that helps franchisees get early support, not punitive monitoring; start U.S.-only with major POS integrations; validate scoring models against historical franchise failures using public bankruptcy data.",
+    "growth_hook": "Offer free risk assessment to 50 franchisors showing which of their current franchisees would have triggered insolvency alerts in past 12 months using publicly available data. Position as 'Wyndham Insurance'—preventing the next $160M writedown. Partner with franchise attorneys and consultants who negotiate franchise agreements. Sponsor IFA (International Franchise Association) annual convention and present case study on preventing franchisee failures. Target franchisors expanding internationally where risk is highest.",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 11,
+    "name": "AI Booking Connector",
+    "one_liner": "Inventory syndication platform that lets independent hotels plug their availability into Google's AI travel tools, OpenAI's ChatGPT booking, and Anthropic's Claude without OTA fees.",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Wyndham partnering with Google and Anthropic on AI bookings, Indian OTAs striking deals with OpenAI, and Booking.com CEO emphasizing ties with independent hotels as 'agentic AI' threatens to disrupt distribution. AI booking platforms are becoming new gatekeepers of travel demand, and hotels need direct connections to avoid 15-25% OTA commissions.",
+    "the_problem": "Independent hotels and small chains lack direct integrations with emerging AI booking platforms (Google Travel AI, ChatGPT, Claude, Perplexity) and must rely on OTAs like Booking.com and Expedia that charge 15-25% commissions. Large chains like Wyndham can negotiate direct deals with AI platforms, but the 100,000+ independent properties globally can't afford enterprise integration teams. Without direct AI distribution, independent hotels will lose even more market share to OTA-dominated booking flows.",
+    "target_audience": "Independent hotels, boutique hotel groups (5-50 properties), and small regional chains that use property management systems like Cloudbeds, Mews, or RoomRaccoon but can't afford enterprise distribution teams.",
+    "product_description": "AI Booking Connector is a lightweight middleware that pulls inventory and availability from existing hotel PMS systems and syndicates it to AI booking platforms via API partnerships. Hotels install the connector with OAuth, map their room types and rates once, and the system automatically updates availability across Google AI, ChatGPT, Claude, and other platforms in real-time. The MVP supports 5 major PMS systems (Cloudbeds, Mews, RoomRaccoon, Little Hotelier, WebRezPro) and provides a simple dashboard showing bookings by source, commission savings vs. OTAs, and AI platform performance. Bookings flow directly to hotel PMS and payment is processed via Stripe Connect.",
+    "revenue_model": "Transaction fee model: 5% commission on bookings generated through AI platforms—significantly less than 15-25% OTA fees but still compelling to hotels. Target $15K MRR within 6 months by signing 200 hotels generating average $1,500/month in AI bookings ($1,500 × 5% × 200 = $15K).",
+    "market_signal": "Major players like Wyndham and Indian OTAs are actively signing AI distribution deals, proving demand and feasibility. Booking.com CEO specifically mentioned independent hotels in context of AI competition, signaling concern about disintermediation. Independent hotels are desperate to reduce OTA dependency—industry studies show 78% of independent hoteliers want more direct booking channels. AI travel agents are already booking flights and hotels in ChatGPT and Perplexity.",
+    "competitive_landscape": "Traditional channel managers (SiteMinder, Cloudbeds Channels) focus on syndicating to OTAs and metasearch, not AI platforms. OTAs themselves are signing AI deals but taking full commissions. Large hotel tech companies (Amadeus, Sabre) serve enterprise only. Gap: affordable AI distribution specifically for independent properties that's plug-and-play with existing PMS systems.",
+    "complexity": "high",
+    "estimated_build_time": "6 weeks for MVP",
+    "tech_stack": "Next.js dashboard, Node.js middleware for PMS integrations, OAuth for PMS connections, REST APIs to AI platforms (requires partnership agreements), Stripe Connect for payment processing, Supabase for database, deploy on Railway or Render for background jobs.",
+    "build_plan": [
+      "Week 1-2: Build PMS OAuth integrations for Cloudbeds and Mews (start with top 2), create data normalization layer that maps PMS room types to standard schema required by AI platforms",
+      "Week 3: Negotiate API partnership agreements with Google Travel AI and one other AI booking platform (Perplexity or OpenAI)—this is the critical blocker; build API connectors to push inventory updates",
+      "Week 4: Build booking ingestion flow that receives reservations from AI platforms, validates them, and posts back to hotel PMS in real-time; implement Stripe Connect for payment processing",
+      "Week 5: Build hotel dashboard showing bookings by source channel, commission comparison vs OTAs, and AI platform performance metrics",
+      "Week 6: Add onboarding wizard with PMS connection, room mapping interface, and rate parity rules; test end-to-end booking flow with pilot hotels"
+    ],
+    "risks_and_challenges": "Biggest risk is securing API partnerships with AI booking platforms—Google, OpenAI, and Anthropic may require scale or strategic relationships before granting API access. PMS integration complexity and rate limiting. Hotels may distrust new distribution channel and worry about rate parity violations with OTAs. Payment processing and fraud risk. Mitigation: start by building proof-of-concept with AI platforms' published APIs and approach partnerships with working prototype + signed hotel LOIs; focus on boutique hotel groups that control their own rates; leverage Stripe's fraud tools; be transparent that this is early-stage tech.",
+    "growth_hook": "Partner with hotel PMS providers (Cloudbeds, Mews) to offer as bundled distribution add-on. Offer free first 50 bookings to 100 pilot hotels to prove channel works and commission savings are real. Target boutique hotel associations and independent hotel conferences with ROI calculator showing $40K annual savings on OTA fees for typical 50-room property. Publish transparent data on AI booking volumes by platform to help hotels decide where to invest. Get featured in Hotel Tech Report and Skift as 'the Stripe for AI hotel distribution.'",
+    "feasibility": 6,
+    "demand_confidence": 6,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 17,
+    "name": "MenuMetrics AI",
+    "one_liner": "Real-time menu performance analytics that tells QSR and fast-casual chains exactly which items are driving sales vs. cannibalizing profits before quarterly reports.",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Multiple chains announcing menu upgrades (Habit Burger, Sweetfin partnering with Michelin chef, Taco Bell LTOs) while others face sales declines (Wingstop -5.8%, Jack in the Box -6.7%). Sweetfin specifically mentions evolving their menu with a Michelin-starred chef, suggesting premium menu engineering is becoming competitive advantage.",
+    "the_problem": "Restaurant chains make expensive menu decisions based on quarterly sales reports that arrive weeks or months too late. By the time they realize a new item is cannibalizing core offerings or that an LTO should become permanent, they've already lost significant revenue. Chains like Wingstop and Jack in the Box facing prolonged sales declines need faster feedback loops on what's actually working on their menus.",
+    "target_audience": "QSR and fast-casual chain operations directors, menu development teams, and franchise owners with 10-200 locations who need daily menu performance insights without enterprise BI costs.",
+    "product_description": "MenuMetrics connects to POS systems (Toast, Square, NCR) and provides daily dashboards showing which menu items are growing vs. declining, cross-sell patterns, daypart performance, and predictive alerts when new items start cannibalizing core SKUs. The MVP focuses on three reports: Item Performance Trends (7/30/90 days), Cannibalization Detection (which new items are stealing sales from established winners), and LTO Success Predictor (should this limited item become permanent based on repeat purchase rate and margin). Simple Slack/email alerts when metrics cross thresholds.",
+    "revenue_model": "SaaS: $299/month per brand for chains with 5-20 locations, $799/month for 21-100 locations, $1,999/month for 100+ locations. Revenue starts at $299 × 50 customers = $14,950/month within 6 months targeting regional chains.",
+    "market_signal": "Habit Burger just did a complete menu overhaul, Sweetfin brought in a Michelin chef to redesign their menu, and multiple chains in the news are struggling with same-store sales declines despite menu innovation efforts. The market is actively spending on menu engineering but lacks daily performance feedback. POS integration companies like Toast report menu analytics as a top feature request from restaurant groups.",
+    "competitive_landscape": "Existing restaurant analytics tools (MarketMan, Crunchtime, Avero) focus on inventory and labor costs, not menu performance velocity. Toast and Square have basic reporting but no cannibalization detection or predictive LTO analysis. Enterprise BI tools like Tableau require data analysts. Gap: affordable, menu-specific analytics with actionable daily insights for non-technical operators.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase for database and auth, Pipedream for POS API integrations (Toast, Square, Clover), Recharts for visualization, Resend for email alerts, deploy on Vercel.",
+    "build_plan": [
+      "Week 1: Build POS OAuth connectors for Toast and Square APIs, create data ingestion pipeline that normalizes sales data into unified schema",
+      "Week 2: Build three core dashboard views (Item Trends, Cannibalization Matrix, LTO Scorecard) with 7/30/90-day date range pickers",
+      "Week 3: Implement alert engine that detects threshold crossings (e.g., new item stealing >15% sales from core item) and sends Slack/email notifications",
+      "Week 4: Add onboarding flow with POS connection wizard, benchmark against similar chains, and CSV export for existing users without API access"
+    ],
+    "risks_and_challenges": "POS API rate limits and data quality issues from inconsistent menu item naming across locations. Some smaller chains still use legacy POS systems without APIs. Risk that chains want more complex statistical modeling than MVP provides. Mitigation: start with Toast-only integration (most modern API), offer CSV upload for non-API systems, focus on simple actionable metrics over complex ML models.",
+    "growth_hook": "Offer free 30-day menu audit to 100 regional restaurant chains (5-50 locations) showing exactly which menu items underperformed in last 90 days. Post results as anonymous case studies on LinkedIn targeting restaurant operations directors. Partner with restaurant consultants who do menu engineering projects and white-label the tool. Sponsor sessions at NRA Show and regional restaurant association events.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 23,
+    "name": "LoyaltyLaunchpad",
+    "one_liner": "Pre-built loyalty and rewards program platform for independent restaurants and boutique hotel groups that launches in 48 hours without custom dev work.",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Airbnb testing loyalty benefits with CEO Brian Chesky saying program 'could be a massive accelerant' after years of resisting loyalty. This validates that loyalty programs are now table stakes even for marketplaces that previously avoided them. Wingstop and other chains facing sales declines need loyalty programs to drive repeat visits but lack in-house tech teams.",
+    "the_problem": "Independent restaurants and boutique hotels know they need loyalty programs to compete with chains but building custom loyalty tech costs $50K-$150K and takes 6-12 months. Off-the-shelf solutions like Square Loyalty and Toast Loyalty are POS-specific and lock restaurants into one payment processor. Restaurants need a loyalty platform that works across multiple POS systems, offers modern features like tiered rewards and experiential benefits, and launches in days not months.",
+    "target_audience": "Independent restaurant groups (3-20 locations), boutique hotel groups (2-15 properties), and food halls/ghost kitchens that operate multiple brands under one roof and need a unified loyalty program.",
+    "product_description": "LoyaltyLaunchpad is a white-label loyalty platform that integrates with existing POS systems (Toast, Square, Clover) and hotel PMS (Cloudbeds, Mews) to track purchases, assign points, and deliver rewards. The MVP includes: customizable point-earning rules ($ spent, check-ins, referrals), tiered membership levels (bronze/silver/gold), digital rewards wallet accessible via SMS or web app (no custom app required), and automated campaigns (birthday rewards, win-back offers for lapsed members). Restaurants configure everything through a no-code dashboard and launch their branded loyalty program in 48 hours. Members earn and redeem rewards by providing phone number at checkout—no app download required.",
+    "revenue_model": "SaaS pricing: $199/month for single-location businesses, $399/month for 2-5 locations, $799/month for 6-20 locations. Additional revenue from SMS messaging at $0.015/message. Target $20K MRR within 6 months by signing 60 customers at average $333/month.",
+    "market_signal": "Airbnb's CEO calling loyalty 'a massive accelerant' validates the channel even for brands that historically resisted it. Chains like Wingstop facing sales declines need loyalty to drive frequency. Industry research shows loyalty members spend 67% more than non-members and visit 2.6× more often. Restaurants constantly ask for affordable, POS-agnostic loyalty in industry forums. Square and Toast charge $45-$100/month for basic loyalty but require using their POS exclusively.",
+    "competitive_landscape": "POS-specific loyalty programs (Square Loyalty, Toast Loyalty, Clover Rewards) lock merchants into one payment processor and lack advanced features. Enterprise platforms (SessionM, Comarch) cost $100K+ annually. Punchcard apps (FiveStars, Thanx) focus on SMBs but lack modern features like tiered benefits and experiential rewards. Gap: affordable, POS-agnostic loyalty that works across restaurant and hotel tech stacks with modern feature set.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js for merchant dashboard and customer web app, Twilio for SMS messaging, Supabase for database and auth, Pipedream for POS/PMS integrations (Toast, Square, Cloudbeds), QR code generation library, deploy on Vercel.",
+    "build_plan": [
+      "Week 1: Build merchant onboarding and white-label configuration (business name, logo, colors, point-earning rules, reward tiers); create customer-facing web app showing points balance and available rewards",
+      "Week 2: Build POS integrations for Toast and Square that capture transaction data, identify members by phone, and assign points automatically; implement SMS opt-in flow and points balance notifications",
+      "Week 3: Build rewards redemption flow where customers redeem via web app and staff validate redemption codes at POS; add tier progression logic and automated tier-up notifications",
+      "Week 4: Build automated campaign builder for birthday rewards, win-back campaigns (no purchase in 60 days), and referral bonuses; implement campaign scheduling and delivery via SMS",
+      "Week 5: Add merchant analytics dashboard showing member acquisition, engagement rates, redemption rates, and ROI metrics; build CSV export for email marketing integration"
+    ],
+    "risks_and_challenges": "POS integration complexity and rate limits. Risk of SMS opt-out and deliverability issues. Merchants may want custom app instead of web-based member experience. Fraud risk from fake accounts gaming point systems. Mitigation: start with most popular POS systems with robust APIs; use Twilio's compliance tools and message templates; position web app as faster launch and no app store fees; implement phone verification and velocity limits on point earning.",
+    "growth_hook": "Offer free 90-day trial to 50 restaurants and hotels showing exactly how much incremental revenue loyalty members generate vs. non-members. Partner with restaurant consultants who advise multi-unit groups on guest retention. Create case study showing a 3-location restaurant adding $8K/month in incremental sales from loyalty within 120 days. Target restaurant and hotel owner Facebook groups and subreddits. Sponsor regional restaurant association events. Get featured in QSR Magazine and Hospitality Technology as 'the Shopify of restaurant loyalty.'",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 29,
+    "name": "PepptronOS",
+    "one_liner": "White-label operating system and remote monitoring platform for restaurant operators deploying automated food vending machines like Donatos' Pepptron pizza kiosks.",
+    "domains": [
+      "food_hospitality",
+      "ecommerce_retail"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Donatos investing in 'Pepptron' pizza vending machines debuting at Columbus airport. This signals a broader trend of restaurants exploring automated, unattended locations as a growth channel—similar to how ghost kitchens emerged. These machines need remote monitoring, inventory management, and maintenance coordination.",
+    "the_problem": "Restaurants deploying automated vending machines face operational chaos: no visibility into inventory levels across machines, no way to remotely diagnose technical issues, no centralized sales reporting, and manual coordination of restocking and maintenance. When a Pepptron runs out of cheese at 2am in an airport terminal, the restaurant has no real-time alert system. Existing vending machine software is built for snacks, not fresh food with complex preparation and expiration tracking.",
+    "target_audience": "QSR chains and ghost kitchen operators exploring automated vending as a new revenue channel, vending machine manufacturers building food-specific units, airport and venue operators managing food vending networks.",
+    "product_description": "PepptronOS is a cloud-based dashboard that connects to smart vending machines via IoT sensors and provides real-time monitoring of inventory levels, equipment health, sales velocity, and maintenance needs. The MVP includes: Inventory tracking with low-stock alerts sent to restocking teams, equipment diagnostics (temperature sensors, cooking cycle counts, error logs), sales dashboard by location/time, and a mobile app for field techs to log maintenance and restocking. Integrates with existing vending hardware via generic IoT gateways (no custom hardware required). Optional white-label version for vending machine manufacturers.",
+    "revenue_model": "SaaS per machine: $49/month per connected vending unit, targeting $10K-$20K MRR within 6 months by signing 200-400 machines across 10 restaurant operators. Additional revenue from white-label licensing to vending manufacturers at $10K one-time + $10/unit/month.",
+    "market_signal": "Donatos is publicly investing in vending machines, signaling validation of the channel. Airports are increasingly open to food automation to fill late-night gaps when restaurants are closed. Ghost kitchen operators like CloudKitchens are exploring automated pickup lockers. The broader vending machine market is growing 9% CAGR with food vending as the fastest segment. No specialized software exists for restaurant-operated food vending.",
+    "competitive_landscape": "Traditional vending management software (Cantaloupe, Nayax) focuses on snacks/beverages and lacks fresh food features like temperature monitoring and prep cycle tracking. Ghost kitchen platforms (Otter, NextBite) manage delivery, not unattended retail. Restaurant POS systems don't handle vending machine integrations. Gap: purpose-built software for restaurant operators running food vending networks.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js web dashboard, React Native mobile app for field techs, Supabase for backend, Particle.io or AWS IoT Core for device connectivity, Twilio for SMS alerts, Stripe for payment processing, Mapbox for location views.",
+    "build_plan": [
+      "Week 1: Build device onboarding flow and create data model for machines, inventory SKUs, and sensor readings; set up IoT message ingestion pipeline",
+      "Week 2: Build dashboard with real-time machine status grid, inventory levels by location, and sales reporting; implement threshold-based alerting (low stock, high temp, error codes)",
+      "Week 3: Build mobile app for field techs to receive alerts, log restocking quantities, and submit maintenance tickets with photos",
+      "Week 4: Add route optimization for restocking teams (which machines need service in what order), build CSV export for accounting integration",
+      "Week 5: Create white-label configuration system for vending manufacturers (custom branding, API keys, webhook integrations)"
+    ],
+    "risks_and_challenges": "Hardware integration complexity—vending machines from different manufacturers use different protocols. Restaurants may be hesitant to add IoT devices to machines they don't fully control. Cold start problem: need vending operators before manufacturers will integrate, need manufacturers before operators will deploy. Mitigation: start with generic IoT sensors that work with any machine, focus on early adopter restaurant chains already testing vending, offer free pilot to first 3 chains in exchange for case studies.",
+    "growth_hook": "Partner with vending machine manufacturers (Blendid, Chowbotics, Picnic) to bundle PepptronOS with their hardware sales. Offer free 90-day trial to any restaurant chain testing food vending—Donatos and competitors. Target airport concessionaires managing multiple food vending locations. Publish ROI calculator showing how remote monitoring reduces truck rolls and spoilage costs by 40%. Sponsor talks at NAMA vending industry conference and National Restaurant Association show.",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 4.7
+  }
+]

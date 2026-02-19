@@ -1,0 +1,128 @@
+[
+  {
+    "rank": 2,
+    "name": "LiteracyBridge",
+    "one_liner": "AI-powered culturally relevant reading material matcher that helps K-12 teachers find and assign texts that connect with multilingual students' backgrounds and boost comprehension",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "Research showing multilingual students read and comprehend more when teaching materials are culturally relevant to them; educators noting 'I can read, but I don't know what it means' problem",
+    "the_problem": "Multilingual students often struggle with reading comprehension not because they can't decode words, but because assigned texts lack cultural relevance and background knowledge from their lived experiences. Teachers spend hours searching for culturally appropriate texts across fragmented sources (Open Library, Newsela, CommonLit, etc.) and lack tools to quickly match materials to individual students' cultural backgrounds, languages, and reading levels. This results in disengagement and poor literacy outcomes for ELL students.",
+    "target_audience": "K-12 ESL/ELL teachers, bilingual education coordinators, elementary literacy coaches, and middle school reading interventionists in districts with 15%+ multilingual student populations",
+    "product_description": "LiteracyBridge aggregates culturally diverse reading materials from open educational resources and partners with publishers. Teachers input student profiles (home language, cultural background, reading level, interests). The AI recommends 5-10 culturally relevant texts per student per week, showing why each text is a good match. Teachers can assign readings directly or export to Google Classroom/Canvas. The MVP includes 2,500+ curated texts tagged by culture, language, Lexile level, and theme, plus a simple recommendation engine and assignment workflow.",
+    "revenue_model": "Freemium model: Free for up to 30 students. Teacher subscription at $12/month for unlimited students. School license at $499/year (unlimited teachers at one school). District license at $3,999/year (up to 25 schools).",
+    "market_signal": "5+ million ELL students in U.S. public schools. Teachers already pay for Newsela ($40/year), CommonLit Pro ($30/year), and ReadWorks subscriptions. ESL teacher Facebook groups with 50K+ members constantly share reading resource lists. Grant funding available for literacy interventions targeting multilingual learners (Title III, Title I).",
+    "competitive_landscape": "Newsela and CommonLit offer diverse texts but no cultural matching. ReadWorks is free but not curated for ELL students. BookNook and Amira focus on tutoring, not material curation. Multicultural book lists exist but aren't searchable or matched to students. Gap: No tool that combines cultural matching with reading level and assignment workflow for teachers.",
+    "complexity": "low",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "Next.js, Supabase (PostgreSQL with full-text search), OpenAI API for cultural relevance matching, Airtable for initial content curation, Tailwind CSS, Vercel hosting",
+    "build_plan": [
+      "Week 1: Curate 500 culturally diverse texts from Project Gutenberg, CommonLit open resources, and OER repositories; tag by culture, language, Lexile, and theme in Airtable",
+      "Week 2: Build teacher account and student profile system with simple form inputs for cultural background, home language, and reading level",
+      "Week 3: Implement basic recommendation algorithm using embeddings and metadata matching, create assignment workflow with Google Classroom integration"
+    ],
+    "risks_and_challenges": "Content curation is labor-intensive and requires cultural expertise to tag accurately. Risk of perpetuating stereotypes if matching is too simplistic. Teachers may have limited time to adopt new tools. Need to balance free content with premium to achieve revenue goals. Competing with free resources requires clear value proposition.",
+    "growth_hook": "Partner with ESL teacher influencers on Instagram and TikTok to showcase student success stories. Offer 100 free annual licenses to early adopters in exchange for testimonials. Post weekly 'Culturally Relevant Text of the Week' on ESL Facebook groups. Run free summer webinar series 'Culturally Responsive Literacy in Practice' to build email list and convert to paid users in fall.",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 9,
+    "name": "StudentVoice Testing Hub",
+    "one_liner": "On-demand student usability testing marketplace that connects edtech companies with real K-12 students and teachers for rapid product feedback before launch",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "Research showing tools that impress adults in demos often fall flat with actual students; growing movement to put students at center of edtech design",
+    "the_problem": "Edtech companies build products that work beautifully in investor demos but fail with real students because they never test with their actual end users during development. Hiring schools for pilots is slow (3-6 months), expensive ($10K-$50K), and requires IRB approval. Startups need fast, affordable access to real K-12 students and teachers to validate UI, content, and pedagogy before launch. Currently, most founders rely on their own kids or beg teacher friends for feedback.",
+    "target_audience": "Edtech founders, product managers at education companies, instructional designers, and curriculum developers building K-12 software and digital content",
+    "product_description": "StudentVoice is a two-sided marketplace connecting edtech companies with vetted K-12 teachers who recruit small groups of students (5-8) for 30-60 minute usability testing sessions. Companies post projects with grade level, subject, and timeline. Teachers apply, get matched, and facilitate testing via Zoom with students using the product. Sessions are recorded, and companies receive a summary report with student feedback, usability observations, and engagement metrics within 48 hours. The MVP includes project posting, teacher/student matching, scheduling, Zoom integration, and basic templated feedback reports.",
+    "revenue_model": "Edtech companies pay per session: $299 for 30-minute session with 5 students, $499 for 60-minute session with 8 students. Teachers earn $100-$150 per session. Platform takes 40-50% margin. Offer 5-session packages at $1,299 (discounted).",
+    "market_signal": "8,000+ edtech companies in the U.S. market, with 2,000+ early-stage startups actively raising or building. User research services like UserTesting.com charge $50-$100 per tester for adults; K-12 student access is a premium offering. Founders already pay $500-$2,000 for generic UX research that doesn't include actual students.",
+    "competitive_landscape": "UserTesting and Respondent.io offer general user research but no K-12 student panels. EdtechKidTest was previously suggested but hasn't been built yet. School-based pilots are slow and expensive. Parent panels exist but lack classroom context. Gap: No fast, affordable, compliant way to test edtech with real students in structured classroom-like sessions.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js, Supabase (PostgreSQL), Stripe for payments, Calendly API for scheduling, Zoom API for session recording, Resend for notifications, Vercel hosting",
+    "build_plan": [
+      "Week 1: Build two-sided marketplace with company account creation, project posting form, and teacher application flow",
+      "Week 2: Create teacher vetting system (background check integration via Checkr API), student consent form templates (COPPA/FERPA compliant), and matching algorithm",
+      "Week 3: Integrate Zoom for video sessions with auto-recording, build Calendly-style scheduling interface",
+      "Week 4: Create feedback report template generator (auto-filled with session notes, student quotes, and usability observations), add Stripe payment processing"
+    ],
+    "risks_and_challenges": "COPPA and FERPA compliance requires careful handling of student data and parental consent. Recruiting and vetting teachers takes time upfront. Quality control of teacher-led sessions is critical. Risk of no-shows from students. Must build trust with both sides of marketplace simultaneously. Seasonality challenge: testing drops in summer.",
+    "growth_hook": "Cold outreach to 200 early-stage edtech founders on LinkedIn offering first session free. Partner with edtech accelerators (ImagineK12, ASU GSV, Reach Capital) to offer portfolio companies discounted testing. Publish case study 'How [Edtech Startup] Avoided $50K Pivot by Testing with Real Students' on Product Hunt and HackerNews. Recruit teacher ambassadors via edtech teacher influencer networks on Twitter/X.",
+    "feasibility": 6,
+    "demand_confidence": 6,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 15,
+    "name": "BudgetLens",
+    "one_liner": "AI-powered budget decision intelligence platform that helps district leaders identify which education programs and vendors deliver measurable ROI using research-backed evidence",
+    "domains": [
+      "education_edtech",
+      "government_compliance"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "District leaders being asked to make irreversible budget decisions with fewer dollars and less margin for error than ever before",
+    "the_problem": "School districts are facing unprecedented budget constraints while being forced to make high-stakes, irreversible spending decisions on edtech, curriculum, and programs. Leaders lack tools to quickly evaluate which vendors and interventions actually deliver measurable outcomes based on research evidence. Current procurement processes rely on vendor demos, anecdotal testimonials, and manual literature reviews that take weeks.",
+    "target_audience": "District superintendents, CFOs, curriculum directors, and procurement officers at K-12 public school districts with 5,000+ students",
+    "product_description": "BudgetLens aggregates research evidence, efficacy data, and peer district outcomes for education vendors and programs. Districts input their budget constraints, student demographics, and improvement goals. The AI scans academic databases, ESSA evidence tiers, What Works Clearinghouse, and peer district results to generate ranked recommendations with projected ROI. It flags vendors with weak evidence and suggests reallocation scenarios. The MVP includes a vendor database of 500+ edtech/curriculum companies, an ROI calculator, and a simple decision rubric dashboard.",
+    "revenue_model": "Annual SaaS subscription: $4,999/year for districts under 25K students, $9,999/year for larger districts. Upsell premium tier at $19,999/year with custom efficacy studies and procurement consulting.",
+    "market_signal": "3,500+ U.S. school districts manage budgets over $50M annually. Education procurement market is $50B+. Districts already pay consultants $10K-$50K for program evaluation studies. Increasing state accountability for evidence-based spending (ESSA requirements) creates regulatory tailwind.",
+    "competitive_landscape": "LearnPlatform and Edsurge product indexes exist but don't integrate budget planning or ROI forecasting. Traditional procurement software (Tyler Tech, PowerSchool) lacks research evidence integration. Consultants are expensive and slow. Gap: No affordable, self-service tool that combines evidence synthesis with budget optimization specifically for district leaders.",
+    "complexity": "medium",
+    "estimated_build_time": "4-5 weeks for MVP",
+    "tech_stack": "Next.js, Supabase (PostgreSQL), OpenAI API for evidence synthesis, Python/Pandas for ROI calculations, Tailwind CSS, Vercel hosting",
+    "build_plan": [
+      "Week 1: Build vendor database schema and scrape 100 major edtech vendors with basic evidence tier data from public sources",
+      "Week 2: Create district onboarding flow (demographics, budget, goals) and simple decision dashboard with filtering",
+      "Week 3: Implement AI evidence synthesis using OpenAI API to scan abstracts from What Works Clearinghouse and generate summaries",
+      "Week 4: Build ROI calculator with cost-per-student-served and outcome projections based on peer district data",
+      "Week 5: Add PDF report generation, vendor comparison views, and basic analytics dashboard"
+    ],
+    "risks_and_challenges": "Data quality and recency of research evidence is hard to maintain. Districts have long sales cycles (6-12 months) and budget approval happens in specific windows. Getting initial vendor efficacy data requires manual curation. Risk of being seen as 'just another vendor tool' if not positioned as independent research platform.",
+    "growth_hook": "Partner with state education associations to present at superintendent conferences. Offer free 90-day trials during budget planning season (Jan-April). Publish monthly 'Budget Waste Report' exposing low-efficacy vendor spending that goes viral on district leader LinkedIn. Cold outreach to 100 district CFOs with personalized budget optimization scenarios.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 27,
+    "name": "SocialShield",
+    "one_liner": "School-district-ready social media harm monitoring and compliance toolkit that tracks student well-being metrics and generates documentation for litigation and policy enforcement",
+    "domains": [
+      "education_edtech",
+      "health_wellness"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "School districts filing lawsuits against social media companies for targeting kids with addictive products, testing new legal theories about causation",
+    "the_problem": "School districts are joining litigation against social media companies but lack systematic data collection showing harm causation within their student populations. Mental health counselors see the impacts daily but don't have tools to aggregate incidents, track trends, or generate litigation-ready documentation. Districts also need to demonstrate they implemented protective measures and monitored outcomes to support legal claims and comply with emerging duty-of-care requirements.",
+    "target_audience": "K-12 district mental health coordinators, student services directors, school counselors, and district general counsels at medium to large school districts (10K+ students)",
+    "product_description": "SocialShield is a secure, FERPA-compliant platform where school counselors log social-media-related incidents (anxiety, depression, self-harm ideation, cyberbullying) using standardized intake forms. The system aggregates anonymized data to identify patterns and trends district-wide. It auto-generates quarterly reports showing correlation between social media use and student well-being metrics. The MVP includes incident logging, trend dashboards, automated report generation for legal teams, and pre-built policy compliance checklists for phone bans and screen time interventions.",
+    "revenue_model": "Annual SaaS license: $8,999/year for districts under 15K students, $14,999/year for larger districts. Additional revenue from exporting litigation-ready data packages at $2,500 per legal filing.",
+    "market_signal": "Over 500 school districts have joined social media harm lawsuits as of early 2025. Districts are spending $50K-$200K on outside counsel for these cases. Growing state mandates for social-emotional learning tracking and mental health reporting create compliance need. School counselor associations are actively seeking better incident tracking tools.",
+    "competitive_landscape": "General student information systems (PowerSchool, Infinite Campus) don't have mental health incident modules. Standalone mental health platforms (Gaggle, GoGuardian Beacon) focus on crisis prevention, not litigation documentation or policy compliance. School safety incident trackers (Raptor, Navigate360) don't link to social media harm specifically. Gap: No tool purpose-built for tracking social media harm with legal documentation features.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js, Supabase with row-level security for FERPA compliance, Tremor for dashboards, Resend for automated reports, PDF generation via react-pdf, Vercel hosting",
+    "build_plan": [
+      "Week 1: Build FERPA-compliant counselor login system with multi-district tenancy and incident logging form (20 standardized fields)",
+      "Week 2: Create anonymized aggregation engine and basic trend dashboards showing incident frequency, types, and severity by school/grade",
+      "Week 3: Build automated quarterly report generator with charts, data tables, and legal narrative templates",
+      "Week 4: Add policy compliance checklist module for phone bans and screen time interventions, plus CSV export for legal teams"
+    ],
+    "risks_and_challenges": "FERPA compliance is critical and requires careful architecture. Counselors may resist additional administrative burden of logging. Risk of being seen as surveillance tool rather than support tool. Must balance granular data collection with student privacy. Slow sales cycles for school districts.",
+    "growth_hook": "Partner with school counselor associations to present at conferences. Offer free accounts to districts already in litigation to build case studies. Publish white paper 'How to Document Social Media Harm for Litigation' that goes viral among district legal teams. Target the 500+ districts already in lawsuits with direct outreach and offer 60-day free trials.",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 4.7
+  }
+]

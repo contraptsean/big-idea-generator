@@ -1,0 +1,163 @@
+[
+  {
+    "rank": 6,
+    "name": "PsychedelicGuard",
+    "one_liner": "Third-party safety and efficacy monitoring platform for psychedelic therapy clinics to ensure proper therapeutic protocols are followed",
+    "domains": [
+      "health_wellness",
+      "government_compliance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Opinion piece by 2012 psilocybin trial participant expressing horror at current psychedelic therapy practices, warning that drugs alone without proper therapeutic framework are dangerous",
+    "the_problem": "As psychedelic therapy rapidly commercializes, many ketamine clinics and emerging psilocybin/MDMA providers are cutting corners on the intensive therapeutic protocols that made clinical trials successful. The original trial participant warns that 'psychedelics without proper therapy' is dangerous, but there's no systematic way for patients, investors, or regulators to verify that clinics are actually following evidence-based protocols. Clinics face reputational and liability risks from poor outcomes, but lack tools to systematically demonstrate protocol adherence.",
+    "target_audience": "Ketamine and psychedelic therapy clinic operators, investors and PE firms backing psychedelic therapy chains, state health regulators developing psychedelic therapy licensing frameworks, malpractice insurers covering psychedelic providers",
+    "product_description": "PsychedelicGuard is a compliance and quality assurance platform that helps psychedelic therapy clinics document and verify they're following evidence-based therapeutic protocols. Clinics use the tool to log pre-treatment screening, therapeutic preparation sessions, integration sessions, therapist qualifications, and patient outcomes. The platform compares actual practice against published trial protocols (Johns Hopkins, MAPS, etc.) and generates compliance scores. For clinic networks, it enables corporate oversight. For insurers and regulators, it provides transparent safety data. Patients can verify a clinic's quality score before treatment. Think 'SOC 2 compliance but for psychedelic therapy.'",
+    "revenue_model": "SaaS pricing: $399/month per clinic location for compliance tracking and reporting. Enterprise: $2,500/month for multi-site operators with consolidated dashboard. Upsell: Custom regulatory compliance reports for state agencies at $5K-$15K per report. Insurer partnerships for risk-adjusted pricing based on compliance scores",
+    "market_signal": "The opinion piece signals real concern from trial participants about declining standards. Ketamine clinics are proliferating rapidly (500+ in the US). Oregon and Colorado have launched legal psilocybin programs requiring oversight. Malpractice insurers are already raising rates for psychedelic providers due to unclear risk. Clinic operators want to differentiate on quality as competition increases",
+    "competitive_landscape": "No direct competitors focused on psychedelic therapy protocol compliance. Adjacent: Healthcare compliance software (Compliancy Group, MedTrainer) but not psychedelic-specific. Patient management EMRs (Practice Fusion, SimplePractice) track appointments but not protocol adherence. Gap: Purpose-built tool that understands psychedelic therapy evidence base and can audit adherence",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js frontend, PostgreSQL via Supabase, Stripe for subscriptions, Twilio for SMS reminders, PDF report generation, optional integration with existing EMR systems via FHIR APIs",
+    "build_plan": [
+      "Week 1: Research and document evidence-based psychedelic therapy protocols from published trials (Johns Hopkins, MAPS, etc.), design compliance checklist and scoring rubric, validate with 2 ketamine clinic operators",
+      "Week 2: Build core platform with clinic onboarding, session logging interface, therapist credential tracking, and protocol checklist completion workflows",
+      "Week 3: Implement compliance scoring algorithm, automated alerts for missed protocol steps, dashboard showing adherence trends over time, and patient outcome tracking",
+      "Week 4: Create regulatory report templates, build public-facing clinic quality score pages, launch landing page targeting ketamine clinics with free 30-day trials"
+    ],
+    "risks_and_challenges": "Psychedelic therapy regulations are evolving rapidly—stay current by monitoring Oregon and Colorado programs. Clinics may resist transparency—frame tool as liability protection and competitive differentiator. Defining 'evidence-based protocols' is subjective—start with widely accepted trial protocols and allow customization. Competition from EMR vendors adding features—focus on psychedelic-specific expertise",
+    "growth_hook": "Reach out to the article's author (Erica Rex) and other trial participants for advisory roles and testimonials. Launch with LinkedIn thought leadership: 'How to Know Your Ketamine Clinic Follows Evidence-Based Protocols.' Target ketamine clinic Facebook groups and psychedelic therapy conferences. Offer free compliance audits to first 10 clinics in exchange for case studies. Partner with psychedelic therapy training programs (Fluence, CIIS) to recommend tool to graduates",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 12,
+    "name": "TelehealthExpansionKit",
+    "one_liner": "International telehealth licensing and compliance automation tool helping US telehealth companies expand to new countries",
+    "domains": [
+      "health_wellness",
+      "government_compliance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Hims & Hers acquiring Australian telehealth firm Eucalyptus to expand globally, signaling US telehealth companies' push for international growth",
+    "the_problem": "US telehealth companies like Hims, Ro, and Cerebral are hitting domestic market saturation and eyeing international expansion, but navigating each country's medical licensing, prescription rules, pharmacy regulations, and data privacy laws is a legal and operational nightmare. Hims solved this by acquiring an Australian company, but most telehealth startups can't afford M&A. They need a way to understand country-specific regulatory requirements and automate compliance workflows without hiring international legal teams for every market.",
+    "target_audience": "CEOs and COOs at mid-size US telehealth companies ($10M-$100M revenue), international expansion managers at health tech companies, investors evaluating telehealth M&A opportunities, telehealth infrastructure providers (e.g., pharmacy networks)",
+    "product_description": "TelehealthExpansionKit is a SaaS platform that helps US telehealth companies evaluate and launch in new international markets. Users select target countries and receive detailed regulatory guides covering medical licensing requirements, prescription drug rules, pharmacy partnerships, data privacy compliance (GDPR, etc.), and local payment processing. The platform includes automated compliance checklists, document templates (terms of service, privacy policies, patient consent forms adapted for each country), and a marketplace connecting companies with vetted local partners (licensed physicians, pharmacies, payment processors). Think 'Stripe Atlas but for telehealth international expansion.'",
+    "revenue_model": "Market research reports: $999 per country. Full expansion toolkit (compliance guides + templates + partner marketplace access): $4,999 per country. Annual subscription for multi-country expansion: $24K/year for up to 5 countries. Premium: Custom regulatory consulting at $15K-$50K per market entry project",
+    "market_signal": "The Hims-Eucalyptus acquisition explicitly demonstrates demand for international telehealth expansion tools. Digital health investment is globalizing. Teladoc, Amwell, and other major players are all expanding internationally. The global telehealth market is projected to grow at 24% CAGR through 2030, with international markets (Asia, Latin America, Australia) growing faster than US",
+    "competitive_landscape": "Healthcare consultancies (Deloitte, McKinsey) charge $100K+ for market entry studies. Legal firms charge hourly for regulatory guidance. No self-service platform exists specifically for telehealth international expansion. Adjacent: Stripe Atlas (company formation), Velocity Global (employer of record) but not healthcare-specific. Gap: Affordable, healthcare-focused tool with ready-made compliance templates",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase backend, Stripe for payments, Notion API for regulatory content management, Airtable for partner marketplace, PDF generation for custom reports",
+    "build_plan": [
+      "Week 1: Research and document regulatory requirements for 5 initial target countries (UK, Australia, Canada, Germany, Brazil), interview 2 telehealth companies about international expansion pain points",
+      "Week 2: Build country selection interface and regulatory requirement comparison tool, create document template library for privacy policies and consent forms",
+      "Week 3: Develop partner marketplace connecting US companies with local physicians, pharmacies, and payment processors in each country",
+      "Week 4: Implement compliance checklist automation and progress tracking, build payment and subscription systems",
+      "Week 5: Create landing page with free country regulatory guides as lead magnets, launch outreach to US telehealth companies on LinkedIn"
+    ],
+    "risks_and_challenges": "Keeping regulatory content current across countries—start with 5 countries and expand carefully. Legal liability if guidance is wrong—add disclaimers and recommend consulting with local attorneys. Telehealth companies may prefer full-service consultants—compete on speed and price for initial market assessment. Building partner network takes time—start with 2-3 verified partners per country",
+    "growth_hook": "Write detailed LinkedIn case study: 'How Hims Spent $50M to Enter Australia—Here's How You Can Do It for $5K.' Target telehealth company executives with targeted ads. Offer free regulatory reports for UK and Australia as lead magnets. Partner with digital health investors (a16z, General Catalyst) to recommend tool to portfolio companies. Speak at telehealth conferences (ATA, Digital Health Summit) about international expansion",
+    "feasibility": 6,
+    "demand_confidence": 6,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 19,
+    "name": "ScribeROI Pro",
+    "one_liner": "AI scribe cost-benefit calculator that shows healthcare systems exact revenue gains from reduced physician burnout and documentation time",
+    "domains": [
+      "health_wellness",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Article mentioning AI medical scribes like Suki and the need for ROI calculators to justify deployment costs",
+    "the_problem": "Healthcare systems are being pitched AI medical scribes but CFOs and CMOs lack tools to model the actual financial impact beyond vendor claims. They need to justify $200K+ annual contracts by calculating precise gains from increased patient throughput, reduced physician overtime, lower burnout-related turnover, and improved coding accuracy—but current ROI calculators are generic vendor marketing tools that don't account for system-specific variables like payer mix, specialty distribution, or current documentation workflows.",
+    "target_audience": "CFOs, CMOs, and COOs at community hospitals and regional health systems evaluating AI scribe vendors; value analysis committees; physician group practice administrators",
+    "product_description": "ScribeROI Pro is an interactive financial modeling tool that ingests a health system's actual operational data (physician FTE counts by specialty, average RVUs, documentation time metrics, turnover costs, coding denial rates) and outputs a detailed 3-year projection showing exactly how AI scribes will impact their bottom line. Users can adjust assumptions around scribe adoption rates, efficiency gains, and pricing models to stress-test different deployment scenarios. The tool generates board-ready reports with sensitivity analyses and payback period calculations, plus benchmarks against peer institutions. Unlike vendor calculators, it accounts for implementation costs, training time, and realistic adoption curves.",
+    "revenue_model": "SaaS subscription at $299/month for unlimited modeling scenarios, or $2,500 one-time enterprise license for large health systems. Upsell custom consulting engagements at $5K-$15K to validate assumptions and present findings to C-suite",
+    "market_signal": "Healthcare systems are actively evaluating AI scribe vendors as referenced in the news. Hospital CFOs routinely use ROI calculators for every major capital decision. The AI scribe market is projected to reach $1.2B by 2028, meaning hundreds of purchasing decisions are being made monthly. Hospital value analysis committees require financial justification for all technology over $50K/year",
+    "competitive_landscape": "Vendor-provided ROI calculators (Suki, Nuance, Abridge) are free but biased and generic. Healthcare consulting firms charge $50K+ for one-time analyses. Healthcare financial planning software (Kaufman Hall, Strata Decision Tech) doesn't have scribe-specific models. Gap: Independent, credible, self-service tool with healthcare-specific financial modeling",
+    "complexity": "medium",
+    "estimated_build_time": "3-4 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase backend, Stripe for payments, Recharts for visualizations, PDF generation via react-pdf, optional Claude API integration for scenario recommendations",
+    "build_plan": [
+      "Week 1: Build core financial model in spreadsheet, validate assumptions with 3 CFOs via LinkedIn outreach, design input form and report layouts",
+      "Week 2: Code interactive calculator UI with real-time updates, implement sensitivity analysis sliders, build PDF report generator",
+      "Week 3: Add data import functionality for common hospital metrics, create benchmark database from public hospital financial reports, build comparison features",
+      "Week 4: Implement user accounts, subscription billing, and landing page with sample reports. Launch on healthcare finance LinkedIn groups and physician practice management forums"
+    ],
+    "risks_and_challenges": "Requires credible healthcare finance expertise to build trust—mitigate by partnering with a hospital CFO as advisor and featuring their testimonial. Health systems move slowly on purchasing decisions—offer free 30-day trials. Competing against free vendor tools—emphasize independence and customization as key differentiators",
+    "growth_hook": "Post detailed LinkedIn case studies analyzing public health system financials to demonstrate AI scribe ROI (e.g., 'How Cleveland Clinic Could Save $12M/Year With AI Scribes'). Share in CFO and physician leadership groups. Offer free ROI reports to first 20 health systems in exchange for testimonials. Partner with healthcare consultants who need this tool for client engagements",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 24,
+    "name": "ValueConnectLite",
+    "one_liner": "Lightweight value-based care analytics dashboard for independent primary care practices that can't afford enterprise platforms",
+    "domains": [
+      "health_wellness",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Optum launching Value Connect, an AI-powered tool to support value-based care, highlighting data fragmentation and administrative burden as key barriers",
+    "the_problem": "Value-based care is the future, but current tools like Optum's Value Connect are enterprise-grade solutions priced for large health systems. Independent primary care practices and small physician groups (5-20 providers) are being pushed into value-based contracts by payers but lack affordable tools to manage the data complexity. They're stuck manually pulling reports from multiple payers, unable to identify high-risk patients or track quality measures in real-time, leading to lost bonus payments and unexpected penalties.",
+    "target_audience": "Independent primary care practices with 5-20 physicians participating in Medicare ACO, CPC+, or commercial value-based contracts; practice managers and CFOs at small physician groups; independent practice associations (IPAs) supporting member practices",
+    "product_description": "ValueConnectLite is an affordable, easy-to-deploy value-based care dashboard for small practices. It integrates with common EHR systems (Epic, Cerner, Athenahealth) via standard APIs to automatically track quality measures (HEDIS, CMS Star Ratings), identify high-risk patients due for preventive visits, and calculate estimated shared savings vs. penalties in real-time. Unlike enterprise platforms, it's designed for practice managers to set up themselves in under an hour with no IT support. Includes automated patient outreach workflows (SMS reminders for overdue screenings) and monthly performance reports showing exactly which quality gaps are costing money.",
+    "revenue_model": "SaaS pricing: $299/month for practices up to 10 providers, $499/month for 11-20 providers. One-time setup fee: $500 for EHR integration assistance. Upsell: Custom payer contract modeling and shared savings projections at $2K per contract. Target: 200 practices in year one = $60K-$100K MRR",
+    "market_signal": "Optum's enterprise tool launch validates the market need for value-based care analytics. 40% of Medicare payments are now tied to value-based arrangements. Small practices are being forced into these contracts but have no tools—survey data shows 70% of small practices struggle with value-based care reporting. Independent practices represent 40% of all primary care physicians",
+    "competitive_landscape": "Enterprise platforms: Arcadia, Innovaccer, Health Catalyst (all $50K-$500K+ annually). Practice management EHRs have basic reporting but not value-based care optimization. Adjacent: eClinicalWorks, Kareo (focus on billing, not VBC analytics). Gap: Affordable, purpose-built tool for small practices that's actually easy to use",
+    "complexity": "medium",
+    "estimated_build_time": "5-6 weeks for MVP",
+    "tech_stack": "Next.js frontend, PostgreSQL via Supabase, FHIR API integrations for EHR data, Twilio for patient SMS reminders, Recharts for dashboards, Stripe for subscriptions",
+    "build_plan": [
+      "Week 1: Research HEDIS and CMS quality measures, design dashboard mockups, interview 3 small practice managers about their VBC reporting pain points",
+      "Week 2-3: Build core dashboard with quality measure tracking, high-risk patient identification logic, and estimated shared savings calculator",
+      "Week 4: Implement EHR integration layer using standard FHIR APIs for data ingestion, test with sample practice data",
+      "Week 5: Add automated patient outreach workflows (SMS for overdue screenings), build monthly performance reports",
+      "Week 6: Create self-service onboarding flow, landing page targeting 'value-based care for small practices,' launch with free 30-day trials"
+    ],
+    "risks_and_challenges": "EHR integrations can be complex—start with one EHR (Epic or Athenahealth) and expand. Small practices have limited budgets—keep pricing under $500/month and emphasize ROI (typical ACO bonuses are $50K-$200K/year). Competition from EHR vendors adding VBC features—differentiate on ease of use and affordability. Payer contract complexity—focus on common programs (Medicare ACO, MSSP) first",
+    "growth_hook": "Create free value-based care readiness assessment tool that small practices can use to estimate their potential shared savings. Distribute via practice management LinkedIn groups and primary care physician associations (AAFP, ACP). Partner with independent practice associations (IPAs) to offer as member benefit. Write blog posts: 'How Small Practices Can Compete in Value-Based Care Without Enterprise Budgets.' Target Meta ads to 'practice manager' and 'primary care physician' audiences",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 31,
+    "name": "FertilityPulse",
+    "one_liner": "At-home semen analysis subscription that positions itself as the male equivalent of the Pap smear for preventive fertility health",
+    "domains": [
+      "health_wellness"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Article about 'guy-necologists' advocating for semen analysis to become routine preventive care for men, positioned as male version of Pap smears",
+    "the_problem": "Male infertility contributes to 50% of couples' fertility struggles, yet men rarely get tested until after 12+ months of failed conception attempts. By then, treatable issues like varicoceles or lifestyle factors have often worsened. Unlike women who get routine reproductive health screenings starting in their 20s, men have no equivalent preventive fertility care pathway. Existing semen analysis requires awkward in-clinic collection and costs $200-$500 per test, creating barriers to early detection and monitoring over time.",
+    "target_audience": "Men aged 25-40 concerned about future fertility, men actively trying to conceive, men who've had vasectomies wanting to confirm success, competitive athletes and professionals exposed to fertility risk factors (heat, chemicals, stress)",
+    "product_description": "FertilityPulse is a quarterly at-home semen analysis subscription service that uses AI-powered smartphone microscopy to measure sperm count, motility, and morphology. Users collect samples at home, use the app to capture microscopy images via a $40 clip-on lens, and receive clinician-reviewed results within 48 hours with trend tracking over time. The platform flags concerning changes and offers virtual consultations with reproductive urologists when intervention is needed. Think 'Everlywell meets Hims' for male fertility. The service normalizes regular fertility monitoring as preventive health, not just a diagnostic test for couples struggling to conceive.",
+    "revenue_model": "Quarterly subscription: $49/quarter (includes analysis kit, clinician review, trend tracking). Annual plan: $169/year (15% discount). Virtual urologist consultations: $89/session as add-on. Referral fees from partner fertility clinics for advanced testing",
+    "market_signal": "Men's health startups like Hims and Ro have proven men will pay for discreet at-home testing and telehealth. The news explicitly mentions emerging startups positioning semen analysis as preventive care. Male fertility testing market growing 8% annually. The 'guy-necologist' framing shows growing awareness that men need reproductive health care equivalent to what women receive",
+    "competitive_landscape": "Existing players: Legacy (fertility preservation), Fellow/Yo Home Sperm Test (one-time tests), ExSeed (Nordic markets). Gap: None are positioning this as ongoing preventive health subscription like Pap smears. Most are one-off diagnostic tools or sperm freezing services. Opportunity to own the 'routine fertility screening for men' category",
+    "complexity": "medium",
+    "estimated_build_time": "4-5 weeks for MVP",
+    "tech_stack": "React Native mobile app, Python/FastAPI backend for image analysis (using open-source sperm detection models), Supabase for data storage, Stripe for subscriptions, Twilio for SMS notifications, integration with telehealth platform (Doxy.me)",
+    "build_plan": [
+      "Week 1: Source smartphone microscopy hardware, validate sperm detection ML model accuracy against lab standards, design app UX flow",
+      "Week 2: Build mobile app with camera integration, image capture workflow, and results display with trend visualization",
+      "Week 3: Implement backend image analysis pipeline, integrate with CLIA-certified lab partner for clinician review, build subscription and notification systems",
+      "Week 4-5: Create onboarding content explaining preventive fertility testing concept, build landing page emphasizing 'male Pap smear' framing, set up partnerships with men's health influencers and urologists for validation"
+    ],
+    "risks_and_challenges": "CLIA certification requirements for lab results—partner with existing certified lab initially. Image quality variability—include quality control checks in app and reject poor samples. Stigma around male fertility—lean into 'preventive health' framing rather than 'infertility.' Competition from established players—differentiate through subscription model and preventive positioning",
+    "growth_hook": "Partner with 'guy-necologist' Dr. Jake Milbank (mentioned in the article) for credibility and content. Launch with educational content on male fertility decline statistics. Run targeted Meta ads to men 28-38 with messaging like 'Annual fertility checkup—as routine as your physical.' Offer free first test for couples trying to conceive. Partner with men's health podcasts and Reddit's r/maleinfertility community",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 4.7
+  }
+]

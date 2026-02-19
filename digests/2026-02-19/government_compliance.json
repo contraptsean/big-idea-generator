@@ -1,0 +1,98 @@
+[
+  {
+    "rank": 5,
+    "name": "CitizenAI Transparency Portal",
+    "one_liner": "White-label transparency portal that government agencies can deploy to show citizens which AI systems are making decisions about their benefits, services, and data.",
+    "domains": [
+      "government_compliance"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "The ease of AI manipulation exposed in the BBC hacking article, combined with federal transparency mandates (Biden AI EO requires agencies to disclose AI use in citizen-facing systems), creates demand for citizen-facing AI transparency tools.",
+    "the_problem": "Federal and state transparency laws increasingly require agencies to disclose when AI is used in decisions affecting citizens (hiring, benefits eligibility, criminal justice, etc.). Agencies lack user-friendly tools to publish this information in accessible formats citizens can understand. Current approaches are static PDFs buried on websites or incomplete databases. Citizens distrust AI in government and need clear explanations of which systems affect them, how decisions are made, and how to appeal. Agencies face FOIA requests, lawsuits, and citizen complaints when AI use isn't transparent.",
+    "target_audience": "State and local government CIOs, federal agency chief data officers, public-facing program administrators (social services, unemployment, permitting), and government transparency/open data teams.",
+    "product_description": "A white-label web portal that agencies can customize and deploy as a subdomain (e.g., ai.cityname.gov). Admins input data about each AI system: name, purpose, decision type, data used, accuracy metrics, appeal process. The portal auto-generates a searchable, mobile-friendly public website with plain-language explanations. Citizens can browse by service type ('housing assistance,' 'business permits') or search by keyword. Each system gets a detail page showing 'How this AI affects you,' 'What data it uses,' 'How accurate it is,' and 'How to challenge a decision.' Includes WCAG accessibility compliance and multilingual support out of the box.",
+    "revenue_model": "SaaS subscription: $999/month for cities under 100K population (unlimited AI systems), $2,499/month for cities 100K-500K, $4,999/month for 500K+ cities and state agencies. One-time $2,500 setup fee includes customization, data migration, and staff training. Target $8K MRR within 6 months by landing 5-6 city/state contracts. Upsell: $5K/year for annual transparency report generation service.",
+    "market_signal": "Colorado's SB21-169 requires state agencies to publish AI impact assessments. NYC's Local Law 144 mandates transparency in automated employment decisions. Multiple states are considering similar legislation. Agencies are Googling 'AI transparency portal' and finding no turnkey solutions. GovTech conferences show transparency is a top concern, but no vendors offer citizen-facing tools—only internal documentation systems.",
+    "competitive_landscape": "Some vendors (Tyler Technologies, Granicus) offer general government website platforms but don't include AI transparency features. Open-source algorithmic accountability tools exist (e.g., AI Fairness 360) but require technical expertise agencies lack. No commercial product specifically solves the citizen-facing transparency portal need with white-label deployment and plain-language content generation.",
+    "complexity": "low",
+    "estimated_build_time": "3-4 weeks for MVP",
+    "tech_stack": "Next.js for portal frontend, Supabase for multi-tenant backend, Postgres for data, Tailwind for government-friendly UI, OpenAI API for plain-language content generation from technical inputs, Vercel for hosting with custom domain support, React Email for admin notifications.",
+    "build_plan": [
+      "Week 1: Build multi-tenant admin dashboard where agency staff input AI system data (name, purpose, decision type, data sources, metrics), create data schema supporting metadata required by common transparency laws",
+      "Week 2: Build public-facing portal with system listing, search, detail pages, develop plain-language content templates ('This AI helps decide...' instead of technical jargon), add WCAG accessibility features",
+      "Week 3: Implement white-label customization (logos, colors, domain mapping), add multilingual support using i18n, create admin onboarding flow and documentation",
+      "Week 4: Beta test with 2-3 pilot agencies (offer free for 6 months in exchange for testimonials), refine based on feedback, build landing page showcasing pilot portals, launch outreach to state/local digital services teams"
+    ],
+    "risks_and_challenges": "Government procurement can take 6-12 months. Mitigation: target cities with existing vendor relationships or emergency procurement authority; position as 'compliance solution' to accelerate approval. Technical challenge: agencies may not have structured AI inventory data ready. Solution: offer consulting service to help document systems (upsell opportunity). Adoption risk: agencies may fear public scrutiny of AI use. Solution: emphasize that transparency builds trust and reduces FOIA burden; provide case studies showing transparency improves citizen satisfaction.",
+    "growth_hook": "Create free 'AI Transparency Compliance Checklist' for state/local governments aligned with emerging legislation; gate it with email signup. Publish op-eds in StateScoop and GovTech magazines about transparency reducing AI backlash. Offer free transparency portal to one high-profile city (Boulder, Austin, Seattle) as pilot case study. Present at Code for America Summit and NACo conferences. Partner with government transparency advocacy groups (Sunlight Foundation alumni, Open Government Partnership) for credibility and referrals.",
+    "feasibility": 7,
+    "demand_confidence": 6,
+    "uniqueness": 7,
+    "avg_score": 6.7
+  },
+  {
+    "rank": 18,
+    "name": "PromptShield Audit",
+    "one_liner": "Automated AI jailbreak vulnerability scanning and compliance reporting for government agencies deploying LLM-powered systems.",
+    "domains": [
+      "government_compliance",
+      "health_wellness"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "BBC article revealing AI chatbots can be hacked to produce false information in just 20 minutes, exposing critical security vulnerabilities in government and healthcare AI deployments.",
+    "the_problem": "Government agencies and healthcare providers are rapidly deploying AI chatbots for citizen services, benefits processing, and medical triage, but lack tools to verify these systems can't be manipulated to provide dangerous misinformation. The BBC article demonstrates how easily AI systems can be compromised through prompt injection attacks. Agencies face regulatory liability if their AI systems provide false legal guidance, incorrect benefit information, or dangerous medical advice due to adversarial prompts.",
+    "target_audience": "Government IT security teams, federal AI compliance officers, state healthcare administrators, and public sector CIOs responsible for AI system procurement and oversight.",
+    "product_description": "A SaaS platform that continuously tests government AI deployments against known jailbreak techniques and adversarial prompts. Users submit their chatbot endpoints or LLM configurations, and PromptShield runs automated penetration tests using a library of 500+ prompt injection patterns. The system generates compliance-ready audit reports showing vulnerability scores, specific attack vectors that succeeded, and remediation guidance aligned with NIST AI Risk Management Framework and emerging federal AI safety standards. Includes scheduled monthly scans and real-time monitoring for production systems.",
+    "revenue_model": "Tiered SaaS subscription: $499/month for up to 5 AI systems tested monthly, $1,999/month for unlimited systems with continuous monitoring, $5,999/month enterprise tier with custom vulnerability testing and white-glove compliance reporting. Target $3K-$8K MRR within 6 months by landing 6-10 government agency contracts.",
+    "market_signal": "Federal agencies are under Executive Orders to ensure AI safety and transparency (Biden's October 2023 EO on Safe AI). The article proves vulnerability is trivial to exploit. Government procurement officers are already searching for AI security vendors but finding mostly enterprise-focused tools that don't address public sector compliance needs or provide audit-ready documentation.",
+    "competitive_landscape": "Robust Intelligence and HiddenLayer offer AI red-teaming but target Fortune 500 enterprises with complex, expensive implementations. Smaller vendors like Guardrails AI focus on runtime filtering, not compliance auditing. No existing tool specifically addresses government procurement requirements, NIST framework alignment, or generates audit reports in government-friendly formats (PDF, ATO packages).",
+    "complexity": "medium",
+    "estimated_build_time": "4-5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Python FastAPI backend, PostgreSQL for test results, OpenAI/Anthropic APIs for testing, Langchain for prompt engineering, Tailwind for compliance report generation, Stripe for billing.",
+    "build_plan": [
+      "Week 1: Build prompt injection test library (curate 100 initial jailbreak patterns from academic research and public disclosures), create API endpoint testing framework",
+      "Week 2: Develop vulnerability scoring engine and compliance mapping to NIST AI RMF, build PDF report generator with government formatting",
+      "Week 3: Build user dashboard for submitting AI systems, scheduling scans, viewing results; implement authentication and basic billing",
+      "Week 4: Add email alerting for critical vulnerabilities, create sample reports, build landing page with compliance messaging",
+      "Week 5: Beta test with 3-5 local/state government contacts, refine reporting based on feedback, launch with initial content marketing targeting GovTech conferences"
+    ],
+    "risks_and_challenges": "Government sales cycles are slow (6-12 months). Mitigation: target state/local first, offer free pilots to build case studies. Technical challenge: AI vendors may block testing attempts or rate-limit. Solution: offer integrations that test in sandbox environments. Legal risk: some agencies may view security testing as unauthorized access. Solution: require written authorization before each scan and provide legal terms.",
+    "growth_hook": "Write a detailed case study showing how you discovered specific vulnerabilities in a popular government chatbot platform (with permission), submit to GovTech publications. Speak at NASCIO and other state CIO conferences. Offer free one-time security audits to state AI working groups in exchange for testimonials. Partner with government AI consultancies (Deloitte, Accenture Public Service) as their security validation partner.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 30,
+    "name": "FedAI Governance Hub",
+    "one_liner": "Policy tracking and compliance automation platform that monitors federal AI regulations and translates them into actionable checklists for government contractors.",
+    "domains": [
+      "government_compliance"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "The rapid proliferation of AI systems in government (implied by the AI hacking vulnerability news) combined with existing federal AI Executive Orders creates an expanding compliance burden for contractors and agencies implementing AI solutions.",
+    "the_problem": "Government contractors building AI systems face a maze of overlapping requirements: Executive Orders on AI safety, NIST AI Risk Management Framework, OMB guidance, agency-specific AI policies, and emerging legislation. These requirements change monthly, and contractors lack a centralized system to track obligations, map them to their projects, and generate compliance documentation. Missing a requirement can result in contract rejection, costly rework, or loss of future bidding opportunities.",
+    "target_audience": "Government contractors (especially small businesses and defense tech startups), federal program managers overseeing AI projects, and compliance officers at systems integrators (Leidos, SAIC, Booz Allen) managing multiple government AI contracts.",
+    "product_description": "A SaaS dashboard that aggregates federal AI policy updates from OMB, NIST, DoD, and major agencies, then automatically matches requirements to user projects based on agency, contract type, and AI use case. Users create project profiles (e.g., 'DoD medical triage chatbot'), and the system generates a living compliance checklist showing which policies apply, what documentation is needed, and upcoming deadline dates. Includes template libraries for required documents (AI use case inventory, bias testing reports, security assessments) and email alerts when new requirements are published that affect active projects.",
+    "revenue_model": "SaaS subscription: $299/month for up to 3 active projects and 5 users, $799/month for unlimited projects and 20 users, $1,999/month enterprise tier with custom policy tracking and white-label compliance reports. Upsell professional services: $5K one-time fee for compliance gap assessment and remediation roadmap. Target $5K MRR within 6 months with 10-15 contractor customers.",
+    "market_signal": "The federal AI market is projected to reach $2.4B by 2026 (IDC). Biden's AI Executive Order mandates agency compliance frameworks by 2025, creating immediate demand. Small defense contractors especially struggle with compliance overhead and would pay to reduce risk. Active online communities (Reddit's r/govtech, LinkedIn federal AI groups) show contractors constantly asking 'which policies apply to my project?'",
+    "competitive_landscape": "Compliance platforms like LogicGate and AuditBoard serve general GRC needs but lack AI-specific content and federal policy tracking. Cooley GO and similar legal tech tools offer policy monitoring but aren't actionable or project-specific. No tool currently bridges the gap between policy publication and project-level compliance checklists for government AI work.",
+    "complexity": "medium",
+    "estimated_build_time": "5-6 weeks for MVP",
+    "tech_stack": "Next.js + Supabase for rapid development, Postgres for data, Python + BeautifulSoup for policy scraping, LangChain + OpenAI for policy analysis and requirement extraction, Resend for email alerts, Stripe for billing.",
+    "build_plan": [
+      "Week 1-2: Build policy ingestion engine that scrapes Federal Register, NIST, OMB, agency websites daily; structure policy data (effective dates, affected agencies, requirement types)",
+      "Week 3: Create project profile system where users input agency, contract vehicle, AI use case, deployment date; build matching algorithm that maps policies to projects",
+      "Week 4: Develop compliance checklist generator with pre-built templates for common requirements (bias assessments, security docs, privacy impact assessments)",
+      "Week 5: Build alert system for policy changes, add document library, implement basic dashboard UI",
+      "Week 6: Beta test with 3-5 contractors, add user feedback features, launch with content marketing targeting GovCon community"
+    ],
+    "risks_and_challenges": "Keeping policy database current requires ongoing manual curation—policies aren't always machine-readable. Mitigation: start with top 20 most-cited requirements, expand based on user requests. Sales challenge: contractors are risk-averse and slow to adopt new tools. Solution: offer 30-day free trials with pre-populated sample projects showing immediate value. Legal risk: providing compliance advice without legal credentials. Solution: add disclaimers that tool provides guidance, not legal advice; recommend legal review.",
+    "growth_hook": "Publish free monthly 'Federal AI Policy Tracker' newsletter summarizing new requirements—build email list of 500+ contractors. Create free policy compliance checklist templates and share on LinkedIn federal contractor groups. Partner with PTAC (Procurement Technical Assistance Centers) to offer free workshops on AI compliance for small businesses, with tool as paid follow-on. Sponsor GovCon conferences and offer free compliance audits at booth.",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 4.7
+  }
+]
