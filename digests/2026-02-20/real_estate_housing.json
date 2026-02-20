@@ -1,0 +1,159 @@
+[
+  {
+    "rank": 5,
+    "name": "NegotiationSim",
+    "one_liner": "AI-powered roleplay simulator that helps real estate agents practice buyer/seller negotiations through realistic scenario drills with instant feedback",
+    "domains": [
+      "real_estate_housing",
+      "education_edtech"
+    ],
+    "primary_domain": "real_estate_housing",
+    "news_trigger": "Inman article on how agents can sharpen negotiation skills without pricey seminars by treating every conversation like practice",
+    "the_problem": "Real estate agents know negotiation skills drive commission income, but live practice is expensive (lost deals), stressful, and inconsistent. Traditional negotiation training is either generic roleplays at brokerage meetings or $2,000+ seminars that don't provide ongoing practice. Agents need a way to drill realistic scenarios (multiple offers, inspection negotiations, appraisal gaps) repeatedly until they're confident, without risking real clients.",
+    "target_audience": "Solo real estate agents and small teams (5-20 agents) who want to improve negotiation skills but can't afford enterprise coaching programs",
+    "product_description": "NegotiationSim is an AI-powered roleplay platform where agents practice realistic negotiation scenarios with an AI buyer or seller. Scenarios include multiple offer situations, lowball offers, inspection repair negotiations, and appraisal gap discussions. The AI adapts its responses based on agent tactics, and users get instant feedback on their language, objection handling, and closing techniques. Agents can replay scenarios, try different approaches, and track improvement over time. Includes a library of 20+ scenario templates.",
+    "revenue_model": "$29/month per agent or $199/month for team licenses (up to 20 agents). Target 200 paying agents in first 6 months = $5,800 MRR",
+    "market_signal": "Real estate agents already pay for coaching, CRM, and lead gen tools. The Inman article explicitly states agents want to improve negotiation skills but need low-cost, flexible practice options. Negotiation directly impacts commission income—easy ROI story.",
+    "competitive_landscape": "Roleplay Anytime and similar platforms exist for general sales training but aren't real estate-specific. No AI-powered negotiation simulator tailored to real estate scenarios exists. Coaching programs like Tom Ferry and Mike Ferry cost $10K+ annually—this is a fraction of the price.",
+    "complexity": "low",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "Next.js, OpenAI API (GPT-4) for AI roleplays, Supabase for user data and scenario library, Stripe for subscriptions",
+    "build_plan": [
+      "Week 1: Build scenario selector interface and integrate OpenAI API to power AI buyer/seller conversations; create 5 core scenario templates (multiple offers, lowball, inspection, appraisal gap, seller concessions)",
+      "Week 2: Build feedback engine that analyzes transcripts and highlights effective language, missed opportunities, and objection handling; add scoring system",
+      "Week 3: Create user dashboard showing practice history, improvement trends, and recommended scenarios; add team leaderboard feature; launch beta with 20 agents"
+    ],
+    "risks_and_challenges": "AI quality is critical—if the roleplays feel unrealistic or the feedback is generic, agents won't see value. Mitigation: Train prompts using real negotiation transcripts and get feedback from experienced agents. Risk of low retention if agents don't build a practice habit—mitigate with weekly email prompts suggesting new scenarios.",
+    "growth_hook": "Partner with real estate coaches and brokerages to offer as a training tool. Create free 'negotiation assessment' that diagnoses weaknesses and recommends practice scenarios. Run LinkedIn ads targeting agents with messaging: 'Practice negotiation without losing deals.' Offer 14-day free trial with 3 scenarios unlocked.",
+    "feasibility": 7,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 12,
+    "name": "MoveInPro",
+    "one_liner": "Automated resident onboarding workflow platform that eliminates move-in friction for property managers and creates loyalty in the critical first 30 days",
+    "domains": [
+      "real_estate_housing"
+    ],
+    "primary_domain": "real_estate_housing",
+    "news_trigger": "HousingWire article highlighting how the first 30 days of a lease can make or break resident loyalty, with 7% national vacancy rates pressuring property managers to retain residents",
+    "the_problem": "Property managers lose residents and incur costly turnover because move-in processes are fragmented, manual, and stressful. The first 30 days set the tone for the entire lease relationship, but most managers rely on email chains, paper forms, and reactive maintenance responses. With 7% vacancy rates, every lost resident is a revenue hit and re-leasing cost that compounds quickly.",
+    "target_audience": "Independent property managers and small-to-mid-size multifamily operators managing 50-500 units who lack enterprise proptech budgets but need to compete on resident experience",
+    "product_description": "MoveInPro is a white-label resident onboarding platform that automates the first 30 days: digital lease signing, move-in checklist completion with photos, automated maintenance request routing, welcome messaging sequences, and satisfaction check-ins. Property managers get a dashboard showing onboarding completion rates and early warning flags for at-risk residents. Residents get a branded mobile experience that makes move-in feel seamless and professional, building trust from day one.",
+    "revenue_model": "$49/month per property + $15/unit/year for active onboarding workflows. Target 100 properties in first 6 months = $4,900 MRR base + unit fees",
+    "market_signal": "Property management software is a proven category with high willingness to pay for retention tools. Multifamily operators already pay for leasing, maintenance, and payment software—onboarding is the missing piece. The article explicitly states these first 30 days drive retention, which directly impacts NOI.",
+    "competitive_landscape": "Buildium, AppFolio, and Rent Manager offer property management suites but treat move-in as an afterthought. No standalone product focuses exclusively on the first 30 days. This is a wedge into a broader proptech stack.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js, Supabase for database, Twilio for SMS, Resend for email, Stripe for payments, Cloudflare for media storage",
+    "build_plan": [
+      "Week 1: Build resident-facing mobile-first onboarding portal with checklist, photo uploads, and digital signature flow",
+      "Week 2: Build property manager dashboard with onboarding status tracking, automated messaging templates, and completion metrics",
+      "Week 3: Integrate SMS/email automation for welcome sequences and 7/15/30-day check-ins",
+      "Week 4: Add maintenance request routing and white-label branding options, launch beta with 5 pilot properties"
+    ],
+    "risks_and_challenges": "Property managers are slow to adopt new tools and may not see onboarding as a standalone purchase. Mitigation: Position as a retention ROI tool with clear cost-of-vacancy math. Risk of competing with all-in-one PM platforms over time—mitigate by staying laser-focused on the first 30 days.",
+    "growth_hook": "Partner with leasing software providers (Apartments.com, Zillow Rental Manager) to offer MoveInPro as a post-lease upsell. Cold outreach to independent property managers on LinkedIn with case study showing reduced 30-day turnover. Offer free onboarding audit showing where their current process breaks down.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 24,
+    "name": "RemodelMatch",
+    "one_liner": "AI-powered contractor marketplace that connects high-end homeowners with vetted remodelers and provides instant project cost estimates based on luxury market pricing",
+    "domains": [
+      "real_estate_housing"
+    ],
+    "primary_domain": "real_estate_housing",
+    "news_trigger": "HousingWire reporting that remodeling industry growth in 2026 is driven by luxury demand, but faces labor shortages and economic uncertainty",
+    "the_problem": "Affluent homeowners planning high-end remodels ($100K+ projects) struggle to find vetted contractors, get accurate pricing upfront, and avoid cost overruns. Luxury remodelers face a fragmented lead generation landscape dominated by low-quality HomeAdvisor-style platforms that don't filter for qualified homeowners. Both sides waste time on mismatched projects and unrealistic expectations.",
+    "target_audience": "High-net-worth homeowners planning $100K+ remodels (kitchen, bathroom, additions) and boutique remodeling firms serving the luxury market with 5-20 employees",
+    "product_description": "RemodelMatch is a curated two-sided marketplace where homeowners submit project details and get AI-generated cost estimates based on luxury market benchmarks. The platform matches them with 2-3 pre-vetted remodelers who have verified portfolios, insurance, and references. Remodelers pay to access qualified leads and get project briefs with realistic budgets already set. Homeowners get transparent pricing and contractor vetting without the spam of traditional platforms.",
+    "revenue_model": "Remodelers pay $199/month subscription + 3% commission on closed projects. Homeowners use the platform free. Target 50 remodelers in year one = $10K MRR + project commissions",
+    "market_signal": "The article explicitly states luxury demand is driving remodeling growth. High-end homeowners already pay premium prices and value quality over cost. Remodelers in this segment have high project values and can afford lead gen costs if the leads are qualified.",
+    "competitive_landscape": "Houzz and Angi dominate but serve all market segments and don't specialize in luxury. Sweeten focuses on mid-market. No platform exclusively serves $100K+ remodels with AI pricing and rigorous contractor vetting.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js, PostgreSQL, OpenAI API for cost estimation, Stripe Connect for payments, Cloudinary for portfolio images, Plaid for contractor financial verification",
+    "build_plan": [
+      "Week 1: Build homeowner intake form with project type, budget range, location, and photo uploads; create AI cost estimator using OpenAI and market data",
+      "Week 2: Build remodeler onboarding with portfolio uploads, insurance verification, and subscription payment flow",
+      "Week 3: Build matching algorithm that connects homeowners with 2-3 remodelers based on project type, location, and availability",
+      "Week 4: Build messaging system for homeowner-remodeler communication and project tracking dashboard",
+      "Week 5: Add review/rating system, referral program, and launch with 10 pilot remodelers in one metro area"
+    ],
+    "risks_and_challenges": "Chicken-and-egg problem: need remodelers to attract homeowners and vice versa. Mitigation: Start in one affluent metro (e.g., Austin, Denver) and manually recruit 10 high-end remodelers before launching homeowner side. Risk of low project close rates—mitigate with better AI cost estimates and pre-qualification questions.",
+    "growth_hook": "Partner with luxury real estate agents who work with clients planning post-purchase remodels. Run targeted Facebook/Instagram ads in affluent zip codes showing before/after luxury remodel photos. Offer first 20 remodelers 90 days free to build supply side.",
+    "feasibility": 6,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 5.0
+  },
+  {
+    "rank": 25,
+    "name": "ReverseMortgageMatch",
+    "one_liner": "Educational platform and lender marketplace helping women 50+ evaluate reverse mortgage options and connect with vetted HECM specialists",
+    "domains": [
+      "real_estate_housing",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "real_estate_housing",
+    "news_trigger": "HousingWire reporting that AARP survey shows older women worried about retirement security and rising costs, making them prime reverse mortgage candidates",
+    "the_problem": "Women 50+ with significant home equity are financially stressed but have misconceptions about reverse mortgages and struggle to find trustworthy lenders. The reverse mortgage industry has a reputation problem due to predatory lending history, and women are particularly hesitant to engage. Meanwhile, HECM lenders struggle to reach this growing demographic with educational content that builds trust before the sales conversation.",
+    "target_audience": "Women aged 50-75 with $200K+ home equity facing retirement income gaps, and reverse mortgage lenders seeking qualified leads in this demographic",
+    "product_description": "ReverseMortgageMatch is an educational platform with an interactive 'Is a reverse mortgage right for me?' assessment tool, video explainers addressing common fears, and a curated marketplace of vetted HECM lenders. Women get unbiased education, scenario modeling showing how reverse mortgages affect estate planning, and connections to 2-3 lenders who've passed background checks. Lenders pay for qualified leads with verified home equity and retirement income needs.",
+    "revenue_model": "Lenders pay $150 per qualified lead. Target 100 leads/month by month 6 = $15K MRR. Optional $49/month premium tier for users wanting 1-on-1 financial coaching",
+    "market_signal": "AARP survey data proves the market exists and is growing. Reverse mortgages are a proven product with high average loan values ($200K+). Lenders already pay for leads—the opportunity is building trust with the female demographic who need it most.",
+    "competitive_landscape": "Reverse mortgage lead gen sites exist (ReverseMortgage.org, LendingTree) but are sales-focused and don't address the trust and education gap for women. No platform specifically serves the female 50+ demographic with content that addresses their unique retirement security concerns.",
+    "complexity": "low",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "Next.js, Supabase, Stripe for lead payments, Cal.com for optional coaching calls, Resend for email nurture sequences",
+    "build_plan": [
+      "Week 1: Build 'Is a reverse mortgage right for me?' quiz with 10 questions assessing home equity, retirement income, and estate planning goals; create results page with personalized insights",
+      "Week 2: Build lender marketplace with profiles, reviews, and lead delivery system; create lender onboarding and payment flow",
+      "Week 3: Create 5 educational blog posts and video scripts addressing women's top reverse mortgage concerns (e.g., 'Will my heirs lose the house?'), launch landing page and run Facebook ads targeting women 50+ in high home equity zip codes"
+    ],
+    "risks_and_challenges": "Regulatory compliance is critical—reverse mortgages are heavily regulated and marketing must be compliant. Mitigation: Partner with a HECM attorney to review all content. Risk of low lead quality—mitigate with detailed pre-qualification questions in the quiz. Reputation risk if lenders aren't vetted properly—only work with FHA-approved lenders.",
+    "growth_hook": "Partner with AARP, financial planners serving retirees, and estate planning attorneys for referrals. Run Facebook/Instagram ads targeting women 50+ with messaging focused on retirement security and staying in their homes. Create a lead magnet: 'The Ultimate Guide to Reverse Mortgages for Women' PDF with email capture.",
+    "feasibility": 6,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 5.0
+  },
+  {
+    "rank": 32,
+    "name": "BuyerJobPulse",
+    "one_liner": "Real-time employment and job market analytics dashboard for builders, lenders, and agents tracking buyer-qualified employment trends by metro area",
+    "domains": [
+      "real_estate_housing"
+    ],
+    "primary_domain": "real_estate_housing",
+    "news_trigger": "HousingWire AI analysis warning that lack of job growth in sectors that buy homes is housing's bigger problem beyond affordability and interest rates",
+    "the_problem": "Homebuilders, lenders, and real estate professionals make multimillion-dollar inventory and pricing decisions without granular, real-time data on employment trends in the specific job sectors that produce homebuyers. Traditional housing market reports focus on interest rates and prices, but ignore the upstream employment signals that predict buyer demand 6-12 months out. This 'qualified buyer gap' causes overbuilding in cooling markets and missed opportunities in growing ones.",
+    "target_audience": "Homebuilder executives, mortgage lenders' market intelligence teams, and commercial real estate investors analyzing residential development opportunities",
+    "product_description": "BuyerJobPulse is a subscription analytics dashboard that tracks employment growth, wage trends, and hiring velocity in buyer-qualified sectors (tech, finance, healthcare, professional services) by metro area. Users get monthly reports showing which markets are adding or losing the jobs that produce mortgage-qualified buyers, with 6-12 month forward-looking indicators. The platform pulls data from BLS, LinkedIn job postings, and proprietary wage surveys to create a 'buyer employment health score' for each market.",
+    "revenue_model": "$499/month for single-market access, $1,999/month for national coverage. Target 20 builder/lender subscribers in first 6 months = $10K-$40K MRR",
+    "market_signal": "Builders like Toll Brothers and lenders spend millions on market research and are desperate for predictive demand signals. The article explicitly identifies this as housing's 'bigger problem'—anyone who solves it can charge premium prices. John Burns Real Estate Consulting and Zelman & Associates prove this market pays for actionable data.",
+    "competitive_landscape": "Existing housing data providers (John Burns, Zelman, CoreLogic) focus on supply-side metrics. BLS employment data is free but not buyer-focused or actionable. No one packages employment trends specifically as a homebuyer demand signal with forward-looking indicators.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Python for data pipelines, PostgreSQL, BLS API, LinkedIn job data scraping (via Proxycurl or similar), Metabase for dashboards, Stripe for subscriptions",
+    "build_plan": [
+      "Week 1: Build data pipeline pulling BLS employment data and LinkedIn job postings for 10 pilot metro areas, focusing on buyer-qualified sectors",
+      "Week 2: Create buyer employment health score algorithm combining job growth, wage trends, and hiring velocity",
+      "Week 3: Build Metabase dashboard showing metro-level trends, sector breakdowns, and 6-12 month forward indicators",
+      "Week 4: Add automated monthly PDF report generation and email delivery",
+      "Week 5: Launch landing page with sample reports, pilot with 5 builder/lender clients, collect feedback and iterate"
+    ],
+    "risks_and_challenges": "Data accuracy and timeliness are critical—buyers will churn if the signals don't predict demand. Mitigation: Start with a few well-understood metros and validate predictions against actual sales data. Risk of being seen as 'just another data product'—mitigate with clear case studies showing how this predicted demand shifts before traditional metrics.",
+    "growth_hook": "Write a viral LinkedIn post using the HousingWire article's framing: 'Why builders are looking at the wrong metrics.' Offer free market report to 50 builder/lender execs in exchange for feedback call. Cold email builder CEOs with specific insights about their target markets. Guest post on HousingWire and Builder Magazine.",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 4,
+    "avg_score": 4.3
+  }
+]

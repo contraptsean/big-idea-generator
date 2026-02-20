@@ -1,0 +1,160 @@
+[
+  {
+    "rank": 1,
+    "name": "TariffIQ Pro",
+    "one_liner": "Real-time tariff impact modeling and landed cost calculator for e-commerce brands and retailers optimizing sourcing amid trade policy volatility",
+    "domains": [
+      "ecommerce_retail",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "ecommerce_retail",
+    "news_trigger": "Wayfair facing tariffs on furniture imports as macro headwind; Nordstrom building procurement resilience amid supply chain volatility; general tariff uncertainty affecting retail sourcing decisions",
+    "the_problem": "E-commerce brands and retailers importing goods from China, Vietnam, or Mexico face unpredictable tariff costs that can swing 10-25% based on policy changes. They lack real-time tools to model 'what-if' scenarios: 'If tariffs on Chinese home goods increase 15%, should we shift to Vietnam suppliers?' Finance teams calculate landed costs in spreadsheets that are outdated the moment tariff rates change. Procurement teams need instant answers to sourcing questions but wait days for manual analysis from finance.",
+    "target_audience": "CFOs, finance directors, and procurement managers at e-commerce brands and specialty retailers ($10M-$500M revenue) importing consumer goods—especially home goods, apparel, toys, and electronics with exposure to China/Asia tariffs",
+    "product_description": "TariffIQ Pro is a web-based landed cost calculator and sourcing scenario modeler. Users input product details (HS codes, supplier countries, FOB costs, volumes) and the platform shows real-time landed costs including tariffs, duties, freight, and currency fluctuations. Core feature: 'what-if' scenario planning where users can model alternative sourcing strategies (e.g., shift 30% of volume from China to Vietnam) and see exact cost impacts. Automatically updates tariff rates from official government sources (USTR, Commerce Dept.) and sends alerts when rates change affecting user's products. Includes supplier comparison tool showing total landed cost by country and integration with freight forwarders for accurate shipping cost estimates.",
+    "revenue_model": "Tiered SaaS: $299/month for up to 100 SKUs, $599/month for 100-500 SKUs, $999/month for 500+ SKUs. Add-on: custom tariff monitoring and alerts ($199/month). Target 40 customers at average $500/month = $20K MRR by month 6. Upsell to procurement teams needing multi-user access.",
+    "market_signal": "Wayfair and furniture retailers publicly citing tariffs as margin pressure. Trump-era tariff volatility created $50B+ in unexpected costs for importers. Brands with China exposure desperate for planning tools as policy uncertainty continues. Existing customs brokers offer tariff consulting but no self-service software for real-time modeling.",
+    "competitive_landscape": "Traditional customs software (Descartes, Amber Road) is enterprise-grade, complex, and expensive ($10K+/year). Freightos offers freight cost estimates but not comprehensive landed cost modeling. Zonos does duty/tax calculation for e-commerce checkout but not strategic sourcing planning. Gap: affordable, self-service landed cost and scenario modeling for mid-market importers.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "React frontend, Node.js/Express backend, PostgreSQL database, integration with USTR/Commerce Dept. tariff databases (web scraping or official APIs if available), Freightos or Flexport APIs for freight costs, Stripe for billing, AWS Lambda for automated tariff rate updates, Vercel hosting",
+    "build_plan": [
+      "Week 1: Build core landed cost calculator—user inputs HS code, origin country, FOB cost, and volume; system calculates tariffs, duties, and estimated freight to show total landed cost. Create database of current tariff rates by HS code and country.",
+      "Week 2: Add automated tariff rate monitoring—scrape USTR/Commerce Dept. sites daily for rate changes and flag products affected. Build email alert system notifying users when tariffs impacting their SKUs change.",
+      "Week 3: Create scenario modeling tool where users can compare sourcing from different countries side-by-side. Show cost delta and ROI timeline for switching suppliers. Add freight cost API integration (Freightos or static estimates).",
+      "Week 4: Build dashboard showing portfolio-level tariff exposure by supplier country and product category. Add CSV import for bulk SKU analysis and export for sharing with finance/procurement teams.",
+      "Week 5: Polish UI, create onboarding flow with sample scenarios. Build landing page with tariff impact calculator widget. Launch with cold outreach to 50 importing brands and retailers, emphasizing tariff volatility risk."
+    ],
+    "risks_and_challenges": "Tariff data quality and timeliness is critical—outdated rates = worthless tool. Mitigation: build automated scrapers with alerts if data source fails, and partner with customs data providers if budget allows. HS code classification is complex—users may input wrong codes leading to bad calculations. Mitigation: add HS code lookup helper and validation. Customer acquisition requires educating on ROI, which may be unclear until next tariff shock hits.",
+    "growth_hook": "Cold outreach to finance/procurement at importing brands with subject line: 'Your China tariff exposure in 60 seconds.' Offer free tariff impact audit where you analyze their top 20 SKUs and show exact exposure and alternative sourcing costs. Partner with freight forwarders and customs brokers who want to offer value-added services to clients. Content marketing: publish weekly 'Tariff Risk Report' showing which product categories face highest exposure based on policy signals.",
+    "feasibility": 7,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 6,
+    "name": "ProcureIQ",
+    "one_liner": "AI-powered procurement spend visibility and sourcing analytics SaaS for mid-market retailers facing supply chain complexity",
+    "domains": [
+      "ecommerce_retail"
+    ],
+    "primary_domain": "ecommerce_retail",
+    "news_trigger": "Nordstrom building AI-powered sourcing strategy and spend visibility platform with focus on procurement agility and resiliency",
+    "the_problem": "Mid-market retailers (think regional chains with $100M-$2B revenue) lack the procurement sophistication of Nordstrom or Walmart but face identical supply chain volatility, tariff impacts, and vendor fragmentation. They're managing sourcing decisions in spreadsheets with zero visibility into spend patterns, supplier risk, or cost-saving opportunities. Procurement teams can't answer basic questions like 'which supplier category is bleeding cash?' or 'what's our exposure to China tariffs?'",
+    "target_audience": "Procurement managers and CFOs at mid-market retail chains (100-500 stores), specialty retailers, and regional grocery/home goods chains lacking enterprise procurement systems",
+    "product_description": "ProcureIQ ingests purchase order data, invoices, and supplier contracts via CSV uploads or accounting system APIs (QuickBooks, NetSuite) to create an AI-powered procurement dashboard. The MVP shows real-time spend analytics by supplier, category, and geography; flags supplier concentration risk; calculates tariff exposure; and generates actionable sourcing recommendations using GPT-4. Users get weekly 'procurement intelligence' reports highlighting cost-saving opportunities, at-risk suppliers, and alternative sourcing options. Built as a lightweight web app with data connectors to common retail ERPs and accounting platforms.",
+    "revenue_model": "SaaS subscription: $499/month for companies with $50M-$250M annual revenue, $999/month for $250M-$1B revenue. Add-on services include supplier risk monitoring ($199/month) and custom category deep-dives ($299 one-time per category). Target 50 customers at $499 tier = $25K MRR by month 6.",
+    "market_signal": "Nordstrom's public commitment to AI procurement tools validates that retailers see this as mission-critical. Mid-market retailers face identical pressures (tariffs, inflation, supply disruption) but can't afford Nordstrom's custom solutions. Procurement software market growing 11% annually with SMB segment underserved.",
+    "competitive_landscape": "Enterprise solutions (Coupa, SAP Ariba) are $100K+ annually and require 6-12 month implementations—total overkill for mid-market. Simpler tools like Procurify focus on purchase approvals, not spend intelligence. Gap: AI-powered spend analytics that works out-of-the-box for retailers under $1B revenue.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js, PostgreSQL, OpenAI GPT-4 API for analysis/recommendations, Plaid or Rutter API for accounting integrations, Recharts for dashboards, AWS/Vercel hosting",
+    "build_plan": [
+      "Week 1-2: Build CSV upload parser and basic spend categorization engine (supplier name normalization, auto-categorization). Create PostgreSQL schema for invoices, suppliers, and categories.",
+      "Week 3: Integrate OpenAI API to analyze spend patterns and generate weekly procurement insights. Build dashboard showing top spend categories, supplier concentration, and cost trends.",
+      "Week 4: Add QuickBooks/NetSuite API connectors using Rutter or direct OAuth. Implement tariff exposure calculator based on supplier country codes and HS tariff codes.",
+      "Week 5: Polish UI, add PDF report generation for weekly insights, build onboarding flow with sample data demo. Launch landing page and run cold outreach to 100 regional retailers."
+    ],
+    "risks_and_challenges": "Data quality is biggest risk—retailer procurement data is often messy with inconsistent supplier naming. Mitigation: build robust entity resolution and let AI handle fuzzy matching. QuickBooks integration may hit API rate limits at scale. Customer acquisition requires direct sales to procurement heads who are skeptical of 'another dashboard'—need strong ROI proof points from pilot customers.",
+    "growth_hook": "Cold LinkedIn outreach to procurement managers at mid-market retailers with message: 'Nordstrom just built AI procurement analytics. You can have it for $499/month.' Offer free 30-day pilot where you manually upload their data and show them tariff exposure and top 3 cost-saving opportunities. Partner with regional retail associations and accounting firms serving retailers.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 13,
+    "name": "ChatCommerce Optimizer",
+    "one_liner": "AI-native product discovery optimization platform that makes retail product catalogs discoverable and shoppable in ChatGPT, Perplexity, and Claude",
+    "domains": [
+      "ecommerce_retail"
+    ],
+    "primary_domain": "ecommerce_retail",
+    "news_trigger": "Williams-Sonoma testing ads in ChatGPT for product discovery; article on why brands must optimize for AI discovery as consumer search behavior shifts from Google to conversational AI",
+    "the_problem": "E-commerce brands built their SEO and discovery strategies for Google's keyword-based search, but 40% of consumers now start product research in ChatGPT, Perplexity, or Claude. Product catalogs aren't structured for conversational AI retrieval—LLMs can't parse standard product feeds effectively, leading to missed recommendations or competitors getting surfaced instead. Brands have no visibility into whether their products appear in AI-generated shopping suggestions or how to optimize for these platforms.",
+    "target_audience": "E-commerce marketing managers and growth teams at DTC brands ($5M-$100M revenue), Shopify Plus merchants, and brand managers at specialty retailers selling home goods, apparel, or consumer electronics",
+    "product_description": "ChatCommerce Optimizer is a Shopify/BigCommerce app that transforms standard product catalogs into AI-optimized structured data that LLMs can easily retrieve and recommend. The platform generates enhanced product descriptions with natural language context, creates semantic tags and use-case metadata, and outputs AI-ready product feeds in formats optimized for ChatGPT Shopping, Perplexity Shopping, and Claude. Dashboard shows 'AI visibility score' for each product, tracks how often products appear in AI-generated shopping recommendations (via API monitoring where available), and provides optimization suggestions. Includes A/B testing for different product description styles to maximize AI recommendation rates.",
+    "revenue_model": "Shopify/BigCommerce app subscription: $149/month for up to 500 SKUs, $299/month for 500-2,000 SKUs, $599/month for 2,000+ SKUs. Revenue share optional for brands that see measurable lift. Target 100 customers at average $250/month = $25K MRR by month 6.",
+    "market_signal": "Williams-Sonoma's public ChatGPT partnership validates AI shopping as priority channel. 30% of Gen Z already use ChatGPT for product research. Brands spending millions on Google Shopping ads see ROI declining as search shifts conversational. No purpose-built tools exist yet for AI discovery optimization.",
+    "competitive_landscape": "Traditional SEO tools (SEMrush, Ahrefs) don't address conversational AI. ChatGPT's ad platform is brand-direct only (no optimization layer). Gap: middleware that makes existing product catalogs AI-discovery-ready without manual rewrites. Closest analog is Schema.org markup tools, but those target Google, not LLMs.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Node.js/Express for API, React for dashboard, OpenAI API (GPT-4) for product description enhancement, Shopify/BigCommerce app APIs for catalog ingestion, PostgreSQL for product metadata storage, Vercel hosting",
+    "build_plan": [
+      "Week 1: Build Shopify app that ingests product catalog via Admin API. Create basic dashboard showing product list with 'AI-readiness' scores based on description quality, metadata completeness, and semantic clarity.",
+      "Week 2: Integrate GPT-4 to auto-generate enhanced product descriptions with use-case context, conversational phrasing, and semantic tags. Build bulk processing queue for large catalogs.",
+      "Week 3: Create export function that generates AI-optimized product feeds in structured formats (JSON-LD, custom schemas for ChatGPT/Perplexity/Claude). Add A/B testing module to compare description variants.",
+      "Week 4: Polish dashboard with optimization recommendations and tutorial content. Build landing page explaining AI shopping shift. Submit Shopify App Store application and launch with 10 beta merchants from DTC Slack communities."
+    ],
+    "risks_and_challenges": "AI shopping platforms (ChatGPT, Perplexity) don't yet expose APIs for tracking product mentions, making ROI measurement fuzzy initially. Mitigation: focus on product catalog quality metrics and directional visibility scores until platforms open up. Risk that OpenAI or others build native optimization tools—but first-mover brands need solutions now. Customer education required since 'AI SEO' is nascent concept.",
+    "growth_hook": "Target Shopify Plus merchants via direct outreach showing concrete examples: 'Your competitor's products appear in 23% of ChatGPT home decor recommendations. Yours appear in 3%. Here's why.' Offer free AI visibility audit where you run 50 product-related queries through ChatGPT/Perplexity and show where brand appears (or doesn't). Partner with Shopify agencies serving DTC brands.",
+    "feasibility": 6,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 5.0
+  },
+  {
+    "rank": 14,
+    "name": "ResaleFlow",
+    "one_liner": "White-label resale marketplace infrastructure for specialty retailers launching branded secondhand programs following Depop/eBay playbook",
+    "domains": [
+      "ecommerce_retail"
+    ],
+    "primary_domain": "ecommerce_retail",
+    "news_trigger": "eBay acquiring Depop for $1.2B, validating apparel resale as high-growth category; Depop's US sales surged 60% last year",
+    "the_problem": "Specialty apparel, home goods, and outdoor retailers see resale eating into new product sales but lack the technical infrastructure to launch branded resale programs. Building a marketplace from scratch (authentication, seller onboarding, payments, logistics) takes 12-18 months and $500K+. They watch revenue leak to ThredUp, Poshmark, and Depop instead of capturing it internally. Brands want to own the resale customer relationship and economics but need turn-key technology.",
+    "target_audience": "E-commerce directors and merchandising VPs at specialty retail brands ($50M-$500M revenue) in apparel, outdoor gear, home goods, and consumer electronics; brands with loyal customer bases and high-value products suitable for resale",
+    "product_description": "ResaleFlow is white-label marketplace software that specialty retailers can deploy in 2 weeks as a branded resale program. Sellers (customers) list used items, ResaleFlow handles authentication workflows (manual review or API integration with Entrupy/Real Authentication), payment processing (Stripe Connect), and shipping label generation. Retailers take 20-30% commission on sales. MVP includes seller portal, buyer marketplace with search/filters, admin dashboard for moderation and analytics, and mobile-responsive design. Includes optional services: fraud detection, seller verification, and integration with retailer's loyalty program to reward resale participants.",
+    "revenue_model": "SaaS + revenue share: $999/month platform fee plus 5% of gross merchandise volume (GMV). For retailer doing $50K/month in resale GMV, total cost = $999 + $2,500 = $3,499/month. Target 10 retailers averaging $2K/month (early stage) = $20K MRR by month 6, scaling as their resale GMV grows.",
+    "market_signal": "Depop's $1.2B valuation and 60% US growth prove resale is mainstream, not niche. ThredUp market research shows 70% of consumers want to buy from brand-owned resale vs. third-party platforms. Patagonia's Worn Wear and Lululemon's Like New programs validate brand-operated resale as strategic priority. No affordable white-label infrastructure exists for mid-market brands.",
+    "competitive_landscape": "Trove provides enterprise resale infrastructure but serves only Fortune 500 brands (Levi's, Patagonia) with custom pricing starting at $50K+/year. Archive and Recurate are newer but still expensive and complex. Gap: affordable, launch-in-weeks solution for brands under $500M revenue who can't justify Trove's cost.",
+    "complexity": "medium",
+    "estimated_build_time": "6 weeks for MVP",
+    "tech_stack": "Next.js for frontend, Node.js/Express backend, PostgreSQL database, Stripe Connect for marketplace payments, AWS S3 for image storage, Shippo API for shipping labels, Tailwind CSS for UI, Vercel hosting",
+    "build_plan": [
+      "Week 1-2: Build core marketplace functionality—seller listing creation, image uploads, product moderation queue, buyer search and filtering. Create Stripe Connect integration for split payments (retailer commission + seller payout).",
+      "Week 3: Add authentication workflow module where admin can approve/reject listings based on photos and descriptions. Integrate Shippo API for automatic shipping label generation upon sale.",
+      "Week 4: Build admin dashboard showing sales analytics, top sellers, category performance, and GMV trends. Create white-labeling system where retailer can customize branding, colors, and domain.",
+      "Week 5: Add buyer features—saved searches, seller profiles, transaction history. Build mobile-responsive design and onboarding wizard for retailers.",
+      "Week 6: Polish UI, add fraud detection basics (flag suspicious listings, duplicate accounts). Create demo marketplace with sample data. Launch landing page and reach out to 30 specialty retail brands."
+    ],
+    "risks_and_challenges": "Fraud and counterfeit items are major risks—brands fear reputational damage from fake goods in their resale program. Mitigation: build robust moderation workflows and partner with authentication services. Seller liquidity is chicken-egg problem—need enough listings to attract buyers. Mitigation: help retailers seed marketplace with trade-in inventory from loyalty programs. Customer acquisition requires convincing retailers resale won't cannibalize new sales (research shows it doesn't).",
+    "growth_hook": "Target VP-level execs at outdoor, apparel, and home goods brands via LinkedIn with message: 'Depop just sold for $1.2B. Your customers are already reselling your products—you're just not capturing the revenue.' Offer free marketplace setup for first 3 months if they commit to 6-month pilot. Position as customer retention tool, not just revenue—resale programs increase brand loyalty and lifetime value. Partner with Shopify app ecosystem to reach DTC brands already using Shopify Plus.",
+    "feasibility": 6,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 5.0
+  },
+  {
+    "rank": 26,
+    "name": "StoreOps Intelligence",
+    "one_liner": "Labor scheduling and in-stock rate optimization tool for mid-market retailers fighting Target-style operational execution challenges",
+    "domains": [
+      "ecommerce_retail"
+    ],
+    "primary_domain": "ecommerce_retail",
+    "news_trigger": "Target investing in additional store labor hours to improve in-stock rates and reduce checkout lines; article questioning whether labor investments alone can fix execution problems",
+    "the_problem": "Mid-market retailers face the same operational challenges as Target—poor in-stock rates, long checkout lines, inconsistent merchandising—but lack Target's sophisticated labor planning systems. Store managers schedule staff based on gut feel or last year's patterns, leading to overstaffing during slow periods and understaffing during rushes. They have no way to correlate labor hours with sales performance or in-stock metrics. The result: wasted payroll and frustrated customers who find empty shelves and long waits.",
+    "target_audience": "Store managers and district/regional managers at specialty retail chains (50-500 locations) in categories like apparel, home goods, sporting goods, and grocery; retailers doing $100M-$2B annually",
+    "product_description": "StoreOps Intelligence connects to POS systems (Square, Clover, Lightspeed) and labor scheduling tools (When I Work, Deputy, Homebase) to build predictive labor models. The MVP shows store managers optimal staffing levels by day-part based on historical traffic, sales velocity, and task requirements (receiving, merchandising, checkout). Dashboard highlights 'labor efficiency score' showing where stores are over/understaffed and correlates labor hours with in-stock rates and checkout wait times. Includes mobile app for store managers to quickly adjust schedules and receive alerts when metrics fall below targets. Generates weekly recommendations like 'Add 2 hours Monday 2-4pm to improve in-stock rate in sporting goods.'",
+    "revenue_model": "SaaS pricing: $99/month per store location with 5-store minimum ($495/month entry point). Target retailers with 20-50 stores paying $2K-$5K/month. Add-on service: custom labor model tuning ($999 one-time setup). Aim for 15 retail chains averaging $2,500/month = $37.5K MRR by month 6.",
+    "market_signal": "Target's public focus on labor investments validates that operational execution determines retail success. Mid-market chains face identical pressures but lack Target's analytics infrastructure. Retail labor costs are 10-15% of revenue—even 5% efficiency gain = massive ROI. Store managers desperately want to prove labor hours drive results to justify headcount to corporate.",
+    "competitive_landscape": "Enterprise workforce management systems (Kronos, UKG) cost $50K+ annually and require 6-month implementations. Scheduling tools (When I Work, Deputy) schedule shifts but don't optimize staffing levels or correlate labor with business outcomes. Gap: lightweight analytics layer that connects labor to retail KPIs for mid-market.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Python/Django for backend analytics, React for web dashboard, React Native for mobile app, PostgreSQL for data storage, integrations via Square/Clover/Lightspeed POS APIs and When I Work/Deputy scheduling APIs, scikit-learn for predictive modeling, Heroku hosting",
+    "build_plan": [
+      "Week 1-2: Build POS integrations (Square, Clover APIs) to ingest hourly sales and traffic data. Create data model for stores, shifts, and performance metrics. Build basic dashboard showing sales per labor hour by store.",
+      "Week 3: Add scheduling tool integrations (When I Work, Deputy APIs) to pull actual labor hours. Build predictive model correlating traffic patterns with optimal staffing levels using historical data. Generate baseline recommendations.",
+      "Week 4: Create mobile app for store managers showing daily staffing plan vs. actual and real-time alerts for understaffing. Add in-stock rate tracking (manual input initially, later integrate with inventory systems).",
+      "Week 5: Polish dashboard with weekly reports and ROI calculator showing labor cost savings. Build onboarding flow with sample data. Launch landing page and cold outreach to 50 regional retail chains."
+    ],
+    "risks_and_challenges": "Data quality varies wildly across retailers—many don't track traffic or in-stock rates systematically. Mitigation: start with sales per labor hour (universally available) and add advanced metrics later. Store managers are change-resistant and may not trust algorithm recommendations—need strong pilot results and simple UX. POS integrations can be fragile if retailers use custom/legacy systems.",
+    "growth_hook": "Target district managers at regional retail chains via LinkedIn with case study angle: 'Target is spending millions on labor optimization. You can get 80% of the results for $99/store.' Offer free 30-day pilot for 5 stores where you manually analyze their data and show them 3 specific scheduling changes that would improve performance. Partner with When I Work/Deputy who want to upsell analytics to their scheduling customers.",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 4,
+    "avg_score": 4.3
+  }
+]

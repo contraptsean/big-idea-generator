@@ -1,0 +1,160 @@
+[
+  {
+    "rank": 2,
+    "name": "HigherThink Assessment Studio",
+    "one_liner": "AI-powered assessment generator that creates higher-order thinking assignments requiring analysis, synthesis, and creativity beyond what AI can automate—helping teachers AI-proof their curriculum.",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "When Machines Think, Human Thinking Must Go Higher - article emphasizing that as AI handles lower-order thinking, educators must focus on teaching higher-order cognitive skills that machines can't replicate",
+    "the_problem": "Teachers are struggling to create assessments that can't be completed by ChatGPT or other AI tools, making traditional homework and tests obsolete. The EdSurge article argues educators must shift focus to 'higher-order thinking' (analysis, evaluation, creation) that AI struggles with, but teachers lack time and expertise to redesign entire curricula. They need assignments that require students to synthesize across sources, apply concepts to novel contexts, defend nuanced positions, and create original work—tasks that reveal understanding AI can't fake. Current assessment banks and test generators focus on knowledge recall that AI easily handles.",
+    "target_audience": "Middle and high school teachers (grades 6-12), college instructors, curriculum coordinators, and instructional coaches across all subjects who are racing to AI-proof their assessments and assignments",
+    "product_description": "HigherThink Assessment Studio uses AI to generate AI-resistant assessments focused on higher-order thinking skills. Teachers input their learning objectives, standards, and content topics. The platform: (1) Generates 5-10 assessment options (projects, essay prompts, discussion questions, performance tasks) that require synthesis, analysis, evaluation, or creation, (2) Explains why each assessment is AI-resistant (e.g., 'Requires students to connect personal experience to theory,' 'Demands oral defense of position with follow-up questions'), (3) Provides rubrics aligned to Bloom's Taxonomy higher levels and clearly distinguishing AI-assisted vs. human thinking, (4) Includes student handouts and teacher facilitation guides. The AI is prompted to avoid questions with clear 'correct answers' that LLMs can look up, instead focusing on open-ended, context-dependent, and creative challenges.",
+    "revenue_model": "Freemium B2C for individual teachers: Free for 3 assessments/month, $15/month for unlimited generation and rubric library access. B2B for schools/districts: $1,500/year per school (unlimited teachers), $5,000/year for districts (5+ schools). Target 300 paid teacher subscribers and 15 schools in first 6 months for $4K+ MRR.",
+    "market_signal": "EdSurge article shows thought leaders are actively grappling with this problem and calling for curriculum transformation. Teachers are desperate for practical solutions to AI cheating beyond detection tools (which don't work). Every school is facing this pressure as AI adoption by students accelerates. Similar teacher resource platforms (TeachersPayTeachers, CommonLit) successfully monetize at $10-20/month subscriptions.",
+    "competitive_landscape": "Current options: (1) Traditional assessment generators (ExamGen, Edulastic) focus on multiple choice and recall questions, (2) AI detection tools (Turnitin, GPTZero) play cat-and-mouse with limited success, (3) Manual assessment redesign (time-intensive, requires training). Gap: No one is using AI to generate deliberately AI-resistant assessments focused on higher-order thinking. Closest is MagicSchool AI, but it generates generic assignments without explicitly designing for AI resistance.",
+    "complexity": "low",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "Next.js with TypeScript frontend, Supabase for database and auth, OpenAI GPT-4 with specialized prompts for assessment generation, Stripe for payments, Docuseal or similar for PDF generation of student handouts",
+    "build_plan": [
+      "Week 1: Develop core assessment generation engine - research Bloom's Taxonomy and AI-resistant assessment design principles, create detailed GPT-4 system prompts that generate higher-order thinking assessments, build prompt testing suite with 20 sample learning objectives across subjects",
+      "Week 2: Build user interface and generation workflow - create teacher input form (subject, grade level, learning objectives, standards, context), implement assessment generation with 5 options per request, add regeneration and customization features",
+      "Week 3: Create rubric generator and output templates - build Bloom's-aligned rubric generator, design student handout templates with clear instructions, create teacher facilitation guides, add PDF export, implement basic auth and payment with Stripe"
+    ],
+    "risks_and_challenges": "AI itself might eventually handle higher-order thinking - position as continuous arms race and ongoing updates. Teachers may not recognize quality of AI-resistant assessments - provide examples and education on what makes assessment AI-proof. Generated assessments need to be genuinely good - requires prompt engineering expertise and teacher feedback loops to refine. Free tier may cannibalize paid subscriptions - limit meaningfully to drive conversions.",
+    "growth_hook": "Launch at start of school year (August) and January when teachers reset curriculum. Create viral social media content: 'Can ChatGPT pass your assignments? Try this test.' Offer free webinar: 'How to AI-Proof Your Curriculum in 30 Minutes.' Partner with education influencers and teacher Facebook groups. SEO targeting 'AI-proof assignments,' 'ChatGPT-resistant homework,' 'higher-order thinking assessments.' Create lead magnet: free 'Top 10 AI-Resistant Assessment Strategies' guide. Cold outreach to instructional coaches and curriculum coordinators with offer to present PD session at their school. Reddit and teacher subreddit engagement with helpful, non-promotional advice that positions product as solution.",
+    "feasibility": 7,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 7,
+    "name": "PhonePolicyPro",
+    "one_liner": "Legislative compliance and implementation management platform that helps K-12 schools design, deploy, and enforce phone-free policies aligned with state-specific requirements.",
+    "domains": [
+      "education_edtech",
+      "government_compliance"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "New Report Card Grades States on Laws Banning Phones in Schools - showing wide variation in legislation quality and implementation requirements",
+    "the_problem": "State legislatures are passing phone ban laws at unprecedented rates, but schools are struggling to interpret varying requirements, implement compliant policies, and document enforcement. The EdSurge report reveals that 'not all laws are created equal,' leaving administrators confused about what compliance actually means. Schools face legal risk if they implement policies incorrectly, and parents are demanding transparency about how these bans work.",
+    "target_audience": "K-12 school administrators, district technology coordinators, school board members, and education attorneys in the 20+ states with active phone restriction legislation",
+    "product_description": "PhonePolicyPro is a compliance management platform that translates state-specific phone ban legislation into actionable implementation checklists. The MVP includes: (1) State-by-state policy decoder that extracts requirements from legislation, (2) Customizable policy template generator that creates compliant school policies, (3) Staff training module library with enforcement protocols, (4) Parent communication toolkit with FAQ templates and multilingual notifications, and (5) Compliance documentation dashboard that tracks implementation status and generates audit-ready reports. Schools answer 10 questions about their context, and the platform outputs a complete, legally compliant phone policy ready for board approval.",
+    "revenue_model": "Tiered SaaS subscription: $199/month for individual schools (up to 1,000 students), $499/month for small districts (2-5 schools), $999/month for large districts (6+ schools). Annual plans at 2 months free. Add-on services: Custom policy review by education attorney ($500 one-time), staff training webinar facilitation ($300/session).",
+    "market_signal": "The EdSurge article indicates legislation is 'sweeping the nation' with a formal report card grading state laws, suggesting urgency and compliance pressure. Schools are being legally mandated to implement these policies, creating non-discretionary budget allocation. Similar compliance software in K-12 (safety protocols, FERPA compliance) successfully charge $200-1000/month per district.",
+    "competitive_landscape": "No dedicated phone policy compliance platforms exist yet. Current alternatives: (1) General school policy management systems (SchoolDoc, BoardDocs) that don't address phone-specific legislation, (2) Legal consultation ($300-500/hour), (3) Manual DIY using generic templates. Gap: No one is translating the nuanced, state-specific requirements into turnkey implementation tools that non-lawyers can use.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase for database and auth, Tailwind CSS, GPT-4 for policy text analysis and template generation, DocuSeal for document generation, SendGrid for email notifications",
+    "build_plan": [
+      "Week 1: Research and database creation - compile all state phone ban legislation (20+ states), extract requirements into structured data model, create requirement taxonomy",
+      "Week 2: Core policy generator - build questionnaire flow, implement template engine that maps school inputs to compliant policy outputs, create 5 base policy templates",
+      "Week 3: Compliance dashboard and documentation - build implementation checklist tracker, create parent communication templates, add staff training module outlines",
+      "Week 4: Testing and launch prep - test with 3 pilot schools across different states, refine templates based on feedback, create onboarding flow and demo video"
+    ],
+    "risks_and_challenges": "Legal liability if generated policies are non-compliant - mitigate with clear disclaimers and optional attorney review add-on. State legislation changes frequently - requires ongoing monitoring and database updates (could be monthly subscription justification). Schools may expect free/cheap tools - position as risk mitigation investment that's cheaper than legal fees.",
+    "growth_hook": "Target schools in states where legislation just passed or takes effect in next 6 months (urgency). Cold outreach to superintendents and principals with subject line: 'Is your phone policy compliant with [State] HB [Number]?' Offer free compliance audit as lead magnet. Partner with state school administrator associations to present webinars on 'Navigating New Phone Ban Laws.' Create SEO content ranking for '[State] school phone ban requirements' searches. Testimonials from early adopter schools showing board approval speed.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 15,
+    "name": "EdResearch Decoder",
+    "one_liner": "AI-powered research synthesis platform that translates academic education studies into actionable budget recommendations for district leaders under financial pressure.",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "Why District Leaders Are Rethinking Education Research and Policy - highlighting that district leaders must make irreversible budget decisions with fewer dollars and less margin for error than ever before",
+    "the_problem": "District leaders are drowning in education research but lack time and expertise to determine which programs actually deliver ROI before committing shrinking budgets. The EdSurge article notes they're 'rethinking education research' because traditional academic studies don't translate into clear procurement decisions. With budgets tighter than ever, they need to know which curriculum, technology, or interventions have proven outcomes within their specific context (demographics, budget constraints, existing infrastructure), but reading hundreds of studies is impossible.",
+    "target_audience": "District superintendents, assistant superintendents for curriculum and instruction, budget directors, and program coordinators at K-12 school districts with 2,500+ students managing annual budgets of $50M+",
+    "product_description": "EdResearch Decoder ingests education research papers, meta-analyses, and program evaluations, then uses AI to extract evidence-based recommendations tailored to a district's context. Users input their district profile (demographics, budget, priorities like literacy or STEM), and the platform: (1) Synthesizes relevant research across 50,000+ studies in its database, (2) Generates side-by-side vendor/program comparisons with evidence strength scores (similar to ESSA evidence tiers), (3) Produces ROI estimates based on cost per student and expected outcomes, (4) Creates board-ready reports with citations and implementation considerations. MVP focuses on 5 high-spend categories: literacy curriculum, math curriculum, SEL programs, edtech platforms, and professional development.",
+    "revenue_model": "District subscription model: $3,000/year for small districts (2,500-10,000 students), $7,500/year for medium districts (10,000-50,000 students), $15,000/year for large districts (50,000+ students). Additional $500/query for custom deep-dive research synthesis on specific vendors or initiatives. Target is to save districts 10x the subscription cost by preventing one bad purchase per year.",
+    "market_signal": "EdSurge explicitly states district leaders are being asked to make 'irreversible budget decisions with fewer dollars and less margin for error,' creating urgency for decision support tools. Districts already pay for research databases (ERIC, What Works Clearinghouse) but don't have tools to operationalize findings. Similar decision intelligence platforms in healthcare (clinical decision support) successfully charge $10K-50K annually to hospital systems.",
+    "competitive_landscape": "Current options: (1) What Works Clearinghouse (free but not actionable or district-specific), (2) Academic journal subscriptions (expensive, time-consuming, not synthesized), (3) Consulting firms ($50K-200K for program evaluations). Gap: No one is using AI to instantly synthesize research and generate contextualized, procurement-ready recommendations. EdReports provides curriculum reviews but doesn't synthesize broader research or provide district-specific recommendations.",
+    "complexity": "high",
+    "estimated_build_time": "6 weeks for MVP",
+    "tech_stack": "Python backend with FastAPI, OpenAI GPT-4 for research synthesis, Pinecone or Weaviate for vector database of research papers, Firecrawl for scraping education research databases, React frontend, PostgreSQL for district profiles and query history, Anthropic Claude for report generation",
+    "build_plan": [
+      "Week 1-2: Build research paper ingestion pipeline - identify top 10 education research sources (ERIC, IES, EdWeek Research Center), create web scrapers, structure metadata extraction (study design, sample size, effect sizes, ESSA evidence tier)",
+      "Week 3: Develop AI synthesis engine - fine-tune prompts to extract actionable insights from papers, create scoring rubric for evidence strength, build comparison matrix generator",
+      "Week 4: Build district profile system and matching algorithm - create intake questionnaire, develop logic to match district context to relevant research subsets",
+      "Week 5: Create report generation module - design board-ready report templates (PDF), implement citation management, add ROI calculator based on district budget inputs",
+      "Week 6: User testing with 2-3 pilot districts and refinement - test with real procurement decisions in progress, iterate based on feedback"
+    ],
+    "risks_and_challenges": "Research database access may require licensing agreements or subscriptions - start with open-access sources (ERIC, IES publications). AI synthesis accuracy is critical - misrepresenting research could damage credibility; implement human review loop for first 50 reports. Districts move slowly on procurement - long sales cycles may require runway. Legal disclaimers needed to clarify this supplements, not replaces, district due diligence.",
+    "growth_hook": "Target districts currently in RFP season (typically January-April for fall implementation). Offer free pilot: 'Get a free research synthesis for your top budget priority this year.' Create case studies showing specific bad purchases avoided (e.g., '$2M literacy program lacked evidence for ELL students'). Partner with state school board associations to present at conferences. Build SEO authority with content like 'Evidence-Based Literacy Curriculum Comparison 2026.' LinkedIn outreach to district curriculum directors with personalized examples of relevant research in their priority areas.",
+    "feasibility": 6,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 5.0
+  },
+  {
+    "rank": 16,
+    "name": "CulturalLit Connector",
+    "one_liner": "Culturally responsive reading material marketplace that helps K-12 teachers instantly find and assign texts that connect with multilingual students' backgrounds to boost comprehension and engagement.",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "'I Can Read, But I Don't Know What It Means': Rethinking Literacy for Multilingual Kids - highlighting research that multilingual students comprehend better when materials are culturally relevant to their backgrounds",
+    "the_problem": "Multilingual students can decode words but struggle with comprehension when reading materials don't connect to their cultural experiences and background knowledge. The EdSurge article features educator Terri Ashchi explaining that culturally irrelevant texts create a comprehension barrier even when students have technical reading skills. Teachers want to assign culturally responsive materials but spend hours searching across fragmented sources (library catalogs, Teachers Pay Teachers, random websites) without knowing which texts match their students' specific cultural backgrounds, reading levels, and curriculum standards.",
+    "target_audience": "K-12 ELL/ESL teachers, literacy coaches, reading specialists, and elementary classroom teachers in schools with 20%+ multilingual student populations (approximately 5 million students are English learners in US public schools)",
+    "product_description": "CulturalLit Connector is a curated marketplace and matching engine for culturally relevant reading materials. Teachers input student demographics (languages spoken, cultural backgrounds, reading levels, interests) and curriculum needs (genre, standards, themes). The platform: (1) Searches across aggregated sources (public domain texts, Creative Commons content, partnered publishers, teacher-created materials) tagged by cultural relevance, language, and complexity, (2) Returns ranked recommendations with cultural connection explanations (e.g., 'Features Mexican-American family experiences, includes Spanish language elements, discusses immigration themes'), (3) Provides teacher guides with discussion questions and vocabulary support for multilingual learners, (4) Allows teachers to build custom reading lists and share with colleagues. MVP includes 500+ texts across top 10 languages/cultures represented in US schools (Spanish, Mandarin, Arabic, Vietnamese, Haitian Creole, etc.) tagged across grade bands K-12.",
+    "revenue_model": "Freemium B2C: Free for 5 texts/month, $12/month for unlimited access and teacher guides. B2B School/District: $500/year per school (unlimited teachers), $2,500/year for small districts (2-5 schools). Revenue share with content creators who upload original culturally relevant materials (70/30 split on premium content sales). Target 500 teacher subscribers and 20 school subscriptions in first 6 months for $4K+ MRR.",
+    "market_signal": "EdSurge article cites veteran educator with 24 years experience emphasizing this problem, indicating it's persistent and acute. Schools are under pressure to close achievement gaps for ELL students, and culturally responsive teaching is an established best practice (TESOL standards, state frameworks). Teachers already pay for materials on Teachers Pay Teachers ($5-20 per resource), showing willingness to invest personal funds for quality materials.",
+    "competitive_landscape": "Current options: (1) Teachers Pay Teachers (unorganized, not curated for cultural relevance), (2) Newsela and ReadWorks (some multicultural content but not systematically tagged or searchable by culture), (3) Library catalogs and book vendors (time-consuming, books only, not classroom-ready). Gap: No one is providing a searchable, culturally-tagged database with curriculum-ready materials specifically for multilingual learners across all content types (articles, short stories, book excerpts, multimedia).",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase for database and auth, Stripe for payments, Algolia for search, AWS S3 for document storage, GPT-4 for cultural relevance tagging and teacher guide generation, Firecrawl for sourcing public domain texts",
+    "build_plan": [
+      "Week 1: Content sourcing and taxonomy creation - identify and aggregate 500 public domain texts and Creative Commons materials, create cultural tagging taxonomy (20+ cultural backgrounds, 10+ themes, reading levels), research top languages/cultures in US schools",
+      "Week 2: Build tagging and metadata system - manually tag first 100 texts to train system, develop GPT-4 prompts to auto-tag cultural elements, implement search database with Algolia",
+      "Week 3: Develop teacher matching interface - create teacher input form (student demographics, curriculum needs), build recommendation algorithm prioritizing cultural match + reading level + standards alignment",
+      "Week 4: Create teacher guide generator - use GPT-4 to auto-generate discussion questions, vocabulary support, and cultural context notes for each text, design downloadable PDF templates",
+      "Week 5: Launch prep and pilot testing - recruit 10 teachers to test platform and provide feedback, refine search and recommendations, create onboarding flow and demo video"
+    ],
+    "risks_and_challenges": "Cultural tagging requires sensitivity and accuracy - could offend if done wrong; mitigate with educator review panel and community feedback. Content licensing for non-public domain materials may require publisher partnerships - start with Creative Commons and public domain only. Teachers may not have budget - focus on school/district sales where literacy improvement budgets exist. Platform value depends on content breadth - need critical mass of materials across languages/cultures; start with top 5 most represented groups.",
+    "growth_hook": "Target teachers during back-to-school (August) and mid-year curriculum refresh (January). Create lead magnet: free 'Culturally Responsive Text Sets' PDF for top 5 cultures. Run teacher Facebook group ads targeting ELL teacher groups. Partner with TESOL and state bilingual education associations for conference presentations and email newsletter features. SEO content: 'Culturally relevant books for [Spanish/Vietnamese/Arabic]-speaking students.' Cold email literacy coaches and ELL coordinators offering free 30-day school trial. User-generated content: incentivize teachers to share successful lessons using platform materials on social media with hashtag campaign.",
+    "feasibility": 6,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 5.0
+  },
+  {
+    "rank": 27,
+    "name": "CareerShift Navigator",
+    "one_liner": "AI-powered career guidance platform that helps college students and high schoolers identify automation-resistant career paths and build AI-proof skill stacks based on real-time labor market signals.",
+    "domains": [
+      "education_edtech"
+    ],
+    "primary_domain": "education_edtech",
+    "news_trigger": "Can AI Help Students Navigate the Career Chaos It's Creating? - noting that 'college and career counseling is tough these days' and schools are exploring AI solutions to help students navigate AI-disrupted job markets",
+    "the_problem": "Students face unprecedented career uncertainty as AI disrupts job markets faster than counselors can track. The EdSurge article highlights that AI is creating 'career chaos,' and traditional career counseling tools (interest inventories, static job outlooks) can't keep pace with which roles are being automated versus which are emerging. Students waste years training for careers that may not exist or will be drastically different by graduation. School counselors are overwhelmed (average ratio is 1:450 students) and lack real-time labor market data showing which skills are actually growing in demand versus declining.",
+    "target_audience": "High school juniors/seniors and college students (ages 16-24) exploring majors and careers, plus high school counselors and college career centers looking for scalable AI-resistant career planning tools",
+    "product_description": "CareerShift Navigator combines AI labor market analysis with personalized career pathing to identify automation-resistant opportunities. Students complete a 10-minute assessment of interests, strengths, and values. The platform then: (1) Analyzes 500+ occupations for 'AI displacement risk' using real-time job posting data, automation research, and wage trend analysis, (2) Recommends 5-10 career paths ranked by alignment, growth outlook, and automation resistance, (3) Maps specific 'AI-proof skills' needed for each path (e.g., complex problem-solving, human empathy, creative synthesis), (4) Generates personalized learning pathways showing which college majors, certifications, side projects, and internships build those skills, (5) Tracks progress with milestone check-ins and updates recommendations as labor market shifts. Includes counselor dashboard for school/college career centers to monitor student cohorts.",
+    "revenue_model": "B2C: $9.99/month or $79/year for students (freemium with basic assessment + 3 career recommendations, premium for full pathways and updates). B2B: $2,500/year for high schools (unlimited students, counselor dashboard), $7,500/year for college career centers. Target 100 B2C users and 10 institutional customers in first 6 months for $5K+ MRR.",
+    "market_signal": "EdSurge article confirms schools are actively 'banking on the idea that AI can help' with career guidance, signaling institutional willingness to adopt AI-powered solutions. Career guidance software market is proven (Naviance, YouScience charge similar prices). Gen Z students already pay for career coaches and LinkedIn Premium ($30-40/month), indicating willingness to invest in career clarity. College career centers have budgets for SaaS tools and face pressure to improve job placement outcomes.",
+    "competitive_landscape": "Existing tools: (1) Naviance and YouScience (aptitude-based, but outdated job outlook data), (2) LinkedIn Career Explorer (broad, not AI-displacement focused), (3) O*NET and BLS data (static, hard to interpret). Gap: No one is providing real-time, AI-displacement-adjusted career recommendations with actionable skill-building pathways. Closest is 80,000 Hours, but it's focused on effective altruism careers, not mainstream students.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js with TypeScript frontend, Supabase for database and auth, Python backend for labor market analysis, OpenAI GPT-4 for career path generation and content personalization, Apify for scraping job posting data (LinkedIn, Indeed), BLS API for wage and occupation data, Stripe for payments",
+    "build_plan": [
+      "Week 1: Build occupation database and AI risk scoring - compile 500 O*NET occupations, create automation risk model using factors (routine tasks, AI capability overlap, wage trends), integrate BLS API for real-time data",
+      "Week 2: Develop student assessment and matching engine - create 10-minute interest/strength/values questionnaire, build algorithm matching student profiles to low-risk occupations",
+      "Week 3: Generate career pathway content - use GPT-4 to create detailed profiles for top 50 careers including required skills, majors, certifications, typical career progression",
+      "Week 4: Build personalized learning pathway generator - create logic mapping career goals to specific action steps (courses, projects, internships), design progress tracking interface",
+      "Week 5: Create counselor dashboard for B2B offering and launch prep - build cohort monitoring view for schools, create demo environment, record product walkthrough video"
+    ],
+    "risks_and_challenges": "Labor market predictions are inherently uncertain - mitigate with disclaimers and focus on skill-building (transferable) vs. specific job titles. Students may distrust AI career advice - build credibility with transparent methodology and counselor endorsements. Job posting data scraping may face rate limits - use multiple sources and caching. Requires ongoing data updates to stay relevant - build this into subscription model justification.",
+    "growth_hook": "Launch during college application season (September-December) and major declaration period (spring semester) when career anxiety peaks. Create viral TikTok/Instagram content: 'Is your dream job going to be automated?' with shocking stats. Partner with high school counselors by offering free first year in exchange for testimonials and case studies. Run Reddit AMA in r/careerguidance and r/college. Create lead magnet: free downloadable 'Top 20 AI-Proof Careers for 2026' report in exchange for email. SEO targeting 'careers that won't be replaced by AI,' 'best majors for the future,' 'AI-proof skills.' Affiliate partnerships with online course platforms (Coursera, Udemy) for skill-building recommendations.",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 4,
+    "avg_score": 4.3
+  }
+]

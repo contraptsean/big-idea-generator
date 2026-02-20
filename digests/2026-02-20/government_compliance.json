@@ -1,0 +1,96 @@
+[
+  {
+    "rank": 10,
+    "name": "VoiceRightsHub",
+    "one_liner": "Rights management and licensing platform that helps voice actors, commentators, and performers track, negotiate, and monetize AI voice cloning deals with game studios and media companies.",
+    "domains": [
+      "government_compliance"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "Football commentator Guy Mowbray permitting EA to use AI version of his voice for EA Sports FC, signaling emerging market for voice talent AI licensing deals",
+    "the_problem": "Voice actors, sports commentators, and on-air talent are being approached by studios to license their voices for AI replication, but have no standardized contracts, usage tracking, or royalty management systems. They're signing one-off deals without understanding fair market rates, usage limits, or long-term rights implications. Meanwhile, studios lack a centralized platform to discover, negotiate with, and license voice talent for AI projects compliantly.",
+    "target_audience": "Professional voice actors, sports commentators, radio/podcast hosts, game studios, media production companies, and talent agents representing voice performers",
+    "product_description": "VoiceRightsHub is a B2B2C marketplace and rights management platform where voice talent can create profiles showcasing their voice samples, set AI licensing terms (usage scope, duration, exclusivity, royalty rates), and track where their AI-generated voice is being used. Studios can search for talent, request AI voice licenses, and manage contracts through standardized templates that comply with SAG-AFTRA and international voice talent union guidelines. The platform includes usage monitoring via audio fingerprinting APIs, automated royalty calculations, and dispute resolution workflows. Talent gets transparency and fair compensation; studios get compliant, efficient licensing.",
+    "revenue_model": "Transaction fee: 15% commission on all AI voice licensing deals brokered through the platform. Optional premium subscription for talent ($29/month) offering advanced analytics, contract templates, and priority dispute resolution. Enterprise tier for studios ($499/month) with unlimited license requests and API access.",
+    "market_signal": "EA's deal with Guy Mowbray demonstrates studios are actively seeking voice talent for AI projects. SAG-AFTRA's 2023 strike included AI voice protections, proving talent cares deeply about these rights. Replica Studios and other AI voice companies exist but don't handle rights management or connect talent with opportunities—they just sell synthetic voices. Voice actors are posting on Reddit and Twitter asking for guidance on AI licensing deals, indicating demand for standardized tools.",
+    "competitive_landscape": "Closest competitors: Voice123 and Voices.com (talent marketplaces but no AI licensing focus), Replica Studios (sells AI voices but doesn't represent real talent), and traditional talent agencies (manual, slow, no tech stack). Gap: No platform specifically handles AI voice rights management, usage tracking, and compliance for the emerging AI voice licensing economy.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js, Supabase (Postgres + Auth), Stripe Connect for payments, Clerk for identity verification, AWS S3 for voice sample storage, Audio fingerprinting API (AcoustID or similar) for usage tracking, DocuSign API for contract e-signing, React Admin dashboard",
+    "build_plan": [
+      "Week 1: Set up Next.js app with Supabase auth, build talent profile creation flow with voice sample upload to S3, create basic license term builder (usage scope, duration, rates)",
+      "Week 2: Build studio-side search and discovery interface, implement license request workflow with Stripe Connect for escrow payments, integrate DocuSign for contract signing",
+      "Week 3: Add usage tracking dashboard using audio fingerprinting API, build automated royalty calculation engine, create notification system for new license requests and usage alerts",
+      "Week 4: Develop dispute resolution workflow with mediation request forms, add analytics dashboards for talent (earnings, usage) and studios (active licenses, compliance status)",
+      "Week 5: Polish UI/UX, add SAG-AFTRA-compliant contract templates, launch beta with 10 voice actors and 2 indie game studios, set up Stripe billing for subscriptions"
+    ],
+    "risks_and_challenges": "Legal complexity: Voice rights law is evolving rapidly and varies by jurisdiction—may need legal counsel to validate contract templates. Chicken-and-egg problem: Studios won't join without talent, talent won't join without deal flow. Audio fingerprinting for usage tracking is technically challenging and may have false positives. SAG-AFTRA or other unions may view platform as undermining collective bargaining if not designed carefully.",
+    "growth_hook": "Cold outreach to 50 mid-tier voice actors on Twitter/Reddit discussing AI voice concerns, offer free profile setup and first deal at 5% commission instead of 15%. Partner with 2-3 indie game studios building AI NPC dialogue systems, offer free 3-month enterprise trial in exchange for case study. Post on r/voiceacting and r/gamedev with 'How to protect your voice from AI exploitation' content marketing, linking to free contract template download that requires email signup.",
+    "feasibility": 6,
+    "demand_confidence": 5,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 21,
+    "name": "ContentAuthenticityStamp",
+    "one_liner": "Browser extension and API that automatically watermarks user-generated content and attaches C2PA provenance metadata to prove when media was AI-generated vs. human-created, helping platforms comply with upcoming AI disclosure laws.",
+    "domains": [
+      "government_compliance"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "Google Gemini generating 'musical slop' and EA using AI voices signals explosion of AI-generated content flooding platforms, while regulators like EU AI Act and California AB 2602 mandate AI content labeling",
+    "the_problem": "Governments worldwide are passing laws requiring platforms to label AI-generated content, but most platforms lack technical infrastructure to detect, watermark, and disclose AI authorship at scale. Content creators (musicians, artists, writers) can't prove their work is human-made when competing against AI slop. Platforms face massive compliance risk and user trust erosion if they can't distinguish authentic from synthetic content.",
+    "target_audience": "Social media platforms, content-sharing sites (SoundCloud, YouTube, DeviantArt), news publishers, government agencies enforcing AI transparency laws, and individual creators wanting to certify their work as human-made",
+    "product_description": "ContentAuthenticityStamp is a dual product: (1) Browser extension for creators that automatically embeds C2PA (Coalition for Content Provenance and Authenticity) metadata into images, audio, and video files proving human authorship, with optional visible watermark. (2) API for platforms to scan uploaded content, detect AI-generated media using perceptual hashing and model fingerprinting, and attach disclosure labels compliant with EU AI Act, California AB 2602, and FTC guidelines. Includes admin dashboard showing compliance audit logs and flagged content for review. Creator-side tool is freemium; platform API is B2B SaaS.",
+    "revenue_model": "Creator extension: Free for 100 stamps/month, $9/month for unlimited. Platform API: Usage-based pricing at $0.02 per content scan, with enterprise contracts starting at $999/month for 100K scans + dedicated compliance support. Government/regulatory tier at $4,999/month with audit trail exports and expert witness consultation.",
+    "market_signal": "EU AI Act (effective August 2024) and California AB 2602 legally require AI content labeling. Adobe, Microsoft, and Google formed C2PA coalition, proving industry recognizes need for provenance standards. Musicians are already posting 'I am human' badges on Spotify/SoundCloud. TikTok and Meta have announced AI labeling policies but lack enforcement tools. Market is regulatory-driven with legal penalties for non-compliance.",
+    "competitive_landscape": "Closest solutions: TrueMedia.org (focused on deepfake detection, not compliance tooling), Adobe Content Credentials (creator-side only, no platform API), Hive Moderation (generic content moderation, not AI-specific). Gap: No turnkey solution combines creator authentication tools + platform compliance API + regulatory audit trails in one product. Existing tools are either too narrow (detection-only) or too expensive (enterprise-only).",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Chrome Extension (Manifest V3), Next.js for web dashboard, FastAPI for content scanning API, C2PA open-source SDK for metadata embedding, Hive AI or Optic API for AI detection, PostgreSQL for audit logs, AWS S3 for file processing, Stripe for billing",
+    "build_plan": [
+      "Week 1: Build Chrome extension that intercepts file uploads on major platforms (Twitter, SoundCloud, YouTube) and embeds C2PA metadata + optional watermark before upload; set up user dashboard for managing stamps",
+      "Week 2: Develop FastAPI scanning endpoint that accepts content uploads, runs AI detection heuristics (metadata analysis, perceptual hashing, model fingerprinting), returns confidence score and compliance label recommendation",
+      "Week 3: Create platform admin dashboard showing flagged content, compliance audit logs, and CSV export for regulatory reporting; integrate Stripe for creator subscription and API usage billing",
+      "Week 4: Add batch processing for platforms with large backlogs, implement webhook notifications for flagged content, write compliance documentation mapping product to EU AI Act and California AB 2602 requirements"
+    ],
+    "risks_and_challenges": "AI detection accuracy is imperfect—false positives could mislabel human content as AI-generated, causing creator backlash. C2PA metadata can be stripped by determined bad actors. Regulations are still evolving, so compliance requirements may shift. Platforms may build in-house solutions instead of paying for API. Browser extension requires ongoing maintenance as platforms change upload flows.",
+    "growth_hook": "Launch on Product Hunt targeting musicians/artists with headline: 'Prove your art is human-made in 1 click.' Partner with 2 mid-size creator platforms (e.g., Newgrounds, Behance alternatives) to pilot API integration in exchange for co-marketing case study. Write LinkedIn article: 'How platforms can avoid $10M EU AI Act fines in 30 days' targeting compliance officers. Offer free 90-day API trial to first 10 platforms that sign up before Q2 2026.",
+    "feasibility": 6,
+    "demand_confidence": 4,
+    "uniqueness": 5,
+    "avg_score": 5.0
+  },
+  {
+    "rank": 30,
+    "name": "SignedInGate",
+    "one_liner": "Widget and API that lets websites selectively gate content and features for signed-out users while remaining compliant with accessibility and SEO best practices, following Google Maps' 'limited view' playbook.",
+    "domains": [
+      "government_compliance",
+      "ecommerce_retail"
+    ],
+    "primary_domain": "government_compliance",
+    "news_trigger": "Google Maps introducing 'limited view' that hides reviews/images for signed-out users, signaling major shift toward gated content experiences to drive authentication and data collection",
+    "the_problem": "Websites want to gate premium content or features to drive sign-ups (like Google Maps hiding reviews), but implementing authentication walls without hurting SEO, accessibility compliance (WCAG, ADA), or user experience is technically complex. Most gating solutions are all-or-nothing paywalls that harm discoverability. Sites need granular control: show previews, hide specific elements, maintain search indexing, and stay legally compliant.",
+    "target_audience": "SaaS platforms, content publishers, e-commerce sites, review platforms, and B2B marketplaces that want to drive authenticated user growth without sacrificing SEO or violating accessibility laws",
+    "product_description": "SignedInGate is an embeddable JavaScript widget and API that lets websites selectively hide or blur content for signed-out users using customizable rules (e.g., show first 3 reviews, blur images, hide download buttons). It automatically generates accessibility-compliant sign-in prompts, preserves meta tags for search crawlers, and includes A/B testing to optimize gate placement. Admin dashboard shows conversion metrics (sign-ups driven by gate), bounce rate impacts, and generates compliance reports proving WCAG 2.1 AA adherence. Integrates with Auth0, Clerk, Supabase Auth, and custom authentication systems.",
+    "revenue_model": "Freemium SaaS: Free for up to 10K monthly visitors with basic gating rules. Pro at $99/month for 100K visitors, advanced rules, and A/B testing. Enterprise at $499/month for unlimited traffic, white-label, custom integrations, and compliance audit support. Add-on: $199 one-time for accessibility compliance report generation.",
+    "market_signal": "Google Maps' move proves major platforms see value in gating content to drive authentication. Medium, Quora, LinkedIn, and countless SaaS products use paywalls but face SEO penalties. Publishers are desperate to grow email lists without alienating readers. Stack Overflow recently added sign-in requirements for certain features. Market exists, but no specialized compliance-first gating tool exists.",
+    "competitive_landscape": "Generic competitors: Memberstack, Outseta, and MemberSpace (full membership platforms, overkill for simple gating). Paywalls: Piano, Pelcro (expensive, publisher-focused). Gap: No lightweight, compliance-first gating widget with built-in SEO preservation and accessibility audit tools. Existing solutions require rebuilding authentication flows; SignedInGate works with what you already have.",
+    "complexity": "low",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "Vanilla JavaScript widget (no framework dependencies), Next.js dashboard, Supabase (Postgres + Auth for dashboard), Stripe for billing, Cloudflare Workers for edge-side gating logic, PostHog for A/B testing analytics, Axe-core for accessibility auditing",
+    "build_plan": [
+      "Week 1: Build core JavaScript widget that detects authentication state, applies CSS-based content hiding/blurring based on JSON rule config, displays customizable sign-in prompt, integrates with Auth0/Clerk/Supabase via OAuth callbacks",
+      "Week 2: Create web dashboard for rule configuration (element selectors, gate triggers, A/B test variants), add analytics showing impressions, sign-ups, bounce rates per gate rule, integrate Stripe for subscription billing",
+      "Week 3: Implement SEO preservation (render full content to search bots via User-Agent detection), run automated Axe-core accessibility scans on gate implementations, generate compliance report PDFs, add Cloudflare Workers edge caching for fast widget delivery"
+    ],
+    "risks_and_challenges": "Websites may implement gating poorly and blame the tool for user experience problems. Search engines may penalize sites using aggressive gating despite compliance efforts (Google is unpredictable). Accessibility advocates may criticize gating as discriminatory if not implemented carefully. Technical challenge: ensuring widget works across different CMS platforms and custom site architectures.",
+    "growth_hook": "Write SEO-optimized blog post: 'How Google Maps gates content without killing SEO (and how your site can too)' targeting growth marketers. Offer free implementation for 5 mid-traffic sites (50K+ monthly visitors) in exchange for case study and testimonial. Post on Indie Hackers: 'I built the gating widget Google Maps wishes it had' with embedded demo. Cold email 100 SaaS founders with free SEO audit showing how their current paywalls hurt search rankings, offer SignedInGate as solution.",
+    "feasibility": 5,
+    "demand_confidence": 4,
+    "uniqueness": 4,
+    "avg_score": 4.3
+  }
+]
