@@ -1,0 +1,97 @@
+[
+  {
+    "rank": 1,
+    "name": "DepopIQ",
+    "one_liner": "Resale marketplace analytics and pricing intelligence platform that tells apparel brands and boutique retailers exactly which items to launch secondhand programs for and how to price them competitively on Depop, Poshmark, and eBay.",
+    "domains": [
+      "ecommerce_retail"
+    ],
+    "primary_domain": "ecommerce_retail",
+    "news_trigger": "eBay acquiring Depop for $1.2B validates massive resale market growth (60% U.S. sales increase). Etsy selling Depop because it was a margin drag suggests resale requires specialized expertise that most retailers lack. Aritzia acquiring Fred Segal shows fashion brands consolidating to compete in resale-first Gen Z market.",
+    "the_problem": "Apparel brands and boutique retailers know they need resale programs to attract Gen Z buyers and compete with Depop's 60% growth, but they have no data on which items actually resell well or how to price them. Launching a branded resale program without intelligence on resale velocity, pricing trends, and buyer demand is a margin-destroying guessing game. Depop's seller tools are basic, and brands can't benchmark their resale performance against competitors or identify which past-season inventory would thrive in secondhand channels.",
+    "target_audience": "Emerging fashion brands ($2M-$50M revenue), boutique clothing retailers with excess inventory, vintage and consignment shops, individual Depop/Poshmark power sellers (>$10K/month GMV), and apparel brands exploring resale channels like Aritzia and Fred Segal-style concepts.",
+    "product_description": "DepopIQ scrapes and analyzes live listings, sold items, and pricing trends across Depop, Poshmark, eBay, and Vinted. Users input their product catalog or brand name, and the tool shows resale velocity (how fast items sell), average resale price vs. original retail, top-performing styles, and seasonal demand trends. Brands get 'Resale Opportunity Scores' for each SKU showing which items should be prioritized for secondhand programs. Includes a pricing recommender that suggests optimal list prices to maximize sell-through and margin. Power sellers get competitor benchmarking, trend alerts for rising styles, and automated repricing recommendations.",
+    "revenue_model": "Freemium: Free tier tracks up to 50 items with basic resale data. Pro: $49/month for up to 500 items, competitor tracking, and pricing recommendations. Brand/Retailer: $299/month for unlimited items, full catalog analysis, trend forecasting, and API access for integrating resale data into inventory systems. Annual plans get 2 months free.",
+    "market_signal": "eBay paying $1.2B for Depop proves resale is a high-growth, high-margin business. Depop's 60% U.S. sales surge shows explosive demand from Gen Z buyers. Etsy dumping Depop because it couldn't scale resale profitably reveals the space needs specialized tools and expertise. Brands like Aritzia investing in heritage resale properties (Fred Segal acquisition) signals that established retailers are moving into secondhand. ThredUp and Vestiaire Collective raised $200M+ showing investor appetite for resale infrastructure.",
+    "competitive_landscape": "Existing tools: Depop's native analytics are basic (sales history only, no competitor data). Poshmark offers seller insights but no cross-platform benchmarking. ThredUp's RaaS (Resale-as-a-Service) is enterprise-focused and expensive. Vestiaire and The RealReal target luxury consignment, not mass-market resale. Resale platforms lack intelligence tools—sellers guess at pricing. DepopIQ fills the gap by providing Depop/Poshmark sellers and brands with data-driven resale strategy, something no current tool offers comprehensively.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Python + Scrapy for web scraping Depop, Poshmark, eBay APIs where available, Next.js frontend, Supabase for database and user auth, OpenAI GPT-4 for product matching and trend analysis, Recharts for dashboards, Stripe for subscription billing, serverless functions (Vercel) for scheduled scraping jobs.",
+    "build_plan": [
+      "Week 1: Build web scrapers for Depop, Poshmark, and eBay to collect live listings, sold items, and pricing data; store in Supabase with scheduled daily updates",
+      "Week 2: Create product matching algorithm using GPT-4 to link similar items across platforms and calculate resale velocity and average prices by brand/style",
+      "Week 3: Build 'Resale Opportunity Score' engine that ranks user's catalog items by sell-through rate and margin potential; create pricing recommender based on sold comps",
+      "Week 4: Add competitor tracking dashboard, trend alerts for rising styles, and export reports; implement Stripe billing with free/pro/brand tiers and usage limits"
+    ],
+    "risks_and_challenges": "Scraping Depop/Poshmark risks IP blocking or ToS violations—need rotating proxies and respectful rate limiting, plus fallback to official APIs where possible. Product matching across platforms is complex (same item listed with different titles/photos)—requires robust image recognition or GPT-4 embeddings for similarity. Resale data can be noisy (incorrect prices, incomplete listings)—need data cleaning and outlier filtering. Platforms may change layouts breaking scrapers—requires ongoing maintenance.",
+    "growth_hook": "Launch with a free 'Resale Readiness Report' that analyzes any apparel brand's top 20 SKUs and shows resale velocity and pricing potential on Depop. Post viral Twitter/TikTok content: 'We analyzed 10,000 Depop listings—here are the 5 vintage brands selling out in under 24 hours.' Target Depop/Poshmark power sellers with YouTube ads showing how to double sell-through with data-driven pricing. Partner with fashion resale influencers and vintage dealers who can promote to their audiences. Sponsor Depop seller Facebook groups and Reddit's r/Depop. Reach out to emerging DTC brands on LinkedIn: 'eBay just paid $1.2B for Depop—is your brand ready to launch a resale channel?'",
+    "feasibility": 7,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 18,
+    "name": "TariffImpactIQ",
+    "one_liner": "Real-time tariff scenario modeling and supplier diversification platform that shows retailers exactly how trade policy volatility affects margins and helps them optimize sourcing decisions before SCOTUS rulings hit the books.",
+    "domains": [
+      "ecommerce_retail",
+      "government_compliance"
+    ],
+    "primary_domain": "ecommerce_retail",
+    "news_trigger": "Supreme Court invalidating Trump tariffs creates massive regulatory uncertainty for retailers who need to model multiple tariff scenarios simultaneously. Furniture retailers like Wayfair face direct tariff exposure on imports, while companies like Walmart and Nordstrom need dynamic sourcing strategies.",
+    "the_problem": "The Supreme Court's 6-3 decision invalidating Trump's emergency tariff powers creates unprecedented regulatory whiplash for retailers with global supply chains. Retailers like Wayfair (furniture imports) and Nordstrom can't predict landed costs or optimize sourcing because tariff rules change faster than their procurement cycles. Most mid-market retailers lack enterprise-grade trade compliance tools and are flying blind on margin impact when tariffs shift weekly.",
+    "target_audience": "Mid-market e-commerce brands ($5M-$100M revenue), furniture/home goods retailers, apparel brands with Asian manufacturing, and procurement teams at specialty retailers lacking enterprise trade compliance software.",
+    "product_description": "TariffImpactIQ is a lightweight SaaS dashboard that ingests product SKU data, supplier locations, and import volumes, then models margin impact across multiple tariff scenarios in real-time. Users connect their Shopify/WooCommerce store or upload a product catalog, and the tool automatically identifies tariff exposure by HTS code. When SCOTUS or executive orders change tariff rules, the system sends instant Slack/email alerts with updated margin calculations and suggests alternative supplier regions with lower duties. Includes a supplier diversification recommender that shows exactly which products should be re-sourced to Mexico, Vietnam, or domestic suppliers to minimize tariff risk.",
+    "revenue_model": "SaaS subscription: $199/month for up to 500 SKUs, $499/month for up to 5,000 SKUs, $999/month for unlimited SKUs and multi-user teams. Annual plans get 20% off. Add-on service: $2,500 one-time tariff audit and supplier diversification roadmap consulting.",
+    "market_signal": "Nordstrom just announced AI-powered sourcing strategy investments specifically for supply chain agility. Wayfair's earnings call explicitly mentioned tariff headwinds on furniture imports. Gordon Brothers acquiring distressed brands like Chinese Laundry shows retailers are failing due to margin compression from trade uncertainty. Import-heavy retailers are already paying $10K-$50K/year for enterprise trade compliance software—this targets the underserved mid-market.",
+    "competitive_landscape": "Enterprise solutions like Descartes CustomsInfo and Avalara Customs & Duty exist but cost $20K-$100K/year and require months to implement. Flexport and Freightos offer freight cost visibility but don't model tariff scenarios or suggest sourcing alternatives. TariffImpactIQ is a lightweight, self-service tool that retailers can deploy in under 2 hours with immediate ROI on the first sourcing decision.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase for database and auth, HTS code API (customs.gov open data), tariff rate APIs (WTO/USITC databases), OpenAI GPT-4 for supplier diversification recommendations, Stripe for billing, SendGrid for email alerts, Slack webhooks for instant notifications.",
+    "build_plan": [
+      "Week 1: Build product catalog upload/integration (Shopify API, CSV import) and HTS code classifier using GPT-4 to map product descriptions to tariff codes",
+      "Week 2: Create tariff scenario modeling engine that pulls live rates from USITC API and calculates margin impact per SKU under different duty regimes",
+      "Week 3: Build supplier diversification recommender that suggests alternative manufacturing regions based on tariff savings, existing trade agreements, and supplier directories",
+      "Week 4: Add alert system (email/Slack) triggered by SCOTUS rulings or executive orders, create simple dashboard showing tariff exposure by category, and implement Stripe billing with tiered plans"
+    ],
+    "risks_and_challenges": "Tariff data APIs can be unreliable or delayed—need fallback to manual USITC data scraping. HTS code classification is complex and requires accuracy or users lose trust—may need human review for edge cases. Legal liability if margin calculations are wrong—must include clear disclaimer that this is decision support, not legal advice. Tariff rules are politically volatile, so product must adapt quickly when policies change overnight.",
+    "growth_hook": "Launch with a free tariff exposure audit tool that analyzes any retailer's product catalog and shows total at-risk margin if tariffs increase 25%. Promote on Reddit's r/ecommerce and r/shopify with case studies showing how tariff shifts wrecked furniture/apparel brands. Partner with freight forwarders and customs brokers who can refer clients. Sponsor Retail Dive and SupplyChainDive newsletters. Target Wayfair, Hasbro, and apparel sellers on LinkedIn ads with message: 'SCOTUS just invalidated tariffs—is your sourcing strategy ready for the next policy whiplash?'",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 19,
+    "name": "ProcureIQ Lite",
+    "one_liner": "AI-powered procurement spend visibility and supplier performance analytics for mid-market retailers who can't afford enterprise sourcing platforms but need Nordstrom-level procurement intelligence.",
+    "domains": [
+      "ecommerce_retail"
+    ],
+    "primary_domain": "ecommerce_retail",
+    "news_trigger": "Nordstrom investing in AI-powered sourcing and spend visibility per their Chief Procurement Officer signals mid-market retailers also need better procurement intelligence. Ace Hardware hitting $10B revenue with digital growth shows that even traditional retailers need modern sourcing tools to manage supplier complexity at scale.",
+    "the_problem": "Mid-market retailers ($20M-$500M revenue) have dozens to hundreds of suppliers but lack visibility into spend patterns, supplier performance, and savings opportunities. They're stuck using spreadsheets and QuickBooks while enterprise retailers like Nordstrom deploy AI-powered procurement platforms costing $100K+/year. When suppliers deliver late (like Walgreens' org restructuring suggests supply chain pressure), procurement teams can't identify the pattern until it's too late. They have no way to benchmark pricing, identify duplicate vendors, or negotiate better terms because they lack centralized spend data.",
+    "target_audience": "Procurement managers, operations directors, and CFOs at mid-market retail chains (20-200 stores), specialty retailers, furniture/home goods brands, and growing e-commerce companies managing complex supply chains without enterprise ERP systems.",
+    "product_description": "ProcureIQ Lite connects to QuickBooks, Xero, NetSuite, or accepts CSV uploads to automatically categorize spend by supplier, category, and department. The AI engine flags savings opportunities like duplicate vendors, price increases above market rates, and suppliers with declining on-time delivery. Dashboards show spend concentration risk, supplier scorecards with performance metrics, and contract renewal alerts. The system learns industry benchmarks from aggregated user data to suggest target pricing for common categories like packaging, ingredients, and fixtures. Includes automated RFQ templates and supplier comparison tools to negotiate better terms.",
+    "revenue_model": "SaaS subscription: $299/month for up to $10M annual spend tracked, $699/month for up to $50M spend, $1,499/month for $50M+ with unlimited users and advanced analytics. One-time setup fee: $999 for data migration and training. Optional add-on: AI-powered RFQ automation and supplier marketplace access for $499/month.",
+    "market_signal": "Nordstrom's CPO explicitly stating they need AI for sourcing agility validates market demand. Ace Hardware growing to $10B means even hardware co-ops face procurement complexity requiring modern tools. Walgreens laying off 600+ employees suggests retailers are cutting costs everywhere—procurement savings become critical. Enterprise platforms like Coupa and SAP Ariba cost $100K-$500K/year, leaving a massive mid-market gap. Retailers already use QuickBooks/Xero for accounting, so connecting to existing systems removes adoption friction.",
+    "competitive_landscape": "Enterprise: Coupa ($100K+/year), SAP Ariba, Jaggaer—too expensive and complex for mid-market. Simpler alternatives: Procurify ($10K-$30K/year) and Zip focus on AP automation, not spend intelligence. Punchout catalogs and marketplaces like Amazon Business don't provide analytics or performance tracking. ProcureIQ Lite is positioned between basic AP tools and enterprise platforms, delivering Nordstrom-level intelligence at mid-market price points with self-service onboarding.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js + TypeScript frontend, Supabase for database and auth, Plaid/Teller for accounting system connections, QuickBooks API, Xero API, OpenAI GPT-4 for spend categorization and savings recommendations, Recharts for dashboards, Stripe for billing, Resend for transactional emails.",
+    "build_plan": [
+      "Week 1: Build accounting system connectors (QuickBooks Online API, Xero API, CSV upload) and data ingestion pipeline that normalizes transactions",
+      "Week 2: Create AI categorization engine using GPT-4 to classify spend by category, supplier, and department; build spend dashboard showing top suppliers and category breakdowns",
+      "Week 3: Build supplier scorecard system tracking on-time delivery, quality issues, and price trends; implement automated alerts for contract renewals and price increases",
+      "Week 4: Add savings opportunity detection (duplicate vendors, above-market pricing, spend concentration risk) with benchmarking data from anonymized user base",
+      "Week 5: Create RFQ template library and supplier comparison tools, implement Stripe billing with tiered pricing, and add CSV export for reports"
+    ],
+    "risks_and_challenges": "Accurate spend categorization is hard—requires training AI on retail-specific vendor names and invoice formats. Users may distrust AI recommendations without clear sourcing data—need to show comparable pricing from similar retailers. Getting initial benchmark data is a cold-start problem—may need to seed with public retail procurement data or industry reports. Integration with legacy accounting systems can be brittle—need robust error handling and manual upload fallback.",
+    "growth_hook": "Launch with a free 'Procurement Health Check' tool that audits any retailer's spend data and identifies top 3 savings opportunities. Post case study on LinkedIn: 'How one $50M furniture retailer saved $180K in Year 1 by finding duplicate suppliers and renegotiating packaging costs.' Target procurement managers on LinkedIn with ads highlighting Nordstrom's AI sourcing strategy. Partner with accounting firms and fractional CFO consultants who serve mid-market retail clients. Sponsor Retail Dive and RetailWire newsletters. Offer free 30-day trial with onboarding call to ensure activation.",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  }
+]

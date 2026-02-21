@@ -1,0 +1,160 @@
+[
+  {
+    "rank": 6,
+    "name": "AgenticBookingHub",
+    "one_liner": "Independent hotel inventory syndication API that makes small hotel availability discoverable by AI agents (ChatGPT, Claude, Perplexity) without paying OTA commissions",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Wyndham and Marriott's agentic AI plans are pressuring Booking.com; Expedia treats AI agents as a major threat per its 10-K filing; hotels want to bypass OTAs and connect directly to LLM-powered travel booking",
+    "the_problem": "AI agents (ChatGPT, Claude, Perplexity) are starting to book travel directly, but only large hotel chains like Wyndham and Marriott have the resources to build direct integrations. Independent hotels and small chains still rely on expensive OTA distribution (15-25% commissions) and risk becoming invisible in the emerging AI-powered booking landscape. They need a simple way to make their inventory AI-discoverable without building custom integrations with every LLM platform.",
+    "target_audience": "Independent boutique hotels (10-50 rooms), regional hotel groups (3-20 properties), bed & breakfasts, vacation rental managers transitioning to hotel-style operations, hotel management software vendors (PMS providers)",
+    "product_description": "AgenticBookingHub is a lightweight API and dashboard that syncs hotel inventory (room availability, rates, photos, amenities) to a structured data format optimized for AI agent retrieval. Hotels connect their existing PMS (or manually update availability) and AgenticBookingHub automatically generates and maintains JSON-LD schema, keeps embeddings updated in vector databases used by AI platforms, and handles real-time availability queries from AI agents. The MVP focuses on basic rate and availability syndication with direct booking links—no payment processing initially, just driving traffic to the hotel's native booking engine. Dashboard shows which AI platforms are surfacing the property and click-through rates.",
+    "revenue_model": "Subscription: $99/month per property for up to 20 rooms, $199/month for 21-50 rooms, $399/month for larger properties or multi-property groups. Optional 3-5% commission on bookings generated through AI agent referrals (tracked via UTM parameters) for hotels that want performance-based pricing instead of flat subscription.",
+    "market_signal": "Expedia's 10-K explicitly calls out AI agents as a threat to its OTA model; Booking Holdings' stock fell when Wyndham announced its agentic strategy. This indicates Wall Street believes AI-powered booking is a real distribution shift, not vaporware. Independent hotels are desperate for alternatives to the 15-25% OTA commissions that have crushed margins post-COVID.",
+    "competitive_landscape": "OTAs like Booking.com and Expedia currently dominate independent hotel distribution but charge massive commissions. Direct PMS integrations with AI platforms require custom API work beyond most small hotels' capabilities. Hotel metasearch engines (Trivago, Kayak) aren't yet AI-agent-optimized. The gap is a turn-key syndication layer specifically designed for AI discoverability at a price point independent hotels can afford.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Node.js/Express backend, PostgreSQL database, Redis for caching real-time availability, JSON-LD schema generation, vector database integration (Pinecone or Weaviate) for embedding storage, OAuth integrations with major PMS APIs (Cloudbeds, Mews, RoomRaccoon), React admin dashboard.",
+    "build_plan": [
+      "Week 1: Build PMS integration framework starting with Cloudbeds and manual CSV upload fallback for hotels without API-enabled systems",
+      "Week 2: Develop structured data generator that converts room inventory into AI-optimized JSON-LD and natural language descriptions for embedding",
+      "Week 3: Integrate with Pinecone to store and update property embeddings; build webhook system to keep availability in sync",
+      "Week 4: Create simple dashboard showing syndication status, AI platform visibility (where possible), and referral traffic with UTM tracking",
+      "Week 5: Add direct booking link generation and test with beta hotels; prepare onboarding docs showing hotels how to verify their property appears in ChatGPT/Claude search results"
+    ],
+    "risks_and_challenges": "AI platforms may not adopt open API standards for travel booking immediately; proving attribution from AI agent bookings is difficult without LLM platform partnerships; small hotels may not understand why they need this until AI booking becomes more mainstream. Need to secure at least one major AI platform partnership (even informal) to demonstrate proof of concept.",
+    "growth_hook": "Partner with boutique hotel associations (Stash Hotel Rewards, Small Luxury Hotels) to offer AgenticBookingHub as a member benefit. Run a 'Make Your Hotel AI-Ready' webinar series targeting independent hoteliers and get PMS vendors (Cloudbeds, Mews) to promote it as a complementary service. Publish a monthly 'AI Booking Index' showing which hotels are getting AI-driven traffic to establish thought leadership.",
+    "feasibility": 7,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 7,
+    "name": "TariffMenuPricer",
+    "one_liner": "Real-time menu pricing and margin calculator that shows restaurants exactly how Supreme Court tariff rulings and commodity price swings affect dish profitability and suggests immediate price adjustments",
+    "domains": [
+      "food_hospitality",
+      "government_compliance"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Supreme Court struck down Trump tariffs affecting seafood, beef, and produce prices; restaurant commodity costs remain highly volatile due to ongoing trade policy uncertainty",
+    "the_problem": "Restaurant operators are dealing with wild commodity price swings driven by tariff policy volatility. When the Supreme Court strikes down tariffs, beef and seafood prices can drop 10-20% overnight, but most restaurants don't adjust menu prices quickly enough to capture margin improvements—or they miss cost spikes and lose money on popular items. Operators need real-time visibility into how policy changes and commodity price movements affect dish-level profitability so they can make immediate pricing decisions.",
+    "target_audience": "Casual dining chains (50-500 locations), independent upscale restaurants with seafood or steak focus, restaurant groups (5-20 concepts), food cost consultants serving multi-unit operators",
+    "product_description": "TariffMenuPricer is a specialized menu engineering tool that monitors commodity prices (beef, seafood, produce) in real-time and maps them to individual menu items' ingredient costs. When tariffs are imposed or struck down, the platform immediately recalculates dish margins and flags which items are now underpriced or overpriced relative to target food cost percentages. The dashboard suggests specific price adjustments (e.g., 'Increase ribeye from $38 to $41 to maintain 28% food cost') and shows the revenue impact across the full menu. MVP includes manual recipe entry, integration with USDA and seafood commodity price feeds, and basic margin analysis with recommended pricing.",
+    "revenue_model": "Subscription: $199/month for single-location restaurants, $499/month for 2-10 locations, $999/month for 11-50 locations with multi-brand support. Optional add-on: $299/month for daily commodity price alerts via SMS and automated pricing recommendations based on competitive pricing data.",
+    "market_signal": "The Supreme Court tariff news directly impacted seafood, beef, and produce—the three highest-cost categories for full-service restaurants. Operators are publicly complaining about commodity volatility making menu planning impossible. The fact that major policy shifts can move prices 10-20% overnight creates urgent demand for real-time margin monitoring.",
+    "competitive_landscape": "Recipe costing tools (PlateIQ, MarginEdge) focus on invoice parsing and general food cost tracking but don't provide real-time commodity price updates or policy-driven repricing recommendations. Menu engineering consultants charge $5K+ for static analyses that are outdated within weeks. The gap is dynamic, policy-aware pricing intelligence at an affordable subscription price.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "React frontend, Node.js backend, PostgreSQL database, USDA Agricultural Marketing Service API for commodity prices, SeafoodSource Price Index API, web scraping for supplemental pricing data, Chart.js for margin visualization.",
+    "build_plan": [
+      "Week 1: Build recipe entry interface where operators input menu items, ingredients, and current menu prices; set up USDA and seafood price feed integrations",
+      "Week 2: Develop margin calculation engine that maps commodity prices to recipe costs and flags items outside target food cost percentages",
+      "Week 3: Create pricing recommendation algorithm that suggests adjustments based on margin targets and historical price elasticity assumptions",
+      "Week 4: Build dashboard with visual alerts for policy-driven price shocks and downloadable repricing reports; add SMS alert system for major commodity swings; launch beta"
+    ],
+    "risks_and_challenges": "Commodity price data APIs may have delays or gaps; operators may resist frequent menu price changes due to guest perception concerns; recipe entry is time-consuming (mitigate with bulk import templates). Need to educate operators that dynamic pricing is necessary in volatile commodity markets, not 'nickel-and-diming' guests.",
+    "growth_hook": "Publish a 'Supreme Court Tariff Impact Calculator' as a free tool showing restaurants exactly how much margin they gained or lost from the recent ruling—capture leads through this viral content. Partner with seafood and beef distributors (Sysco, US Foods) to offer TariffMenuPricer as a value-add to their largest restaurant customers. Cold email casual dining chains with subject line: 'Your ribeye margin just improved 15% overnight—here's how to capture it.'",
+    "feasibility": 8,
+    "demand_confidence": 7,
+    "uniqueness": 3,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 15,
+    "name": "NationalDayPromoHub",
+    "one_liner": "Automated 'National Day' promotion planning and execution platform that helps QSR and fast-casual chains launch timely digital giveaways like National Chili Day or National Tortilla Chip Day in under 30 minutes",
+    "domains": [
+      "food_hospitality",
+      "ecommerce_retail"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "Wendy's National Chili Day giveaway, Chipotle's National Tortilla Chip Day promotion, and other chains capitalizing on quirky food holidays to drive app downloads and digital orders",
+    "the_problem": "QSR and fast-casual chains are increasingly using 'National [Food] Day' promotions to spike digital orders and app engagement, but most operators don't have a systematic way to track these obscure holidays, plan promotions in advance, or execute them quickly across digital channels. Marketing teams scramble to create assets, set up app campaigns, and coordinate with ops at the last minute—or they miss opportunities entirely because they didn't know National Queso Day was coming up.",
+    "target_audience": "QSR and fast-casual marketing managers (50-500 locations), regional franchise groups, ghost kitchen operators, digital marketing agencies serving restaurant clients",
+    "product_description": "NationalDayPromoHub is a promotion planning and execution platform built around the 200+ food-related 'National Days' each year. It provides a calendar showing upcoming food holidays relevant to the operator's menu, pre-built promotion templates (free item with purchase, percentage off, limited-time combo), and one-click deployment to major digital ordering platforms (Toast, Square, Olo, native apps). The MVP includes email and SMS campaign templates, social media post generators with Canva-style graphics, and basic offer tracking showing redemption rates. Operators can queue up promotions weeks in advance and the platform auto-executes them on the right day.",
+    "revenue_model": "Subscription: $299/month for single-brand access with up to 10 locations, $699/month for multi-brand groups or 11-50 locations, $1,499/month for 51+ locations with white-label campaign management. Optional add-on: $199/month for AI-generated social media content customized to brand voice.",
+    "market_signal": "Major chains like Wendy's and Chipotle are publicly announcing National Day promotions, indicating they drive meaningful digital order volume. These promotions consistently trend on social media and generate press coverage—free marketing for chains that execute well. The frequency of these holidays (nearly every day has one) creates recurring demand for streamlined execution tools.",
+    "competitive_landscape": "General restaurant marketing platforms (Fishbowl, Thanx) offer promotion tools but don't curate food holidays or provide templates. Social media management tools (Hootsuite, Sprout Social) help with posting but don't integrate with ordering platforms. The gap is a verticalized solution combining holiday calendars, promotion templates, and digital ordering integration.",
+    "complexity": "low",
+    "estimated_build_time": "3 weeks for MVP",
+    "tech_stack": "React frontend, Node.js backend, PostgreSQL database, integration APIs for Toast, Square, Olo (initially via OAuth and webhooks), Twilio for SMS campaigns, SendGrid for email, Canva API for social media graphic generation.",
+    "build_plan": [
+      "Week 1: Build food holiday calendar with filtering by menu category (e.g., show me all chip/dip days, all burger days); create promotion template library",
+      "Week 2: Integrate with one major ordering platform (Toast or Square) to enable promotion deployment; build email/SMS campaign builder",
+      "Week 3: Add social media post generator with basic Canva-style templates; build promo tracking dashboard showing redemptions and ROI; launch beta"
+    ],
+    "risks_and_challenges": "Saturation risk if too many chains promote the same National Day—could dilute effectiveness; integration complexity with diverse ordering platforms; proving ROI may be difficult initially. Need to emphasize speed-to-market and reducing marketing team workload as key value props beyond just driving orders.",
+    "growth_hook": "Launch 2 weeks before National Burger Day (May 28) and offer free setup to the top 10 regional burger chains. Publish a 'National Food Day ROI Report' analyzing which holidays drive the most digital orders based on anonymized beta customer data. Partner with ordering platform providers (Toast, Square, Olo) to list NationalDayPromoHub in their app marketplaces as a recommended marketing tool.",
+    "feasibility": 6,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 24,
+    "name": "ExperienceOS",
+    "one_liner": "White-label experiential dining event management platform for hotels and restaurants deploying immersive tech-driven culinary experiences like 3D projection mapping dinners",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "'Le Petit Chef' 3D projection mapping dinner experience returning to Grand Hyatt Atlanta; growing trend of experiential dining combining technology and multicourse tasting menus",
+    "the_problem": "Hotels and upscale restaurants want to deploy immersive dining experiences like 3D projection mapping shows, but lack the operational infrastructure to manage complex multicourse menus, synchronized technology cues, ticket sales, and guest coordination. Most operators license expensive turn-key solutions or build custom tech stacks that don't integrate with existing reservation and kitchen systems.",
+    "target_audience": "Upscale hotel F&B directors, independent fine dining restaurants, event venues with private dining rooms, culinary entertainment companies",
+    "product_description": "ExperienceOS is a specialized event management platform for tech-enhanced dining experiences. It orchestrates reservation management, multicourse menu timing, technology cue sheets (projection mapping, lighting, sound), kitchen prep workflows, and guest communications in one dashboard. The MVP includes a visual timeline builder that syncs menu courses with tech moments, automated guest communication templates, and kitchen display integration. Operators can clone and customize existing experience templates (like virtual cooking competitions across countries) or build new concepts. Includes basic ticketing, dietary restriction tracking, and post-event feedback collection.",
+    "revenue_model": "SaaS subscription at $299-599/month based on venue size, plus 2-3% transaction fee on ticket sales. Premium tier at $999/month includes white-label guest-facing booking pages and custom integration with projection mapping hardware vendors.",
+    "market_signal": "Grand Hyatt Atlanta is bringing back 'Le Petit Chef' as a recurring dinner theater event, indicating proven demand. These experiences typically charge $150-300 per person and sell out quickly. Hotels like this are actively seeking differentiated F&B experiences to drive room bookings and compete with standalone experiential restaurants.",
+    "competitive_landscape": "General event management tools (Eventbrite, Tripleseat) don't handle the complex timing coordination between kitchen, service, and technology. Turn-key experiential dining licensors like Le Petit Chef charge substantial licensing fees and don't provide operational software. The gap is purpose-built software for operators who want to run their own immersive dining concepts.",
+    "complexity": "medium",
+    "estimated_build_time": "4-5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Node.js/Express backend, PostgreSQL database, Stripe for payments, Twilio for SMS reminders, calendar integration APIs (Google Calendar, Outlook). Optional: OSC (Open Sound Control) library for basic lighting/projection cue triggering.",
+    "build_plan": [
+      "Week 1: Build core timeline/runsheet builder with drag-and-drop course scheduling and technology cue markers",
+      "Week 2: Implement reservation management with dietary restrictions, party size tracking, and automated confirmation emails",
+      "Week 3: Create kitchen display integration that shows timed prep and plating schedules synced to the experience timeline",
+      "Week 4: Add ticketing/payment processing via Stripe and basic guest communication templates",
+      "Week 5: Build reporting dashboard showing sales, guest feedback, and experience timing analytics; launch beta"
+    ],
+    "risks_and_challenges": "Integration complexity with diverse AV equipment vendors; convincing operators to switch from manual runsheets to software; educating market on the category since it's a new software niche. Need to start with venues already doing experiential dining rather than trying to convince traditional restaurants to adopt the concept.",
+    "growth_hook": "Target the 50+ hotels worldwide currently licensing Le Petit Chef or similar concepts with cold outreach: 'Run your next immersive dining event in-house for 1/3 the licensing cost.' Partner with projection mapping hardware vendors (like Optoma, Epson) to get listed as recommended software in their hospitality sales materials. Launch a gallery of free downloadable experience templates (virtual wine tours, chef competition formats) to attract operators exploring the concept.",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 25,
+    "name": "HospitalityGapScore",
+    "one_liner": "Technology perception audit tool that shows restaurant operators where their tech investments are failing to improve guest-perceived hospitality based on consumer sentiment data",
+    "domains": [
+      "food_hospitality"
+    ],
+    "primary_domain": "food_hospitality",
+    "news_trigger": "National Restaurant Association's 2026 State of the Industry Report revealed significant gaps between how restaurant operators and consumers perceive the hospitality impact of technology investments",
+    "the_problem": "Restaurant operators are spending heavily on tech (kiosks, apps, kitchen automation) assuming it improves service, but the NRA report shows consumers often disagree—they feel tech hurts hospitality. Operators lack concrete feedback mechanisms to identify which specific technology implementations are degrading guest experience vs. genuinely helping, so they keep investing in the wrong areas.",
+    "target_audience": "Multi-unit restaurant operators (20-200 locations), regional QSR and fast-casual franchisees, restaurant technology consultants, hospitality VC firms evaluating tech ROI",
+    "product_description": "HospitalityGapScore is an audit and benchmarking platform that identifies where restaurant technology is eroding perceived hospitality. It combines anonymous guest surveys (deployed via QR codes, SMS, or email receipts) with operator self-assessments to generate a 'Hospitality Gap Score' for each tech touchpoint (mobile ordering, kiosk, digital menu board, kitchen display system, etc.). The dashboard highlights which technologies guests perceive as helpful vs. alienating, benchmarked against similar restaurant types. Includes actionable recommendations like 'Your kiosk reduces wait time but guests report feeling ignored—add a greeter station' or 'Guests love your app's customization but hate that it eliminated tableside ordering.' Operators can track score improvements over time as they adjust implementations.",
+    "revenue_model": "Subscription: $299/month per brand for up to 5 locations, $699/month for 6-20 locations, custom enterprise pricing beyond that. Optional add-on: $99/month for competitive benchmarking data showing how your gap scores compare to industry averages by segment.",
+    "market_signal": "The NRA explicitly flagged the perception gap as a major industry concern in their 2026 report, indicating operators are aware they have a blind spot. Restaurant tech spending exceeded $3.5B in 2025, yet guest satisfaction scores have plateaued or declined—operators are desperate to understand why their investments aren't translating to better experiences.",
+    "competitive_landscape": "General guest feedback platforms (Medallia, Qualtrics) capture sentiment but don't specifically diagnose tech-hospitality tradeoffs. Mystery shopping services audit service quality but aren't technology-focused. The gap is a purpose-built diagnostic tool that isolates technology's impact on perceived hospitality and provides benchmarking context.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "React frontend, Node.js backend, PostgreSQL database, Twilio for SMS surveys, SendGrid for email surveys, Chart.js for data visualization. Use a simple NPS-style survey framework initially to reduce complexity.",
+    "build_plan": [
+      "Week 1: Build operator onboarding flow where they list all customer-facing tech touchpoints and deploy guest survey generation (QR code, SMS link)",
+      "Week 2: Create guest survey interface with mobile-optimized questions asking guests to rate specific tech on convenience vs. personal connection",
+      "Week 3: Develop scoring algorithm that calculates Hospitality Gap Score by comparing operator expectations to guest sentiment; build basic dashboard",
+      "Week 4: Add benchmarking module with anonymized industry averages by restaurant segment; create PDF report exports for stakeholder sharing; launch beta"
+    ],
+    "risks_and_challenges": "Low guest survey response rates (mitigate with incentives like discount codes); operators may resist findings that contradict their tech investment decisions; difficult to isolate technology's impact from other service quality factors. Need statistically significant sample sizes before scores are meaningful.",
+    "growth_hook": "Offer free Hospitality Gap Score audits to the 50 largest QSR and fast-casual chains mentioned in the NRA report. Publish anonymized findings (e.g., 'QSR kiosks score 3.2/10 on hospitality perception vs. 8.1/10 on convenience') as industry research to establish thought leadership. Partner with restaurant tech vendors (Toast, Square, Olo) to offer HospitalityGapScore as a free value-add to their customers evaluating tech ROI.",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  }
+]

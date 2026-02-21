@@ -1,0 +1,159 @@
+[
+  {
+    "rank": 9,
+    "name": "PrescriptionGuardian",
+    "one_liner": "Safety audit layer for AI prescription renewal systems that catches dangerous drug interactions and outdated scripts before they're auto-renewed",
+    "domains": [
+      "health_wellness"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "STAT article 'Would you trust AI to renew your drug prescriptions?' highlighting the rise of AI-powered prescription renewal chatbots like Doctronic, raising safety and liability concerns",
+    "the_problem": "As AI tools like Doctronic automate prescription renewals, they create new safety risks: outdated prescriptions being renewed without physician review, drug interaction checks being bypassed, and patients getting renewals for medications they should have stopped. Physicians and health systems adopting AI renewal tools need a safety layer to prevent malpractice lawsuits and patient harm, but existing tools don't integrate with AI chatbots.",
+    "target_audience": "Chief medical officers and digital health leaders at health systems, telehealth companies, and primary care groups piloting AI prescription renewal automation",
+    "product_description": "PrescriptionGuardian is a middleware API that sits between AI prescription renewal systems and pharmacy/EMR systems. It audits every AI-generated renewal request against evidence-based safety rules: checks for dangerous drug interactions using FDA data, flags prescriptions that haven't had an in-person review within clinical guidelines (e.g., controlled substances, chronic disease meds), and identifies patients with recent hospitalizations or diagnoses that contraindicate renewal. When a risky renewal is detected, it blocks submission and alerts the prescribing physician with specific clinical reasoning. The MVP supports integration with common telehealth platforms (Doxy.me, SimplePractice) and e-prescribing systems (Surescripts, DrFirst).",
+    "revenue_model": "Usage-based pricing: $0.10 per prescription renewal audited, or flat $499/month for up to 5,000 renewals. Hospitals and telehealth companies with 10K+ renewals/month pay $999-$2,999/month. Target 15 pilot customers within 6 months = $7.5K-45K MRR.",
+    "market_signal": "STAT's coverage shows AI prescription automation is already happening and generating mainstream concern. Physicians are nervous about liability. Health systems will pay for safety layers before adopting AI tools broadly. Similar 'guardrail' products in AI radiology (Aidoc, Annalise.ai) have raised hundreds of millions—proving the safety audit model works.",
+    "competitive_landscape": "Drug interaction checkers (Lexicomp, Micromedex) exist but don't integrate with AI chatbot workflows or flag inappropriate renewals. Clinical decision support tools (UpToDate, DynaMed) are manual reference tools, not automated audits. PrescriptionGuardian is the first purpose-built safety layer for AI prescription automation.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Node.js/Express API, PostgreSQL with drug interaction database (FDA's National Drug Code directory + First Databank drug interaction data), Surescripts API for e-prescribing integration, webhooks for chatbot integration",
+    "build_plan": [
+      "Week 1: Build core API that accepts prescription renewal requests (drug name, dose, patient ID, last refill date) and returns safety score with flagged risks",
+      "Week 2: Integrate FDA drug interaction database and clinical guidelines (e.g., American Heart Association, American Diabetes Association) for evidence-based safety rules",
+      "Week 3: Add physician alert workflow with detailed clinical reasoning for flagged renewals and one-click override for false positives",
+      "Week 4: Build Surescripts API integration for blocking risky prescriptions before they're sent to pharmacies, plus webhook support for AI chatbot platforms"
+    ],
+    "risks_and_challenges": "Liability concerns—mitigate by positioning as 'decision support' not 'final arbiter' and requiring physician review of all flags. Drug interaction data licensing costs—start with free FDA data and upgrade to First Databank later. Integration complexity with diverse AI chatbot platforms—begin with webhooks and expand to direct integrations based on demand.",
+    "growth_hook": "Publish a white paper showing % of AI prescription renewals that would have been unsafe without PrescriptionGuardian audit (partner with 3-5 pilot sites for data). Reach out directly to telehealth companies featured in STAT article. Offer free 90-day pilots to health systems testing AI prescription tools, with no-obligation safety audits.",
+    "feasibility": 7,
+    "demand_confidence": 5,
+    "uniqueness": 6,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 10,
+    "name": "MAExitNavigator",
+    "one_liner": "Automated Medicare Advantage plan comparison and enrollment platform that helps seniors forced out of their MA plans find equivalent or better coverage in 72 hours",
+    "domains": [
+      "health_wellness",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Study showing forced Medicare Advantage disenrollments are rising as payers exit markets and rethink benefits amid financial pressures",
+    "the_problem": "When Medicare Advantage plans exit markets or drop provider networks, seniors get 60 days to find new coverage—but most don't understand their options and risk losing access to their doctors or medications. The forced disenrollment crisis creates massive confusion and potential coverage gaps for vulnerable seniors. Insurance brokers are overwhelmed and can't provide personalized guidance at scale. Seniors need an automated tool that quickly shows which plans cover their current doctors and prescriptions.",
+    "target_audience": "Medicare-eligible seniors (65+) facing forced disenrollment from their MA plans, plus insurance agents and senior advocacy organizations helping affected populations",
+    "product_description": "MAExitNavigator is a web-based tool that helps disenrolled MA beneficiaries find replacement plans in minutes. Users enter their zip code, current doctors, and current prescriptions. The platform queries the Medicare Plan Finder API to identify all available MA plans, then automatically filters and ranks options by: (1) whether they cover the user's current providers, (2) estimated total annual cost including premiums, deductibles, and drug copays, (3) star ratings. Results show side-by-side comparisons with one-click enrollment links. The MVP includes a guided interview flow, automated provider network lookups, and drug formulary checking.",
+    "revenue_model": "Free for consumers. Revenue from insurance carrier commissions ($300-600 per MA enrollment) and lead generation fees from licensed agents ($25 per qualified lead). Target 500 enrollments in year 1 = $150K-300K revenue. Add $99/year 'premium' tier for ongoing plan optimization alerts.",
+    "market_signal": "The study explicitly shows forced disenrollments are accelerating. 33 million Americans are enrolled in MA plans. Even if just 3-5% face forced disenrollment annually, that's 1M+ affected seniors needing urgent help. Existing Medicare.gov tools are clunky and don't optimize for continuity of care. Every insurance agent wants better lead gen tools.",
+    "competitive_landscape": "Medicare.gov Plan Finder is the official tool but has terrible UX and doesn't prioritize provider continuity. eHealth, GoHealth, and SelectQuote are lead gen platforms for brokers but don't offer self-service plan comparison. MAExitNavigator combines self-service convenience with agent monetization, filling the gap.",
+    "complexity": "medium",
+    "estimated_build_time": "4 weeks for MVP",
+    "tech_stack": "Next.js frontend, Medicare Plan Finder API, PostgreSQL for provider network data (scraped from CMS files), Stripe for payments (if adding premium tier), Vercel hosting",
+    "build_plan": [
+      "Week 1: Build guided intake flow collecting zip code, current plan details, list of doctors (NPI numbers), and current prescriptions (drug names and doses)",
+      "Week 2: Integrate Medicare Plan Finder API to fetch available MA plans by zip code, then filter by provider network inclusion using CMS provider directory data",
+      "Week 3: Build drug formulary checking using CMS prescription drug plan formulary files to calculate estimated annual drug costs for each plan option",
+      "Week 4: Create side-by-side plan comparison UI with cost breakdowns, star ratings, and one-click enrollment links to carrier websites or agent referral forms"
+    ],
+    "risks_and_challenges": "Insurance carrier commission rules vary by state—mitigate by partnering with licensed insurance agencies or using lead gen model only. CMS data is updated annually but plans change mid-year—add disclaimers and manual verification step. Seniors may not know their doctors' NPI numbers—offer lookup by doctor name and address. Competition from established insurance brokers—differentiate with superior UX and faster results.",
+    "growth_hook": "Partner with Area Agencies on Aging and SHIP (State Health Insurance Assistance Program) counselors to promote the tool to affected seniors. Run Facebook and Google ads targeting '[your city] Medicare Advantage plan cancelled' searches. Publish guides on senior-focused websites (AARP, SilverSneakers) showing how to navigate forced disenrollment.",
+    "feasibility": 8,
+    "demand_confidence": 7,
+    "uniqueness": 3,
+    "avg_score": 6.0
+  },
+  {
+    "rank": 16,
+    "name": "NicotineWatchdog",
+    "one_liner": "Browser extension and alert system that detects when wellness influencers promote nicotine products and flags potential health misinformation for users and platforms",
+    "domains": [
+      "health_wellness"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "STAT article revealing biohackers and wellness influencers are increasingly promoting nicotine as a cognitive enhancer and productivity tool, creating a new public health risk as smoking rates decline",
+    "the_problem": "Wellness influencers with millions of followers are normalizing nicotine use by framing it as a nootropic 'biohack' for focus and productivity, contradicting decades of public health messaging about nicotine addiction and cardiovascular risks. Consumers, especially young adults, are being exposed to unregulated health claims without understanding the risks. Public health agencies and social media platforms have no systematic way to detect and counter this trend at scale.",
+    "target_audience": "Health-conscious social media users (18-35) following wellness and biohacking content, plus public health organizations and universities monitoring misinformation trends",
+    "product_description": "NicotineWatchdog is a browser extension (Chrome, Firefox) that runs in the background while users browse social media (Instagram, TikTok, YouTube, Twitter/X). It uses computer vision and NLP to detect when influencers are promoting nicotine products (nicotine pouches, patches, gum marketed as cognitive enhancers) in posts, videos, or stories. When detected, it displays an overlay warning showing peer-reviewed evidence of nicotine's cardiovascular and addiction risks, with links to CDC and WHO resources. Users can optionally report flagged content to platforms or public health databases. For public health researchers, the tool aggregates anonymized data on nicotine promotion trends across platforms.",
+    "revenue_model": "Freemium model: free browser extension with basic warnings. $4.99/month 'Health Guardian' tier adds real-time alerts for new nicotine promotions from followed influencers, plus reports from public health authorities. B2B licensing to universities and public health orgs ($999-2,999/year) for trend monitoring dashboards. Target 5,000 paid users + 3 institutional licenses = $30K-40K MRR within 6 months.",
+    "market_signal": "The STAT article proves this is an emerging public health threat that mainstream media is covering. Previous nicotine cessation apps have raised millions (e.g., Pivot, QuitGenius). Consumer demand for health misinformation detection tools is high (see: NewsGuard, which has 6M+ users). Public health orgs actively fund tools to counter emerging substance use trends.",
+    "competitive_landscape": "NewsGuard and similar tools focus on fake news sites, not influencer health claims. Social media platforms' misinformation detection is notoriously slow and incomplete. NicotineWatchdog is the first tool specifically targeting influencer-driven nicotine normalization with real-time consumer protection.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Browser extension (Manifest V3), OpenAI GPT-4 Vision API for image/video analysis, Whisper API for audio transcription, PostgreSQL for flagged content database, React for settings dashboard",
+    "build_plan": [
+      "Week 1-2: Build browser extension that monitors social media feeds (Instagram, TikTok, YouTube) and extracts post text, images, and video thumbnails using DOM scraping",
+      "Week 3: Integrate GPT-4 Vision API to analyze content for nicotine product mentions (brand names, product images, promotional language) with >80% accuracy",
+      "Week 4: Build overlay UI that displays health warnings when nicotine content is detected, with links to CDC/WHO resources and one-click reporting to platforms",
+      "Week 5: Add user dashboard showing aggregated nicotine promotion trends from followed influencers, plus optional email alerts for new promotions"
+    ],
+    "risks_and_challenges": "Social media platforms frequently change their APIs and DOM structure—mitigate with modular scraping code and community-driven updates. False positives (flagging anti-nicotine content) could annoy users—add feedback loop for users to mark incorrect flags. Influencers may push back or claim censorship—position tool as empowering consumer choice, not restricting speech.",
+    "growth_hook": "Launch with a viral Twitter/X thread showing examples of influencers promoting nicotine with side-by-side health warnings that would appear with NicotineWatchdog installed. Partner with public health influencers (e.g., Dr. Mike, Mama Doctor Jones) to promote the tool. Reach out to university public health departments for institutional pilots. Submit press release to STAT, Vox, and NYT highlighting the tool as a consumer protection response to their nicotine influencer coverage.",
+    "feasibility": 6,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.7
+  },
+  {
+    "rank": 28,
+    "name": "ChronoMed Optimizer",
+    "one_liner": "Clinical trial timing optimizer that helps cancer centers test whether treatment timing affects outcomes by tracking infusion schedules and patient responses",
+    "domains": [
+      "health_wellness"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Nature Medicine investigation into study claiming cancer immunotherapy is more effective when administered in the morning, highlighting need for rigorous testing of circadian timing in treatment protocols",
+    "the_problem": "The morning immunotherapy study controversy reveals a critical gap: healthcare providers have no systematic way to test whether treatment timing matters for their specific patient populations. Cancer centers and research hospitals need tools to rigorously track circadian variables in treatment protocols without designing expensive clinical trials from scratch.",
+    "target_audience": "Cancer center research coordinators, oncology practice managers, and clinical trial coordinators at academic medical centers testing treatment optimization strategies",
+    "product_description": "ChronoMed Optimizer is a lightweight scheduling and outcomes tracking platform specifically designed for testing circadian treatment hypotheses. It integrates with existing EMR systems to capture infusion times, patient outcomes, and relevant biomarkers, then uses statistical analysis to identify whether timing patterns correlate with treatment efficacy. The MVP focuses on immunotherapy infusion scheduling with automated data collection forms, patient outcome tracking, and basic statistical reporting that meets IRB requirements for quality improvement studies.",
+    "revenue_model": "$299/month per site license for cancer centers, with additional $49/month per active study arm. Target 20 early adopter cancer centers at $6K-8K/year each = $120K-160K ARR within 6 months",
+    "market_signal": "The controversial study generated massive clinical interest before being questioned—proving oncologists desperately want actionable circadian insights. 1,500+ cancer centers in the US routinely conduct quality improvement studies. Even 1% adoption = 15 paying sites.",
+    "competitive_landscape": "Clinical trial management systems like Medidata and Veeva are enterprise-only and cost $50K+/year. REDCap is free but requires significant technical setup and offers no circadian-specific analytics. ChronoMed fills the gap for mid-sized cancer centers who want circadian treatment insights without enterprise budgets or full IRB-approved trials.",
+    "complexity": "medium",
+    "estimated_build_time": "5 weeks for MVP",
+    "tech_stack": "Next.js frontend, Supabase for database, HL7 FHIR API for EMR integration, Python/NumPy for statistical analysis, Vercel hosting",
+    "build_plan": [
+      "Week 1-2: Build EMR-compatible data ingestion forms for treatment timing and patient outcomes with REDCap-style data validation",
+      "Week 3: Implement automated statistical analysis module that calculates correlation between treatment timing and outcomes (survival rates, response rates, adverse events)",
+      "Week 4: Create dashboard showing time-of-day treatment patterns, outcome distributions, and statistical significance testing with exportable IRB-ready reports",
+      "Week 5: Add authentication, site admin features, and basic HL7 FHIR integration for automated data pull from common EMRs (Epic, Cerner)"
+    ],
+    "risks_and_challenges": "EMR integration is complex—mitigate by starting with manual CSV uploads and adding API connections later. IRB approval requirements vary by institution—address with templated protocols and consent forms. Risk of being seen as 'pseudoscience' if initial results don't validate timing effects—counter with rigorous statistical methodology and transparent reporting.",
+    "growth_hook": "Publish a pre-print on medRxiv showing aggregated anonymized data from first 5 pilot sites testing the morning immunotherapy hypothesis. Reach out directly to the 200 NCI-designated cancer centers with free 60-day pilots. Partner with oncology societies (ASCO, AACR) to present findings at conferences.",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  },
+  {
+    "rank": 29,
+    "name": "DenialSense AI",
+    "one_liner": "AI-powered claims denial prediction engine that alerts RCM teams before submission which claims will likely be denied and why",
+    "domains": [
+      "health_wellness",
+      "finance_personal_finance"
+    ],
+    "primary_domain": "health_wellness",
+    "news_trigger": "Survey showing RCM leaders cite payer behaviors and claims denials as the #1 risk in 2026, plus ongoing payer-provider friction evidenced by DOJ antitrust lawsuit against OhioHealth over insurance contract practices",
+    "the_problem": "Healthcare providers lose billions to preventable claims denials. RCM teams are overwhelmed manually reviewing claims before submission, leading to 15-20% initial denial rates. Existing denial management tools are reactive—they help you appeal after denial, but don't prevent denials in the first place. With payer behaviors becoming more aggressive (as the OhioHealth lawsuit suggests), providers need proactive defense.",
+    "target_audience": "Revenue cycle management directors and claims processing teams at mid-sized hospitals (100-500 beds), ambulatory surgery centers, and multi-specialty physician groups with $50M-$500M annual revenue",
+    "product_description": "DenialSense AI analyzes historical claims data and payer-specific denial patterns to predict which claims will be denied before submission. The platform integrates with practice management systems (Epic, Cerner, Athenahealth) via API to pull pending claims, runs them through trained ML models, and flags high-risk claims with specific fix recommendations (missing documentation, incorrect codes, prior auth gaps). RCM teams get a daily dashboard showing risky claims ranked by dollar value with one-click fixes. The MVP focuses on the top 10 denial reasons that cause 80% of denials: missing prior authorization, incorrect codes, duplicate claims, medical necessity documentation gaps.",
+    "revenue_model": "SaaS pricing at $999/month for groups under 50 providers, $2,999/month for 50-200 providers, $5,999/month for enterprise. ROI pitch: preventing just 5-10 denials per month pays for itself. Target 30 customers within 6 months = $30K-90K MRR.",
+    "market_signal": "The RCM survey explicitly calls out claims denials as the top growth risk. ClaimDenialAI concept from previous brainstorm validates demand. Existing denial management market is $4B+ and growing 12% annually. RCM teams are already buying AI tools—just need one that prevents vs. reacts.",
+    "competitive_landscape": "Change Healthcare, Waystar, and R1 RCM offer denial management but focus on appeals, not prevention. Providers want upstream solutions. Startups like Apixio and Olive (now defunct) tried AI claims review but were too broad. DenialSense focuses exclusively on denial prediction, making it simpler to sell and implement.",
+    "complexity": "high",
+    "estimated_build_time": "6 weeks for MVP",
+    "tech_stack": "Python/FastAPI backend, scikit-learn or XGBoost for ML models, PostgreSQL for claims data, React dashboard, AWS hosting, HL7/FHIR and X12 EDI parsers for claims ingestion",
+    "build_plan": [
+      "Week 1-2: Build claims data ingestion pipeline supporting CSV upload and basic HL7/X12 parsing for common practice management systems",
+      "Week 3-4: Train initial ML model on publicly available Medicare claims denial data and partner pilot data to predict top 10 denial reasons with >75% accuracy",
+      "Week 5: Build dashboard showing predicted denials sorted by risk score and dollar value, with drill-down to show specific issues and fix recommendations",
+      "Week 6: Add integration hooks for Epic, Athenahealth, or Cerner APIs to auto-pull pending claims, plus webhook alerts to RCM team workflows"
+    ],
+    "risks_and_challenges": "Getting sufficient training data is hard—mitigate by offering free pilots in exchange for historical denial data. HIPAA compliance adds overhead—use existing BAA templates and SOC 2-ready hosting. Payer denial patterns change frequently—address with continuous model retraining. Competing with established RCM vendors requires clear ROI proof—run 60-day pilots showing exact $ saved.",
+    "growth_hook": "Offer free 60-day ROI pilots to 20 mid-sized hospital systems, showing exact dollars saved from prevented denials. Publish case studies on LinkedIn and healthcare finance forums. Partner with RCM consulting firms (Huron, Navigant) who can white-label the tool. Sponsor sessions at HFMA (Healthcare Financial Management Association) conferences.",
+    "feasibility": 5,
+    "demand_confidence": 6,
+    "uniqueness": 5,
+    "avg_score": 5.3
+  }
+]
