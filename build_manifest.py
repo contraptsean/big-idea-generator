@@ -37,10 +37,11 @@ def _load_domains() -> list[dict]:
     except OSError:
         return []
 
-    # Find DOMAIN_GROUPS = [...] and extract the list literal
-    match = re.search(r"^DOMAIN_GROUPS\s*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
+    # Find DOMAIN_GROUPS = [...] and extract the list literal.
+    # [^=]* handles optional type annotations like DOMAIN_GROUPS: list[dict] = [
+    match = re.search(r"^DOMAIN_GROUPS[^=]*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
     if not match:
-        match = re.search(r"^DOMAINS\s*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
+        match = re.search(r"^DOMAINS[^=]*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
     if not match:
         return []
 
@@ -65,10 +66,8 @@ def _load_domain_icons() -> dict[str, str]:
     except OSError:
         return {}
 
-    match = re.search(r"^DOMAIN_ICONS\s*:\s*\S+\s*=\s*(\{.*?^})", source, re.DOTALL | re.MULTILINE)
-    if not match:
-        # Also try without type annotation
-        match = re.search(r"^DOMAIN_ICONS\s*=\s*(\{.*?^})", source, re.DOTALL | re.MULTILINE)
+    # [^=]* handles optional type annotations like DOMAIN_ICONS: dict[str, str] = {
+    match = re.search(r"^DOMAIN_ICONS[^=]*=\s*(\{.*?^})", source, re.DOTALL | re.MULTILINE)
     if not match:
         return {}
 
@@ -115,13 +114,20 @@ def build() -> None:
     _DIGESTS_DST.mkdir(parents=True, exist_ok=True)
 
     raw_groups = _load_domains()
-    flat_domains = _flatten_domains(raw_groups)
-    domain_icons = _load_domain_icons()
+    # Prefer group-level metadata (4 groups) over flat domain list (9 domains)
     domains_meta = [
-        {"id": d["id"], "name": d["name"], "icon": d.get("icon") or domain_icons.get(d["id"], "")}
-        for d in flat_domains
-        if "id" in d and "name" in d
+        {"id": g["group_id"], "name": g["group_name"], "icon": g.get("icon", "")}
+        for g in raw_groups
+        if "group_id" in g and "group_name" in g
     ]
+    if not domains_meta:
+        # Fallback: old flat DOMAINS list
+        domain_icons = _load_domain_icons()
+        domains_meta = [
+            {"id": d["id"], "name": d["name"], "icon": d.get("icon") or domain_icons.get(d["id"], "")}
+            for d in _flatten_domains(raw_groups)
+            if "id" in d and "name" in d
+        ]
 
     database_url = os.environ.get("NEON_DATABASE_URL")
     if not database_url or psycopg2 is None:
@@ -175,9 +181,9 @@ def build() -> None:
         for opp in opportunities:
             c = opp.get("complexity", "unknown")
             complexity_breakdown[c] = complexity_breakdown.get(c, 0) + 1
-            pd = opp.get("primary_domain")
-            if pd:
-                domain_breakdown[pd] = domain_breakdown.get(pd, 0) + 1
+            gid = opp.get("group_id") or opp.get("primary_domain")
+            if gid:
+                domain_breakdown[gid] = domain_breakdown.get(gid, 0) + 1
             if opp.get("avg_score") is not None:
                 score_sum += opp["avg_score"]
                 score_count += 1

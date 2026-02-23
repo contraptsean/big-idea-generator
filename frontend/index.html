@@ -1119,10 +1119,7 @@
 
           if (activeDomain.value !== 'All') {
             const did = activeDomain.value;
-            list = list.filter(o =>
-              o.primary_domain === did ||
-              (o.domains && o.domains.includes(did))
-            );
+            list = list.filter(o => o.group_id === did);
           }
 
           if (sortBy.value === 'score') {
@@ -1148,10 +1145,10 @@
           const byDomain = {};
           const uncategorised = [];
           for (const opp of list) {
-            const pd = opp.primary_domain;
-            if (pd && domainMap.value[pd]) {
-              if (!byDomain[pd]) byDomain[pd] = [];
-              byDomain[pd].push(opp);
+            const gid = opp.group_id;
+            if (gid && domainMap.value[gid]) {
+              if (!byDomain[gid]) byDomain[gid] = [];
+              byDomain[gid].push(opp);
             } else {
               uncategorised.push(opp);
             }
