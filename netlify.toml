@@ -1,6 +1,7 @@
 # Netlify configuration for Big Idea Radar dashboard
-# The build script copies digests/ into frontend/ and generates manifest.json.
+# The build script queries Neon DB and generates static JSON files in frontend/.
+# Set NEON_DATABASE_URL in Netlify UI: Site Settings → Environment variables.
 
 [build]
-  command = "python build_manifest.py"
+  command = "pip install psycopg2-binary --quiet && python build_manifest.py"
   publish = "frontend/"

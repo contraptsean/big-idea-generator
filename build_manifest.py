@@ -1,27 +1,34 @@
-"""Build script: copies digests into frontend/ and generates manifest.json.
+"""Build script: queries Neon DB for digests, writes static JSON files to frontend/.
 
 Run before deploying, or set as the Netlify build command:
     python build_manifest.py
+
+Requires NEON_DATABASE_URL in environment (set in Netlify UI or .env locally).
+Deliberately does NOT import config.py to avoid env-var load failures in CI.
 """
 
 from __future__ import annotations
 
 import json
-import shutil
+import os
 from pathlib import Path
 
+try:
+    import psycopg2
+except ImportError:
+    psycopg2 = None  # type: ignore[assignment]
+
 _ROOT = Path(__file__).resolve().parent
-_DIGESTS_SRC = _ROOT / "digests"
 _FRONTEND = _ROOT / "frontend"
 _DIGESTS_DST = _FRONTEND / "digests"
 
 
 def _load_domains() -> list[dict]:
-    """Load DOMAINS from config.py without triggering env-var loading.
+    """Load DOMAIN_GROUPS from config.py without triggering env-var loading.
 
     config.py loads env vars at import time (which fails in CI/Netlify
     where python-dotenv isn't installed and env vars are missing).
-    Instead, we parse out just the DOMAINS list using ast.literal_eval.
+    Instead, we parse out just the DOMAIN_GROUPS list using ast.literal_eval.
     """
     import ast
     import re
@@ -35,121 +42,122 @@ def _load_domains() -> list[dict]:
     except OSError:
         return []
 
-    # Find the DOMAINS = [...] assignment and extract the list literal
-    match = re.search(r"^DOMAINS\s*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
+    # Find the DOMAIN_GROUPS = [...] assignment and extract the list literal
+    match = re.search(r"^DOMAIN_GROUPS\s*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
+    if not match:
+        # Fall back to legacy DOMAINS list
+        match = re.search(r"^DOMAINS\s*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
     if not match:
         return []
 
     try:
-        domains = ast.literal_eval(match.group(1))
-        return domains if isinstance(domains, list) else []
+        result = ast.literal_eval(match.group(1))
+        return result if isinstance(result, list) else []
     except (ValueError, SyntaxError):
         return []
 
 
-def build():
+def _flatten_domains(groups: list[dict]) -> list[dict]:
+    """Flatten DOMAIN_GROUPS into a flat list of domain dicts for display."""
+    flat: list[dict] = []
+    for group in groups:
+        if "domains" in group:
+            flat.extend(group["domains"])
+        elif "id" in group:
+            # Already a flat DOMAINS list
+            flat.append(group)
+    return flat
+
+
+def _write_empty_manifest(domains_meta: list[dict]) -> None:
+    out_path = _DIGESTS_DST / "manifest.json"
+    out_path.write_text(json.dumps({
+        "digests": [],
+        "domains": domains_meta,
+        "stats": {
+            "total_digests": 0,
+            "total_opportunities": 0,
+            "avg_score": None,
+            "complexity_breakdown": {},
+            "domain_breakdown": {},
+            "date_range": {"earliest": None, "latest": None},
+        },
+    }, indent=2))
+
+
+def build() -> None:
     # Clean and recreate destination
+    import shutil
     if _DIGESTS_DST.exists():
         shutil.rmtree(_DIGESTS_DST)
     _DIGESTS_DST.mkdir(parents=True, exist_ok=True)
 
-    domains = _load_domains()
-    # Build a serialisable list with just what the frontend needs
+    raw_groups = _load_domains()
+    flat_domains = _flatten_domains(raw_groups)
     domains_meta = [
-        {"id": d["id"], "name": d["name"], "icon": d["icon"]}
-        for d in domains
+        {"id": d["id"], "name": d["name"], "icon": d.get("icon", "")}
+        for d in flat_domains
+        if "id" in d and "name" in d
     ]
 
-    manifest = []
+    database_url = os.environ.get("NEON_DATABASE_URL")
+    if not database_url or psycopg2 is None:
+        reason = "NEON_DATABASE_URL not set" if not database_url else "psycopg2 not installed"
+        print(f"{reason} — writing empty manifest.")
+        _write_empty_manifest(domains_meta)
+        return
+
+    # Query DB for all 'all' artifact rows
+    try:
+        conn = psycopg2.connect(database_url, sslmode="require")
+        cur = conn.cursor()
+        cur.execute(
+            "SELECT run_date::text, data FROM digests"
+            " WHERE artifact = 'all'"
+            " ORDER BY run_date ASC"
+        )
+        rows = cur.fetchall()
+        conn.close()
+    except Exception as exc:
+        print(f"DB query failed: {exc} — writing empty manifest.")
+        _write_empty_manifest(domains_meta)
+        return
+
+    manifest: list[dict] = []
     total_opportunities = 0
     score_sum = 0.0
     score_count = 0
     complexity_breakdown: dict[str, int] = {}
     domain_breakdown: dict[str, int] = {}
 
-    if not _DIGESTS_SRC.is_dir():
-        print("No digests/ directory found — writing empty manifest.")
-        (_DIGESTS_DST / "manifest.json").write_text(json.dumps({
-            "digests": [],
-            "domains": domains_meta,
-            "stats": {
-                "total_digests": 0,
-                "total_opportunities": 0,
-                "avg_score": None,
-                "complexity_breakdown": {},
-                "domain_breakdown": {},
-                "date_range": {"earliest": None, "latest": None},
-            },
-        }, indent=2))
-        return
+    for date_str, opportunities in rows:
+        # psycopg2 returns JSONB as Python object; guard against string fallback
+        if isinstance(opportunities, str):
+            try:
+                opportunities = json.loads(opportunities)
+            except json.JSONDecodeError:
+                opportunities = []
 
-    # Collect digest dates from both directory-based (new) and flat (old) layouts
-    seen_dates: set[str] = set()
+        if not isinstance(opportunities, list):
+            opportunities = []
 
-    # New layout: digests/<date>/all.json
-    for date_dir in sorted(_DIGESTS_SRC.iterdir()):
-        if not date_dir.is_dir():
-            continue
-        all_json = date_dir / "all.json"
-        if not all_json.is_file():
-            continue
-        date_str = date_dir.name
-        if date_str in seen_dates:
-            continue
-        seen_dates.add(date_str)
-
-        # Copy as flat file for frontend consumption
+        # Write flat date file for frontend consumption
         dst = _DIGESTS_DST / f"{date_str}.json"
-        shutil.copy2(all_json, dst)
+        dst.write_text(json.dumps(opportunities, indent=2))
 
-        try:
-            data = json.loads(all_json.read_text())
-        except (json.JSONDecodeError, OSError):
-            data = []
-
-        count = len(data) if isinstance(data, list) else 0
+        count = len(opportunities)
         manifest.append({"date": date_str, "count": count})
-
         total_opportunities += count
-        if isinstance(data, list):
-            for opp in data:
-                c = opp.get("complexity", "unknown")
-                complexity_breakdown[c] = complexity_breakdown.get(c, 0) + 1
-                pd = opp.get("primary_domain")
-                if pd:
-                    domain_breakdown[pd] = domain_breakdown.get(pd, 0) + 1
-                if opp.get("avg_score") is not None:
-                    score_sum += opp["avg_score"]
-                    score_count += 1
 
-    # Old layout: digests/<date>.json (flat files)
-    for src_file in sorted(_DIGESTS_SRC.glob("*.json")):
-        date_str = src_file.stem
-        if date_str in seen_dates:
-            continue
-        seen_dates.add(date_str)
-
-        shutil.copy2(src_file, _DIGESTS_DST / src_file.name)
-
-        try:
-            data = json.loads(src_file.read_text())
-        except (json.JSONDecodeError, OSError):
-            data = []
-
-        count = len(data) if isinstance(data, list) else 0
-        manifest.append({"date": date_str, "count": count})
-
-        total_opportunities += count
-        if isinstance(data, list):
-            for opp in data:
-                c = opp.get("complexity", "unknown")
-                complexity_breakdown[c] = complexity_breakdown.get(c, 0) + 1
-                pd = opp.get("primary_domain")
-                if pd:
-                    domain_breakdown[pd] = domain_breakdown.get(pd, 0) + 1
-                if opp.get("avg_score") is not None:
-                    score_sum += opp["avg_score"]
-                    score_count += 1
+        for opp in opportunities:
+            c = opp.get("complexity", "unknown")
+            complexity_breakdown[c] = complexity_breakdown.get(c, 0) + 1
+            pd = opp.get("primary_domain")
+            if pd:
+                domain_breakdown[pd] = domain_breakdown.get(pd, 0) + 1
+            if opp.get("avg_score") is not None:
+                score_sum += opp["avg_score"]
+                score_count += 1
 
     # Sort newest first
     manifest.sort(key=lambda d: d["date"], reverse=True)

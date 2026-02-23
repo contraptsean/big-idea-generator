@@ -793,16 +793,79 @@ def fetch_all_news() -> list[dict]:
 
 def prepare_news_for_analysis(
     news_items: list[dict],
+    domain_groups: list[dict],
+) -> dict[str, list[dict]]:
+    """Organise news items into per-group buckets for analysis.
+
+    Accepts either a list of domain-groups (each with a ``group_id`` and
+    ``domains`` list) or the legacy flat list of domain dicts (each with an
+    ``id``).  The return dict is keyed by ``group_id`` in group mode and by
+    ``domain_id`` in legacy mode.
+
+    For each group:
+    - Items whose ``domain_hint`` matches any domain in the group go to that
+      group's bucket.
+    - General items (no ``domain_hint``) supplement the bucket until it has
+      at least 15 items.
+    - The bucket is capped at 40 items; domain-specific items take priority.
+    """
+    _MIN_ITEMS = 15
+    _MAX_ITEMS = 40
+
+    # Detect legacy mode: flat list of domains (each has "id", not "group_id")
+    if domain_groups and not domain_groups[0].get("group_id"):
+        return _prepare_news_legacy(news_items, domain_groups)
+
+    # ----- grouped mode -----
+    # Map every domain_id → its parent group_id
+    domain_to_group: dict[str, str] = {}
+    for group in domain_groups:
+        for domain in group["domains"]:
+            domain_to_group[domain["id"]] = group["group_id"]
+
+    group_specific: dict[str, list[dict]] = {
+        g["group_id"]: [] for g in domain_groups
+    }
+    general: list[dict] = []
+
+    for item in news_items:
+        hint = item.get("domain_hint")
+        if hint and hint in domain_to_group:
+            group_specific[domain_to_group[hint]].append(item)
+        else:
+            general.append(item)
+
+    result: dict[str, list[dict]] = {}
+    for group in domain_groups:
+        gid = group["group_id"]
+        gname = group["group_name"]
+        specific = group_specific[gid]
+        n_specific = len(specific)
+
+        # Supplement with general news to reach _MIN_ITEMS
+        if n_specific < _MIN_ITEMS:
+            supplemented = specific + general[: _MIN_ITEMS - n_specific]
+        else:
+            supplemented = specific
+
+        # Cap at _MAX_ITEMS (domain-specific items are already first)
+        supplemented = supplemented[:_MAX_ITEMS]
+
+        n_general = max(0, len(supplemented) - n_specific)
+        logger.info(
+            "Group '%s': %d domain-specific + %d general = %d items",
+            gname, n_specific, n_general, len(supplemented),
+        )
+        result[gid] = supplemented
+
+    return result
+
+
+def _prepare_news_legacy(
+    news_items: list[dict],
     domains: list[dict],
 ) -> dict[str, list[dict]]:
-    """Organise news items into per-domain buckets for analysis.
-
-    Items with a ``domain_hint`` go to their hinted domain. Items without a
-    hint (general news) are available to supplement any domain that has fewer
-    than 10 domain-specific items.
-
-    Returns ``{"domain_id": [list of news items], ...}``.
-    """
+    """Legacy version: organise items into per-domain buckets (domain_id keys)."""
     domain_ids = {d["id"] for d in domains}
     domain_specific: dict[str, list[dict]] = {did: [] for did in domain_ids}
     general: list[dict] = []
@@ -820,7 +883,6 @@ def prepare_news_for_analysis(
         if len(specific) >= 10:
             result[domain_id] = specific
         else:
-            # Supplement with general news to reach at least 10
             needed = 10 - len(specific)
             result[domain_id] = specific + general[:needed]
 

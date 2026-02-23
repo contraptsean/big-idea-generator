@@ -1,0 +1,52 @@
+name: Daily Digest
+
+on:
+  schedule:
+    # 15:00 UTC = 10:00 AM EST (winter). Runs 11:00 AM during EDT (summer, UTC-4).
+    # Change to '0 14 * * *' if you prefer 10 AM EDT year-round (9 AM EST in winter).
+    - cron: '0 15 * * *'
+  workflow_dispatch: # allow manual trigger from GitHub Actions UI
+
+permissions:
+  contents: write # needed to commit data/previous_ideas.json back to repo
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          DIGEST_RECIPIENT: ${{ secrets.DIGEST_RECIPIENT }}
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+        run: python main.py
+
+      - name: Commit previous_ideas.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/previous_ideas.json
+          git diff --staged --quiet || git commit -m "chore: update previous_ideas.json [skip ci]"
+          git push
+
+      - name: Trigger Netlify rebuild
+        run: curl -s -X POST "${{ secrets.NETLIFY_BUILD_HOOK_URL }}"
