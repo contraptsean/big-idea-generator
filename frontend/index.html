@@ -724,6 +724,7 @@
         <div class="d-flex align-items-center gap-3 flex-wrap">
           <!-- Date picker -->
           <select class="ctrl-select" v-model="selectedDate" @change="loadDigest">
+            <option value="all">All Digests</option>
             <option value="week">Last 7 days</option>
             <option v-for="d in dates" :key="d.date" :value="d.date">
               {{ d.date }} ({{ d.count }})
@@ -833,7 +834,7 @@
                 >{{ domainIcon(did) }} {{ domainShortName(did) }}</span>
               </div>
 
-              <div class="scores-row">
+              <div class="scores-row" v-if="opp.feasibility != null">
                 <div class="score-item">
                   <div class="score-label">Feasibility <span>{{ opp.feasibility }}/10</span></div>
                   <div class="score-track">
@@ -855,13 +856,13 @@
               </div>
 
               <div class="card-meta">
-                <span class="avg-score-pill" :class="scoreClass(opp.avg_score)">
-                  {{ opp.avg_score.toFixed(1) }}
+                <span class="avg-score-pill" :class="scoreClass(opp.avg_score)" v-if="opp.avg_score != null">
+                  {{ formatScore(opp.avg_score) }}
                 </span>
-                <span class="meta-tag">
+                <span class="meta-tag" v-if="opp.estimated_build_time">
                   &#x23F1; <span class="val">{{ opp.estimated_build_time }}</span>
                 </span>
-                <span class="date-tag" v-if="selectedDate === 'week'">{{ opp._date }}</span>
+                <span class="date-tag" v-if="selectedDate === 'week' || selectedDate === 'all'">{{ opp._date }}</span>
               </div>
             </div>
           </div>
@@ -894,7 +895,7 @@
           >{{ domainIcon(did) }} {{ domainShortName(did) }}</span>
         </div>
 
-        <div class="modal-scores">
+        <div class="modal-scores" v-if="modalOpp.feasibility != null">
           <div class="score-item">
             <div class="score-label">Feasibility <span>{{ modalOpp.feasibility }}/10</span></div>
             <div class="score-track">
@@ -916,58 +917,58 @@
         </div>
 
         <div class="modal-meta">
-          <span class="avg-score-pill" :class="scoreClass(modalOpp.avg_score)">
-            {{ modalOpp.avg_score.toFixed(1) }} avg
+          <span class="avg-score-pill" :class="scoreClass(modalOpp.avg_score)" v-if="modalOpp.avg_score != null">
+            {{ formatScore(modalOpp.avg_score) }} avg
           </span>
-          <span class="meta-tag">
+          <span class="meta-tag" v-if="modalOpp.estimated_build_time">
             &#x23F1; <span class="val">{{ modalOpp.estimated_build_time }}</span>
           </span>
           <span class="date-tag" v-if="modalOpp._date">{{ modalOpp._date }}</span>
         </div>
 
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.news_trigger">
           <div class="detail-label">News Trigger</div>
           <div class="detail-text">{{ modalOpp.news_trigger }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.the_problem">
           <div class="detail-label">The Problem</div>
           <div class="detail-text">{{ modalOpp.the_problem }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.target_audience">
           <div class="detail-label">Target Audience</div>
           <div class="detail-text">{{ modalOpp.target_audience }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.product_description">
           <div class="detail-label">Product Description</div>
           <div class="detail-text">{{ modalOpp.product_description }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.revenue_model">
           <div class="detail-label">Revenue Model</div>
           <div class="detail-text">{{ modalOpp.revenue_model }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.market_signal">
           <div class="detail-label">Market Signal</div>
           <div class="detail-text">{{ modalOpp.market_signal }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.competitive_landscape">
           <div class="detail-label">Competitive Landscape</div>
           <div class="detail-text">{{ modalOpp.competitive_landscape }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.risks_and_challenges">
           <div class="detail-label">Risks &amp; Challenges</div>
           <div class="detail-text">{{ modalOpp.risks_and_challenges }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.growth_hook">
           <div class="detail-label">Growth Hook</div>
           <div class="detail-text">{{ modalOpp.growth_hook }}</div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="parseTechStack(modalOpp.tech_stack).length">
           <div class="detail-label">Tech Stack</div>
           <div class="tech-stack-chips">
             <span class="tech-chip" v-for="t in parseTechStack(modalOpp.tech_stack)" :key="t">{{ t }}</span>
           </div>
         </div>
-        <div class="detail-section">
+        <div class="detail-section" v-if="modalOpp.build_plan && modalOpp.build_plan.length">
           <div class="detail-label">Build Plan</div>
           <div
             v-for="(step, si) in modalOpp.build_plan"
@@ -994,7 +995,7 @@
         const domainList = ref([]);
         const domainMap = ref({});
         const allDigests = {};
-        const selectedDate = ref('week');
+        const selectedDate = ref('all');
         const opportunities = ref([]);
         const searchQuery = ref('');
         const activeComplexity = ref('All');
@@ -1037,6 +1038,19 @@
           opportunities.value = results.flat();
         }
 
+        async function loadAll() {
+          const results = await Promise.all(
+            dates.value.map(async d => {
+              if (allDigests[d.date]) return allDigests[d.date];
+              const data = await fetchJSON(`digests/${d.date}.json`);
+              const tagged = tagOpps(data, d.date);
+              allDigests[d.date] = tagged;
+              return tagged;
+            })
+          );
+          opportunities.value = results.flat();
+        }
+
         async function init() {
           loading.value = true;
           try {
@@ -1055,7 +1069,7 @@
             }
 
             if (manifest.digests.length > 0) {
-              await loadWeek();
+              await loadAll();
             }
           } catch (e) {
             console.error('Failed to load data:', e);
@@ -1068,7 +1082,9 @@
           loading.value = true;
           modalOpp.value = null;
           try {
-            if (selectedDate.value === 'week') {
+            if (selectedDate.value === 'all') {
+              await loadAll();
+            } else if (selectedDate.value === 'week') {
               await loadWeek();
             } else {
               const date = selectedDate.value;
@@ -1196,6 +1212,10 @@
           return 'avg-low';
         }
 
+        function formatScore(score) {
+          return score != null ? score.toFixed(1) : '—';
+        }
+
         function parseTechStack(str) {
           if (!str) return [];
           return str.split(',').map(s => s.trim()).filter(Boolean);
@@ -1216,7 +1236,7 @@
           searchQuery, activeComplexity, activeDomain, sortBy, modalOpp,
           complexityFilters, filteredOpportunities, groupedOpportunities,
           loadDigest, openModal, closeModal,
-          scoreClass, parseTechStack,
+          scoreClass, formatScore, parseTechStack,
           domainName, domainShortName, domainIcon,
         };
       }

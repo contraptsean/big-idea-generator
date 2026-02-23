@@ -24,12 +24,7 @@ _DIGESTS_DST = _FRONTEND / "digests"
 
 
 def _load_domains() -> list[dict]:
-    """Load DOMAIN_GROUPS from config.py without triggering env-var loading.
-
-    config.py loads env vars at import time (which fails in CI/Netlify
-    where python-dotenv isn't installed and env vars are missing).
-    Instead, we parse out just the DOMAIN_GROUPS list using ast.literal_eval.
-    """
+    """Load DOMAIN_GROUPS from config.py without triggering env-var loading."""
     import ast
     import re
 
@@ -42,10 +37,9 @@ def _load_domains() -> list[dict]:
     except OSError:
         return []
 
-    # Find the DOMAIN_GROUPS = [...] assignment and extract the list literal
+    # Find DOMAIN_GROUPS = [...] and extract the list literal
     match = re.search(r"^DOMAIN_GROUPS\s*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
     if not match:
-        # Fall back to legacy DOMAINS list
         match = re.search(r"^DOMAINS\s*=\s*(\[.*?^])", source, re.DOTALL | re.MULTILINE)
     if not match:
         return []
@@ -55,6 +49,34 @@ def _load_domains() -> list[dict]:
         return result if isinstance(result, list) else []
     except (ValueError, SyntaxError):
         return []
+
+
+def _load_domain_icons() -> dict[str, str]:
+    """Parse DOMAIN_ICONS dict from config.py without importing it."""
+    import ast
+    import re
+
+    config_path = _ROOT / "config.py"
+    if not config_path.is_file():
+        return {}
+
+    try:
+        source = config_path.read_text()
+    except OSError:
+        return {}
+
+    match = re.search(r"^DOMAIN_ICONS\s*:\s*\S+\s*=\s*(\{.*?^})", source, re.DOTALL | re.MULTILINE)
+    if not match:
+        # Also try without type annotation
+        match = re.search(r"^DOMAIN_ICONS\s*=\s*(\{.*?^})", source, re.DOTALL | re.MULTILINE)
+    if not match:
+        return {}
+
+    try:
+        result = ast.literal_eval(match.group(1))
+        return result if isinstance(result, dict) else {}
+    except (ValueError, SyntaxError):
+        return {}
 
 
 def _flatten_domains(groups: list[dict]) -> list[dict]:
@@ -94,8 +116,9 @@ def build() -> None:
 
     raw_groups = _load_domains()
     flat_domains = _flatten_domains(raw_groups)
+    domain_icons = _load_domain_icons()
     domains_meta = [
-        {"id": d["id"], "name": d["name"], "icon": d.get("icon", "")}
+        {"id": d["id"], "name": d["name"], "icon": d.get("icon") or domain_icons.get(d["id"], "")}
         for d in flat_domains
         if "id" in d and "name" in d
     ]
