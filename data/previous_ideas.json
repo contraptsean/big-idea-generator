@@ -1003,5 +1003,160 @@
     "name": "HigherThinkAIProfing Studio",
     "one_liner": "AI-powered assessment generator that creates higher-order thinking assignments requiring analysis, synthesis, and creativity beyond what AI can automate, helping teachers design AI-proof curricula and evaluations.",
     "date": "2026-02-27"
+  },
+  {
+    "name": "AgentContextOS",
+    "one_liner": "A context window management and session persistence layer for Claude Code and multi-agent coding workflows that prevents agent psychosis and token blowout.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "LLMShrink",
+    "one_liner": "Automated token usage auditor and prompt compression toolkit that cuts LLM API costs by 30-60% for developers building AI-powered apps.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "OpenSourceTrustGraph",
+    "one_liner": "A dependency trust scoring and code provenance verification tool for teams worried about supply chain attacks in LLM-generated and AI-assisted codebases.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AgentMonthCalc",
+    "one_liner": "An AI coding agent ROI calculator and team productivity benchmarking tool that helps engineering leaders decide how many engineers to replace or augment with AI agents.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "WasmLaunchPad",
+    "one_liner": "A no-config WebAssembly build pipeline and testing harness that lets solo developers ship WASM modules to the web in under 30 minutes.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AndroidOpenDeploy",
+    "one_liner": "Alternative Android app distribution and developer identity verification platform for indie developers fighting Google's mandatory registration requirements.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "ComprehensionDebtTracker",
+    "one_liner": "A developer-facing AI code review tool that scores how well your team actually understands AI-generated code and flags comprehension gaps before they become production bugs.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "LoyaltyPulse for Restaurants",
+    "one_liner": "Real-time loyalty program health monitor that alerts fast-casual and QSR operators before traffic-killing loyalty changes trigger same-store sales collapses like Sweetgreen's 11.5% drop.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AnchorBreaker",
+    "one_liner": "Behavioral finance-based home affordability reframe tool that helps real estate agents convert rate-anchored buyers stuck comparing today's rates to 2020's 2.65% into confident purchasers.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "PetTravelPass",
+    "one_liner": "Pet-friendly hotel and travel itinerary planner that surfaces properties actively welcoming pets over children as the travel industry demographically shifts toward pet-owning travelers.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "FairHousingCE Tracker",
+    "one_liner": "Compliance management and CE course delivery platform that helps real estate brokerages track, assign, and certify Massachusetts-mandated fair housing training hours for every licensed agent.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "ClosingFraudShield Lite",
+    "one_liner": "Lightweight wire fraud prevention and closing checklist tool for independent real estate agents and small title companies that can't afford enterprise platforms like CertifID.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "MenuValueOptimizer",
+    "one_liner": "Barbell menu strategy builder and value-tier performance tracker that helps casual dining operators like Red Robin systematically identify which price anchors are driving traffic recovery.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "ExtendedStayMatch",
+    "one_liner": "Extended-stay and furnished apartment alternative search platform for corporate travelers and relocating workers who need 30-90 day stays as Sonder-style inventory moves to branded operators like Belvilla.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AffordabilityTruthScore",
+    "one_liner": "Hyper-local home affordability reality-check tool that shows buyers the true monthly cost of ownership in their specific target neighborhood, including hidden costs that make headline rate comparisons misleading.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "BNPLComplianceOS",
+    "one_liner": "Automated regulatory compliance platform that helps BNPL providers navigate fragmented state licensing requirements (NY, CA, IL) and stay audit-ready.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "FinTechLayoffCareerBridge",
+    "one_liner": "Specialized job board and upskilling platform that helps 4,000+ Block employees and displaced fintech workers pivot to AI-native fintech roles or adjacent high-growth sectors.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "RetirementMatchMaximizer",
+    "one_liner": "Self-service calculator and enrollment platform that helps the 56M Americans without employer retirement plans find and claim the Trump administration's new $1,000 federal match program.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "DigitalBankingAccessibilityAudit",
+    "one_liner": "Compliance and UX audit tool that helps regional and community banks ensure digital-only account opening flows meet ADA accessibility standards while maintaining conversion rates.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AIAgentRetailReady",
+    "one_liner": "Rapid product catalog optimization and syndication tool that prepares mid-market e-commerce catalogs for AI agent shopping (ChatGPT, Claude, Perplexity) in <2 weeks.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "GrayMarketVendorIntelligence",
+    "one_liner": "Real-time brand protection and gray market detection platform that monitors unauthorized resellers across marketplaces and alerts brands to inventory leaks and channel conflicts.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "VendorCashFlowBridge",
+    "one_liner": "Supply chain financing platform that helps small and mid-market vendors to large retailers bridge payment gaps and invoice factoring during bankruptcy or extended payment delays.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "RetailOpsIntelligence",
+    "one_liner": "Real-time labor scheduling and inventory optimization dashboard for mid-market retailers fighting in-stock rate and operational execution challenges similar to Target.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AnalogTeachDiagnostics",
+    "one_liner": "Real-time classroom observation tool that scores when teachers are using technology ineffectively and recommends specific analog alternatives or pedagogical shifts.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "GamblingLiteracyKit",
+    "one_liner": "Turnkey K-12 curriculum and assessment platform that teaches probability, expected value, and risk literacy through gambling case studies, simulations, and interactive problem sets.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "CareerChaosNavigator Pro",
+    "one_liner": "AI-powered career exploration and labor market intelligence platform that helps high school and college students map automation-resistant career paths, identify adjacent skill gaps, and track weekly labor market shifts.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "ResearchToBudget Translator",
+    "one_liner": "AI-powered research synthesis platform that translates academic education research into dollar-quantified budget impact projections, helping cash-strapped district leaders make irreversible budget allocation decisions with confidence.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "UniversalPreKEnrollmentOS",
+    "one_liner": "Enrollment management and capacity optimization SaaS that helps states and school districts manage Universal Pre-K expansion, match families to available slots, and optimize provider enrollment and tuition collection.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "TeacherGradingIntelligence",
+    "one_liner": "AI-powered assessment analytics dashboard that shows K-12 teachers exactly which student misconceptions require human feedback vs. which can self-correct through spaced repetition, helping teachers redirect grading time to high-impact feedback.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "SchoolLitigationDefenseHub",
+    "one_liner": "Automated legal evidence collection and incident documentation platform that helps K-12 districts track, prepare, and defend against social media harm lawsuits with real-time case law monitoring and compliance reporting.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "HigherThinkAIProfing Studio",
+    "one_liner": "AI-powered assessment generator that creates higher-order thinking assignments requiring analysis, synthesis, and creativity beyond what AI can automate, helping teachers design AI-proof curricula and evaluations.",
+    "date": "2026-02-27"
   }
 ]
