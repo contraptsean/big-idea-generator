@@ -949,7 +949,10 @@ def _analyze_single_group(
             messages=messages,
         )
     except (anthropic.APIError, ValueError) as exc:
-        logger.error("Failed to analyze group %s: %s", group["group_id"], exc)
+        logger.error(
+            "FAILED group '%s' (model=%s): %s: %s",
+            group["group_id"], group["model"], type(exc).__name__, exc,
+        )
         return []
 
     # Tag with group_id and ensure domain fields are set
