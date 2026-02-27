@@ -1,0 +1,847 @@
+[
+  {
+    "name": "ComplianceGuard",
+    "one_liner": "Automated robots.txt and copyright notice generator for news publishers blocking AI scrapers while preserving archive access",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "PromptPulse",
+    "one_liner": "Real-time collaborative prompt engineering workspace with version control and A/B testing for AI teams building LLM-powered products",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "RepoRadar",
+    "one_liner": "GitHub repository monitoring tool that tracks when your dependencies or starred projects get acquired, sunset, or relicense unexpectedly",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "ContactCenterAI Marketplace",
+    "one_liner": "Curated marketplace of pre-built AI agent scripts and workflows for contact centers using platforms like Scala, Zendesk, and Intercom",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "ShieldScope",
+    "one_liner": "AI-powered vulnerability scanner and compliance dashboard for defense tech startups navigating complex military procurement requirements",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "EmbedSearch",
+    "one_liner": "Embeddable semantic search widget for SaaS docs and help centers, powered by vector databases, that actually understands what users are asking",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "PitchForge",
+    "one_liner": "AI-powered pitch deck generator that creates investor-ready presentations in under 3 hours using proven templates and your startup data",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "SlackDigest",
+    "one_liner": "AI-powered Slack summarization tool that turns chaotic threads into structured daily digests for managers and remote teams",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "VideoVerify",
+    "one_liner": "Blockchain-timestamped video verification tool that proves footage hasn't been AI-manipulated, for journalists and legal teams",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "ArchiveMyData",
+    "one_liner": "Dead-simple personal data backup service that writes your photos, docs, and code to archival-grade M-Discs and ships them to you annually",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "ClawHub Scanner",
+    "one_liner": "Security scanner and marketplace reputation system for OpenClaw skills, preventing developers from installing malicious or credential-leaking agent extensions",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "M-Disc Backup Service",
+    "one_liner": "Managed archival backup service that writes your critical data to M-Disc optical media and ships it to you annually, offering 1,000-year durability for $199/year",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "FaceShield",
+    "one_liner": "Browser extension that detects when websites are using facial recognition or biometric tracking and lets you block it with one click",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "Indie Hacker CFO",
+    "one_liner": "AI-powered financial dashboard for indie SaaS founders that automates bookkeeping, cash flow forecasting, and investor-ready financials for $49/month",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "TrumpToolkit",
+    "one_liner": "Pre-built compliance and monitoring tools for startups navigating Trump administration policy changes, from ICE risk assessment to FTC content review workflows",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "CerebrasCompare",
+    "one_liner": "Real-time cost and latency comparison tool for AI inference providers that shows developers exactly which platform (Cerebras, Nvidia Blackwell, AMD, etc.) is cheapest and fastest for their specific workload",
+    "date": "2026-02-15"
+  },
+  {
+    "name": "IoTHawk",
+    "one_liner": "Consumer security scanner that checks your smart home devices for open MQTT brokers and publicly exposed APIs, then guides you through fixing them before hackers find them",
+    "date": "2026-02-15"
+  },
+  {
+    "name": "BotBlocker",
+    "one_liner": "Automated CAPTCHA and bot-detection monitoring tool that alerts website owners when AI scrapers or malicious bots bypass their defenses",
+    "date": "2026-02-15"
+  },
+  {
+    "name": "WebMCP Studio",
+    "one_liner": "Visual tool that lets developers turn their website's JavaScript functions into AI-agent-callable tools by wrapping them in WebMCP schemas—no backend rewrite required",
+    "date": "2026-02-15"
+  },
+  {
+    "name": "SubpoenaShield",
+    "one_liner": "Automated GDPR/data request responder for social media users that generates legally compliant responses to government subpoenas asking platforms to reveal your identity",
+    "date": "2026-02-15"
+  },
+  {
+    "name": "BlackwellBench",
+    "one_liner": "AI inference cost calculator and ROI forecaster that tells enterprises whether switching to Nvidia Blackwell infrastructure will actually save them money based on their current workload and usage patterns",
+    "date": "2026-02-15"
+  },
+  {
+    "name": "FacialPrivacyMonitor",
+    "one_liner": "Browser extension and mobile app that detects when websites or apps are using facial recognition or biometric tracking and blocks it with one click—also alerts you when your face appears in publicly accessible facial recognition databases",
+    "date": "2026-02-15"
+  },
+  {
+    "name": "MemoryChip",
+    "one_liner": "Personal data backup service that writes your critical files to M-Disc optical media and ships them to you annually for 1,000-year storage",
+    "date": "2026-02-16"
+  },
+  {
+    "name": "AgentCostTracker",
+    "one_liner": "Real-time cost monitoring dashboard for AI agent deployments that alerts you before runaway agents drain your API budget",
+    "date": "2026-02-16"
+  },
+  {
+    "name": "ClawGuard",
+    "one_liner": "Security monitoring dashboard that detects malicious OpenClaw skills and credential leaks before they compromise your systems",
+    "date": "2026-02-16"
+  },
+  {
+    "name": "WebMCP Studio",
+    "one_liner": "Developer tool that converts existing website forms and workflows into WebMCP schemas in under 5 minutes with auto-generated test suites",
+    "date": "2026-02-16"
+  },
+  {
+    "name": "WorkflowMCP",
+    "one_liner": "Visual workflow builder that turns business processes into WebMCP tools that AI agents can execute without writing code",
+    "date": "2026-02-16"
+  },
+  {
+    "name": "RetailSecWatch",
+    "one_liner": "Automated security monitoring service that alerts e-commerce store owners when Chrome, payment gateway, or plugin vulnerabilities threaten their checkout flows.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "PhonePolicy Toolkit",
+    "one_liner": "Compliance and implementation software that helps K-12 schools design, deploy, and enforce phone-free policies aligned with new state legislation.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "Parent PLUS Rescue",
+    "one_liner": "Automated eligibility checker and application assistant for Parent PLUS borrowers to secure affordable repayment and loan forgiveness before policy changes eliminate access",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "EmergencySupplyLink",
+    "one_liner": "Instant emergency restaurant supply ordering platform that connects restaurants with local backup suppliers when their primary distributor runs out or delivers late.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "PatchAudit Pro",
+    "one_liner": "Automated compliance audit report generator for government agencies that proves they patched critical vulnerabilities like the Chrome CVE within regulatory deadlines.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "DrugShortageNavigator",
+    "one_liner": "Real-time hospital drug shortage tracker with automated alternative therapy protocols for pharmacists and clinicians",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "FinCEN Filing Copilot",
+    "one_liner": "Automated FinCEN beneficial ownership reporting service for title agents and small real estate law firms handling residential transactions.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "MagSafeCatalog",
+    "one_liner": "Curated marketplace and API for discovering, comparing, and integrating MagSafe-compatible accessories into e-commerce stores with automated product data feeds.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "CareerCompass AI",
+    "one_liner": "AI-powered career navigation platform that helps college students and recent grads identify AI-proof career paths and required skills based on real-time labor market data.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "QuantumShield",
+    "one_liner": "Quantum-readiness assessment and migration planner for financial institutions preparing for post-quantum cryptography before Q-day attacks",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "CoreMenuAI",
+    "one_liner": "AI-powered menu optimization tool that identifies when menu innovation is cannibalizing core offerings and recommends data-driven SKU rationalization for QSR and fast-casual chains.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "ZeroDayWatch",
+    "one_liner": "Real-time zero-day vulnerability monitoring and compliance tracking that alerts government IT teams the moment critical CVEs like Chrome zero-days are announced, with automated patch deployment workflows.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "DeepfakeDefender",
+    "one_liner": "Browser extension and mobile app that detects and flags deepfake medical influencers on social media before they can scam health consumers",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "IncomeVerifyNow",
+    "one_liner": "API-first income verification tool that gives mortgage lenders instant, accurate borrower income data on Day Zero instead of Day 28.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "ConsoleDropHub",
+    "one_liner": "Automated inventory monitoring and order routing system that helps gaming accessory retailers capitalize on console release cycles by predicting demand surges and optimizing stock levels.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "EdtechKidTest",
+    "one_liner": "Student user-testing marketplace connecting edtech companies with real K-12 students and teachers for rapid product feedback and iteration.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "CardSchemeArb",
+    "one_liner": "Payment routing optimization tool for UK/EU businesses that automatically switches transactions between Visa/Mastercard and emerging alternatives to minimize processing fees",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "FieldOpsHub",
+    "one_liner": "Mobile-first field operations management platform for restaurant chains to coordinate field managers, track store visits, and fix operational issues in real-time.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "SoftwareInventoryAI",
+    "one_liner": "AI-powered software asset discovery tool for government agencies that automatically identifies all installed software across networks to ensure compliance and vulnerability management.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "GLP-1 Monitor",
+    "one_liner": "Price tracking and safety monitoring dashboard for patients buying compounded GLP-1 drugs from telehealth providers",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "HomeEquityTracker",
+    "one_liner": "Personal finance app that tracks home equity growth over time and helps retirees model how to convert equity into retirement income.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "HigherThinkingLab",
+    "one_liner": "AI-powered higher-order thinking skills assessment and lesson plan generator that helps teachers design assignments requiring analysis, synthesis, and creativity beyond what AI can do.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "401k Emergency Link",
+    "one_liner": "White-label emergency savings account integration for 401k plan providers helping employers offer SECURE 2.0-compliant emergency savings tied to retirement plans",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "PersonalMenuAI",
+    "one_liner": "Customer data platform that helps restaurants deliver personalized menu recommendations, offers, and ordering experiences using purchase history and dietary preferences.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "MentalHealthFormularyNavigator",
+    "one_liner": "Insurance coverage prediction tool that tells psychiatrists and patients which mental health medications will be covered before prescribing",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "BaselMortgageHub",
+    "one_liner": "Compliance automation tool that helps community banks and credit unions navigate Basel capital rules for mortgage lending and servicing.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "CulturalLens Library",
+    "one_liner": "Curated marketplace of culturally relevant reading materials and lesson supplements for multilingual K-12 students, tagged by language, culture, and reading level.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "ComplianceGPT for Banks",
+    "one_liner": "AI-powered autonomous compliance and accounting agents for community banks that automate regulatory reporting and audit preparation using bank-specific LLMs",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "HotelImmigrationHub",
+    "one_liner": "Compliance and workforce management platform helping hotels navigate immigration enforcement, verify worker status, and build contingency staffing plans amid increased federal scrutiny.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "AIScribeCostROI Calculator",
+    "one_liner": "Interactive ROI calculator that shows health systems exactly how much revenue they'll gain from deploying AI medical scribes like Suki",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "AgentOS Dashboard",
+    "one_liner": "AI-powered daily workflow hub for real estate agents that unifies CRM, task automation, and market insights in one simple interface.",
+    "date": "2026-02-17"
+  },
+  {
+    "name": "Tariff Impact Calculator",
+    "one_liner": "Real-time tariff scenario modeling tool that shows e-commerce brands and retailers exactly how import duties affect profit margins and helps them optimize sourcing decisions.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "LiteracyBridge",
+    "one_liner": "AI-powered culturally relevant reading material matcher that helps K-12 teachers find and assign texts that connect with multilingual students' backgrounds and boost comprehension",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "StudentLoanDeadlineTracker",
+    "one_liner": "Automated alert system that tells Parent PLUS and federal student loan borrowers exactly which enrollment deadlines they must hit to preserve affordable repayment and forgiveness eligibility before policy changes take effect.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "FranchiseRisk Monitor",
+    "one_liner": "Automated financial health monitoring and early warning system for hotel and restaurant franchisors to detect franchisee insolvency before it wipes out millions in fees.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "CitizenAI Transparency Portal",
+    "one_liner": "White-label transparency portal that government agencies can deploy to show citizens which AI systems are making decisions about their benefits, services, and data.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "PsychedelicGuard",
+    "one_liner": "Third-party safety and efficacy monitoring platform for psychedelic therapy clinics to ensure proper therapeutic protocols are followed",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "SeniorTaxFreeze Navigator",
+    "one_liner": "Automated eligibility checker and application assistant that helps senior homeowners apply for property tax freeze programs before they're priced out of their homes",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "DealBar Copycat Kit",
+    "one_liner": "White-label 'under $10 deals' merchandising module that helps mid-market retailers quickly launch Kohl's-style deal zones in stores and online to attract price-sensitive shoppers.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "StudentVoice Testing Hub",
+    "one_liner": "On-demand student usability testing marketplace that connects edtech companies with real K-12 students and teachers for rapid product feedback before launch",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "OvertimeTaxHelper",
+    "one_liner": "Automated tax form assistant that calculates Trump's 'no tax on overtime' deduction for hourly workers and generates IRS-ready documentation in under 5 minutes.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "AI Booking Connector",
+    "one_liner": "Inventory syndication platform that lets independent hotels plug their availability into Google's AI travel tools, OpenAI's ChatGPT booking, and Anthropic's Claude without OTA fees.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "TelehealthExpansionKit",
+    "one_liner": "International telehealth licensing and compliance automation tool helping US telehealth companies expand to new countries",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "AgentAI Workflow Hub",
+    "one_liner": "Daily AI-powered workflow dashboard that consolidates CRM tasks, market insights, and lead prioritization into one simple morning routine for real estate agents",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "ChatGPT Commerce API",
+    "one_liner": "Turn-key API that makes e-commerce product catalogs discoverable and shoppable within ChatGPT's advertising platform for brands testing AI-native commerce.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "BudgetLens",
+    "one_liner": "AI-powered budget decision intelligence platform that helps district leaders identify which education programs and vendors deliver measurable ROI using research-backed evidence",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "CoP Compliance Tracker",
+    "one_liner": "Automated Confirmation of Payee implementation monitoring and compliance reporting for UK/EU banks and payment providers facing regulatory deadlines.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "MenuMetrics AI",
+    "one_liner": "Real-time menu performance analytics that tells QSR and fast-casual chains exactly which items are driving sales vs. cannibalizing profits before quarterly reports.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "PromptShield Audit",
+    "one_liner": "Automated AI jailbreak vulnerability scanning and compliance reporting for government agencies deploying LLM-powered systems.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "ScribeROI Pro",
+    "one_liner": "AI scribe cost-benefit calculator that shows healthcare systems exact revenue gains from reduced physician burnout and documentation time",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "CreditGuardian for Homebuyers",
+    "one_liner": "Automated credit monitoring and dispute resolution platform that protects mortgage applicants from credit reporting errors before they tank loan approvals",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "AI Retail Readiness Audit",
+    "one_liner": "Automated technical audit tool that shows retailers whether their mobile apps and websites are optimized for AI discovery (ChatGPT, Perplexity, Google AI) with actionable fix recommendations.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "StablecoinPSP Bridge",
+    "one_liner": "Embeddable payment widget that lets SaaS and e-commerce platforms accept both fiat and stablecoin payments with automatic conversion and unified reporting.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "LoyaltyLaunchpad",
+    "one_liner": "Pre-built loyalty and rewards program platform for independent restaurants and boutique hotel groups that launches in 48 hours without custom dev work.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "ValueConnectLite",
+    "one_liner": "Lightweight value-based care analytics dashboard for independent primary care practices that can't afford enterprise platforms",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "BuilderTrend Tracker",
+    "one_liner": "Real-time homebuilder inventory and incentive monitoring tool that alerts buyers and agents when builders cut prices or add incentives in target markets",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "StoreLabor Optimizer",
+    "one_liner": "AI-powered labor scheduling tool that helps retail managers predict traffic patterns and optimize hourly staffing to reduce checkout lines and improve in-stock rates.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "SocialShield",
+    "one_liner": "School-district-ready social media harm monitoring and compliance toolkit that tracks student well-being metrics and generates documentation for litigation and policy enforcement",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "Pay by Bank ROI Calculator",
+    "one_liner": "Interactive cost comparison tool showing e-commerce merchants exactly how much they'll save switching from card payments to open banking 'Pay by Bank' solutions.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "PepptronOS",
+    "one_liner": "White-label operating system and remote monitoring platform for restaurant operators deploying automated food vending machines like Donatos' Pepptron pizza kiosks.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "FedAI Governance Hub",
+    "one_liner": "Policy tracking and compliance automation platform that monitors federal AI regulations and translates them into actionable checklists for government contractors.",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "FertilityPulse",
+    "one_liner": "At-home semen analysis subscription that positions itself as the male equivalent of the Pap smear for preventive fertility health",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "HomePrep Capital",
+    "one_liner": "Instant pre-listing home improvement financing marketplace that connects sellers with vetted contractors and advances renovation costs repaid at closing",
+    "date": "2026-02-19"
+  },
+  {
+    "name": "TariffIQ Pro",
+    "one_liner": "Real-time tariff impact modeling and landed cost calculator for e-commerce brands and retailers optimizing sourcing amid trade policy volatility",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "HigherThink Assessment Studio",
+    "one_liner": "AI-powered assessment generator that creates higher-order thinking assignments requiring analysis, synthesis, and creativity beyond what AI can automate—helping teachers AI-proof their curriculum.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "LoanRescueTracker",
+    "one_liner": "Deadline countdown and eligibility checker that tells Parent PLUS and federal student loan borrowers exactly which steps to take before policy changes eliminate affordable repayment and forgiveness",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "FoodLTO Copilot",
+    "one_liner": "AI-powered limited-time offer (LTO) launch and performance tracking platform for QSR chains testing new menu items",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "NegotiationSim",
+    "one_liner": "AI-powered roleplay simulator that helps real estate agents practice buyer/seller negotiations through realistic scenario drills with instant feedback",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "ProcureIQ",
+    "one_liner": "AI-powered procurement spend visibility and sourcing analytics SaaS for mid-market retailers facing supply chain complexity",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "PhonePolicyPro",
+    "one_liner": "Legislative compliance and implementation management platform that helps K-12 schools design, deploy, and enforce phone-free policies aligned with state-specific requirements.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "JackpotAlert",
+    "one_liner": "Real-time ATM security monitoring service that alerts small businesses and independent ATM operators when their machines exhibit jackpotting attack patterns",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "BeefPulse",
+    "one_liner": "Real-time commodity cost forecasting and menu optimization platform for casual dining chains navigating volatile protein prices",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "VoiceRightsHub",
+    "one_liner": "Rights management and licensing platform that helps voice actors, commentators, and performers track, negotiate, and monetize AI voice cloning deals with game studios and media companies.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "ClaimDenialAI",
+    "one_liner": "AI-powered claims denial prediction and appeal automation platform that helps RCM teams prevent denials before submission and draft winning appeals in minutes.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "MoveInPro",
+    "one_liner": "Automated resident onboarding workflow platform that eliminates move-in friction for property managers and creates loyalty in the critical first 30 days",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "ChatCommerce Optimizer",
+    "one_liner": "AI-native product discovery optimization platform that makes retail product catalogs discoverable and shoppable in ChatGPT, Perplexity, and Claude",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "ResaleFlow",
+    "one_liner": "White-label resale marketplace infrastructure for specialty retailers launching branded secondhand programs following Depop/eBay playbook",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "EdResearch Decoder",
+    "one_liner": "AI-powered research synthesis platform that translates academic education studies into actionable budget recommendations for district leaders under financial pressure.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "CulturalLit Connector",
+    "one_liner": "Culturally responsive reading material marketplace that helps K-12 teachers instantly find and assign texts that connect with multilingual students' backgrounds to boost comprehension and engagement.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "CoP Compliance Copilot",
+    "one_liner": "Automated Confirmation of Payee implementation toolkit for small banks and payment providers facing regulatory deadlines and multi-million pound fines",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "RefundMaximizer Pro",
+    "one_liner": "AI-powered tax refund optimization tool that helps filers identify overlooked deductions and credits after Trump's 'no tax on overtime' and other new breaks",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "LoyaltyFlip",
+    "one_liner": "AI-powered loyalty program optimization tool that tells QSR chains when to tweak rewards before customer churn spikes",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "RevPurge",
+    "one_liner": "Automated underperforming property identification and exit strategy tool for hotel franchisors protecting brand quality",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "ContentAuthenticityStamp",
+    "one_liner": "Browser extension and API that automatically watermarks user-generated content and attaches C2PA provenance metadata to prove when media was AI-generated vs. human-created, helping platforms comply with upcoming AI disclosure laws.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "NicotineGuard",
+    "one_liner": "Browser extension and mobile app that detects when wellness influencers and biohackers promote nicotine products, flags potential health risks, and reports deceptive health claims to FTC.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "PrescriptionAI Copilot",
+    "one_liner": "AI-powered prescription renewal verification and safety check tool that audits automated prescription renewals before they're sent to patients, catching drug interactions and outdated prescriptions.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "RemodelMatch",
+    "one_liner": "AI-powered contractor marketplace that connects high-end homeowners with vetted remodelers and provides instant project cost estimates based on luxury market pricing",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "ReverseMortgageMatch",
+    "one_liner": "Educational platform and lender marketplace helping women 50+ evaluate reverse mortgage options and connect with vetted HECM specialists",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "StoreOps Intelligence",
+    "one_liner": "Labor scheduling and in-stock rate optimization tool for mid-market retailers fighting Target-style operational execution challenges",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "CareerShift Navigator",
+    "one_liner": "AI-powered career guidance platform that helps college students and high schoolers identify automation-resistant career paths and build AI-proof skill stacks based on real-time labor market signals.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "AdvisorOS Lite",
+    "one_liner": "Affordable AI workflow automation for independent financial advisors who can't afford Jump's enterprise platform but need client research, meeting prep, and compliance help",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "ConceptCycle",
+    "one_liner": "Turnkey rotating theme and menu management platform for experiential bars and restaurants testing limited-time concepts",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "SignedInGate",
+    "one_liner": "Widget and API that lets websites selectively gate content and features for signed-out users while remaining compliant with accessibility and SEO best practices, following Google Maps' 'limited view' playbook.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "StateFundingFinder",
+    "one_liner": "Automated grant discovery and application assistant that helps biomedical researchers find and apply for new state-level research funding as federal NIH dollars become uncertain.",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "BuyerJobPulse",
+    "one_liner": "Real-time employment and job market analytics dashboard for builders, lenders, and agents tracking buyer-qualified employment trends by metro area",
+    "date": "2026-02-20"
+  },
+  {
+    "name": "DepopIQ",
+    "one_liner": "Resale marketplace analytics and pricing intelligence platform that tells apparel brands and boutique retailers exactly which items to launch secondhand programs for and how to price them competitively on Depop, Poshmark, and eBay.",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "PhonePolicyCompliance Pro",
+    "one_liner": "Implementation and enforcement tracking platform that helps K-12 schools deploy and monitor phone-free policies aligned with state legislation and best practices.",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "CulturalLit Matcher",
+    "one_liner": "AI-powered reading material recommendation engine that helps K-12 teachers instantly find culturally relevant texts that match multilingual students' backgrounds and boost comprehension.",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "StudentLoanDelinquencyAlert",
+    "one_liner": "Automated delinquency prevention system that sends personalized payment reminders, hardship program suggestions, and deferment application assistance before borrowers miss payments",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "PersonalLoanRefiBuddy",
+    "one_liner": "Personal loan marketplace and refinancing advisor that helps middle-class borrowers compare rates from 20+ lenders and refinance high-interest credit card debt into lower-rate personal loans",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "AgenticBookingHub",
+    "one_liner": "Independent hotel inventory syndication API that makes small hotel availability discoverable by AI agents (ChatGPT, Claude, Perplexity) without paying OTA commissions",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "TariffMenuPricer",
+    "one_liner": "Real-time menu pricing and margin calculator that shows restaurants exactly how Supreme Court tariff rulings and commodity price swings affect dish profitability and suggests immediate price adjustments",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "BiometricConsentOS",
+    "one_liner": "White-label consent management and regulatory compliance platform for AR/VR device makers collecting biometric data from users",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "PrescriptionGuardian",
+    "one_liner": "Safety audit layer for AI prescription renewal systems that catches dangerous drug interactions and outdated scripts before they're auto-renewed",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "MAExitNavigator",
+    "one_liner": "Automated Medicare Advantage plan comparison and enrollment platform that helps seniors forced out of their MA plans find equivalent or better coverage in 72 hours",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "FlexDefend CRM",
+    "one_liner": "Automated compliance and documentation platform that helps real estate agents using Zillow Flex prove no illegal steering or RESPA violations occurred",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "Compass Referral Optimizer",
+    "one_liner": "Automated lead referral tracking and commission calculator for Compass listing agents maximizing earnings from the new 10% listing referral program",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "EdtechValidation Hub",
+    "one_liner": "On-demand student usability testing marketplace that connects edtech companies with real K-12 students and teachers for rapid product feedback before launch.",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "FigureBreachMonitor",
+    "one_liner": "Automated dark web monitoring and identity protection service for fintech customers whose data was compromised in recent breaches like Figure Technology, with instant fraud alerts and credit freeze assistance",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "NationalDayPromoHub",
+    "one_liner": "Automated 'National Day' promotion planning and execution platform that helps QSR and fast-casual chains launch timely digital giveaways like National Chili Day or National Tortilla Chip Day in under 30 minutes",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "NicotineWatchdog",
+    "one_liner": "Browser extension and alert system that detects when wellness influencers promote nicotine products and flags potential health misinformation for users and platforms",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "BuilderPulse Tracker",
+    "one_liner": "Real-time new home builder sales and inventory monitoring dashboard that alerts buyers and agents when builders cut prices, offer incentives, or reduce inventory",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "TariffImpactIQ",
+    "one_liner": "Real-time tariff scenario modeling and supplier diversification platform that shows retailers exactly how trade policy volatility affects margins and helps them optimize sourcing decisions before SCOTUS rulings hit the books.",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "ProcureIQ Lite",
+    "one_liner": "AI-powered procurement spend visibility and supplier performance analytics for mid-market retailers who can't afford enterprise sourcing platforms but need Nordstrom-level procurement intelligence.",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "SchoolLitigation Intelligence",
+    "one_liner": "Legal intelligence platform that helps school districts track, analyze, and prepare for social media harm litigation with automated documentation and case law tracking.",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "EvidenceBuilder for Schools",
+    "one_liner": "Automated student wellness data collection and legal documentation platform that helps school districts build admissible evidence for social media harm litigation.",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "TrumpAccountNavigator",
+    "one_liner": "Automated eligibility checker and setup assistant that helps families claim Trump accounts for their children in under 5 minutes with pre-filled application forms and maximum benefit calculation",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "RefundBoostAI",
+    "one_liner": "AI-powered tax refund optimizer that analyzes your return to find missed deductions and credits, with average refund increase claims of $800-1500 for middle-income filers",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "ExperienceOS",
+    "one_liner": "White-label experiential dining event management platform for hotels and restaurants deploying immersive tech-driven culinary experiences like 3D projection mapping dinners",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "HospitalityGapScore",
+    "one_liner": "Technology perception audit tool that shows restaurant operators where their tech investments are failing to improve guest-perceived hospitality based on consumer sentiment data",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "CloudModelGov",
+    "one_liner": "Automated climate model validation and regulatory compliance reporting for federal agencies using AI to audit cloud physics accuracy in climate predictions",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "DeviceComplianceHub",
+    "one_liner": "Automated FCC/FDA compliance tracking and certification management for hardware startups shipping AI-powered consumer devices",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "ChronoMed Optimizer",
+    "one_liner": "Clinical trial timing optimizer that helps cancer centers test whether treatment timing affects outcomes by tracking infusion schedules and patient responses",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "DenialSense AI",
+    "one_liner": "AI-powered claims denial prediction engine that alerts RCM teams before submission which claims will likely be denied and why",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "MSRcap Optimizer",
+    "one_liner": "AI-powered bank capital optimization platform that models mortgage risk weights and MSR capital charges to help lenders minimize regulatory capital requirements",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "TriMerge Score Dispute",
+    "one_liner": "Automated credit score discrepancy detection and dispute resolution platform that helps mortgage borrowers fix bureau errors before loan denial",
+    "date": "2026-02-21"
+  },
+  {
+    "name": "LoanRescueAlert Pro",
+    "one_liner": "Automated SMS/email alert system that sends personalized delinquency prevention and deferment reminders to student loan borrowers with 25% delinquency surge.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "PersonalLoanCompare Pro",
+    "one_liner": "Fast personal loan marketplace and refinancing optimizer that aggregates 30+ lenders and auto-matches middle-class borrowers to lowest rates for credit card payoff.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "TariffMarginCalculator",
+    "one_liner": "Real-time landed cost and profit margin calculator for e-commerce sellers and retailers showing exact impact of Trump tariffs and Supreme Court rulings on product pricing.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "CreditReportOptimizer",
+    "one_liner": "Automated credit report audit and dispute platform that finds and fixes errors before mortgage application, targeting homebuyers paying inflated credit check fees.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "TrumpAccountMaximizer",
+    "one_liner": "Automated eligibility checker and application assistant that identifies which family members qualify for Trump accounts, calculates max benefit, and generates pre-filled IRS forms.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "InventoryGrayMarketMonitor",
+    "one_liner": "Real-time gray market and unauthorized reseller detection dashboard for brands like Bath & Body Works showing where inventory is leaking and quantifying revenue loss.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "RealTimeOrderManagementLite",
+    "one_liner": "Lightweight order management platform for mid-market retailers (1-3 locations) that syncs inventory across channels, prevents overselling, and routes orders to optimal fulfillment point.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "RefundBuddyMax",
+    "one_liner": "AI-powered tax refund optimizer that analyzes returns for overlooked deductions, calculates exact savings, and auto-generates IRS-ready documentation for above-average returns.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "GambitLit",
+    "one_liner": "Turnkey curriculum and assessment toolkit that teaches K-12 students probability, expected value, and risk literacy through gambling case studies and interactive simulations.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "ResearchToBudget",
+    "one_liner": "AI-powered research-to-action platform that translates academic education research into dollar-quantified budget recommendations for district leaders facing fiscal pressure.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "SchoolLitigation AI",
+    "one_liner": "Legal intelligence and evidence documentation platform that helps school districts track, prepare, and defend against social media addiction lawsuits with automated case law analysis and incident logging.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "CareerPathAI Pro",
+    "one_liner": "AI-powered career navigation and skill-stacking platform for college and high school students identifying automation-resistant career paths and building AI-proof professional competencies.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "CulturalLitFinder",
+    "one_liner": "AI-powered reading material discovery API that helps K-12 teachers instantly find and assign culturally relevant texts matching multilingual students' backgrounds to boost comprehension and engagement.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "PhonePolicy Enforcer",
+    "one_liner": "Implementation and compliance tracking platform that helps K-12 schools deploy, monitor, and enforce phone-free policies aligned with state legislation with automated reporting and staff/student accountability.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "HigherThinkAssess Studio",
+    "one_liner": "AI-powered assessment generator that creates higher-order thinking assignments requiring analysis, synthesis, and creativity beyond what AI can automate, helping teachers AI-proof their curriculum.",
+    "date": "2026-02-23"
+  },
+  {
+    "name": "GambitLit Pro (Government Version)",
+    "one_liner": "Policy compliance and curriculum audit platform that helps state education departments track school adoption of gambling literacy requirements and generate accountability reports for legislatures.",
+    "date": "2026-02-23"
+  }
+]

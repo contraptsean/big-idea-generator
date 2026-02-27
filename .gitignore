@@ -12,7 +12,7 @@ build/
 venv/
 
 # Runtime data
-data/
+data/*
 !data/previous_ideas.json
 # digests/ — tracked so Netlify build can generate the manifest
 frontend/digests/
