@@ -54,7 +54,7 @@ DOMAIN_GROUPS: list[dict] = [
     {
         "group_id": "tech",
         "group_name": "Tech & Developer Tools",
-        "model": "claude-sonnet-4-5-20250514",
+        "model": "claude-sonnet-4-6",
         "icon": "\U0001f916",  # 🤖
         "min_ideas": 5,
         "max_ideas": 8,
@@ -82,7 +82,7 @@ DOMAIN_GROUPS: list[dict] = [
     {
         "group_id": "lifestyle",
         "group_name": "Lifestyle & Wellness",
-        "model": "claude-sonnet-4-5-20250514",
+        "model": "claude-sonnet-4-6",
         "icon": "\U0001f33f",  # 🌿
         "min_ideas": 6,
         "max_ideas": 10,

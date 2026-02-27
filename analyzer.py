@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
 
-_MODEL = "claude-sonnet-4-5-20250514"        # default / legacy
+_MODEL = "claude-sonnet-4-6"                 # default / legacy
 _EXPAND_MODEL = "claude-haiku-4-5-20251001"  # cheap expansion calls
 _MAX_TOKENS = 16_384
 _GROUPED_MAX_TOKENS = 4_000
