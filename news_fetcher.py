@@ -6,7 +6,7 @@ Sources:
   3. RSS feeds (via feedparser)
   4. Reddit (OAuth API)
   5. Federal Register (public API)
-  6. Google Trends (via pytrends)
+  6. Google Trends (daily RSS feed)
   7. GitHub Trending (HTML scraping)
 """
 
@@ -61,6 +61,7 @@ _REDDIT_SUBREDDITS = [
 _REDDIT_LIMIT = 10  # posts per subreddit
 
 _FEDERAL_REGISTER_API = "https://www.federalregister.gov/api/v1/documents.json"
+_GOOGLE_TRENDS_RSS_URL = "https://trends.google.com/trends/trendingsearches/daily/rss?geo=US"
 _GITHUB_TRENDING_URL = "https://github.com/trending"
 
 _TITLE_SIMILARITY_THRESHOLD = 0.80
@@ -611,36 +612,79 @@ def fetch_federal_register() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# Source 6: Google Trends (via pytrends)
+# Source 6: Google Trends (daily RSS feed)
 # ---------------------------------------------------------------------------
 
 def fetch_google_trends() -> list[dict]:
-    """Fetch today's trending searches from Google Trends."""
-    try:
-        from pytrends.request import TrendReq
-    except ImportError:
-        logger.warning("pytrends not installed — skipping Google Trends")
-        return []
+    """Fetch today's trending searches via the Google Trends daily RSS feed.
+
+    Uses the public RSS endpoint directly — no third-party library required.
+    The feed exposes up to ~20 trending searches with approximate traffic counts.
+    """
+    import xml.etree.ElementTree as ET
+    from email.utils import parsedate_to_datetime
 
     articles: list[dict] = []
 
     try:
-        pytrends = TrendReq(hl="en-US", tz=360)
-        trending = pytrends.trending_searches(pn="united_states")
-    except Exception as exc:
-        logger.error("Google Trends request failed: %s", exc)
+        resp = _request_with_retry(
+            "GET",
+            _GOOGLE_TRENDS_RSS_URL,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; OpportunityRadar/1.0)"},
+        )
+    except (requests.RequestException, requests.HTTPError) as exc:
+        logger.error("Google Trends RSS request failed: %s", exc)
         return []
 
-    for _, row in trending.head(20).iterrows():
-        query = row[0]
+    try:
+        root = ET.fromstring(resp.text)
+    except ET.ParseError as exc:
+        logger.error("Google Trends RSS parse error: %s", exc)
+        return []
+
+    channel = root.find("channel")
+    if channel is None:
+        logger.warning("Google Trends RSS: no <channel> element found")
+        return []
+
+    for item in channel.findall("item")[:20]:
+        title_el = item.find("title")
+        link_el = item.find("link")
+        pubdate_el = item.find("pubDate")
+        # ht:approx_traffic lives in a custom namespace — match by local name only
+        traffic_el = item.find("{*}approx_traffic")
+
+        query = (title_el.text or "").strip() if title_el is not None else ""
+        if not query:
+            continue
+
+        url = (link_el.text or "").strip() if link_el is not None else ""
+        if not url:
+            url = f"https://trends.google.com/trends/explore?q={query}&geo=US"
+
+        published_at = datetime.now(tz=timezone.utc).isoformat()
+        if pubdate_el is not None and pubdate_el.text:
+            try:
+                published_at = parsedate_to_datetime(pubdate_el.text).isoformat()
+            except Exception:
+                pass
+
+        approx_traffic = ""
+        if traffic_el is not None and traffic_el.text:
+            approx_traffic = traffic_el.text.strip()
+
+        description = f"'{query}' is trending on Google Search"
+        if approx_traffic:
+            description += f" (~{approx_traffic} searches)"
+
         articles.append({
             "title": f"Trending: {query}",
-            "description": f"'{query}' is currently trending on Google Search",
+            "description": description,
             "source": "Google Trends",
-            "url": f"https://trends.google.com/trends/explore?q={query}&geo=US",
-            "published_at": datetime.now(tz=timezone.utc).isoformat(),
+            "url": url,
+            "published_at": published_at,
             "category": "trending",
-            "metadata": {"trend_query": query},
+            "metadata": {"trend_query": query, "approx_traffic": approx_traffic},
         })
 
     logger.info("Google Trends: %d trending searches", len(articles))
