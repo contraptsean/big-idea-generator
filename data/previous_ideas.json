@@ -923,5 +923,85 @@
     "name": "AnalogTeachTech Coach",
     "one_liner": "Real-time classroom observation and coaching platform that helps administrators and instructional coaches identify when teachers are using technology ineffectively and recommend analog alternatives or pedagogical tweaks.",
     "date": "2026-02-27"
+  },
+  {
+    "name": "BlockShift Accelerator",
+    "one_liner": "Job transition and upskilling platform for displaced fintech workers (Block's 4,000+ layoffs) to pivot into AI-native fintech roles or adjacent high-growth sectors.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "BNPLComplianceOS",
+    "one_liner": "Automated regulatory compliance and readiness platform that helps BNPL providers and fintech lenders navigate fragmented state licensing requirements (NY, CA, IL) and stay audit-ready.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "DigitalBankingAccessibilityAudit",
+    "one_liner": "Compliance and UX audit tool that helps regional and community banks ensure digital-only account opening flows meet ADA accessibility standards while maintaining conversion rates and SEO.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AIAgentRetailReady",
+    "one_liner": "Rapid product catalog optimization and syndication tool that prepares mid-market e-commerce catalogs (furniture, apparel, goods) for AI agent shopping (ChatGPT, Claude, Perplexity) in <2 weeks.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "GrayMarketVendorIntelligence",
+    "one_liner": "Real-time brand protection and gray market detection platform that monitors unauthorized resellers across marketplaces and alerts brands to inventory leaks and channel conflicts.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "VendorCashFlowBridge",
+    "one_liner": "Supply chain financing platform that helps small and mid-market vendors to large retailers (Saks, Walmart, Lowe's) bridge payment gaps and invoice factoring during bankruptcy or extended payment delays.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "ResaleMarketplaceOptimizer",
+    "one_liner": "Analytics and pricing intelligence platform that tells apparel brands, luxury retailers, and department stores exactly which items to launch secondhand programs for and how to price them competitively across Depop, Poshmark, Vestiaire, and ThredUp.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "RetirementMatchMaximizer",
+    "one_liner": "Self-service calculator and enrollment platform that helps the 56M Americans without employer retirement plans find and claim the Trump administration's new $1,000 federal match program.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AnalogTeachDiagnostics",
+    "one_liner": "Real-time classroom observation and tech-effectiveness scoring platform that helps school administrators identify when teachers are using technology counterproductively and recommends specific analog alternatives or pedagogical shifts.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "GamblingLiteracyKit",
+    "one_liner": "Turnkey K-12 curriculum and assessment platform that teaches probability, expected value, and risk literacy through gambling case studies, betting simulations, and interactive problem sets.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "CareerChaosNavigator Pro",
+    "one_liner": "AI-powered career exploration and labor market intelligence platform that helps high school and college students map automation-resistant career paths, identify adjacent skill gaps, and track weekly labor market shifts.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "ResearchToBudget Translator",
+    "one_liner": "AI-powered research synthesis platform that translates academic education research into dollar-quantified budget impact projections, helping cash-strapped district leaders make irreversible budget allocation decisions with confidence.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "TeacherGradingIntelligence",
+    "one_liner": "AI-powered assessment analytics dashboard that shows K-12 teachers exactly which student misconceptions require human feedback vs. which can self-correct through spaced repetition, helping teachers redirect grading time to high-impact feedback.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "SchoolLitigationDefenseHub",
+    "one_liner": "Automated legal evidence collection and incident documentation platform that helps K-12 districts track, prepare, and defend against social media harm lawsuits with real-time case law monitoring and compliance reporting.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "UniversalPreKEnrollmentOS",
+    "one_liner": "Enrollment management and capacity optimization SaaS that helps states and school districts manage Universal Pre-K expansion, match families to available slots, and optimize provider enrollment and tuition collection.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "HigherThinkAIProfing Studio",
+    "one_liner": "AI-powered assessment generator that creates higher-order thinking assignments requiring analysis, synthesis, and creativity beyond what AI can automate, helping teachers design AI-proof curricula and evaluations.",
+    "date": "2026-02-27"
   }
 ]
