@@ -843,5 +843,85 @@
     "name": "GambitLit Pro (Government Version)",
     "one_liner": "Policy compliance and curriculum audit platform that helps state education departments track school adoption of gambling literacy requirements and generate accountability reports for legislatures.",
     "date": "2026-02-23"
+  },
+  {
+    "name": "BNPLComplianceOS",
+    "one_liner": "Automated regulatory compliance platform that helps BNPL providers and fintech lenders navigate state-by-state licensing requirements (NY, CA, IL) and stay audit-ready.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "StudentLoanTaxPrepper",
+    "one_liner": "AI-powered tax planning tool that calculates exact IRS tax bills for student loan forgiveness recipients and auto-generates payment plans before the 2026 tax deadline.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "RetirementMatchMaximizer",
+    "one_liner": "Self-service calculator and enrollment platform that helps the 56M Americans without employer retirement plans find and claim the Trump administration's new $1,000 federal match program.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "DigitalBankingAccessibilityAudit",
+    "one_liner": "Compliance and UX audit tool that helps regional banks ensure digital-only account opening flows meet accessibility standards while maintaining ADA compliance and SEO discoverable.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "VendorCashFlowBridge",
+    "one_liner": "Supply chain financing platform that helps small vendors to mid-market retailers (Saks, Walmart) bridge payment gaps and invoice factoring while in bankruptcy or payment delays.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AIAgentRetailReady",
+    "one_liner": "Rapid product catalog optimization and syndication tool that prepares mid-market e-commerce catalogs (furniture, apparel, goods) for AI agent shopping (ChatGPT, Claude, Perplexity) in <2 weeks.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "GrayMarketVendorIntelligence",
+    "one_liner": "Real-time brand protection and gray market detection platform that monitors unauthorized resellers across marketplaces and alerts brands (cosmetics, apparel, luxury goods) to inventory leaks and channel conflicts.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "FintechLayoffCareerBridge",
+    "one_liner": "Specialized job board and upskilling platform that helps 4,000+ Block employees and other displaced fintech workers pivot to AI-native fintech roles or adjacent high-growth sectors.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "TeacherGradingShield",
+    "one_liner": "AI-powered assessment analytics dashboard that shows K-12 teachers exactly which student misconceptions require human feedback vs. which can self-correct, helping teachers spend grading time on high-impact feedback.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AnalogCurriculum Compass",
+    "one_liner": "Turnkey analog-first lesson design toolkit that helps K-12 teachers build tech-light, hands-on curricula with embedded cognitive scaffolding based on neuroscience principles.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "CareerChaosNavigator",
+    "one_liner": "AI-powered career exploration platform that helps high school and college students map automation-resistant career paths, identify adjacent skill requirements, and track labor market shifts weekly.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "GamblingLitKit Pro",
+    "one_liner": "Turnkey gambling literacy curriculum and assessment toolkit that teaches K-12 students expected value, probability, and risk management through interactive simulations and real-world case studies.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "SchoolLitigationGuardian",
+    "one_liner": "Automated legal evidence and incident logging platform that helps K-12 districts track, document, and prepare defenses against social media harm lawsuits with automated case law monitoring.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "ResearchToBudgetTranslator",
+    "one_liner": "AI-powered research synthesis platform that translates academic education research into dollar-quantified budget impact projections for cash-strapped district leaders making irreversible allocation decisions.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "UniversalPreKMarketplace",
+    "one_liner": "Enrollment and capacity management SaaS for states/districts managing Universal Pre-K expansion, matching families to available slots and helping providers optimize enrollment and tuition collection.",
+    "date": "2026-02-27"
+  },
+  {
+    "name": "AnalogTeachTech Coach",
+    "one_liner": "Real-time classroom observation and coaching platform that helps administrators and instructional coaches identify when teachers are using technology ineffectively and recommend analog alternatives or pedagogical tweaks.",
+    "date": "2026-02-27"
   }
 ]
