@@ -805,7 +805,6 @@ def _rescore(opportunities: list[dict]) -> list[dict]:
 
     messages = [
         {"role": "user", "content": "Here are the opportunities to score:\n\n" + summary},
-        {"role": "assistant", "content": "["},
     ]
 
     logger.info("Re-scoring %d opportunities...", len(opportunities))
@@ -936,10 +935,7 @@ def _analyze_single_group(
         f"{group['group_name']} group. Identify the best app/SaaS business "
         f"opportunities across these domains.\n\n{articles_text}"
     )
-    messages = [
-        {"role": "user", "content": user_message},
-        {"role": "assistant", "content": "["},
-    ]
+    messages = [{"role": "user", "content": user_message}]
 
     try:
         opportunities = _call_claude_cached(
@@ -1002,10 +998,7 @@ def _analyze_single_domain(
         f"{domain['name']} space. Identify the best app/SaaS business "
         f"opportunities in this domain.\n\n{articles_text}"
     )
-    messages = [
-        {"role": "user", "content": user_message},
-        {"role": "assistant", "content": "["},
-    ]
+    messages = [{"role": "user", "content": user_message}]
 
     try:
         opportunities = _call_claude_with_retry(system=system, messages=messages)
@@ -1218,10 +1211,7 @@ def _analyze_legacy(
         f"Here are {len(news_items)} recent news articles. Identify the best "
         f"app/SaaS business opportunities.\n\n{articles_text}"
     )
-    messages = [
-        {"role": "user", "content": user_message},
-        {"role": "assistant", "content": "["},
-    ]
+    messages = [{"role": "user", "content": user_message}]
 
     opportunities = _call_claude_with_retry(system=system, messages=messages)
     validated = _validate(opportunities)
