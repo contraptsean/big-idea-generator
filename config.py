@@ -119,7 +119,7 @@ DOMAIN_GROUPS: list[dict] = [
     {
         "group_id": "commerce",
         "group_name": "Commerce & Finance",
-        "model": "claude-haiku-4-5-20251001",
+        "model": "claude-sonnet-4-6",
         "icon": "\U0001f4bc",  # 💼
         "min_ideas": 5,
         "max_ideas": 8,
@@ -147,7 +147,7 @@ DOMAIN_GROUPS: list[dict] = [
     {
         "group_id": "civic",
         "group_name": "Civic & Education",
-        "model": "claude-haiku-4-5-20251001",
+        "model": "claude-sonnet-4-6",
         "icon": "\U0001f3db\ufe0f",  # 🏛️
         "min_ideas": 5,
         "max_ideas": 8,

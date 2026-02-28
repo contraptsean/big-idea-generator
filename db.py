@@ -28,6 +28,11 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 _COST_RATES: dict[str, dict[str, float]] = {
+    "claude-sonnet-4-6": {
+        "input": 3.00 / 1_000_000,
+        "output": 15.00 / 1_000_000,
+        "cached": 3.00 / 1_000_000 * 0.10,
+    },
     "claude-sonnet-4-5-20250514": {
         "input": 3.00 / 1_000_000,
         "output": 15.00 / 1_000_000,
@@ -39,7 +44,7 @@ _COST_RATES: dict[str, dict[str, float]] = {
         "cached": 0.80 / 1_000_000 * 0.10,
     },
 }
-_DEFAULT_RATES = _COST_RATES["claude-sonnet-4-5-20250514"]
+_DEFAULT_RATES = _COST_RATES["claude-sonnet-4-6"]
 
 
 def _estimate_cost(

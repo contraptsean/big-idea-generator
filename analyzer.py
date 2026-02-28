@@ -13,6 +13,8 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 import anthropic
+from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
+from anthropic.types.messages.batch_create_params import Request as BatchRequest
 
 import config
 
@@ -20,8 +22,9 @@ logger = logging.getLogger(__name__)
 
 client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
 
-_MODEL = "claude-sonnet-4-6"                 # default / legacy
-_EXPAND_MODEL = "claude-haiku-4-5-20251001"  # cheap expansion calls
+_MODEL = "claude-sonnet-4-6"        # default / legacy
+_EXPAND_MODEL = "claude-sonnet-4-6"  # expansion calls
+_BATCH_POLL_INTERVAL = 15           # seconds between batch status checks
 _MAX_TOKENS = 16_384
 _GROUPED_MAX_TOKENS = 4_000
 _MAX_RETRIES = 3
@@ -674,7 +677,7 @@ def _call_claude_cached(
         {
             "type": "text",
             "text": static_prompt,
-            "cache_control": {"type": "ephemeral"},
+            "cache_control": {"type": "ephemeral", "ttl": "1h"},
         },
         {
             "type": "text",
@@ -1071,47 +1074,159 @@ def _analyze_grouped(
     memory: DailyMemory,
     dedup_block: str,
 ) -> list[dict]:
-    """Run 4 grouped Claude calls (Sonnet first, then Haiku) with prompt caching."""
+    """Submit all group requests as a single Batch API job with 1-hour prompt cache TTL.
+
+    All 4 groups are submitted together; the shared static system prompt block
+    is cached with a 1-hour TTL so every request in the batch benefits from the
+    same cache entry. Results are polled every ``_BATCH_POLL_INTERVAL`` seconds.
+    """
+    global _total_input_tokens, _total_output_tokens
+    global _total_cache_creation_tokens, _total_cache_read_tokens
+
+    # Build one BatchRequest per group ----------------------------------------
+    requests: list[BatchRequest] = []
+    groups_in_batch: list[dict] = []
+
+    for group in domain_groups:
+        group_news = news_by_group.get(group["group_id"], [])
+        if not group_news:
+            logger.warning("No news items for group '%s' — skipping.", group["group_id"])
+            continue
+
+        variable_prompt = _build_variable_prompt(group, dedup_block)
+        articles_text = _format_articles(group_news)
+        user_message = (
+            f"Here are {len(group_news)} recent news articles relevant to the "
+            f"{group['group_name']} group. Identify the best app/SaaS business "
+            f"opportunities across these domains.\n\n{articles_text}"
+        )
+        system_blocks = [
+            {
+                "type": "text",
+                "text": STATIC_SYSTEM_PROMPT,
+                "cache_control": {"type": "ephemeral", "ttl": "1h"},
+            },
+            {
+                "type": "text",
+                "text": variable_prompt,
+            },
+        ]
+
+        requests.append(BatchRequest(
+            custom_id=group["group_id"],
+            params=MessageCreateParamsNonStreaming(
+                model=group["model"],
+                max_tokens=_GROUPED_MAX_TOKENS,
+                system=system_blocks,
+                messages=[{"role": "user", "content": user_message}],
+            ),
+        ))
+        groups_in_batch.append(group)
+
+    if not requests:
+        return []
+
+    # Submit batch ------------------------------------------------------------
+    batch = client.messages.batches.create(requests=requests)
+    logger.info("Submitted batch %s with %d group requests", batch.id, len(requests))
+
+    # Poll until all requests are processed ------------------------------------
+    while True:
+        batch = client.messages.batches.retrieve(batch.id)
+        if batch.processing_status == "ended":
+            break
+        logger.info(
+            "Batch %s: %s (%d processing, %d complete)",
+            batch.id, batch.processing_status,
+            batch.request_counts.processing,
+            batch.request_counts.succeeded + batch.request_counts.errored,
+        )
+        time.sleep(_BATCH_POLL_INTERVAL)
+
+    logger.info(
+        "Batch %s complete: %d succeeded, %d errored",
+        batch.id, batch.request_counts.succeeded, batch.request_counts.errored,
+    )
+
+    # Collect raw text and usage keyed by group_id ----------------------------
+    raw_by_group: dict[str, str] = {}
+    usage_by_group: dict[str, object] = {}
+
+    for result in client.messages.batches.results(batch.id):
+        if result.result.type == "succeeded":
+            msg = result.result.message
+            raw_by_group[result.custom_id] = msg.content[0].text
+            usage_by_group[result.custom_id] = msg.usage
+        else:
+            logger.error(
+                "Batch request '%s' failed: %s",
+                result.custom_id, result.result.error,
+            )
+
+    # Parse results, track usage, tag opportunities ---------------------------
     all_opportunities: list[dict] = []
 
-    # Order: Sonnet groups first to maximise cache hit within the 5-min TTL
-    sonnet_groups = [g for g in domain_groups if "sonnet" in g["model"].lower()]
-    haiku_groups = [g for g in domain_groups if "sonnet" not in g["model"].lower()]
-    ordered = sonnet_groups + haiku_groups
+    for group in groups_in_batch:
+        group_id = group["group_id"]
+        if group_id not in raw_by_group:
+            continue
 
-    with ThreadPoolExecutor(max_workers=_GROUP_WORKERS) as executor:
-        futures = {}
-        for group in ordered:
-            group_news = news_by_group.get(group["group_id"], [])
-            if not group_news:
-                logger.warning(
-                    "No news items for group '%s' — skipping.", group["group_id"],
-                )
-                continue
-            future = executor.submit(
-                _analyze_single_group, group, group_news, dedup_block,
-            )
-            futures[future] = group
+        usage = usage_by_group[group_id]
+        in_tok = usage.input_tokens
+        out_tok = usage.output_tokens
+        cache_creation = getattr(usage, "cache_creation_input_tokens", 0) or 0
+        cache_read = getattr(usage, "cache_read_input_tokens", 0) or 0
 
-        for future in as_completed(futures):
-            group = futures[future]
-            try:
-                result = future.result()
-                all_opportunities.extend(result)
-            except Exception as exc:
-                logger.error("Group '%s' failed: %s", group["group_id"], exc)
+        _total_input_tokens += in_tok
+        _total_output_tokens += out_tok
+        _total_cache_creation_tokens += cache_creation
+        _total_cache_read_tokens += cache_read
+
+        with _usage_lock:
+            _group_usages.append({
+                "group_id": group_id,
+                "model": group["model"],
+                "input_tokens": in_tok,
+                "output_tokens": out_tok,
+                "cache_read_tokens": cache_read,
+                "cache_creation_tokens": cache_creation,
+            })
+
+        logger.info(
+            "Group '%s' | Model: %s | Cache: %d/%d input tokens cached",
+            group["group_name"], group["model"], cache_read, in_tok,
+        )
+
+        raw_text = raw_by_group[group_id]
+        try:
+            opportunities = _extract_json(raw_text)
+        except ValueError:
+            logger.warning("JSON parse failed for group '%s', trying partial...", group_id)
+            opportunities = _extract_partial(raw_text) or []
+
+        for opp in opportunities:
+            opp["group_id"] = group_id
+            opp["_source_model"] = group["model"]
+            if "domains" not in opp or not opp["domains"]:
+                opp["domains"] = []
+            if "primary_domain" not in opp and group["domains"]:
+                opp["primary_domain"] = group["domains"][0]["id"]
+            pd = opp.get("primary_domain")
+            if pd and pd not in opp["domains"]:
+                opp["domains"].insert(0, pd)
+
+        validated = _validate_slim(opportunities)
+        logger.info(
+            "Group '%s': parsed %d opportunities (%d valid).",
+            group_id, len(opportunities), len(validated),
+        )
+        all_opportunities.extend(validated)
 
     if not all_opportunities:
         return []
 
-    # Before dedup: sort so Sonnet ideas appear first (will be kept over Haiku dupes)
-    all_opportunities.sort(
-        key=lambda o: (0 if "sonnet" in o.get("_source_model", "").lower() else 1)
-    )
-
     all_opportunities = _deduplicate_across_domains(all_opportunities)
 
-    # Remove internal tracking field
     for opp in all_opportunities:
         opp.pop("_source_model", None)
 
