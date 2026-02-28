@@ -1158,5 +1158,170 @@
     "name": "HigherThinkAIProfing Studio",
     "one_liner": "AI-powered assessment generator that creates higher-order thinking assignments requiring analysis, synthesis, and creativity beyond what AI can automate, helping teachers design AI-proof curricula and evaluations.",
     "date": "2026-02-27"
+  },
+  {
+    "name": "AgentPsychosisGuard",
+    "one_liner": "Real-time context health monitor and session recovery tool for developers running long Claude Code and multi-agent AI coding workflows.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "SecretsRadar",
+    "one_liner": "Automated secrets sprawl detector and remediation assistant that scans codebases, CI configs, and .env files for exposed credentials and guides developers through safe rotation.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "PromptRegulationRadar",
+    "one_liner": "AI policy and regulation change tracker that alerts developers and AI product teams when new state or federal AI laws could affect their product's compliance posture.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "ComprehensionDebt CLI",
+    "one_liner": "A developer tool that scores how well your team understands AI-generated code by running comprehension checks during code review, flagging high-risk blind-acceptance patterns.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "MCPServerKit",
+    "one_liner": "A zero-config scaffold and testing harness for developers building Model Context Protocol (MCP) servers for Claude, Perplexity, and other AI agents.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "LLMPolicyEnforcer",
+    "one_liner": "A middleware layer that enforces configurable hard rules on LLM outputs and inputs for enterprise AI apps, preventing policy violations without relying on model-level guardrails alone.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "OpenSourceTrustVouch",
+    "one_liner": "A dependency trust scoring and code provenance verification tool for developers worried about supply chain attacks in AI-assisted codebases.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "AIEnergyFootprintAPI",
+    "one_liner": "A developer API that calculates and reports the carbon and energy cost of LLM API calls, helping AI product teams measure, reduce, and report their model inference footprint.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "PetStayFinder",
+    "one_liner": "A pet-first travel and accommodation search platform that surfaces hotels, rentals, and itineraries explicitly welcoming pets, ranked by pet amenity quality rather than just policy permissiveness.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "MortgageRateSpringAlert",
+    "one_liner": "A hyper-personalized mortgage rate drop alert and affordability scenario calculator that helps rate-locked buyers know exactly when to pull the trigger on a home purchase.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "ReverseMortgageClarityHub",
+    "one_liner": "A plain-language reverse mortgage counseling prep tool that helps seniors and their families understand eligibility, costs, and alternatives before mandatory HUD counseling sessions.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "K-Shaped Menu Optimizer",
+    "one_liner": "A dual-track menu and pricing strategy tool that helps casual and fast-casual restaurants simultaneously serve value-seeking and premium-spending customers in a bifurcated economy.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "FoodDeliveryFeeAuditor",
+    "one_liner": "A consumer-facing delivery fee transparency tool that shows users the true all-in cost of ordering from Grubhub, DoorDash, and Uber Eats before they place an order.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "CreditScoreMortgageLift",
+    "one_liner": "A 90-day credit score improvement roadmap tool that shows homebuyers the exact actions needed to cross the 760 FICO prime threshold and calculates the dollar savings on their target mortgage.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "AirspaceDisruptionGuard",
+    "one_liner": "A real-time travel disruption monitoring and rebooking assistant for frequent travelers and travel managers during geopolitical crises that force sudden airspace closures.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "ProteinMenuBuilder",
+    "one_liner": "An AI-powered high-protein menu development and nutritional compliance tool that helps QSR and fast-casual operators launch and market protein-forward menus aligned with GLP-1 and fitness culture trends.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "HotelBrandFocusAdvisor",
+    "one_liner": "A hotel brand portfolio rationalization tool that helps independent and boutique hotel operators choose the right flag or brand alignment in an AI-compressed, loyalty-fatigued market.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "TariffRefundTracker",
+    "one_liner": "Automated tariff refund claim filing and documentation platform that helps retail brands (Allbirds, On, Nike) recover overpaid tariffs from recent Supreme Court and policy reversals.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "SupplierDataSyncOS",
+    "one_liner": "Real-time supplier-to-store data synchronization platform that lets small and mid-market vendors and suppliers tap Walmart's Scintilla In-Store model without enterprise infrastructure.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "BlockCareerPivotOS",
+    "one_liner": "Specialized job board and upskilling platform that helps Block's 4,000+ displaced fintech workers land roles at AI-native fintech startups, BigTech (Google, Meta, Amazon), or adjacent high-growth sectors.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "RetirementMatchMaximizerPro",
+    "one_liner": "Self-service calculator and pre-filled enrollment assistant that helps the 56M Americans without employer retirement plans find and claim the Trump administration's new $1,000 federal match program.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "TaxCreditClaimAssistant",
+    "one_liner": "AI-powered tax refund optimization platform that identifies missed deductions and credits (esp. Earned Income Tax Credit), auto-generates IRS-ready documentation, and targets filers leaving $5K-15K on the table.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "NavientSettlementClaimAssistant",
+    "one_liner": "Automated settlement check eligibility verifier and claim filing assistant that helps Navient-affected student loan borrowers quickly determine if they qualify for forbearance-related compensation.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "eBayVendorOptimizer",
+    "one_liner": "Real-time marketplace analytics and repricing platform that helps small and mid-market resellers and vendors on eBay survive the 6% layoff restructuring by automating competitive pricing and demand-surge detection.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "RegionalBankDigitalAccessibilityAudit",
+    "one_liner": "Automated compliance and UX audit tool that helps regional and community banks ensure digital-only account opening flows meet ADA accessibility standards while maintaining conversion rates and legal defensibility.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "AnalogTeachDiagnostics",
+    "one_liner": "Real-time classroom observation tool that scores when teachers are using technology ineffectively and recommends specific analog alternatives or pedagogical shifts.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "HigherThinkAIProfing Studio",
+    "one_liner": "AI-powered assessment generator that creates higher-order thinking assignments requiring analysis, synthesis, and creativity beyond what AI can automate, helping teachers design AI-proof curricula.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "GamblingLiteracyKit",
+    "one_liner": "Turnkey K-12 curriculum and assessment platform that teaches probability, expected value, and risk literacy through gambling case studies, simulations, and interactive problem sets.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "ResearchToBudget Translator",
+    "one_liner": "AI-powered research synthesis platform that translates academic education research into dollar-quantified budget impact projections, helping cash-strapped district leaders make irreversible budget allocation decisions with confidence.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "CareerChaosNavigator Pro",
+    "one_liner": "AI-powered career exploration and labor market intelligence platform that helps high school and college students map automation-resistant career paths, identify adjacent skill gaps, and track weekly labor market shifts.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "SchoolLitigationDefenseHub",
+    "one_liner": "Automated legal evidence collection and incident documentation platform that helps K-12 districts track, prepare, and defend against social media addiction lawsuits with real-time case law monitoring and compliance reporting.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "UniversalPreKEnrollmentOS",
+    "one_liner": "Enrollment management and capacity optimization SaaS that helps states and school districts manage Universal Pre-K expansion, match families to available slots, and optimize provider enrollment and tuition collection.",
+    "date": "2026-02-28"
+  },
+  {
+    "name": "FairHousingCETracker",
+    "one_liner": "Compliance management and CE course delivery platform that helps real estate brokerages track, assign, and certify fair housing training hours required by state mandates (Massachusetts, others), preventing broker liability and audit failures.",
+    "date": "2026-02-28"
   }
 ]
