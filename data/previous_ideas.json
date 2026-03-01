@@ -1323,5 +1323,160 @@
     "name": "FairHousingCETracker",
     "one_liner": "Compliance management and CE course delivery platform that helps real estate brokerages track, assign, and certify fair housing training hours required by state mandates (Massachusetts, others), preventing broker liability and audit failures.",
     "date": "2026-02-28"
+  },
+  {
+    "name": "PolicyGuardAI",
+    "one_liner": "Real-time AI regulatory risk monitor that alerts dev teams when new federal or state AI policies (like Pentagon supply-chain designations or NY AI bills) could affect their LLM provider choices or product compliance posture.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "ContextContinuity",
+    "one_liner": "A persistent context management and session checkpointing layer for Claude Code and multi-agent workflows that prevents agent psychosis and recovers broken long-running coding sessions.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "ComprehensionDebtCI",
+    "one_liner": "A CI/CD plugin that scores how well your engineering team actually understands AI-generated code by analyzing commit patterns, review speed, and blind-acceptance rates, then flags high-risk blind spots before they ship.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "MCPForge",
+    "one_liner": "A zero-config scaffold, testing harness, and deployment toolkit for developers building Model Context Protocol (MCP) servers for Claude, Perplexity, and other AI agents.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "LLMEnergyMeter",
+    "one_liner": "A developer SDK and dashboard that calculates, tracks, and reports the real-time energy and carbon cost of LLM API calls, helping AI product teams measure and reduce their model inference footprint.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "TrustVouch OSS",
+    "one_liner": "A dependency trust scoring and code provenance verification tool that flags unvetted or suspicious packages in AI-assisted codebases, with a community-driven vouching system for open source maintainers.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "LLMTokenShrink",
+    "one_liner": "An automated prompt compression and token audit toolkit that reduces LLM API costs by 30-60% for developers building AI-powered apps, with real-time cost forecasting by model and provider.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "LanguageROICalc",
+    "one_liner": "A programming language and framework selection advisor for AI-assisted development teams that calculates the economic trade-offs of language choice given LLM code quality, token efficiency, and maintenance costs.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "GeopoliticalRateWatch",
+    "one_liner": "A real-time mortgage rate scenario modeler that shows homebuyers exactly how geopolitical shocks (like U.S.-Iran war escalation) affect their monthly payment and optimal lock timing.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "PetFirstStay",
+    "one_liner": "A pet-centric hotel and short-term rental booking platform that ranks properties by actual pet amenity quality, not just policy permissiveness, for the growing segment of pet-over-kids travelers.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "DeliveryFeeXray",
+    "one_liner": "A browser extension and web app that reveals the true all-in cost of food delivery orders across Grubhub, DoorDash, and Uber Eats before consumers place an order, in light of Grubhub's $5M fee deception settlement.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "FICOSprintMortgage",
+    "one_liner": "A 90-day FICO improvement roadmap tool that shows homebuyers the exact credit actions needed to cross the 760 prime threshold and calculates the precise dollar savings on their target mortgage.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "ProteinMenuLab",
+    "one_liner": "An AI-powered protein-forward menu development and nutritional compliance tool that helps QSR and fast-casual operators build, cost, and market high-protein menus aligned with GLP-1 drug trends and fitness culture demand.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "LoyaltyDecayAlert",
+    "one_liner": "A real-time loyalty program health monitor and customer sentiment tracker that warns restaurant operators before loyalty program changes trigger the kind of same-store sales collapse Sweetgreen just experienced.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "MidEastTravelGuard",
+    "one_liner": "A real-time travel disruption monitoring and alternative routing assistant for frequent travelers and travel managers during geopolitical crises that force sudden Middle East airspace closures.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "ReverseReadyCounselor",
+    "one_liner": "A plain-language reverse mortgage eligibility and cost modeler that helps seniors and their adult children prepare for and navigate mandatory HUD counseling sessions before New Jersey and other states add new legislative friction.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "KShapeMenuIntel",
+    "one_liner": "A barbell pricing strategy analyzer and menu performance tracker that helps casual dining operators simultaneously optimize for value-seeking and premium-spending customers in today's K-shaped economy.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "EarnedCreditFinder",
+    "one_liner": "An AI-powered EITC eligibility screener and claim optimizer that helps the 1-in-5 eligible filers who miss the Earned Income Tax Credit recover thousands in refunds they're owed.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "SAVEPlanNavigator",
+    "one_liner": "A real-time student loan repayment plan comparison and scenario calculator that helps borrowers understand their options after the SAVE plan legal battles and court rulings.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "TariffRefundClaimOS",
+    "one_liner": "An automated tariff overpayment claim filing and documentation platform that helps retail brands recover IEEPA and Section 301 tariff refunds through Court of International Trade lawsuits.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "SupplierIntelBridge",
+    "one_liner": "A lightweight supplier-to-retailer data sync and field rep analytics dashboard that gives small and mid-market CPG vendors store-level sell-through visibility without enterprise Walmart or Target vendor portals.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "BNPLRiskDashboard",
+    "one_liner": "A real-time BNPL spending monitor and debt load analyzer that helps consumers understand their true BNPL obligations across Klarna, Affirm, Afterpay, and Apple Pay Later before they overextend.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "PremiumToyResellRadar",
+    "one_liner": "A real-time premium toy market intelligence and resale pricing tool that helps small toy retailers, collectors, and resellers identify which high-demand SKUs to stock and when to flip them.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "ActiveFundScorecard",
+    "one_liner": "A personal portfolio auditor that analyzes whether an investor's actively managed funds are worth their fees versus index alternatives, delivering a plain-English switch recommendation.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "DistrictPolicyPulse",
+    "one_liner": "A real-time federal and state education policy tracker that alerts district leaders when new regulations, funding cuts, or compliance mandates directly affect their budget decisions.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "KinderCompliance Tracker",
+    "one_liner": "A state-by-state kindergarten and Universal Pre-K enrollment compliance dashboard that helps district administrators track, report, and optimize mandated early childhood education participation rates.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "SocialMediaHarmLog",
+    "one_liner": "A structured incident documentation and legal evidence platform that helps K-12 school districts log, timestamp, and organize social media harm events to build defensible records for litigation and insurance claims.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "AssessmentDepthDesigner",
+    "one_liner": "An AI-powered assessment builder that generates higher-order thinking rubrics and assignments calibrated to Bloom's Taxonomy levels AI cannot replicate, helping K-12 and higher education teachers make their evaluations AI-proof.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "AnalogLessonBuilder",
+    "one_liner": "A structured lesson planning tool that helps K-12 teachers design hands-on, screen-free learning activities grounded in neuroscience principles, with ready-to-use templates for every subject and grade level.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "GamblingMathCurriculum Pro",
+    "one_liner": "A standards-aligned K-12 math curriculum toolkit that teaches probability, expected value, and statistical reasoning through gambling and risk literacy case studies, with built-in teacher guides and student assessments.",
+    "date": "2026-03-01"
+  },
+  {
+    "name": "HumanGradingValueKit",
+    "one_liner": "A professional development toolkit and classroom implementation guide that helps teachers articulate, document, and demonstrate the pedagogical value of human grading to administrators, parents, and policymakers resisting AI-grading adoption.",
+    "date": "2026-03-01"
   }
 ]
