@@ -1478,5 +1478,165 @@
     "name": "HumanGradingValueKit",
     "one_liner": "A professional development toolkit and classroom implementation guide that helps teachers articulate, document, and demonstrate the pedagogical value of human grading to administrators, parents, and policymakers resisting AI-grading adoption.",
     "date": "2026-03-01"
+  },
+  {
+    "name": "DefenseModelSwitch",
+    "one_liner": "Real-time LLM provider risk monitor and migration planner that alerts AI teams when their LLM provider's government/defense status changes and auto-generates migration checklists to alternative providers.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "AgentSanityCheck",
+    "one_liner": "A real-time agent behavior monitoring and psychosis detection dashboard for developers running long multi-agent Claude Code and LLM coding workflows.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "SaaSReplaceAudit",
+    "one_liner": "An AI-powered SaaS portfolio auditor that identifies which of your team's SaaS subscriptions are being made redundant by LLM-native alternatives and calculates the exact savings from switching.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "MCPCloudflareKit",
+    "one_liner": "A batteries-included MCP server scaffold, testing harness, and one-click Cloudflare Workers deployment toolkit for developers building Model Context Protocol integrations.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "ComprehensionDebtScanner",
+    "one_liner": "A VS Code and CLI tool that scores how deeply your team understands AI-generated code by analyzing review speed, change patterns, and blind-acceptance rates, then flags high-risk modules before they ship.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "CloudOutageRadar",
+    "one_liner": "A real-time cloud infrastructure outage and geopolitical risk monitor that alerts DevOps teams when provider regions are physically at risk and auto-generates failover runbooks.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "LLMEnergyBudget",
+    "one_liner": "A developer SDK and team dashboard that calculates, tracks, and reports the real-time energy and carbon cost of every LLM API call, helping AI product teams hit sustainability targets and report to investors.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "AIFreeCodeKit",
+    "one_liner": "A VS Code fork extension and linting toolkit for developers who want to write, review, and ship code without LLM assistance, providing AI-free code provenance certificates for audits and compliance.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "TrueDeliveryCost",
+    "one_liner": "A browser extension and web app that shows consumers the real all-in cost of food delivery orders across Grubhub, DoorDash, and Uber Eats before they place an order.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "PetStayRank",
+    "one_liner": "A pet-centric hotel and short-term rental booking aggregator that ranks properties by actual pet amenity quality — not just policy permissiveness — for the exploding segment of pet-primary travelers.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "LoyaltyPulseAlert",
+    "one_liner": "A real-time loyalty program health monitor and customer sentiment early-warning system that alerts restaurant operators before program changes trigger same-store sales collapse.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "ProteinMenuLaunchKit",
+    "one_liner": "An AI-powered protein-forward menu development, cost modeling, and marketing copy tool that helps QSR and fast-casual operators build high-protein menus aligned with GLP-1 culture and fitness demand.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "MortgageRateLockPulse",
+    "one_liner": "A hyper-personalized mortgage rate scenario modeler and geopolitical risk alert tool that tells rate-locked homebuyers exactly when to lock, float, or pull the trigger given real-time macro and geopolitical events.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "PrivateLenderLicenseOS",
+    "one_liner": "A multi-state mortgage licensing compliance tracker and renewal automation platform built specifically for private lenders expanding across state lines in 2026.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "ReverseReadyCoach",
+    "one_liner": "A plain-language HECM eligibility modeler and counseling prep tool that helps seniors and their adult children understand reverse mortgage costs, misconceptions, and alternatives before mandatory HUD counseling sessions.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "MidEastTravelRebooker",
+    "one_liner": "A real-time Middle East travel disruption monitor and alternative routing assistant that helps frequent travelers and travel managers rebook instantly when geopolitical crises close regional airspace.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "AgentPayReady",
+    "one_liner": "A product catalog and checkout API readiness auditor that helps mid-market e-commerce merchants prepare their stores for AI agent shopping (Walmart Sparky, Mastercard/Santander agent payments) before they get bypassed.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "TariffClaimOS",
+    "one_liner": "An automated tariff overpayment claim documentation and Court of International Trade lawsuit filing assistant for retail brands seeking IEEPA and Section 301 tariff refunds.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "SupplierPulse",
+    "one_liner": "A lightweight store-level sell-through analytics and field rep dashboard that gives small and mid-market CPG suppliers real-time inventory visibility into retail partners without needing enterprise Walmart or Target vendor portal access.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "EITCRecovery",
+    "one_liner": "An AI-powered Earned Income Tax Credit eligibility screener and missed credit recovery tool that helps the 1-in-5 eligible filers who miss the EITC claim thousands in refunds they're legally owed.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "NewInvestorOnboard",
+    "one_liner": "A guided investment onboarding and financial literacy platform for the 167% surge in low- and middle-income first-time investors who opened brokerage accounts since 2020 but lack the knowledge to invest confidently.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "SAVEPlanTracker",
+    "one_liner": "A real-time student loan repayment plan comparison and scenario modeler that helps borrowers navigate the ongoing SAVE plan legal battles and identify their safest repayment path.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "PremiumToyRadar",
+    "one_liner": "A real-time premium toy market intelligence and demand-forecasting tool that helps independent toy retailers and resellers identify which high-ticket SKUs to stock and when to flip them.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "LMIRetirementMatch",
+    "one_liner": "A self-service calculator and guided enrollment assistant that helps low- and middle-income workers without employer retirement plans claim the Trump administration's new $1,000 federal retirement match.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "DistrictBudgetResearch AI",
+    "one_liner": "Translates academic education research into dollar-quantified, decision-ready budget recommendations for K-12 district leaders facing irreversible spending cuts.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "SocialHarmLog",
+    "one_liner": "Structured legal evidence documentation platform that helps K-12 districts log, timestamp, and organize social media harm incidents to build defensible litigation records.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "EarlyEdEnrollOS",
+    "one_liner": "Enrollment management and compliance tracking SaaS that helps states and districts navigate Universal Pre-K and kindergarten expansion mandates, match families to slots, and report participation to state agencies.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "HigherOrderAssess",
+    "one_liner": "AI-powered assessment builder that generates Bloom's Taxonomy upper-level assignments and rubrics calibrated to require analysis and synthesis that AI tools cannot replicate, for K-12 and higher ed teachers.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "AnalogLessonForge",
+    "one_liner": "Structured lesson planning tool that helps K-12 teachers rapidly design hands-on, screen-free learning activities grounded in neuroscience principles, with ready-to-use templates for every subject and grade.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "RiskLitMathKit",
+    "one_liner": "Standards-aligned K-12 math curriculum toolkit that teaches probability, expected value, and financial risk literacy through gambling and real-world risk case studies, with built-in teacher guides and assessments.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "AICareerCompassK12",
+    "one_liner": "AI-powered career exploration platform that helps high school counselors and students map automation-resistant career paths, identify skill gaps, and track weekly labor market shifts.",
+    "date": "2026-03-02"
+  },
+  {
+    "name": "TechPedagogyAudit",
+    "one_liner": "Classroom technology effectiveness scoring platform that helps instructional coaches and administrators identify when teachers are using EdTech counterproductively and recommend specific analog or blended alternatives.",
+    "date": "2026-03-02"
   }
 ]
