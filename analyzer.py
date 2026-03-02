@@ -31,6 +31,10 @@ _MAX_RETRIES = 3
 _RETRY_BACKOFF = 2  # seconds, doubled each retry
 _DOMAIN_WORKERS = 3  # max parallel domain API calls (legacy mode)
 _GROUP_WORKERS = 2   # max parallel group API calls (new mode)
+_FILTER_MODEL = "claude-haiku-4-5-20251001"  # cheap classification for semantic dedup
+_FILTER_MIN_HISTORY = 10     # skip semantic filter if fewer historical ideas
+_FILTER_SIMILARITY_THRESHOLD = 70  # score >= this → idea blocks same problem space
+_FILTER_MIN_PER_GROUP = 2    # floor: always keep at least this many ideas per group
 
 # Slim schema — 10 core fields (no build-plan / audience / tech-stack etc.)
 SLIM_REQUIRED_FIELDS = {
@@ -335,7 +339,7 @@ Return ONLY a JSON array (no markdown, no commentary). Each element must have:
 
 _DATA_DIR = Path(__file__).resolve().parent / "data"
 _PREVIOUS_IDEAS_FILE = _DATA_DIR / "previous_ideas.json"
-_MEMORY_LOOKBACK_DAYS = 7
+_MEMORY_LOOKBACK_DAYS = 30
 _MEMORY_PRUNE_DAYS = 30
 
 
@@ -387,17 +391,24 @@ class DailyMemory:
             return ""
         lines = ["## Previously suggested ideas (DO NOT repeat these)\n"]
         for entry in recent:
-            lines.append(f"- {entry.get('name', '?')}: {entry.get('one_liner', '')}")
+            problem = entry.get("the_problem", "")
+            suffix = f" | Problem: {problem}" if problem else ""
+            lines.append(f"- {entry.get('name', '?')}: {entry.get('one_liner', '')}{suffix}")
         return "\n".join(lines)
 
     def record(self, opportunities: list[dict]) -> None:
         today = date.today().isoformat()
         for opp in opportunities:
-            self._entries.append({
+            entry: dict = {
                 "name": opp.get("name", ""),
                 "one_liner": opp.get("one_liner", ""),
                 "date": today,
-            })
+            }
+            if opp.get("the_problem"):
+                entry["the_problem"] = opp["the_problem"]
+            if opp.get("primary_domain"):
+                entry["primary_domain"] = opp["primary_domain"]
+            self._entries.append(entry)
         self.save()
 
 
@@ -864,7 +875,38 @@ def _rescore(opportunities: list[dict]) -> list[dict]:
 # Grouped-mode prompt building
 # ---------------------------------------------------------------------------
 
-def _build_variable_prompt(group: dict, dedup_block: str) -> str:
+def _build_coverage_summary(memory: DailyMemory) -> str:
+    """Summarise how many recent ideas exist per primary_domain.
+
+    Returns a prompt block flagging over-represented niches so Claude avoids
+    them during generation. Returns empty string if history is too small or
+    no domain has 3+ ideas.
+    """
+    from collections import Counter
+    history = memory.recent_ideas()
+    if len(history) < 10:
+        return ""
+    domain_counts: Counter = Counter(
+        e["primary_domain"] for e in history if e.get("primary_domain")
+    )
+    saturated = sorted(
+        [(d, c) for d, c in domain_counts.items() if c >= 3],
+        key=lambda x: x[1], reverse=True,
+    )
+    if not saturated:
+        return ""
+    lines = ["## Saturated Niches (last 30 days) — Avoid these over-represented areas\n"]
+    for domain, count in saturated:
+        lines.append(f"- {domain}: {count} ideas already generated")
+    lines.append(
+        "\nPrioritize under-served domains. Do NOT generate another idea in a "
+        "saturated niche unless today's news presents a clearly distinct, "
+        "news-triggered opportunity."
+    )
+    return "\n".join(lines)
+
+
+def _build_variable_prompt(group: dict, dedup_block: str, coverage_block: str = "") -> str:
     """Build the per-group variable portion of the system prompt (not cached)."""
     domain_ids = ", ".join(d["id"] for d in group["domains"])
     domain_details = "\n".join(
@@ -883,6 +925,8 @@ def _build_variable_prompt(group: dict, dedup_block: str) -> str:
         f"If an idea also fits a domain from another group, include that domain "
         f"ID in the \"domains\" list as a secondary tag."
     )
+    if coverage_block:
+        prompt = prompt + "\n\n" + coverage_block
     if dedup_block:
         prompt = prompt + "\n\n" + dedup_block
     return prompt
@@ -1065,6 +1109,186 @@ def _deduplicate_across_domains(opportunities: list[dict]) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# Semantic similarity filter (post-generation)
+# ---------------------------------------------------------------------------
+
+def _filter_by_semantic_similarity(
+    opportunities: list[dict],
+    memory: DailyMemory,
+    api_client: anthropic.Anthropic,
+) -> list[dict]:
+    """Filter ideas that are semantically too similar to ideas from the past 30 days.
+
+    Uses a single Haiku call to score each new idea against the full history.
+    Ideas scoring >= _FILTER_SIMILARITY_THRESHOLD are dropped, subject to a
+    per-group floor of _FILTER_MIN_PER_GROUP ideas (to avoid decimating any group).
+    Falls back to the full list on any API or parse error.
+    """
+    from collections import defaultdict
+
+    history = memory.recent_ideas()
+    if len(history) < _FILTER_MIN_HISTORY:
+        logger.info(
+            "Semantic filter skipped: only %d historical ideas (need %d).",
+            len(history), _FILTER_MIN_HISTORY,
+        )
+        return opportunities
+
+    if not opportunities:
+        return opportunities
+
+    # Annotate each opp with its index for reliable mapping after the API call
+    for i, opp in enumerate(opportunities):
+        opp["_filter_idx"] = i
+
+    # Build history block
+    hist_lines = []
+    for i, entry in enumerate(history, 1):
+        problem = entry.get("the_problem", "")
+        problem_str = f"\n   Problem: {problem}" if problem else ""
+        hist_lines.append(
+            f"{i}. {entry['name']}: {entry.get('one_liner', '')}{problem_str}"
+        )
+    history_block = "\n".join(hist_lines)
+
+    # Build new ideas block
+    new_lines = []
+    for opp in opportunities:
+        problem = opp.get("the_problem", "")
+        problem_str = f"\n   Problem: {problem}" if problem else ""
+        new_lines.append(
+            f"{opp['_filter_idx']}. {opp.get('name', '?')}: "
+            f"{opp.get('one_liner', '')}{problem_str}"
+        )
+    new_block = "\n".join(new_lines)
+
+    filter_system = """\
+You are a startup idea deduplication expert. Detect when a new startup idea \
+addresses the same core problem space as an existing idea, even when names \
+and descriptions differ.
+
+Two ideas ARE too similar if they:
+- Target the same specific user pain point
+- Would be direct substitutes for each other
+- Compete for the same niche customer segment
+
+Two ideas are NOT too similar if they:
+- Share a broad domain but solve different specific problems
+- Target different user types within the same domain
+- Have meaningfully different core workflows or value propositions
+
+Score each new idea's similarity to the CLOSEST matching historical idea on \
+a 0-100 scale:
+  0-39  = Genuinely different problem space
+  40-69 = Related theme but distinct value proposition
+  70-84 = Similar niche — probably overlapping market
+  85-100 = Functionally identical — direct substitutes
+
+Output ONLY a JSON array. Each element must have exactly these fields:
+{"index": <0-based index>, "name": "<idea name>", "score": <0-100>, \
+"similar_to": "<closest historical idea name, or null if score < 40>", \
+"keep": <true if score < 70, false if score >= 70>}
+No preamble, no markdown fences, no commentary.\
+"""
+
+    user_message = (
+        f"## Historical ideas (last 30 days)\n\n{history_block}\n\n"
+        f"## New ideas to evaluate (use the leading index number)\n\n{new_block}\n\n"
+        f"Rate each new idea's similarity to the closest historical idea."
+    )
+
+    global _total_input_tokens, _total_output_tokens
+    try:
+        logger.info(
+            "Running semantic similarity filter on %d new ideas vs %d historical.",
+            len(opportunities), len(history),
+        )
+        response = api_client.messages.create(
+            model=_FILTER_MODEL,
+            max_tokens=2000,
+            system=filter_system,
+            messages=[{"role": "user", "content": user_message}],
+        )
+        _total_input_tokens += response.usage.input_tokens
+        _total_output_tokens += response.usage.output_tokens
+
+        raw_text = response.content[0].text.strip()
+        try:
+            ratings = _extract_json(raw_text)
+        except ValueError:
+            logger.warning(
+                "Semantic filter: JSON parse failed. Keeping all ideas. Raw: %.300s",
+                raw_text,
+            )
+            for opp in opportunities:
+                opp.pop("_filter_idx", None)
+            return opportunities
+
+    except Exception as exc:
+        logger.warning("Semantic filter API call failed (%s). Keeping all ideas.", exc)
+        for opp in opportunities:
+            opp.pop("_filter_idx", None)
+        return opportunities
+
+    # Build a lookup: filter_idx → rating
+    rating_by_idx: dict[int, dict] = {}
+    for r in ratings:
+        if isinstance(r, dict) and "index" in r and "keep" in r:
+            rating_by_idx[int(r["index"])] = r
+
+    kept: list[dict] = []
+    filtered_out: list[dict] = []
+
+    for opp in opportunities:
+        idx = opp["_filter_idx"]
+        rating = rating_by_idx.get(idx, {})
+        score = rating.get("score", 0)
+        similar_to = rating.get("similar_to")
+
+        if not rating.get("keep", True):
+            logger.info(
+                "Filtered (score %d, similar to '%s'): %s — %s",
+                score, similar_to,
+                opp.get("name"), opp.get("one_liner", "")[:80],
+            )
+            filtered_out.append(opp)
+        else:
+            kept.append(opp)
+
+    # Per-group floor: reinstate least-similar filtered ideas if a group drops below minimum
+    kept_per_group: dict[str, int] = defaultdict(int)
+    for opp in kept:
+        kept_per_group[opp.get("group_id", "_")] += 1
+
+    filtered_scored = sorted(
+        filtered_out,
+        key=lambda o: rating_by_idx.get(o["_filter_idx"], {}).get("score", 100),
+    )
+
+    reinstated: list[dict] = []
+    for opp in filtered_scored:
+        gid = opp.get("group_id", "_")
+        if kept_per_group[gid] < _FILTER_MIN_PER_GROUP:
+            kept_per_group[gid] += 1
+            reinstated.append(opp)
+            score = rating_by_idx.get(opp["_filter_idx"], {}).get("score", "?")
+            logger.info(
+                "Reinstating (floor rule, group '%s', score %s): %s",
+                gid, score, opp.get("name"),
+            )
+
+    all_kept = kept + reinstated
+    logger.info(
+        "Semantic filter: %d → %d opportunities (%d filtered, %d reinstated).",
+        len(opportunities), len(all_kept), len(filtered_out), len(reinstated),
+    )
+
+    for opp in all_kept:
+        opp.pop("_filter_idx", None)
+    return all_kept
+
+
+# ---------------------------------------------------------------------------
 # Grouped analysis pipeline
 # ---------------------------------------------------------------------------
 
@@ -1087,13 +1311,17 @@ def _analyze_grouped(
     requests: list[BatchRequest] = []
     groups_in_batch: list[dict] = []
 
+    coverage_block = _build_coverage_summary(memory)
+    if coverage_block:
+        logger.info("Coverage summary injected: saturation data included in prompts.")
+
     for group in domain_groups:
         group_news = news_by_group.get(group["group_id"], [])
         if not group_news:
             logger.warning("No news items for group '%s' — skipping.", group["group_id"])
             continue
 
-        variable_prompt = _build_variable_prompt(group, dedup_block)
+        variable_prompt = _build_variable_prompt(group, dedup_block, coverage_block)
         articles_text = _format_articles(group_news)
         user_message = (
             f"Here are {len(group_news)} recent news articles relevant to the "
@@ -1226,6 +1454,7 @@ def _analyze_grouped(
         return []
 
     all_opportunities = _deduplicate_across_domains(all_opportunities)
+    all_opportunities = _filter_by_semantic_similarity(all_opportunities, memory, client)
 
     for opp in all_opportunities:
         opp.pop("_source_model", None)
