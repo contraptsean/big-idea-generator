@@ -1638,5 +1638,131 @@
     "name": "TechPedagogyAudit",
     "one_liner": "Classroom technology effectiveness scoring platform that helps instructional coaches and administrators identify when teachers are using EdTech counterproductively and recommend specific analog or blended alternatives.",
     "date": "2026-03-02"
+  },
+  {
+    "name": "LLMProviderRiskRadar",
+    "one_liner": "Real-time LLM provider compliance and geopolitical risk monitor that alerts AI engineering teams when their chosen provider faces DOD designations, outages, or regulatory shifts—with auto-generated migration runbooks.",
+    "date": "2026-03-03",
+    "the_problem": "The Anthropic DOD 'supply chain risk' designation and Claude's widespread outage in the same week proved that AI teams have no early warning system for provider-level geopolitical or reliability risk. When a provider gets flagged by the Pentagon or goes dark, engineering teams scramble reactively with no playbook. Switching from ChatGPT to Claude (and vice versa) is increasingly common but painful without structured guidance.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "ProviderSwitchKit",
+    "one_liner": "A developer toolkit and interactive migration wizard that helps AI product teams switch LLM providers (e.g., OpenAI to Claude, or vice versa) with automated prompt translation, API adapter generation, and regression test scaffolding.",
+    "date": "2026-03-03",
+    "the_problem": "As users and products migrate between ChatGPT and Claude in waves—driven by controversies, outages, and pricing changes—developers face real friction: different API schemas, prompt syntax differences, capability gaps, and no regression testing baseline. The TechCrunch 'how to switch' article signals mass migration but most guides are consumer-focused, not developer-focused. Every switch risks breaking production AI features.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "AIOutagePostmortem",
+    "one_liner": "Automated incident postmortem and SLA breach documentation tool for SaaS products that depend on third-party LLM APIs, helping teams quantify downtime impact and negotiate credits.",
+    "date": "2026-03-03",
+    "the_problem": "Claude's widespread outage exposed a gap: when a third-party LLM is the core of your product, downtime cascades into customer impact but teams have no automated way to document what happened, calculate SLA breach severity, or generate evidence for provider credit claims. Most LLM API providers have weak SLAs and no self-service credit claim process. AI-dependent products have no runbook for this.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "AIFreeEditorKit",
+    "one_liner": "A lightweight, AI-free code editor distribution and provenance certification toolkit for developers who need to write, review, and certify human-only code for compliance, audits, or principled development—inspired by the GRAM Zed fork.",
+    "date": "2026-03-03",
+    "the_problem": "The launch of GRAM (a Zed fork without AI) signals genuine demand from developers who need or want AI-free coding environments—whether for government contracts, ethical reasons, or audit compliance. Anti-AI protest movements and enterprise procurement requirements are accelerating this. There's no polished, commercially supported toolkit that certifies AI-free code provenance and pairs it with an editor experience.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "VCSwitchReadiness",
+    "one_liner": "An AI SaaS investor-readiness audit tool that scores early-stage AI startups against the exact criteria VCs say they're no longer funding, helping founders reposition before pitching.",
+    "date": "2026-03-03",
+    "the_problem": "TechCrunch's 'what VCs aren't looking for in AI SaaS' article signals a major recalibration in what gets funded—but founders pitching AI SaaS products have no structured way to audit their positioning against current investor sentiment. Pitching a 'thin wrapper' or 'ChatGPT for X' in 2026 kills deals immediately, but founders often don't know which signals are toxic until after rejection.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "HotelTaxPilot",
+    "one_liner": "Automated lodging tax compliance and filing platform for independent hotels and boutique operators struggling with multi-jurisdiction tax obligations.",
+    "date": "2026-03-03",
+    "the_problem": "Hotel margins are shrinking and lodging tax compliance is consuming operator attention and back-office resources across dozens of jurisdictions. Independent and boutique hotels lack the enterprise tools that chains use, leading to missed filings, penalties, and audit exposure. A Skift report specifically called out tax compliance as a top competitive disadvantage for lodging operators.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "RenovationLoanMatch",
+    "one_liner": "Homeowner-facing renovation financing comparison and pre-qualification tool that matches renovation projects to the right loan product (RenoFi, HELOC, 203k, cash-out refi) in under 5 minutes.",
+    "date": "2026-03-03",
+    "the_problem": "RenoFi just raised $22M to expand AI-powered renovation lending, signaling explosive growth in the renovation financing market. But homeowners are confused by the alphabet soup of renovation loan products and don't know which fits their project, equity position, or credit profile. Most comparison tools just capture leads for lenders without giving homeowners genuine decision support.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "WarRateLock",
+    "one_liner": "Real-time geopolitical risk and mortgage rate scenario modeler that tells homebuyers exactly when to lock their rate given Iran war escalation and 10-year yield movements.",
+    "date": "2026-03-03",
+    "the_problem": "Geopolitical escalation with Iran is actively moving the 10-year Treasury yield and mortgage rates, but homebuyers and their loan officers lack tools to translate macro war risk signals into actionable rate lock decisions. A 0.25% rate difference on a $500K mortgage costs $30K+ over a loan life — missing the right lock moment is devastatingly expensive. HousingWire's coverage explicitly notes markets aren't fully pricing in Iran escalation yet.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "HospitalityRoleBuilder",
+    "one_liner": "AI-powered hospitality role design and training platform that helps QSR and fast-casual chains like Panera and Starbucks design, staff, and train new guest-facing hospitality roles without inflating labor costs.",
+    "date": "2026-03-03",
+    "the_problem": "Panera, Starbucks, and Cava are all adding new in-store roles exclusively focused on guest hospitality as customer experience expectations rise and the K-shaped economy bifurcates spending. But designing these roles, writing job descriptions, building training curricula, and tracking whether the roles actually improve guest scores is done ad hoc — costing chains months of HR and ops leadership time per concept.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "CanadaTravelPivot",
+    "one_liner": "Destination marketing intelligence and campaign optimization platform that helps US and global travel brands capture the surging Canadian outbound travel market being ignored by competitors.",
+    "date": "2026-03-03",
+    "the_problem": "Skift's reporting reveals Canada is in the middle of a 'quiet travel revolution' that most destinations are treating as a rounding error — and it's becoming very expensive. Canadian outbound travel is surging but most destination marketing organizations and hotels have no tools to identify, target, or convert Canadian travelers differently from US travelers, despite distinct booking behavior, preferred channels, and travel motivations.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "HMDACompliancePilot",
+    "one_liner": "Automated HMDA data validation and regulatory reporting platform for community banks and credit unions that eliminates manual review and submission errors during annual reporting season.",
+    "date": "2026-03-03",
+    "the_problem": "HMDA reporting season is actively stressing compliance professionals at community banks and credit unions, with institutions required to submit detailed loan data to regulators by March 2. Manual review, scattered systems, and last-minute validation create massive compliance risk and operational burden. Errors in HMDA submissions can trigger regulatory scrutiny and fair lending investigations.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "PrivateListing Intelligence",
+    "one_liner": "Real-time private listing and off-market property tracker that gives buyers and agents visibility into Clear Cooperation Policy-exempt listings before they hit the MLS.",
+    "date": "2026-03-03",
+    "the_problem": "The MLS consolidation and private listings debate is intensifying — Inman's coverage of the James Dwiggins/Realtor.com debate shows clear friction around the future of MLS vs. private networks. Buyers and buyer's agents are losing deals to off-market transactions they never see. No affordable tool aggregates private listings, pocket listings, and off-market signals for individual buyers and agents.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "StablecoinSettleTracker",
+    "one_liner": "A real-time stablecoin payment settlement monitoring and reconciliation dashboard for SaaS companies and e-commerce brands beginning to accept stablecoin payments via Mastercard/Visa rails.",
+    "date": "2026-03-03",
+    "the_problem": "Mastercard and Visa are now actively enabling stablecoin settlement (SoFiUSD, USDC) across their global networks, meaning thousands of merchants will begin receiving stablecoin settlements within 12 months but have zero tooling to reconcile crypto settlements against fiat ledgers, compute realized gains/losses for tax purposes, or flag failed settlement events. Existing crypto accounting tools like Koinly are consumer-focused and don't integrate with card network settlement reports.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "CoupleRetirementSync",
+    "one_liner": "A household retirement coordination calculator that shows dual-income couples exactly how to sequence 401k contributions to maximize employer matches and eliminate the $14,000 wealth gap from poor coordination.",
+    "date": "2026-03-03",
+    "the_problem": "New CNBC/research data shows couples lose an average $14,000 in retirement wealth from poor contribution coordination — specifically by not prioritizing the highest employer match between spouses before splitting contributions. No consumer tool models this cross-household optimization; every 401k calculator treats each spouse independently, missing the compounding multi-decade impact of contribution sequencing errors.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "GeoMacroPortfolioAlert",
+    "one_liner": "A personal finance scenario modeler that shows retail investors exactly how geopolitical shocks — Middle East conflict, oil price spikes, gold rallies — affect their specific portfolio and generates plain-English rebalancing options.",
+    "date": "2026-03-03",
+    "the_problem": "Iran strikes are disrupting flights and oil prices are spiking, gold is jumping — but the 167% surge in new low- and middle-income investors since 2020 has no personalized tool to understand how these macro shocks translate to their specific holdings. They're reading CNBC articles that say 'gold is up' without knowing if their ETF portfolio is exposed or hedged. Generic robo-advisors rebalance silently without explanation, leaving new investors anxious and uninformed.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "DeliveryTrackWhitelabel",
+    "one_liner": "A white-label real-time large-item delivery tracking and customer communication platform for independent furniture, appliance, and home improvement retailers replicating Home Depot's new last-mile visibility feature.",
+    "date": "2026-03-03",
+    "the_problem": "Home Depot just launched real-time delivery tracking for large items (appliances, lumber, bulky goods) using driver handheld devices — a feature that independent furniture stores, appliance dealers, and regional home improvement retailers desperately need but can't build themselves. Today, these merchants rely on manual calls from drivers or static delivery windows, generating massive inbound 'where is my order' customer service volume that kills margins.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "StudentMindBridge",
+    "one_liner": "A school-deployable AI mental health check-in and triage platform that captures student emotional data and routes at-risk teens to human counselors before crises escalate.",
+    "date": "2026-03-03",
+    "the_problem": "Teens are already confiding in AI tools like ChatGPT for emotional support, but schools have no visibility or control over these interactions. School counselors are overwhelmed and under-resourced, missing early warning signs. There's no structured, FERPA-compliant bridge between AI-assisted student emotional disclosure and human intervention.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "FedPolicyPulse",
+    "one_liner": "Real-time federal and state education policy and funding change tracker that alerts K-12 district leaders when new regulations, Title I cuts, or compliance mandates directly affect their budget and programs.",
+    "date": "2026-03-03",
+    "the_problem": "Federal education policy is changing faster than districts can track—Title I funding reviews, Department of Education restructuring, and state legislative sessions are creating rapid compliance and budget shocks. District administrators learn about changes from news alerts weeks after they've already affected grant deadlines or reporting requirements. There's no tool that monitors policy changes and translates them into district-specific action items.",
+    "primary_domain": "government_compliance"
   }
 ]
