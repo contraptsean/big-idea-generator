@@ -1764,5 +1764,229 @@
     "date": "2026-03-03",
     "the_problem": "Federal education policy is changing faster than districts can track—Title I funding reviews, Department of Education restructuring, and state legislative sessions are creating rapid compliance and budget shocks. District administrators learn about changes from news alerts weeks after they've already affected grant deadlines or reporting requirements. There's no tool that monitors policy changes and translates them into district-specific action items.",
     "primary_domain": "government_compliance"
+  },
+  {
+    "name": "VoiceCodeBridge",
+    "one_liner": "A voice-to-code workflow toolkit that supercharges Claude Code's new Voice Mode with custom command vocabularies, voice macros, and accessibility profiles for developers who code by speaking.",
+    "date": "2026-03-04",
+    "the_problem": "Claude Code just launched Voice Mode, but there's no tooling to make it actually productive — developers can't define custom voice commands, create project-specific vocabularies, or build macros that translate natural speech into precise coding actions. Voice Mode out of the box is a novelty; paired with workflow tooling it becomes a productivity multiplier and accessibility tool for developers with RSI or disabilities.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "OperationalAIGapFinder",
+    "one_liner": "An AI deployment readiness auditor that benchmarks enterprise teams' production AI maturity and generates a prioritized gap-closing roadmap from pilot to full operational deployment.",
+    "date": "2026-03-04",
+    "the_problem": "MIT Tech Review's 'Bridging the Operational AI Gap' report confirms enterprises are stuck between pilot and production — they've proven AI works but can't operationalize it. Engineering and AI platform teams have no structured diagnostic to identify exactly where the gaps are: data pipelines, LLM infrastructure, governance, monitoring, or org structure. This causes stalled projects and wasted budget.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "ModelPoliticsRadar",
+    "one_liner": "Real-time tracker of AI regulation lobbying activity, congressional bills, and political spending that alerts AI product teams when regulatory risk to their stack is escalating.",
+    "date": "2026-03-04",
+    "the_problem": "Tech billionaires are spending $125M to block AI regulation, while candidates like Alex Bores are pushing hard for new rules. AI product teams have no early warning system for regulatory risk — a bill that passes in NY, CA, or federally could require immediate product changes to LLM usage, data handling, or disclosure requirements. Teams learn about this from news alerts weeks after the legislative window to comment has closed.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "AIContentLabelKit",
+    "one_liner": "Automated AI-generated content detection and labeling SDK that helps creators and platforms comply with emerging platform policies (X, Meta, YouTube) before they face suspension or demonetization.",
+    "date": "2026-03-04",
+    "the_problem": "X just announced creator suspensions for unlabeled AI-generated posts of armed conflict — and this is just the start. Every major platform is rolling out AI content labeling requirements with real financial consequences (revenue share suspension, demonetization). Creators and platforms building UGC tools have no automated way to detect AI-generated media and attach C2PA-compliant labels before posting, leaving them exposed to policy violations.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "CursorAlternativeStack",
+    "one_liner": "A curated benchmarking and switching guide platform that helps developers evaluate AI coding assistants beyond Cursor — with live performance comparisons, cost calculators, and migration toolkits.",
+    "date": "2026-03-04",
+    "the_problem": "Cursor hitting $2B ARR means the AI coding assistant market is exploding — but also that developers are locked in and overpaying. Thousands of teams want to evaluate alternatives (Windsurf, GitHub Copilot, Cline, Zed AI) but there's no neutral benchmarking platform that shows real-world performance differences, total cost of ownership, or migration effort. Developers make $2,000+/seat/year decisions based on Twitter takes.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "ComprehensionDebtPRBot",
+    "one_liner": "A GitHub PR bot that flags when AI-generated code is being merged with insufficient human review time, scoring comprehension debt risk before it ships to production.",
+    "date": "2026-03-04",
+    "the_problem": "Addy Osmani's 'managing comprehension debt when leaning on AI to code' article (referenced in Changelog) and the 'confident idiot' problem are surfacing a real crisis: teams are merging AI-generated code they don't understand, creating invisible technical debt. PRs with AI-written code get reviewed 3x faster than human code, but AI code has 2x the subtle logic errors. No tooling exists to flag this pattern in real-time during code review.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "AgentMonthROI",
+    "one_liner": "A team productivity benchmarking and ROI calculator that helps engineering leaders quantify exactly how much AI coding agents (Claude Code, Cursor, Copilot) are actually saving vs. replacing human developer hours.",
+    "date": "2026-03-04",
+    "the_problem": "The Changelog's 'mythical agent-month' episode crystallizes a real problem: engineering leaders are spending $50K-$500K/year on AI coding tools but have no rigorous way to measure whether they're getting productivity gains worth the cost, or whether agents are creating more debugging overhead than they save. Every ROI claim is anecdotal. CFOs are starting to ask hard questions that CTOs can't answer.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "AgeGateComplianceKit",
+    "one_liner": "A developer SDK and compliance audit tool that helps web apps implement California's Digital Age Assurance Act (AB 1043) age verification requirements without collecting or storing biometric data.",
+    "date": "2026-03-04",
+    "the_problem": "California's Digital Age Assurance Act (AB 1043) is being actively debated and its FOSS implications are causing real implementation confusion for developers (Lobsters discussion). Developers building consumer web apps — especially social platforms, gaming, and content sites — need to implement age verification that satisfies the law but doesn't create biometric data liability or break open-source licensing. There's no turnkey SDK for this.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "TaxInsuranceShield",
+    "one_liner": "A hyper-local property tax and homeowners insurance cost tracker that shows homebuyers the true PITI breakdown before they make an offer, and alerts existing owners when their escrow costs are likely to spike.",
+    "date": "2026-03-04",
+    "the_problem": "HousingWire's Neighbors Bank report reveals property taxes and insurance now average 21% of mortgage payments — a figure most buyers and agents don't model until after closing. Buyers routinely underestimate PITI by $400-700/month because lenders quote principal and interest, not the full payment. No affordable consumer tool shows hyper-local tax and insurance cost estimates before offer submission.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "RefiRadar",
+    "one_liner": "A personalized mortgage refinance opportunity monitor that tells existing homeowners exactly when their break-even refi window opens and auto-generates lender comparison pre-approvals.",
+    "date": "2026-03-04",
+    "the_problem": "MBA data shows refi applications jumped 14.3% in a single week when the 30-year fixed dipped toward 6%, but most homeowners have no tool monitoring their personal break-even threshold. With rates oscillating 15-30bps weekly due to Iran conflict and macro shocks, missing a 2-week rate window costs homeowners $20K-$50K in lifetime interest. Generic rate alerts from Bankrate don't account for remaining loan balance, closing cost rolling, or tax impact.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "CashBuyerComply",
+    "one_liner": "A one-click anti-money laundering compliance and FinCEN reporting tool for closing agents and settlement companies handling all-cash residential real estate purchases.",
+    "date": "2026-03-04",
+    "the_problem": "A new FinCEN AML rule just went into effect requiring closing and settlement agents to report details of all-cash residential purchases by legal entities and trusts. Most closing agents are small operations with no compliance software — they're using spreadsheets and email, and penalties for non-reporting are severe. There is currently no lightweight, affordable tool purpose-built for the volume of small title and settlement companies handling these transactions daily.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "AgentChurnIQ",
+    "one_liner": "A brokerage retention and agent performance intelligence platform that predicts which agents are likely to switch brokerages and surfaces actionable retention interventions before they leave.",
+    "date": "2026-03-04",
+    "the_problem": "Courted's data shows 16% of agents — 230,000 people — switched brokerages in 2025, generating $590B in volume churn. Yet most brokerages have no early warning system for agent departure risk; they only learn an agent is leaving when they get the resignation. Replacing a productive agent costs $15,000-$50,000 in recruiting and ramp time. Existing CRMs track transactions but not behavioral signals of disengagement.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "BOHOps AI",
+    "one_liner": "A back-of-house AI operations dashboard for independent and mid-size restaurant operators that optimizes food cost, prep scheduling, and waste using real POS and inventory data.",
+    "date": "2026-03-04",
+    "the_problem": "Nation's Restaurant News coverage confirms operators are now prioritizing back-of-house data optimization and operational AI over customer-facing tech as they mature in their tech strategy. But the tools that actually do this — Restaurant365, Crunchtime, Apicbase — cost $500-2000/month and require multi-month implementations. Independent and fast-casual operators with 1-10 locations need BOH intelligence but are priced out and under-resourced to implement enterprise platforms.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "GeoPolitiRate",
+    "one_liner": "A real-time mortgage rate scenario modeler that translates geopolitical shocks (Iran conflict, oil price spikes, Treasury yield movements) into personalized lock-or-float recommendations for homebuyers and loan officers.",
+    "date": "2026-03-04",
+    "the_problem": "Inman reports rates reversed sharply to 6.15% in a single day as the Iran conflict escalated — just after touching sub-6% for the first time in three years. Homebuyers in active purchase transactions have days to decide whether to lock their rate, but they have no tool that translates macro signals into a personalized recommendation. A 0.25% rate difference on a $500K loan is $26,000 over 30 years, but borrowers are making lock decisions based on vibes and news headlines.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "PadSplitOps",
+    "one_liner": "A co-living property management and tenant coordination platform for individual homeowners renting spare bedrooms under PadSplit-style shared housing models.",
+    "date": "2026-03-04",
+    "the_problem": "Portland's pilot of the PadSplit model — unlocking spare bedrooms to ease affordability — signals cities across the US will push co-living arrangements as a housing supply solution. But individual homeowners who rent spare rooms face a unique management challenge: multiple tenants with different lease terms, shared space rules, utility splits, and community norms in a single property. No tool is purpose-built for this model; homeowners are stitching together Venmo, group texts, and generic landlord software.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "MiddleEastTravelPulse",
+    "one_liner": "A real-time Iran conflict and Middle East airspace disruption monitor with instant alternative routing for corporate travel managers and frequent travelers with active bookings in the region.",
+    "date": "2026-03-04",
+    "the_problem": "Skift reports UAE operators are bracing for blanket cancellations and airspace closures as the Iran conflict escalates, with stranded travelers relying on Indian airlines improvising new routes. Corporate travel managers with teams in Dubai, Riyadh, or Abu Dhabi have no dedicated tool monitoring airspace status, hotel availability shifts, and alternative routing options in real time — they're refreshing news sites and calling TMCs who are equally overwhelmed.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "AgentPayCheckout",
+    "one_liner": "A plug-and-play checkout readiness auditor and API adapter that helps e-commerce merchants make their stores compatible with AI agent shopping (Klarna/Stripe BNPL, Mastercard stablecoin, Nexi agentic payments) before they get bypassed.",
+    "date": "2026-03-04",
+    "the_problem": "Klarna and Stripe just announced BNPL for AI agents, Mastercard/Visa are enabling stablecoin settlement, and Nexi is building agentic payment infrastructure with Google Cloud — all in the same week. Mid-market e-commerce merchants have no idea if their checkout flows, product data schemas, or payment rails are compatible with AI agent purchases. A merchant whose checkout isn't agent-readable will be invisible to the next wave of autonomous shopping, but there's no tool that audits and fixes this gap.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "StablecoinReconDesk",
+    "one_liner": "Automated stablecoin payment reconciliation and tax reporting dashboard for SaaS and e-commerce businesses beginning to receive settlements via Mastercard, Visa, and SoFi stablecoin rails.",
+    "date": "2026-03-04",
+    "the_problem": "Mastercard and Visa are actively enabling stablecoin settlement (SoFiUSD, USDC) across their global networks right now, meaning thousands of merchants will start receiving crypto settlements within 12 months. These businesses have zero tooling to reconcile stablecoin receipts against fiat ledgers, compute realized gains/losses for tax purposes, or flag failed settlement events. Existing crypto accounting tools like Koinly are consumer-focused and don't integrate with card network settlement reports or merchant accounting systems like QuickBooks.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "CoupleRetirementCoordinator",
+    "one_liner": "A household retirement optimization calculator that shows dual-income couples exactly how to sequence 401k contributions across both spouses to maximize employer matches and close the $14,000 coordination gap.",
+    "date": "2026-03-04",
+    "the_problem": "New CNBC-covered research shows couples lose an average $14,000 in retirement wealth from poor contribution coordination — specifically by not prioritizing the highest employer match between spouses before splitting contributions. Record-high 401k hardship withdrawals (also in today's news) show retirement stress is at a peak. No consumer retirement tool models cross-household contribution optimization; every 401k calculator treats each spouse as an independent account, missing the multi-decade compounding impact of sequencing errors.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "HardshipWithdrawalGuard",
+    "one_liner": "A 401k hardship withdrawal alternatives analyzer that shows retirement savers every option they haven't considered before they permanently damage their retirement by taking an early withdrawal.",
+    "date": "2026-03-04",
+    "the_problem": "Workers are tapping 401ks at record rates per CNBC coverage of Trump's State of the Union claims — hardship withdrawals are at all-time highs as inflation and economic stress squeeze households. Most workers don't know they have alternatives (72t distributions, 401k loans, HELOC, personal loans, BNPL) with dramatically different tax consequences. A $20,000 hardship withdrawal at a 22% tax bracket plus 10% penalty costs $6,400 in avoidable taxes — but workers are making this decision with no structured guidance at the moment of maximum financial stress.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "LoyaltyTierOptimizer",
+    "one_liner": "An AI-powered loyalty program tier design and performance analytics platform that helps mid-market retailers like Michaels build and optimize tiered rewards programs without enterprise software costs.",
+    "date": "2026-03-04",
+    "the_problem": "Michaels just revamped its loyalty program adding a premium tier for top spenders — a trend playing out across retail (Macy's, Kohl's, Claire's all in today's news are fighting for customer retention). Mid-market and specialty retailers know they need tiered loyalty but have no affordable tool to design tier structures, model the ROI of different reward configurations, or track whether a new tier is actually retaining high-LTV customers vs. just discounting to people who'd buy anyway. Enterprise platforms like Salesforce Loyalty Management cost $50K+/year.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "PrivateLabelLaunchIQ",
+    "one_liner": "A private label brand development analytics and market validation platform that helps mid-market retailers like Kohl's identify which apparel categories have the highest white-space opportunity for private label launches.",
+    "date": "2026-03-04",
+    "the_problem": "Kohl's just launched Sea and Skye (teen/tween private label), Merrell is repositioning its global brand, and Claire's is fighting for Gen Z/Alpha relevance — all in the same news cycle. Retailers launching or repositioning private labels are making category bets with incomplete competitive data, guessing at which price points, styles, and demographics have unmet demand vs. saturated competition. A failed private label launch costs $500K-$2M in design, inventory, and markdown exposure with no guarantee of return.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "GoldPortfolioReality",
+    "one_liner": "A geopolitical macro stress-tester for retail investor portfolios that shows exactly how Middle East conflict, oil price spikes, and gold rallies affect their specific holdings with plain-English rebalancing options.",
+    "date": "2026-03-04",
+    "the_problem": "Iran strikes are disrupting flights and pushing gold prices up, yet the 167% surge in new low- and middle-income investors since 2020 has no personalized tool to understand how geopolitical shocks translate to their specific ETF and stock holdings. CNBC articles say 'gold is up' without telling new investors whether their S&P 500 ETF is correlated, hedged, or exposed. Generic robo-advisors rebalance silently without explanation, leaving anxious new investors making emotional decisions — buying gold at the peak after reading headlines.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "BNPLAgentRiskMonitor",
+    "one_liner": "A real-time BNPL debt exposure tracker and AI agent purchase safeguard that shows consumers their true total BNPL obligations across Klarna, Affirm, and Afterpay before autonomous AI agents add more purchases on their behalf.",
+    "date": "2026-03-04",
+    "the_problem": "Klarna and Stripe just announced BNPL for AI agent-driven shopping — meaning AI agents will soon be able to take on BNPL debt on a consumer's behalf without a manual checkout moment. At the same time, BNPL debt is already invisible in credit reports and most consumers have no consolidated view of their obligations across multiple BNPL providers. Adding autonomous AI agent purchases to this mix creates a genuine consumer debt trap: an agent buys 5 things with Klarna, each under $50, and a consumer is suddenly $250 in BNPL debt they didn't consciously approve.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "StudentMindBridge",
+    "one_liner": "A FERPA-compliant AI mental health check-in and triage platform that bridges teen AI emotional disclosures to school counselors before crises escalate.",
+    "date": "2026-03-04",
+    "the_problem": "Teens are already confiding in AI tools like ChatGPT for emotional support at scale, but schools have zero visibility into these interactions and no structured intake pathway. School counselors are overwhelmed and miss early warning signs entirely. There is no FERPA-compliant, school-deployable tool that captures AI-assisted emotional disclosure and routes at-risk students to human intervention before crises hit.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "FedPolicyPulse",
+    "one_liner": "Real-time federal and state education policy tracker that alerts K-12 district leaders when funding cuts, compliance mandates, or regulatory changes directly affect their budget and programs.",
+    "date": "2026-03-04",
+    "the_problem": "Federal education policy is changing faster than districts can track — Title I funding reviews, Department of Education restructuring, and rapid state legislative sessions are creating compliance and budget shocks with no warning. District administrators typically learn about changes weeks after grant deadlines or reporting requirements have already shifted. No affordable tool monitors these changes and translates them into district-specific action items with deadlines.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "SocialHarmLogPro",
+    "one_liner": "Structured legal evidence documentation platform that helps K-12 districts log, timestamp, and organize social media harm incidents to build defensible litigation records.",
+    "date": "2026-03-04",
+    "the_problem": "School districts are increasingly being sued for social media addiction harms, and courts are developing new legal theories about school district liability. Districts currently log incidents in spreadsheets, email chains, or Word docs that are legally fragile, inconsistently formatted, and inadmissible or easily challenged. There is no purpose-built, tamper-evident incident documentation platform that creates legally defensible records aligned to the specific evidentiary standards these lawsuits require.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "DistrictBudgetResearchAI",
+    "one_liner": "AI-powered platform that translates academic education research into dollar-quantified, decision-ready budget recommendations for K-12 district leaders facing irreversible spending cuts.",
+    "date": "2026-03-04",
+    "the_problem": "District leaders are being asked to make irreversible budget cuts with less margin for error than ever, but the academic research that could guide decisions is locked in dense journals inaccessible to non-researchers. Leaders resort to gut instinct or vendor claims rather than evidence. No tool exists that synthesizes peer-reviewed education research and outputs plain-English, dollar-quantified ROI projections calibrated to a district's specific demographics and budget profile.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "EarlyEdEnrollOS",
+    "one_liner": "Enrollment management and compliance tracking SaaS that helps states and school districts manage Universal Pre-K and kindergarten expansion mandates, match families to available slots, and report participation to state agencies.",
+    "date": "2026-03-04",
+    "the_problem": "Fewer than half of U.S. states require kindergarten completion, but expanding Universal Pre-K and early childhood mandates are creating enrollment, compliance, and reporting complexity that districts aren't equipped to handle with existing Student Information Systems. Family-to-slot matching, provider capacity tracking, and state participation reporting are done manually in spreadsheets or bolted onto legacy SIS platforms not designed for this use case.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "RiskLitMathKit",
+    "one_liner": "Standards-aligned K-12 math curriculum toolkit that teaches probability, expected value, and financial risk literacy through gambling case studies and interactive simulations, for teachers needing turnkey implementation.",
+    "date": "2026-03-04",
+    "the_problem": "Underage gambling is rising sharply with sports betting legalization, and education researchers are calling for gambling literacy to be added to K-12 math curricula. But teachers have no ready-made, standards-aligned curriculum — they'd need to build it from scratch, which takes 40-80 hours per unit. State legislatures are beginning to mandate financial and risk literacy but provide zero implementation support or materials.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "HigherOrderAssessBuilder",
+    "one_liner": "AI-powered assessment generator that creates Bloom's Taxonomy upper-level assignments requiring analysis and synthesis that AI tools cannot replicate, helping K-12 and higher ed teachers AI-proof their evaluations.",
+    "date": "2026-03-04",
+    "the_problem": "As AI tools make lower-order thinking tasks trivially completable by students, teachers face urgent pressure to redesign assessments to require genuine human cognition — but most teachers lack the assessment design expertise or time to do this systematically. The result is continued reliance on AI-vulnerable assignments, grade inflation, and eroding learning accountability. There is no tool that helps a time-pressed teacher quickly generate AI-resistant, higher-order thinking assessments calibrated to their specific subject and grade.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "AnalogLessonForge",
+    "one_liner": "Structured lesson planning tool that helps K-12 teachers rapidly design hands-on, screen-free learning activities grounded in neuroscience principles, with ready-to-use templates for every subject and grade.",
+    "date": "2026-03-04",
+    "the_problem": "Neuroscientists like Jared Cooney Horvath (The Digital Delusion) are building mainstream momentum for reducing classroom technology dependence, but teachers who want to implement analog-first instruction have no structured resource to do so efficiently. Designing hands-on, screen-free lessons from scratch is time-consuming, and most instructional design tools are built around EdTech integration, not reduction. This leaves well-intentioned teachers unable to act on the neuroscience they're reading.",
+    "primary_domain": "education_edtech"
   }
 ]
