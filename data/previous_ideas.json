@@ -1988,5 +1988,110 @@
     "date": "2026-03-04",
     "the_problem": "Neuroscientists like Jared Cooney Horvath (The Digital Delusion) are building mainstream momentum for reducing classroom technology dependence, but teachers who want to implement analog-first instruction have no structured resource to do so efficiently. Designing hands-on, screen-free lessons from scratch is time-consuming, and most instructional design tools are built around EdTech integration, not reduction. This leaves well-intentioned teachers unable to act on the neuroscience they're reading.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "OSS ContribGuard",
+    "one_liner": "AI contribution screening and policy enforcement toolkit for open-source maintainers overwhelmed by AI-generated pull requests and agent harassment.",
+    "date": "2026-03-05",
+    "the_problem": "MIT Tech Review's reporting on AI agents harassing open-source maintainers (the matplotlib case) reveals a growing crisis: maintainers are being flooded with low-quality AI-generated PRs and now facing coordinated agent 'hit pieces' when they reject them. Projects like matplotlib are instituting manual AI-code policies with no tooling to enforce them. This is burning out maintainers and threatening the open-source ecosystem.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "MultiModelVerify",
+    "one_liner": "Developer API that queries multiple LLMs simultaneously and returns a confidence-weighted consensus answer, reducing hallucination risk in production AI applications.",
+    "date": "2026-03-05",
+    "the_problem": "CollectivIQ's TechCrunch feature validates real demand for multi-model consensus as a hallucination reduction strategy, but it's a consumer product. Developers building production AI apps (customer support bots, legal tools, medical apps) have no simple API to implement multi-model consensus verification—they'd have to build multi-provider orchestration, response normalization, and confidence scoring themselves, which takes weeks.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "AILiabilityWatcher",
+    "one_liner": "Real-time AI product liability and litigation monitoring dashboard that alerts AI founders and developers when new lawsuits, regulatory actions, or platform policy changes create legal risk for their specific product category.",
+    "date": "2026-03-05",
+    "the_problem": "The Gemini chatbot suicide lawsuit (TechCrunch) follows the Character.AI lawsuit pattern—AI product makers are being sued for foreseeable harms with zero early warning. Founders building AI companions, mental health tools, or emotionally engaging products have no system monitoring the litigation and regulatory landscape specific to their product type. By the time they read about a relevant lawsuit, the legal theory is already established and their product is exposed.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "AICanvasExportKit",
+    "one_liner": "Developer SDK that lets SaaS apps embed Google Gemini Canvas-style collaborative AI workspaces—plan builders, project generators, and app scaffolders—without building the AI infrastructure from scratch.",
+    "date": "2026-03-05",
+    "the_problem": "Google rolling out Gemini Canvas to all US users (TechCrunch) establishes a new UX standard: users now expect AI tools to help them generate structured plans, projects, and mini-apps interactively, not just chat. SaaS founders building productivity, project management, or no-code tools need to match this capability but lack the time to build collaborative AI canvas UX from scratch. The gap between what Google ships and what indie SaaS can build is widening fast.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "MLSFragmentWatch",
+    "one_liner": "Automated MLS fragmentation and private listing compliance monitor that alerts brokerages and agents when their local MLS rules, Clear Cooperation obligations, or anti-trust exposure shifts.",
+    "date": "2026-03-05",
+    "the_problem": "The Compass-Redfin-Rocket alliance and NWMLS vs. Compass litigation are actively rewriting what MLS participation means and what agents are legally obligated to do. Brokerages and agents don't have a single tool tracking rule changes across their MLS jurisdiction, Clear Cooperation policy updates, and court rulings that alter their compliance posture — they learn about changes from Inman articles days or weeks after they matter.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "LenderEdgeIQ",
+    "one_liner": "Mortgage lender operational benchmarking dashboard that shows loan officers and ops teams exactly which processes are costing them basis points versus top-tier competitors.",
+    "date": "2026-03-05",
+    "the_problem": "HousingWire's MBA data shows a persistent 200 basis point gap between top-tier and bottom-tier lenders, but average lenders have no granular tool to identify where their production income is being eroded. They're guessing at whether the gap is in processing speed, fallout rates, lock management, or margin compression — and spending $50K+ on consultants to find out what a structured benchmarking dashboard could surface in minutes.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "ShortStayComply",
+    "one_liner": "Automated short-term rental licensing compliance and renewal management platform for STR operators in markets with fragmented or rapidly changing regulations.",
+    "date": "2026-03-05",
+    "the_problem": "Indonesia's Bali STR confusion (Skift) is just the most visible example of a global pattern: short-term rental regulations are being introduced, revised, and enforced erratically across hundreds of jurisdictions. Operators managing even 2-5 properties face licensing deadlines, inspection requirements, and rule changes they learn about too late. Non-compliance risks fines, de-listing from Airbnb, and property seizure — yet no affordable tool monitors multi-jurisdiction STR compliance for independent operators.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "HospitalityHumanScore",
+    "one_liner": "AI-powered guest experience and hospitality quality monitoring platform that helps independent restaurant groups measure whether human hospitality investments are actually improving guest sentiment.",
+    "date": "2026-03-05",
+    "the_problem": "Accor's exec warned that AI overuse is eroding 'human connection' in hospitality, while Pineapple Hospitality and other independent restaurant groups are actively leaning into hospitality differentiation as their competitive edge. But these operators have no structured way to measure whether their hospitality investments — staff training, experiential touches, personalization — are actually moving guest sentiment scores and repeat visit rates. They're investing in vibe and hoping it shows up in Yelp stars.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "ViralMenuCapture",
+    "one_liner": "Automated viral food moment monitoring and competitive response toolkit that alerts QSR marketing teams when competitor menu launches go viral and generates ready-to-post reactive content.",
+    "date": "2026-03-05",
+    "the_problem": "McDonald's Big Arch became a viral marketing moment that competitors scrambled to capitalize on with their own reactive posts — but most chains did this manually and slowly, missing the peak virality window. QSR marketing teams have no dedicated tool that monitors competitor menu viral moments in real time, scores their competitive relevance, and pre-generates reactive content options the team can approve and post within the same news cycle.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "WorldCupStayIQ",
+    "one_liner": "World Cup 2026 accommodation demand intelligence and dynamic pricing advisor for independent hotels and short-term rental operators in the three host countries.",
+    "date": "2026-03-05",
+    "the_problem": "The FIFA World Cup 2026 spans USA, Canada, and Mexico with 48 teams and 80+ matches — the largest World Cup in history. Independent hotels and STR operators in host cities have no affordable tool to model demand surges by match schedule, visa restriction impacts on international visitor flows, and optimal pricing windows. They're setting prices manually based on gut instinct while large hotel chains use enterprise revenue management systems that cost $2,000+/month.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "ClimateStayShift",
+    "one_liner": "Climate risk-adjusted destination and property investment intelligence platform that helps hospitality investors and destination marketers model how rising temperatures and flooding will reshape tourist flows over the next decade.",
+    "date": "2026-03-05",
+    "the_problem": "The EU Tourism Chief's warning that coastal and mountain destinations are already being hit by climate change — and that tourist flows will fundamentally shift — is a genuine business risk for hospitality property investors and destination marketers. Yet there's no affordable tool that models how specific coastal or mountain destinations' tourism appeal will degrade by decade, which alternative destinations will benefit, or how to reposition a property portfolio ahead of climate-driven demand shifts.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "AgentTrustAudit",
+    "one_liner": "Automated compliance and readiness auditor that tells e-commerce merchants whether their store, payment flows, and data schemas meet Mastercard's new agentic commerce trust layer standards before they get excluded from AI agent shopping.",
+    "date": "2026-03-05",
+    "the_problem": "Mastercard just unveiled an open, standards-based trust layer for agentic commerce with major partners signing on — meaning the rules for how AI agents authenticate, purchase, and settle are being written right now. Mid-market e-commerce merchants have no idea if their checkout flows, product data schemas, payment rails, or identity verification meet these emerging standards. A merchant who fails to qualify for the agentic trust layer will be invisible to the next wave of autonomous AI shopping, losing high-value, frictionless sales to competitors who got compliant first.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "RetailBrandIntelligence",
+    "one_liner": "Competitive brand positioning and private label opportunity scanner that helps mid-market apparel and specialty retailers identify white-space opportunities before launching brand refreshes or private label lines.",
+    "date": "2026-03-05",
+    "the_problem": "Abercrombie & Fitch, Bath & Body Works, Brooks Brothers, Merrell, The Children's Place, and Target are all simultaneously executing brand repositioning and private label strategy changes — a pattern Retail Dive is covering intensively. Mid-market retailers watching these moves have no affordable tool to analyze competitor brand positioning shifts, identify which customer segments are being abandoned by repositioning incumbents, or validate whether a private label bet has white space. A failed private label launch costs $500K–$2M in design, inventory, and markdown exposure, but decisions are made on gut instinct and agency decks.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "SocialHarmLogPro",
+    "one_liner": "Tamper-evident incident documentation platform that helps K-12 school districts build legally defensible records for social media addiction lawsuits.",
+    "date": "2026-03-05",
+    "the_problem": "EdSurge's coverage of schools testing new legal theories on social media addiction confirms courts are actively developing district liability standards. Districts currently log incidents in spreadsheets and email chains that are legally fragile, inconsistently formatted, and easily challenged in discovery. No purpose-built platform creates tamper-evident, timestamped incident records aligned to the specific evidentiary standards these lawsuits require.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "CareerChaosNavigator",
+    "one_liner": "AI-powered career exploration platform that helps high school counselors and students map automation-resistant career paths and build AI-proof skill stacks using real-time labor market data.",
+    "date": "2026-03-05",
+    "the_problem": "EdSurge's coverage of AI career chaos confirms college and career counseling is overwhelmed by the pace of labor market disruption — counselors lack both the data and the tools to advise students on AI-proof career paths. Most career exploration tools (Naviance, Xello) were built for a stable labor market and don't incorporate real-time automation risk signals or AI-adjacent skill demand data.",
+    "primary_domain": "education_edtech"
   }
 ]
