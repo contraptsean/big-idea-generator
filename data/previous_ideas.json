@@ -2093,5 +2093,103 @@
     "date": "2026-03-05",
     "the_problem": "EdSurge's coverage of AI career chaos confirms college and career counseling is overwhelmed by the pace of labor market disruption — counselors lack both the data and the tools to advise students on AI-proof career paths. Most career exploration tools (Naviance, Xello) were built for a stable labor market and don't incorporate real-time automation risk signals or AI-adjacent skill demand data.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "ChipExportComply",
+    "one_liner": "Automated chip export control compliance tracker and transaction screening tool for hardware startups, semiconductor distributors, and AI infrastructure companies navigating new U.S. export rules.",
+    "date": "2026-03-06",
+    "the_problem": "The U.S. government's sweeping new chip export control proposal would require government approval on every chip export regardless of destination country—an unprecedented compliance burden. Hardware startups, AI cloud providers sourcing Nvidia GPUs internationally, and semiconductor distributors currently have no automated tooling to track which chips require licenses, screen transactions against restricted end-users, or generate BIS (Bureau of Industry and Security) compliance documentation at speed.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "CreativeAgentBridge",
+    "one_liner": "Developer SDK that lets SaaS apps embed Luma-style multi-modal AI agent workflows—text, image, video, and audio generation coordinated by a single agent—without building the orchestration infrastructure from scratch.",
+    "date": "2026-03-06",
+    "the_problem": "Luma's launch of 'Unified Intelligence' agents that coordinate across text, images, video, and audio establishes a new product expectation: users will soon expect any creative SaaS tool to offer end-to-end AI-generated creative work. But building multi-modal agent orchestration requires integrating 4-6 different model APIs, handling async job queues, managing output stitching, and building fallback logic—easily 6-12 weeks of engineering for a solo developer. The gap between what frontier labs ship and what indie SaaS can replicate is widening dangerously fast.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "RestaurantSurvivalScore",
+    "one_liner": "Real-time financial health monitoring and early-warning platform for full-service restaurant operators and their investors to predict closure risk before it's too late.",
+    "date": "2026-03-06",
+    "the_problem": "Black Box Intelligence data shows 9% of full-service restaurants are at closure risk in 2026—units that lost 30%+ of peak sales. Restaurant operators, franchisors, and small investors in restaurant groups have no affordable early-warning system to detect when a location is sliding toward this threshold before it's too late to intervene. By the time a closure is obvious, landlords, suppliers, and owners have already absorbed massive losses.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "SnackMenuBuilder",
+    "one_liner": "AI-powered snack and small-plate menu development tool that helps casual dining and fast-casual operators capture price-sensitive traffic with optimized lower-commitment menu items.",
+    "date": "2026-03-06",
+    "the_problem": "NRN reporting confirms restaurant consumers are systematically trading down to snacks and smaller items as prices rise—requiring less commitment and more flexibility. But most casual dining operators (like Cracker Barrel, which is showing 7.1% same-store sales declines) have menu development processes built around full entrees, not snack-tier items. Designing, pricing, and testing snack menus requires food cost modeling, daypart analysis, and margin optimization that operators currently do manually or via expensive consultants.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "HotelStayLengthIQ",
+    "one_liner": "Revenue management and pricing optimization platform for independent hotels adapting to the structural shift from 3-night business stays to shorter, fragmented trips.",
+    "date": "2026-03-06",
+    "the_problem": "Skift's coverage confirms business travel demand has returned but the traditional Monday-Thursday 3-night stay pattern has permanently fragmented into shorter, less predictable stays—quietly rewiring hotel revenue models. Independent and boutique hotels that built pricing, staffing, and F&B operations around the old rhythm are underperforming because their revenue management strategies still assume the old pattern. Enterprise hotels use $2,000+/month revenue management systems; independents have nothing.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "LongTermCareReady",
+    "one_liner": "Personal finance planning tool that helps Americans 55+ model their long-term care funding gap and match them to the right insurance, savings, or home equity solution before they need care.",
+    "date": "2026-03-06",
+    "the_problem": "A new Milliman study shows 65-year-olds now need an average $135,000 for long-term care costs—a figure that varies dramatically by care type (home health vs. assisted living vs. nursing home) and geography. Most Americans have no structured way to calculate their personal care funding gap, understand which combination of LTC insurance, savings, or home equity covers it, or compare options before a health crisis forces reactive decisions. Financial advisors charge $200-500/hour for this analysis.",
+    "primary_domain": "health_wellness"
+  },
+  {
+    "name": "AIEmployeeAssistantKit",
+    "one_liner": "White-label AI employee assistant platform for independent and franchise restaurant operators to deploy Burger King/Taco Bell-style virtual staff assistants without enterprise build costs.",
+    "date": "2026-03-06",
+    "the_problem": "NRN reports that Burger King, Taco Bell, and other major QSR brands are deploying AI employee assistants that handle HR questions, training reminders, scheduling conflicts, and operational procedures—but these are proprietary enterprise builds costing $500K+. Independent operators and small franchisees (1-20 units) see these tools transforming labor productivity at big chains but have no affordable path to deploy equivalent functionality. They continue losing hours of manager time answering repetitive staff questions manually.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "LoanOfficerContentOS",
+    "one_liner": "AI-powered mortgage marketing content platform that helps loan officers build personal brand and generate leads in a post-trigger-lead regulatory environment.",
+    "date": "2026-03-06",
+    "the_problem": "HousingWire's coverage of the 'post-trigger-lead landscape' signals that loan officers who relied on purchased trigger leads (credit inquiry-based lists) are being forced to rebuild their marketing from scratch using content and relationship-based strategies—a skill set most LOs never developed. The transition is happening now, and LOs have no affordable, mortgage-specific content tool to build educational social content, email sequences, and rate commentary that generates inbound leads without relying on trigger data.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "CashlessShield",
+    "one_liner": "Compliance and customer communication toolkit that helps UK high street retailers manage the legal and reputational risks of going cashless, including accessibility obligations and customer notice requirements.",
+    "date": "2026-03-06",
+    "the_problem": "14% of UK high street shops went cashless in the last year, but most don't realize they face legal exposure: the FCA and Payment Systems Regulator are actively scrutinizing cashless policies, disabled and elderly customers have explicit access rights, and shops need proper signage and notice procedures. A retailer who goes cashless without proper communication faces reputational backlash and potential regulatory action. There's no lightweight tool that walks a small retailer through the compliance and communication steps.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "RetirementVolatilityCoach",
+    "one_liner": "Personalized pre-retirement portfolio stress tester that shows workers within 5 years of retirement exactly how Iran war market volatility and record 401k hardship withdrawal trends affect their specific retirement timeline.",
+    "date": "2026-03-06",
+    "the_problem": "CNBC's coverage of the Iran war market shock specifically flags pre-retirees as the most vulnerable investor segment — a bad sequence of returns in the 5 years before retirement can permanently damage retirement income by 30-40%. Simultaneously, 401k hardship withdrawals are at record highs, meaning workers are raiding retirement accounts right when they're most needed. No affordable consumer tool combines real-time geopolitical volatility modeling with sequence-of-returns risk analysis calibrated to a specific user's retirement date and account balance.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "PersonalizationConsentGuard",
+    "one_liner": "Retail personalization transparency and consent management toolkit that helps e-commerce brands avoid the 'dark side of personalization' — customer backlash, regulatory exposure, and trust erosion — with explainable, consent-driven targeting.",
+    "date": "2026-03-06",
+    "the_problem": "Retail Dive's 'dark side of personalization' coverage signals a growing consumer and regulatory backlash: customers are creeped out by hyper-personalization they can't explain, and Qualtrics experts are warning brands to only personalize what they can justify. Lloyds' plan to monetize customer data adds urgency. Mid-market retailers running personalization via Klaviyo, Salesforce, or Bloomreach have no lightweight tool to audit whether their personalization logic is transparent, consent-backed, and defensible to regulators and angry customers.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "AITaxVerify",
+    "one_liner": "AI tax preparation accuracy checker that lets consumers verify Grok, ChatGPT, or TurboTax AI outputs against IRS rules before filing, reducing the risk of audits triggered by AI hallucinations.",
+    "date": "2026-03-06",
+    "the_problem": "Elon Musk's public endorsement of Grok for tax prep is driving mass consumer experimentation with AI tax tools, but AI models hallucinate deductions, misapply phase-out rules, and miss jurisdiction-specific requirements. A filer who relies on a hallucinated deduction faces IRS penalties of 20-25% of underpaid tax plus interest. Experts in the CNBC article explicitly warn against using AI for taxes without verification — but no tool exists that lets a consumer cross-check their AI-generated return against authoritative IRS rules before filing.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "SocialHarmVault",
+    "one_liner": "Tamper-evident incident documentation platform that helps K-12 school districts log, timestamp, and organize social media harm events to build legally defensible records for addiction litigation.",
+    "date": "2026-03-06",
+    "the_problem": "Courts are actively developing new legal theories of school district liability in social media addiction lawsuits, and districts need defensible evidence records. Currently, incidents are logged in spreadsheets, email chains, and Word docs that are legally fragile, inconsistently formatted, and easily challenged in discovery. There is no purpose-built, tamper-evident platform that creates timestamped incident records aligned to the specific evidentiary standards these lawsuits require.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "STRComplianceTracker",
+    "one_liner": "Multi-jurisdiction short-term rental licensing compliance and renewal management platform for independent STR operators managing properties in markets with rapidly changing regulations.",
+    "date": "2026-03-06",
+    "the_problem": "Short-term rental regulations are being introduced, revised, and enforced erratically across hundreds of jurisdictions globally and domestically, from Bali to Miami Beach to New York City. Independent operators managing even 2-5 properties face licensing deadlines, inspection requirements, and rule changes they learn about too late from Facebook groups and news articles. Non-compliance risks fines, de-listing from Airbnb, and property seizure—yet no affordable tool monitors multi-jurisdiction STR compliance for operators who can't afford $500+/month property management platforms.",
+    "primary_domain": "government_compliance"
   }
 ]
