@@ -2191,5 +2191,89 @@
     "date": "2026-03-06",
     "the_problem": "Short-term rental regulations are being introduced, revised, and enforced erratically across hundreds of jurisdictions globally and domestically, from Bali to Miami Beach to New York City. Independent operators managing even 2-5 properties face licensing deadlines, inspection requirements, and rule changes they learn about too late from Facebook groups and news articles. Non-compliance risks fines, de-listing from Airbnb, and property seizure—yet no affordable tool monitors multi-jurisdiction STR compliance for operators who can't afford $500+/month property management platforms.",
     "primary_domain": "government_compliance"
+  },
+  {
+    "name": "OSSContribGuard",
+    "one_liner": "AI contribution screening and policy enforcement bot for open-source maintainers overwhelmed by AI-generated PRs and agent harassment campaigns.",
+    "date": "2026-03-07",
+    "the_problem": "MIT Tech Review's reporting on the matplotlib AI agent harassment case shows maintainers are being flooded with low-quality AI PRs and then targeted with coordinated hit pieces when they reject them. Projects are manually instituting 'no AI code' policies with zero tooling to enforce them. This is burning out maintainers and threatening open-source sustainability at scale.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "AgentWormShield",
+    "one_liner": "Real-time AI agent security sandbox and prompt injection firewall that detects and blocks agent worm propagation before it reaches production systems.",
+    "date": "2026-03-07",
+    "the_problem": "The Lobsters-featured 'first AI agent worm is months away' post documents how prompt injection attacks can propagate autonomously through multi-agent systems, compromising connected tools and data stores without human intervention. Developers deploying agentic systems (Claude Code, LangChain, AutoGPT) have no runtime security layer specifically designed to detect cross-agent prompt injection or autonomous worm propagation patterns. By the time an agent worm hits production it has already exfiltrated credentials or corrupted data.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "WhatsAppBotLaunchpad",
+    "one_liner": "Turn-key SDK and compliance toolkit that lets AI product teams deploy their LLM chatbots on WhatsApp's new third-party AI channel in Europe and Brazil in under 48 hours.",
+    "date": "2026-03-07",
+    "the_problem": "Meta just opened WhatsApp to third-party AI chatbots in Europe and Brazil, creating an immediate land-grab opportunity. But deploying on WhatsApp requires navigating Meta's Business API, webhook infrastructure, rate limits, conversation threading, and GDPR/LGPD compliance simultaneously. Most AI product teams building LLM-powered assistants have never touched the WhatsApp API and face 2-4 weeks of integration work before they can even test a message — by which point early-mover advantage is gone.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "IngredientSafetyAudit",
+    "one_liner": "Automated beverage and food ingredient safety documentation platform that helps QSR chains prove their menu items meet health regulatory standards before RFK Jr.-style government scrutiny forces costly reformulations.",
+    "date": "2026-03-07",
+    "the_problem": "RFK Jr. is publicly demanding Starbucks and Dunkin' prove their drinks are safe, signaling a new era of federal scrutiny on QSR ingredients. Most chains have no structured system to proactively compile, document, and present ingredient safety evidence on demand. A reactive response to a government inquiry costs $200K-$2M in legal fees, reformulation costs, and reputational damage — but chains have no affordable tool to stay ahead of it.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "ManufacturedHomeIQ",
+    "one_liner": "Consumer-facing manufactured housing discovery, financing comparison, and stigma-reduction platform that helps first-time and affordable homebuyers evaluate manufactured homes as a real alternative to site-built housing.",
+    "date": "2026-03-07",
+    "the_problem": "Manufactured housing is the largest source of unsubsidized affordable housing in the US, but persistent stigma and buyer confusion about financing options (chattel loans vs. real property loans, non-QM products like Redwood's Aspire) mean qualified buyers self-select out before ever getting accurate information. There is no consumer-facing tool that presents manufactured home options alongside real financing scenarios and dispels misconceptions with data.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "TriggerLeadReplacement",
+    "one_liner": "AI-powered relationship-based mortgage lead generation platform that helps loan officers replace banned trigger leads with consent-driven content marketing and referral network activation.",
+    "date": "2026-03-07",
+    "the_problem": "The new FCRA amendment effective March 5, 2026 restricts trigger lead sales — the primary outbound lead source for thousands of loan officers who have built their business on credit-inquiry-based lists. LOs who relied on trigger leads must rebuild their marketing from scratch using content and relationship strategies they've never developed. The transition is happening now, with no grace period, and LOs have no mortgage-specific tool to replace this pipeline.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "DestinationCreatorGuard",
+    "one_liner": "AI-powered destination brand monitoring and creator partnership management platform that helps DMOs and boutique hospitality operators protect their destination identity from viral creator monoculture distortion.",
+    "date": "2026-03-07",
+    "the_problem": "Skift's reporting on creator monoculture hijacking destination identity reveals a growing crisis: viral creator content systematically exoticizes and flattens destinations, driving unsustainable visitor surges to single Instagram-able spots while destroying authentic local identity. DMOs and independent hospitality operators have no tool to monitor how their destination is being portrayed across creator content, identify narrative distortions before they damage brand, or manage creator partnerships around authentic storytelling.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "MiddleEastHospitalityRecovery",
+    "one_liner": "Real-time Iran conflict and Middle East travel disruption monitoring and revenue recovery platform for independent hotels and travel operators in UAE, Saudi Arabia, and surrounding markets.",
+    "date": "2026-03-07",
+    "the_problem": "Iran's retaliatory strikes have hit Middle East civilian infrastructure and Dubai hotel operators like Al Habtoor are facing blanket cancellations, airspace closures, and collapsing forward bookings. Independent hotels and boutique operators in the region have no dedicated tool to model revenue impact by scenario, trigger proactive guest communication, activate cancellation-waiver workflows, or identify alternative demand sources (domestic, regional). Enterprise chains have crisis management systems; independents are manually fielding calls.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "ACAShockNavigator",
+    "one_liner": "Automated ACA marketplace plan comparison and enrollment rescue tool that helps the millions of Americans at risk of losing coverage under the GOP 'big beautiful bill' find affordable alternatives before open enrollment closes.",
+    "date": "2026-03-07",
+    "the_problem": "Health policy experts quoted in CNBC expect the GOP 'big beautiful bill' to reduce ACA marketplace enrollment by millions through administrative tweaks — not headline cuts, but quiet barriers like shorter enrollment windows and tighter verification requirements. Affected individuals often don't realize they've lost eligibility until they get a bill, and navigating alternative coverage (Medicaid, CHIP, short-term plans, employer COBRA) requires comparing dozens of options with no decision support. The disruption is happening now, ahead of the next enrollment period.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "HomeCapGainsPlannerPro",
+    "one_liner": "Tax scenario calculator that helps homeowners model the financial impact of proposed capital gains tax cuts on home sales and decide whether to sell now or wait for legislation to pass.",
+    "date": "2026-03-07",
+    "the_problem": "CNBC reports lawmakers are actively pushing to cut or eliminate capital gains taxes on home sales — a policy change that could save sellers $50,000–$200,000 on a median-priced home in high-cost markets. Homeowners considering selling have no structured way to model their personal break-even between selling now at current rates vs. waiting for legislation, accounting for their specific gain, filing status, income, and timeline risk of legislation failing or being delayed.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "SocialHarmVaultEdu",
+    "one_liner": "Tamper-evident incident documentation platform that helps K-12 school districts log, timestamp, and organize social media harm events to build legally defensible records for addiction litigation.",
+    "date": "2026-03-07",
+    "the_problem": "Courts are actively developing new legal theories of school district liability in social media addiction lawsuits, and districts are being held to evidentiary standards they cannot meet with spreadsheets and email chains. Districts currently have no purpose-built, tamper-evident documentation platform aligned to the specific evidentiary requirements these lawsuits impose — leaving them legally exposed in discovery.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "AgeGateKit",
+    "one_liner": "A developer SDK and compliance checklist tool that helps web app builders implement state age verification requirements (California AB 1043 and equivalents) without storing biometric data or breaking open-source licensing.",
+    "date": "2026-03-07",
+    "the_problem": "California's Digital Age Assurance Act and similar bills in 15+ states are creating a patchwork compliance burden for consumer web app developers — especially social platforms, gaming sites, and content apps. The System76/Hacker News discussion confirms implementation confusion is real and widespread. Developers need age verification that satisfies multiple state laws without creating biometric data liability or breaking FOSS licensing, and no turnkey SDK exists for this.",
+    "primary_domain": "government_compliance"
   }
 ]
