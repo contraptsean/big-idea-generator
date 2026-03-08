@@ -2275,5 +2275,61 @@
     "date": "2026-03-07",
     "the_problem": "California's Digital Age Assurance Act and similar bills in 15+ states are creating a patchwork compliance burden for consumer web app developers — especially social platforms, gaming sites, and content apps. The System76/Hacker News discussion confirms implementation confusion is real and widespread. Developers need age verification that satisfies multiple state laws without creating biometric data liability or breaking FOSS licensing, and no turnkey SDK exists for this.",
     "primary_domain": "government_compliance"
+  },
+  {
+    "name": "ClaudeSecurityScanner",
+    "one_liner": "Automated AI-powered vulnerability scanning service that lets security teams and developers run Claude-style deep code analysis on their own repositories without a Mozilla-scale partnership.",
+    "date": "2026-03-08",
+    "the_problem": "Anthropic's Claude just found 22 vulnerabilities in Firefox — 14 high-severity — in two weeks, a result that would have taken a human security team months. This signals that LLM-powered deep vulnerability analysis is now viable, but only Mozilla-scale organizations with Anthropic partnerships can access it. The 99% of software teams maintaining open-source libraries, internal apps, and SaaS products have no path to this level of analysis.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "FedContractAIReadiness",
+    "one_liner": "AI product compliance and positioning audit tool that helps startups assess their risk exposure and readiness before pursuing federal contracts, learning from the Anthropic Pentagon deal collapse.",
+    "date": "2026-03-08",
+    "the_problem": "The Anthropic Pentagon deal collapse — and the DoD's supply-chain risk designation — exposed a structural knowledge gap: AI startups pursuing federal contracts have no structured way to assess whether their AI governance policies, model control frameworks, and ethical use positions are compatible with DoD requirements before investing 12-18 months in the contracting process. The cost of discovery-at-the-end is catastrophic: Anthropic lost a $200M contract and gained a Pentagon enemy.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "SnackMenuLab",
+    "one_liner": "AI-powered snack and small-plate menu development, food cost modeling, and margin optimization tool for casual dining and fast-casual operators losing traffic to price-sensitive trading down.",
+    "date": "2026-03-08",
+    "the_problem": "NRN reports consumers are systematically trading down to snacks and smaller items as prices rise — requiring less commitment and more flexibility. But most casual dining operators (like Cracker Barrel, showing 7.1% SSS declines) have menu development processes built around full entrees, not snack-tier items. Designing, pricing, and testing snack menus requires food cost modeling, daypart analysis, and margin optimization that takes months via expensive consultants or ad hoc Excel work.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "NonQMMatchmaker",
+    "one_liner": "Consumer-facing non-QM mortgage eligibility screener and lender comparison tool that matches self-employed, investor, and credit-challenged borrowers to the right non-QM product in under 10 minutes.",
+    "date": "2026-03-08",
+    "the_problem": "Redwood's $391M Aspire securitization and Angel Oak's growth commentary confirm non-QM lending is expanding significantly as rates ease — but non-QM borrowers are the least-served by existing comparison tools. Self-employed borrowers, real estate investors, and credit-challenged buyers don't know which non-QM product (bank statement loan, DSCR, asset depletion, interest-only) fits their situation, and broker matching is opaque and commission-driven. These borrowers overpay by 50-100bps by landing in the wrong product.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "OvertimeTaxVerify",
+    "one_liner": "AI tax accuracy checker that cross-validates overtime deduction claims, IRS refund calculations, and AI-generated tax outputs against authoritative IRS rules before filing.",
+    "date": "2026-03-08",
+    "the_problem": "Millions are claiming Trump's 'no tax on overtime' deduction with filing mistakes that experts say are widespread — and Elon Musk is publicly driving consumers toward AI tools like Grok for tax prep that hallucinate deductions and misapply phase-out rules. Average IRS refunds are up 10.6% this season, meaning more money is at stake. A filer who relies on a hallucinated deduction faces IRS penalties of 20-25% of underpaid tax plus interest, but no tool exists to cross-check AI-generated or self-prepared returns against authoritative IRS rules before submission.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "SkillsTradeCareerNav",
+    "one_liner": "AI-powered skilled trades career navigation and training pathway finder that helps job seekers identify the highest-paying, AI-proof trade careers and connect to local apprenticeship programs.",
+    "date": "2026-03-08",
+    "the_problem": "CNBC's coverage of AI-proof skilled trades as a career refuge is driving massive consumer interest in trade career pivots — but job seekers have no structured tool to identify which specific trades have the best income trajectory, which apprenticeships are currently accepting applications in their metro area, and how to finance trade school or certification costs. Generic career tools like LinkedIn don't surface trade apprenticeship opportunities or model the lifetime income advantage of trades over white-collar AI-threatened roles.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "SocialHarmVault",
+    "one_liner": "Tamper-evident incident documentation platform that helps K-12 school districts log, timestamp, and organize social media harm events to build legally defensible litigation records.",
+    "date": "2026-03-08",
+    "the_problem": "EdSurge's coverage of new legal theories in social media addiction lawsuits confirms courts are actively developing district liability standards. Districts currently log incidents in spreadsheets, email chains, and Word docs that are legally fragile, inconsistently formatted, and easily challenged in discovery. No purpose-built, tamper-evident platform creates timestamped records aligned to the evidentiary standards these lawsuits impose.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "FedPolicyPulse",
+    "one_liner": "Real-time federal and state education policy tracker that alerts K-12 district leaders when funding cuts, compliance mandates, or regulatory changes directly affect their budget and programs.",
+    "date": "2026-03-08",
+    "the_problem": "EdSurge confirms district leaders are making irreversible budget decisions with less margin for error than ever, yet federal education policy—Title I reviews, Department of Education restructuring, state legislative sessions—is changing faster than districts can track. Administrators learn about changes weeks after grant deadlines or reporting requirements have already shifted, with no tool translating changes into district-specific action items.",
+    "primary_domain": "government_compliance"
   }
 ]
