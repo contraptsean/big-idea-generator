@@ -2331,5 +2331,75 @@
     "date": "2026-03-08",
     "the_problem": "EdSurge confirms district leaders are making irreversible budget decisions with less margin for error than ever, yet federal education policy—Title I reviews, Department of Education restructuring, state legislative sessions—is changing faster than districts can track. Administrators learn about changes weeks after grant deadlines or reporting requirements have already shifted, with no tool translating changes into district-specific action items.",
     "primary_domain": "government_compliance"
+  },
+  {
+    "name": "HumanAuthorStamp",
+    "one_liner": "A lightweight API and developer SDK implementing the human.json protocol to let creators cryptographically assert human authorship of content, helping platforms comply with AI disclosure requirements.",
+    "date": "2026-03-09",
+    "the_problem": "The Lobsters-featured human.json proposal for a lightweight protocol to assert human authorship is gaining traction precisely because AI-generated content is flooding every platform. Developers building publishing tools, CMS platforms, and social apps have no simple, standardized way to attach verifiable human-authorship metadata to content. Platform policies at X, Meta, and YouTube are tightening around AI disclosure, and legal liability for mislabeled AI content is growing—but there's no drop-in SDK that handles this for web developers.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "RailsAIScaffold",
+    "one_liner": "An AI-powered Rails scaffold generator and modernization toolkit that helps developers returning to Rails in 2026 add LLM features, Hotwire patterns, and modern auth to legacy Rails apps in under an hour.",
+    "date": "2026-03-09",
+    "the_problem": "The 'Returning to Rails in 2026' Lobsters post is generating significant engagement because thousands of developers are genuinely rediscovering Rails as the antidote to JavaScript fatigue and AI complexity overhead. But Rails itself has changed significantly—Hotwire, Solid Queue, Turbo Streams, and LLM integration patterns are all new. A developer returning after 5 years can't get productive in a day, and there's no 'Rails in 2026' scaffold that includes modern patterns and AI feature templates out of the box.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "QueryPlanPorter",
+    "one_liner": "A developer tool that extracts production-quality Postgres query plans and statistics without exposing production data, letting developers reproduce and fix slow queries in local or staging environments.",
+    "date": "2026-03-09",
+    "the_problem": "The Lobsters-featured 'Production query plans without production data' post documents a well-known but unsolved developer pain: reproducing slow queries outside production requires either real production data (a security and compliance nightmare) or manually crafting statistics that don't match reality. Developers routinely ship 'fixed' queries to production that perform identically poorly because their local query planner had different statistics. This wastes days of debugging time per incident and creates production incidents from 'fixed' code.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "WorldCupRevenueIQ",
+    "one_liner": "Dynamic pricing intelligence and demand forecasting platform for independent hotels and STR operators in FIFA World Cup 2026 host cities across the US, Canada, and Mexico.",
+    "date": "2026-03-09",
+    "the_problem": "The 2026 FIFA World Cup spans 3 countries and 16 host cities with 80+ matches — the largest in history. Independent hotels and STR operators in cities like New York, Los Angeles, Dallas, and Miami are setting prices manually while large chains use $2,000+/month enterprise revenue management systems. The Ahmedabad T20 World Cup example (20x price surge) and NYC Airbnb ban pushing demand to New Jersey show the massive revenue stakes: operators who price wrong leave tens of thousands on the table in a once-in-a-generation demand event.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "ADCFundMatchmaker",
+    "one_liner": "Self-service acquisition, development and construction loan matching platform that connects small homebuilders and developers to private debt funds as bank AD&C credit tightens.",
+    "date": "2026-03-09",
+    "the_problem": "D.R. Horton, Toll Brothers, and Century Communities are investing in private debt funds like Avila Real Estate Capital's $1B fund specifically because traditional bank AD&C credit is tightening. Small and mid-size homebuilders — the 95% who aren't DR Horton — are being squeezed out of bank credit entirely but have no structured way to access the growing private debt fund market. They're calling brokers, going to conferences, and relying on relationships while sitting on shovel-ready lots they can't finance.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "401kPortabilityPlanner",
+    "one_liner": "A smart 401k rollover decision tool that helps job-changers understand auto-portability rules, Roth money exceptions, and the tax implications of each transfer path before their employer acts for them.",
+    "date": "2026-03-09",
+    "the_problem": "New auto-portability rules mean small 401k balances will automatically follow workers to their next job — but Roth money is explicitly excluded, creating a decision gap that most workers don't understand. A worker who doesn't actively manage this transition could end up with fragmented accounts, unexpected taxable events, or Roth contributions stranded in a rollover IRA with no path to their new employer's plan. No consumer tool explains the Roth exception, models the tax impact of each path, or generates a step-by-step action plan before the automatic transfer happens.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "KShapedWalletTracker",
+    "one_liner": "A personal finance dashboard for women and middle-income households that quantifies their K-shaped economy gap and generates a concrete spending-power recovery plan with actionable product and account switches.",
+    "date": "2026-03-09",
+    "the_problem": "CNBC's coverage of the K-shaped economy widening specifically for women shows lower pay and higher everyday costs are systematically reducing financial mobility — but personal finance apps like Mint's successors and YNAB are budgeting tools that describe the problem without diagnosing the gender-and-income-specific structural gap. Women who are losing spending power don't know how much of their shortfall is due to pay gap exposure vs. inflation on goods they disproportionately buy vs. financial product mismatches. There is no tool that quantifies the K-shaped squeeze for a specific user and surfaces the highest-ROI financial product switches.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "CostcoPersonalizationPlaybook",
+    "one_liner": "A turnkey product recommendation personalization toolkit for mid-market e-commerce retailers that replicates Costco's $470M personalization playbook at 1% of the enterprise cost.",
+    "date": "2026-03-09",
+    "the_problem": "Costco's CFO just credited digital personalization — specifically personalized recommendation carousels and modernized product display pages — with $470M in sales growth. Mid-market retailers on Shopify, WooCommerce, or Magento know personalization works but face a brutal implementation gap: enterprise personalization platforms like Dynamic Yield or Salesforce Commerce Cloud cost $50,000-$200,000/year and require months of integration. Lightweight tools like LimeSpot or Frequently Bought Together don't offer the algorithmic depth or revenue attribution Costco-style deployment requires. Retailers are leaving millions on the table in untapped personalization lift.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "ScreenFreePolicy Hub",
+    "one_liner": "Legislative compliance and implementation management platform that helps K-12 schools design, enforce, and report on screen-free and phone-free policies aligned with state-specific legislation.",
+    "date": "2026-03-09",
+    "the_problem": "Legislators across multiple states are now pushing screen-free mandates that go beyond phone bans to cover all classroom devices — a more complex policy to implement than phone-only bans. Schools face the challenge of defining what 'screen-free' means per subject, grade, and time of day, communicating policies to parents and staff, and proving compliance to state agencies. Existing phone-policy tools only address device confiscation, not curriculum-level screen reduction mandates with audit trails.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "RiskLitMathKit",
+    "one_liner": "Standards-aligned K-12 curriculum and assessment platform that teaches probability, expected value, and financial risk literacy through gambling case studies and interactive simulations.",
+    "date": "2026-03-09",
+    "the_problem": "EdSurge reports underage gambling is rising sharply with sports betting legalization, and education researchers are calling for gambling literacy to be added to K-12 math curricula. But teachers have no ready-made, standards-aligned curriculum — building it from scratch takes 40-80 hours per unit. State legislatures are beginning to mandate financial and risk literacy but provide zero implementation support or materials, leaving teachers unfunded and under-resourced.",
+    "primary_domain": "education_edtech"
   }
 ]
