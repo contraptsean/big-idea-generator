@@ -2401,5 +2401,89 @@
     "date": "2026-03-09",
     "the_problem": "EdSurge reports underage gambling is rising sharply with sports betting legalization, and education researchers are calling for gambling literacy to be added to K-12 math curricula. But teachers have no ready-made, standards-aligned curriculum — building it from scratch takes 40-80 hours per unit. State legislatures are beginning to mandate financial and risk literacy but provide zero implementation support or materials, leaving teachers unfunded and under-resourced.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "MultiModelConsensus API",
+    "one_liner": "A drop-in developer API that queries multiple LLMs simultaneously and returns a confidence-weighted consensus answer, reducing hallucination risk in production AI applications.",
+    "date": "2026-03-10",
+    "the_problem": "The Anthropic DOD lawsuit and the Claude outage reinforce that single-provider LLM dependency is a genuine production liability — both for reliability and for correctness. Meanwhile, the 'Your LLM Doesn't Write Correct Code' article and the 'confident idiot' problem confirm that hallucination in production AI apps is costing real money. Developers building production AI apps (customer support, legal tools, medical tools) have no simple API to implement multi-model consensus verification without building multi-provider orchestration, response normalization, and confidence scoring from scratch.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "WorldModelDevBench",
+    "one_liner": "A developer benchmarking and integration testing harness that helps AI product builders evaluate and integrate world model APIs (from AMI Labs and competitors) for spatial reasoning, simulation, and embodied AI applications.",
+    "date": "2026-03-10",
+    "the_problem": "Yann LeCun's AMI Labs raising $1.03B at $3.5B valuation signals that world models — AI systems that reason about physical reality, spatial relationships, and causal dynamics — are entering commercialization within 18-24 months. Developers building robotics, AR/VR, delivery automation (like the Pokémon Go/Niantic delivery robot story), and simulation tools will need to evaluate, benchmark, and integrate world model APIs. There is currently no developer tooling for this emerging API category — no standard benchmarks, no integration test suites, and no comparison frameworks.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "FederatedBlogKit",
+    "one_liner": "A turnkey ActivityPub-powered federated blogging and developer documentation platform that lets indie developers and small teams own their content while syndicating to the Fediverse, inspired by Madblog.",
+    "date": "2026-03-10",
+    "the_problem": "The Madblog Lobsters post — showing a zero-database, zero-JavaScript federated blog from a Markdown folder — generated strong community engagement because it solves a real pain: developers want to own their content, avoid platform lock-in (Substack, Medium, Dev.to), and participate in the Fediverse without building ActivityPub from scratch. Setting up ActivityPub correctly is technically complex (WebFinger, inbox/outbox handling, signature verification), and most existing tools require databases, JavaScript, or ongoing platform dependency. The Rails 2026 resurgence reinforces appetite for simple, owned infrastructure.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "GLP-1 SideEffect Tracker",
+    "one_liner": "A patient-facing symptom logging and FDA adverse event reporting tool for Ozempic and Wegovy users being underserved by Novo Nordisk's compliance failures.",
+    "date": "2026-03-10",
+    "the_problem": "The FDA has now warned Novo Nordisk three times in recent weeks for failing to report GLP-1 drug side effects — meaning millions of patients on Ozempic and Wegovy are experiencing undocumented adverse events with no structured channel to report them. Patients self-managing GLP-1 side effects (nausea, gastroparesis, pancreatitis signals) are doing so via Reddit threads and Facebook groups, not clinical-grade logs. This gap creates both a patient safety risk and a massive unmet need for structured adverse event documentation.",
+    "primary_domain": "health_wellness"
+  },
+  {
+    "name": "ListingContentOS",
+    "one_liner": "AI-powered listing content multiplier that turns a single real estate listing into 10 platform-ready marketing assets for agents in under 5 minutes.",
+    "date": "2026-03-10",
+    "the_problem": "Inman's coverage explicitly validates the pain: agents know they should be creating multi-platform content from every listing but lack the time and skills to do it efficiently. An agent with 10 active listings should be generating 100 pieces of content per month but is creating 5-10. The content problem is the top barrier to agent personal brand growth, and the Compass-Redfin ecosystem consolidation means independent agents need stronger personal brands more than ever to survive.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "TSAWaitWatch",
+    "one_liner": "Real-time TSA wait time monitor and pre-travel alert system for frequent travelers navigating staffing shortage-driven airport delays.",
+    "date": "2026-03-10",
+    "the_problem": "TSA staffing shortages triggered by the government shutdown are creating hours-long airport security lines that are causing missed flights, extreme traveler stress, and cascading itinerary disruptions. Travelers have no real-time, airport-level wait time data before they leave home — TSA's own app data is delayed and incomplete. The stress and health impact of missed flights and multi-hour queues is a genuine wellness problem disproportionately affecting frequent business travelers who can't afford to miss connections.",
+    "primary_domain": "health_wellness"
+  },
+  {
+    "name": "AirfareFuelShockAlert",
+    "one_liner": "Personalized airfare price movement alert and booking timing optimizer for travelers facing 10%+ fare hikes from oil price shocks and Iran war disruptions.",
+    "date": "2026-03-10",
+    "the_problem": "Skift reports oil price shocks could trigger 10%+ airline fare hikes and $24B in additional costs for US carriers — and Iran war airspace disruptions are already costing small airlines $200K/day. Travelers with upcoming trips or flexible dates have no personalized tool that translates macro oil and geopolitical signals into a specific 'book now vs. wait' recommendation for their route. Generic fare alerts from Google Flights and Kayak don't model fuel cost pass-through timing or route-specific disruption risk.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "SME Virtual CFO Kit",
+    "one_liner": "White-label AI virtual CFO dashboard for small business owners that delivers Mastercard-style strategic financial guidance — cash flow forecasting, scenario planning, and vendor negotiation scripts — at $49/month without needing an agency or accountant.",
+    "date": "2026-03-10",
+    "the_problem": "Mastercard's announcement of an AI-powered virtual C-suite for SMEs confirms massive demand — but Mastercard's solution will be locked to their merchant network and won't ship to independent SMEs for 12-18 months. Small business owners making $500K-$5M in revenue are making pricing, hiring, and cash flow decisions with no strategic financial support. Their accountant does taxes once a year; no one is modeling 90-day cash runway or flagging supplier concentration risk in real time. A bad cash flow decision can kill a healthy business in 60 days.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "TaxIdentityShield",
+    "one_liner": "Proactive employment-related identity theft detection and IRS resolution toolkit that alerts consumers when a fraudulent W-2 or 1099 has been filed under their Social Security number before the IRS catches it first.",
+    "date": "2026-03-10",
+    "the_problem": "CNBC's reporting confirms employment-related identity theft is rising sharply and most victims don't discover it until tax season — when the IRS flags a duplicate SSN and freezes their refund. The victim is then stuck in a multi-month resolution process requiring Form 14039, IRS Identity Protection PINs, and potentially amended returns. Average resolution time is 6-12 months. No affordable consumer product actively monitors for fraudulent employment records filed under your SSN before you discover it the hard way when your refund is delayed.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "VendorBankruptcyPayTracker",
+    "one_liner": "Real-time vendor payment status monitoring and cash flow bridge matching platform for small suppliers owed money by bankrupt or distressed retailers like Saks Global, helping them recover faster and access invoice financing.",
+    "date": "2026-03-10",
+    "the_problem": "Saks Global just announced 15 more store closures while in bankruptcy court, expanding its vendor base to 500 — meaning hundreds of small and mid-size vendors are simultaneously owed money and being asked to keep shipping to a bankrupt buyer. These vendors have no tool to monitor their claim status in bankruptcy court, understand their recovery priority (critical vendor vs. general unsecured), model their expected recovery timeline and cents-on-the-dollar outcome, or connect to invoice factoring options that could bridge their cash flow while the bankruptcy drags on 12-24 months.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "ScreenPolicyOS",
+    "one_liner": "Implementation, compliance tracking, and parent communication platform that helps K-12 schools design and enforce screen-free policies aligned with emerging state legislation.",
+    "date": "2026-03-10",
+    "the_problem": "Screen-free mandates are now going beyond phone bans to cover all classroom devices—a far more complex policy to implement than simple phone confiscation. Schools must define what 'screen-free' means by subject, grade, and time of day, communicate policies to parents and staff, generate audit trails for state agencies, and handle exceptions (e.g., IEP accommodations). No affordable tool exists to manage this end-to-end, and non-compliance risks loss of state funding and litigation exposure.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "MindBridgeEdu",
+    "one_liner": "FERPA-compliant AI mental health check-in platform that captures student emotional disclosures and routes at-risk teens to school counselors before crises escalate.",
+    "date": "2026-03-10",
+    "the_problem": "Teens are already confiding in AI tools like ChatGPT for emotional support at massive scale, but schools have zero visibility into these interactions and no structured intake pathway. School counselors are overwhelmed and missing early warning signs entirely. There is no FERPA-compliant, school-deployable tool that bridges AI-assisted emotional disclosure and routes at-risk students to human intervention with documented triage trails.",
+    "primary_domain": "education_edtech"
   }
 ]
