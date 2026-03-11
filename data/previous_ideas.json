@@ -2485,5 +2485,110 @@
     "date": "2026-03-10",
     "the_problem": "Teens are already confiding in AI tools like ChatGPT for emotional support at massive scale, but schools have zero visibility into these interactions and no structured intake pathway. School counselors are overwhelmed and missing early warning signs entirely. There is no FERPA-compliant, school-deployable tool that bridges AI-assisted emotional disclosure and routes at-risk students to human intervention with documented triage trails.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "RetentionLoop",
+    "one_liner": "Automated AI app retention analytics and lifecycle messaging platform that helps mobile developers identify and fix the Day 7/Day 30 drop-off killing AI-powered apps.",
+    "date": "2026-03-11",
+    "the_problem": "RevenueCat's new report confirms AI-powered apps drive strong early monetization but catastrophically fail at long-term retention — a pattern distinct from non-AI apps. Developers have no AI-specific retention analytics that tie feature usage patterns (prompt counts, agent task completions, model response quality scores) to churn events. Generic tools like Mixpanel don't understand AI app engagement loops or the 'novelty cliff' that hits AI apps at Day 7-14.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "AgentMailKit",
+    "one_liner": "Developer SDK and infrastructure scaffold that gives AI agents their own managed email identities, conversation threading, and reply parsing without building on top of raw SMTP or IMAP.",
+    "date": "2026-03-11",
+    "the_problem": "AgentMail just raised $6M proving the market exists — but their platform is a closed API with a $0.01-per-message pricing model that becomes expensive at scale. Developers building autonomous AI agents that need to send, receive, and parse emails (scheduling agents, outreach agents, support agents) are forced to either pay AgentMail's per-message fees or build raw SMTP/IMAP infrastructure themselves — a 2-4 week project involving bounce handling, threading logic, spam compliance, and reply parsing.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "WasmSnapDeploy",
+    "one_liner": "Managed deployment and snapshot orchestration platform for WebAssembly applications using fully snapshotable Wasm interpreters, enabling instant state restore and edge rollback for solo developers.",
+    "date": "2026-03-11",
+    "the_problem": "The Lobsters-featured 'fully snapshotable Wasm interpreter' (gabagool) signals that snapshotable WebAssembly is becoming a practical primitive — but there's no managed platform that turns this capability into a deployable product feature. Developers building Wasm-based edge functions, sandboxed plugins, or AI agent tool runtimes need snapshot/restore for reliability (instant rollback, stateful resumption), but wiring this to a deployment pipeline requires understanding Wasm memory models, serialization formats, and edge runtime compatibility. Solo developers and small teams are stuck at the research prototype stage.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "LLMLeaderboardGames",
+    "one_liner": "Developer tool that implements the LLM Neuroanatomy activation-steering and representation-engineering techniques as a no-code API, letting AI product builders tune model behavior without fine-tuning or weight changes.",
+    "date": "2026-03-11",
+    "the_problem": "The Lobsters-featured 'LLM Neuroanatomy' post shows a developer topping AI leaderboards by steering model behavior through activation manipulation rather than changing weights — a technique that's currently inaccessible to 99% of developers because it requires deep ML infrastructure knowledge. AI product builders who want to tune tone, reduce hallucinations, or adjust response style are stuck with either expensive fine-tuning ($500-5,000 per run) or brittle system prompt engineering. Activation steering offers a faster, cheaper, and more robust alternative — but only for developers with ML PhDs.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "MultiLangAILocale",
+    "one_liner": "Automated localization and prompt optimization toolkit that helps AI app developers ship production-quality multilingual experiences for Indian regional languages (Hindi, Bengali, Tamil, etc.) without manual translation work.",
+    "date": "2026-03-11",
+    "the_problem": "Google's Gemini expansion to India with support for Hindi, Bengali, Gujarati, Kannada, Malayalam, Marathi, Telugu, and Tamil signals that the next 100M AI app users will be Indian regional language speakers — but developers building AI applications have no tooling to optimize prompts, evaluate output quality, or localize UX for these languages. System prompts written in English perform 30-50% worse in regional Indian languages due to tokenization inefficiency and training data gaps. Developers are shipping globally broken experiences to a billion-person market.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "FlipValuator",
+    "one_liner": "Automated fix-and-flip deal analyzer and entry-level buyer matching platform that helps real estate investors and first-time buyers identify underpriced renovated starter homes before they hit the open market.",
+    "date": "2026-03-11",
+    "the_problem": "New Western data shows fix-and-flip investors supplied 120,193 starter homes under $261K in 2025 vs. only 37,931 new builds at that price point—yet buyers and agents have no tool to systematically identify and evaluate these renovated entry-level homes before or as they list. Investors doing the flipping also lack affordable deal-scoring tools that model ARV, renovation cost estimates, and buyer demand by ZIP code without paying for enterprise platforms like PropStream at $100+/month.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "DeferredDealScan",
+    "one_liner": "AI-powered deferred maintenance detection and deal-risk scoring tool that helps real estate agents flag hidden repair liabilities before they kill a transaction.",
+    "date": "2026-03-11",
+    "the_problem": "Inman explicitly validates that deferred maintenance is 'costing agents deals'—yet agents have no structured tool to systematically assess maintenance risk before listing or making an offer. Agents discover problems at inspection, which kills momentum, damages client relationships, and costs agents their commission. A $15,000 deferred maintenance discovery at inspection derails 1 in 4 transactions.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "AgentVoiceLogger",
+    "one_liner": "Voice-first activity logging and client journey tracker for real estate agents that auto-generates CRM entries, showing-notes, and follow-up tasks from a 60-second voice memo.",
+    "date": "2026-03-11",
+    "the_problem": "Rayse's launch of RAE—a conversational AI for agents to log work by voice—validates the market, but it's MLS-distributed and inaccessible to the 385,000+ independent agents in communities like Agent Impact Network who aren't MLS partners. Agents lose 45-90 minutes daily on manual CRM data entry after showings, calls, and client meetings. The busiest agents—who generate the most data—are worst at logging it, creating compliance risk and lost referral opportunities when client journey details are incomplete.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "IHGClimateOps",
+    "one_liner": "Hotel emissions tracking and climate target reset advisory platform for independent and boutique hotels navigating net-zero commitments with rising actual emissions.",
+    "date": "2026-03-11",
+    "the_problem": "IHG's public admission that emissions rose for a second consecutive year—forcing a 2026 climate target review—signals a crisis playing out quietly across thousands of independent and boutique hotels that made ESG commitments they can't execute. These operators lack the data infrastructure to measure scope 1, 2, and 3 emissions accurately, can't model which operational changes deliver the best emissions reduction per dollar invested, and face investor and corporate travel buyer scrutiny if they abandon or downgrade targets publicly.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "DeMinimisTracker",
+    "one_liner": "Real-time de minimis exemption status monitor and landed cost calculator for e-commerce sellers and importers affected by the ongoing legal battle over Trump's elimination of the trade tool.",
+    "date": "2026-03-11",
+    "the_problem": "A federal court just ruled that a lawsuit challenging Trump's elimination of the de minimis exemption can proceed — meaning the exemption's fate is actively uncertain and could flip multiple times before resolution. E-commerce sellers importing from China, sourcing via Temu, Shein-style supply chains, or drop-shipping directly to US customers have no tool that monitors court and policy status in real time, recalculates their true landed costs under each scenario, and alerts them when to adjust pricing or sourcing before customs bills arrive unexpectedly.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "RevolutMigrationKit",
+    "one_liner": "Automated account migration and feature comparison tool that helps UK consumers and small businesses switch from traditional banks to Revolut now that it holds a full banking licence.",
+    "date": "2026-03-11",
+    "the_problem": "Revolut just received its full UK banking licence after a four-year wait, making it a credible alternative to Barclays, HSBC, and Lloyds for the first time. Millions of UK consumers and SMEs who previously avoided Revolut due to its e-money institution status (no FSCS protection) are now reconsidering — but have no structured tool to compare their current bank's fee structure, features, and FSCS protections against Revolut's new full-bank offering, or to execute the actual account switch and direct debit migration without missing payments.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "OffPriceIntelligence",
+    "one_liner": "Competitive pricing and assortment intelligence platform that helps specialty and department store buyers identify which product categories TJX, Ross, and Burlington are aggressively targeting before they lose market share.",
+    "date": "2026-03-11",
+    "the_problem": "TJX, Ross, and Burlington are opening hundreds of stores per year and beginning to cannibalize each other while simultaneously attacking department stores and specialty retailers. Mid-market retailers like Kohl's (which just reported disappointing Q4 results and is simplifying promotions) have no affordable tool to track which specific product categories off-price giants are aggressively discounting, what price points they're hitting, and which customer segments they're winning. By the time retailers see it in their own same-store sales data, the customer has already shifted.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "QuinceMarginMapper",
+    "one_liner": "DTC brand cost structure benchmarking and margin optimization tool that helps digitally-native apparel brands model the Quince playbook of factory-direct pricing at scale.",
+    "date": "2026-03-11",
+    "the_problem": "Quince just hit a $10B valuation on $1B+ revenue by eliminating middlemen and sourcing direct from factories — a model thousands of DTC apparel brands want to replicate but can't analyze rigorously. Founders know factory-direct is the margin play but have no tool to model their specific product category's achievable factory-direct margin stack, benchmark it against Quince's known unit economics, or identify which SKUs in their current line have the highest margin expansion opportunity if they cut distributors. They're making sourcing decisions based on gut instinct and broker presentations.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "ScreenPolicyOS",
+    "one_liner": "Implementation, compliance tracking, and parent communication platform that helps K-12 schools design and enforce screen-free and phone-free policies aligned with emerging state legislation.",
+    "date": "2026-03-11",
+    "the_problem": "State legislators are now pushing screen-free mandates that go beyond phone bans to cover all classroom devices — a far more complex policy to implement than phone confiscation. Schools must define 'screen-free' by subject, grade, and time of day, communicate policies to parents and staff, generate audit trails for state agencies, and handle IEP/ADA exceptions. Non-compliance risks loss of state funding, parent litigation, and regulatory scrutiny, yet no affordable tool manages this end-to-end.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "MindBridgeSchool",
+    "one_liner": "FERPA-compliant AI mental health check-in platform that captures student emotional disclosures and routes at-risk teens to school counselors before crises escalate.",
+    "date": "2026-03-11",
+    "the_problem": "EdSurge confirms teens are already confiding in AI tools like ChatGPT for emotional support at massive scale, but schools have zero visibility into these interactions and no structured intake pathway. School counselors are overwhelmed and missing early warning signs entirely. There is no FERPA-compliant, school-deployable tool that bridges AI-assisted emotional disclosure and routes at-risk students to human intervention with documented triage trails that satisfy duty-of-care requirements.",
+    "primary_domain": "education_edtech"
   }
 ]
