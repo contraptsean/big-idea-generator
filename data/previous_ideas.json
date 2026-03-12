@@ -2590,5 +2590,117 @@
     "date": "2026-03-11",
     "the_problem": "EdSurge confirms teens are already confiding in AI tools like ChatGPT for emotional support at massive scale, but schools have zero visibility into these interactions and no structured intake pathway. School counselors are overwhelmed and missing early warning signs entirely. There is no FERPA-compliant, school-deployable tool that bridges AI-assisted emotional disclosure and routes at-risk students to human intervention with documented triage trails that satisfy duty-of-care requirements.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "AgentDataFoundry",
+    "one_liner": "Self-service data infrastructure readiness auditor and remediation planner for enterprise teams trying to move AI agents from pilot to production.",
+    "date": "2026-03-12",
+    "the_problem": "MIT Tech Review's 'Building a strong data infrastructure for AI agent success' report confirms that nearly two-thirds of enterprises are experimenting with AI agents but most are stalled between pilot and production because of data infrastructure gaps—pipelines, context stores, retrieval quality, and governance. Engineering teams have no structured diagnostic to identify exactly where their data infrastructure is failing their agents. They spend months in expensive consulting engagements to discover what a structured audit tool could surface in hours.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "VibeCostGuard",
+    "one_liner": "Real-time LLM token cost monitor and budget enforcer for vibe-coding platforms and AI-native app builders who are burning through API credits without visibility.",
+    "date": "2026-03-12",
+    "the_problem": "Lovable crossing $400M ARR with 146 employees signals that vibe-coding platforms are generating massive LLM API spend at scale—but individual builders using Lovable, Bolt, and Replit AI have zero visibility into their per-feature, per-session, or per-model token costs until they get a bill. A single complex app generation session on GPT-5.4 or Claude can consume $5-15 in tokens without the developer realizing it. Teams building internal tools with these platforms are blowing through budgets with no alerts, no per-project attribution, and no model-switching recommendations to cut costs 30-60%.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "FreeThreadBench",
+    "one_liner": "Automated free-threaded Python compatibility scanner and benchmark harness that tells library maintainers exactly what to fix to support Python's GIL-free build.",
+    "date": "2026-03-12",
+    "the_problem": "The Lobsters interview with ngoldbaum reveals that Python's free-threaded (no-GIL) build is coming in 3.16-3.17, but the long tail of libraries—especially C extension packages, Cython-based scientific tools, and web framework dependencies—are not yet compatible. Library maintainers don't know where their thread-safety issues are, and the existing pytest-run-parallel approach requires manual setup and interpretation. With 1,500+ packages needing audits and maintainers already burned out, there's a clear need for an automated scanner that identifies global state, unsafe C patterns, and threading anti-patterns without requiring maintainers to become free-threading experts.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "ZendeskMigrationKit",
+    "one_liner": "Automated data migration and workflow translation toolkit for customer support teams moving from Forethought to Zendesk's native AI agent suite after the acquisition.",
+    "date": "2026-03-12",
+    "the_problem": "Zendesk just acquired Forethought, meaning Forethought's existing customers—who chose Forethought specifically because it was independent and best-in-breed—now face a forced migration decision. Some will stay in the Zendesk ecosystem; others will flee to Intercom, Freshdesk, or Salesforce Service Cloud. Both groups need migration tooling: the stayers need workflow translation from Forethought's schema to Zendesk's native AI agent format, while the leavers need full data portability. Acquisitions of this type predictably generate 6-18 months of customer confusion and migration projects that service teams handle manually.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "WasmSnapEdge",
+    "one_liner": "Managed deployment platform for snapshotable WebAssembly modules that enables instant state restore, edge rollback, and plugin sandboxing for solo developers.",
+    "date": "2026-03-12",
+    "the_problem": "The Lobsters-featured 'fully snapshotable Wasm interpreter' (gabagool) demonstrates that snapshotable WebAssembly is now a practical primitive—but there's no managed platform that turns this capability into a deployable product feature. Developers building Wasm-based edge functions, sandboxed plugin runtimes, or AI agent tool execution environments need snapshot/restore for reliability and stateful resumption, but wiring this to a deployment pipeline requires deep knowledge of Wasm memory models and edge runtime compatibility. The 'Building a new Flash' Lobsters post and the broader Wasm revival signal strong developer appetite for rich, sandboxed web runtimes that current platforms don't support.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "InheritIQ",
+    "one_liner": "Guides real estate agents and their clients through inherited property transactions with automated legal checklists, tax impact modeling, and estate coordination workflows.",
+    "date": "2026-03-12",
+    "the_problem": "HousingWire explicitly calls out that a growing share of homebuyers will inherit real estate, and most agents are completely unprepared for that conversation. Inherited property transactions involve probate timelines, stepped-up basis tax implications, multi-heir coordination, and title complications that standard agent workflows don't cover. Agents who can't guide clients through this lose the transaction entirely — often to an attorney or another agent who can.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "MidwestAbsorptionAlert",
+    "one_liner": "Hyper-local absorption rate tracker and buyer urgency dashboard that tells agents and buyers in high-velocity Midwest markets exactly how many days they have before a listing is gone.",
+    "date": "2026-03-12",
+    "the_problem": "HousingWire's data shows Midwest markets are absorbing homes faster than new listings appear — a pattern that catches buyers and agents off guard with no early warning. Agents advising buyers in Columbus, Indianapolis, Minneapolis, and similar markets are losing credibility when clients lose 3 offers in a row because they didn't understand true days-on-market velocity. No affordable, agent-facing tool translates absorption rate data into a daily decision dashboard at the ZIP code level.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "AllInclusiveMatch",
+    "one_liner": "Personalized all-inclusive resort comparison and booking intelligence platform that matches travelers to properties based on activity preferences, group composition, and value optimization.",
+    "date": "2026-03-12",
+    "the_problem": "Skift's new research confirms all-inclusive travel is having a sustained structural moment — not a trend — driven by travelers seeking personalized experiences and activity richness, not just a price bundle. But all-inclusive resort comparison tools (TripAdvisor, Expedia) rank properties by star rating and price, not by activity fit or experience personalization. Families, couples, and multi-gen groups are making $3,000-$15,000 booking decisions on inadequate information and ending up at the wrong property.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "ConsumerInputOS",
+    "one_liner": "White-label consumer taste-testing and feedback panel platform that lets QSR and fast-casual chains run Wendy's/Pizza Hut-style 'Chief Tasting Officer' programs without hiring dedicated staff.",
+    "date": "2026-03-12",
+    "the_problem": "Wendy's just created a 'Chief Tasting Officer' and Pizza Hut launched a 'Hut Crust Connoisseur' — consumer-input positions — because chains are discovering that structured consumer panels drive menu momentum and brand engagement more cost-effectively than traditional focus groups. But only large chains with PR departments can execute this. Mid-market chains, regional operators, and fast-casual concepts want this marketing and product development flywheel but have no platform to recruit, manage, compensate, and synthesize consumer taster panels at scale.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "SpringPricingPulse",
+    "one_liner": "Hyper-local asking price trend tracker and pricing strategy tool for real estate agents navigating a soft-priced spring market with regional divergence.",
+    "date": "2026-03-12",
+    "the_problem": "Inman's Market View shows asking prices dropping in many parts of the country while the Midwest is simultaneously absorbing homes faster than listings arrive — creating a violently divergent spring market where agents in softening markets are overpricing and agents in hot markets are underpricing. Agents currently rely on CMAs that are backward-looking by 30-60 days, missing the real-time price velocity signal that differentiates a listing that sells in 7 days from one that sits for 60.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "TurnaroundIntelligence",
+    "one_liner": "Restaurant brand turnaround tracking and competitive benchmarking platform that helps operators and investors model which chain recovery strategies are working and apply them to their own concept.",
+    "date": "2026-03-12",
+    "the_problem": "P.F. Chang's turnaround, Krystal's leadership changes, and multiple chain restructurings are all happening simultaneously — and every independent restaurant operator and franchise investor is trying to understand which recovery tactics actually drive results. There is no structured way for operators to track, compare, and extract the specific operational and marketing levers being pulled across chain turnarounds and apply them to their own situation. They're reading NRN articles but can't synthesize patterns across 15 brands at once.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "WealthyTravelerRetention",
+    "one_liner": "Demand intelligence and VIP guest retention platform for luxury independent hotels that models how wealthy travelers reroute — not cancel — during geopolitical shocks, enabling proactive rebooking outreach.",
+    "date": "2026-03-12",
+    "the_problem": "Hyatt's CFO confirmed that wealthy travelers aren't canceling — they're rerouting. But independent luxury boutique hotels lack the CRM intelligence to identify which of their upcoming guests are at rerouting risk, which alternative destinations they might consider, and how to proactively reach out with rebooking offers before those guests rebook at a competitor. Hyatt can do this at the enterprise level; independents are losing high-value guests to competitors who reach out first.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "BreachIdentityGuard",
+    "one_liner": "Proactive bank account and identity theft monitoring tool for consumers whose financial data was exposed in telecom and fintech breaches, with automated resolution workflows.",
+    "date": "2026-03-12",
+    "the_problem": "Six million Odido customers just had bank account details leaked after a ransomware attack, and the Lloyds Bank app incident exposed customer account numbers, sort codes, and spending histories to random strangers. These aren't isolated events — they're accelerating. Affected consumers have no dedicated tool that monitors dark web marketplaces for their specific bank account details, alerts them the moment their data appears for sale, and walks them through the exact resolution steps (account freezes, dispute filing, credit agency alerts) before fraudsters can act. Generic credit monitoring services like Experian catch identity theft after the fact, not when bank data leaks in real time.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "DebtConsolidationRealityCheck",
+    "one_liner": "Behavioral finance-powered debt consolidation analyzer that shows consumers whether a personal loan will actually fix their debt problem or just reset the cycle — with a 12-month cash flow plan either way.",
+    "date": "2026-03-12",
+    "the_problem": "CNBC's coverage explicitly states consumers 'can't borrow their way out of debt' but more are trying — personal loan originations are surging as consumers use them to consolidate high-interest credit card debt. The problem is that without behavioral change, 60-70% of debt consolidation borrowers reaccumulate the same debt within 24 months, now with both the personal loan and new credit card balances. Lenders like Upstart (just applied for a bank charter) are growing fast, but no neutral tool tells borrowers whether consolidation actually makes mathematical and behavioral sense for their specific situation before they apply. Consumers are making $20,000-$50,000 decisions based on interest rate math alone, missing the behavioral trap.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "StaffCoachOS",
+    "one_liner": "A coaching workflow and outcome-tracking platform for K-12 instructional coaches working with non-classroom staff and central office personnel.",
+    "date": "2026-03-12",
+    "the_problem": "NYC just invested heavily in coaching staff outside the classroom — central office cubicle workers, coordinators, and support staff — but the tools for managing these coaching relationships are borrowed from teacher coaching platforms that don't fit the use case. Coaches lack structured goal-setting, session logging, and outcome measurement tools for non-instructional staff, and districts have no way to prove ROI on these coaching investments to school boards and state agencies.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "HigherOrderAssessBuilder",
+    "one_liner": "An AI-powered assessment generator that creates Bloom's Taxonomy upper-level assignments requiring analysis and synthesis that AI tools cannot replicate, helping K-12 and higher ed teachers AI-proof their evaluations.",
+    "date": "2026-03-12",
+    "the_problem": "As AI tools make lower-order thinking tasks trivially completable by students, teachers face urgent pressure to redesign assessments to require genuine human cognition — but most lack the assessment design expertise or time to do this systematically. The EdSurge 'what students gain when teachers grade' article crystallizes the tension: human grading is only worth defending if the assignments themselves require human-quality thinking. There is no tool that helps a time-pressed teacher quickly generate AI-resistant, higher-order thinking assessments calibrated to their specific subject, grade level, and learning objectives.",
+    "primary_domain": "education_edtech"
   }
 ]
