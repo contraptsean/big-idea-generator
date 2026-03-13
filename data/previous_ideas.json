@@ -2702,5 +2702,117 @@
     "date": "2026-03-12",
     "the_problem": "As AI tools make lower-order thinking tasks trivially completable by students, teachers face urgent pressure to redesign assessments to require genuine human cognition — but most lack the assessment design expertise or time to do this systematically. The EdSurge 'what students gain when teachers grade' article crystallizes the tension: human grading is only worth defending if the assignments themselves require human-quality thinking. There is no tool that helps a time-pressed teacher quickly generate AI-resistant, higher-order thinking assessments calibrated to their specific subject, grade level, and learning objectives.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "MarketplaceAutoReply SDK",
+    "one_liner": "White-label AI auto-reply SDK that lets any marketplace or classifieds platform embed Meta-style AI seller response drafting into their listings in under a day.",
+    "date": "2026-03-13",
+    "the_problem": "Meta just shipped AI auto-reply for Facebook Marketplace sellers, instantly raising the bar for every competing classifieds and marketplace platform (OfferUp, Craigslist clones, vertical marketplaces, Shopify second-hand plugins). Competing platforms can't build this in-house quickly, and independent sellers on any platform still have no tool to auto-draft replies using listing context. The market expectation has shifted overnight—sellers who can't auto-reply will look unresponsive by comparison.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "OpenClawMonetize",
+    "one_liner": "Developer monetization and skill marketplace toolkit for indie developers building OpenClaw/agentic AI tools and automations, handling payments, licensing, and distribution.",
+    "date": "2026-03-13",
+    "the_problem": "The MIT Tech Review OpenClaw gold rush story documents developers like Feng Qingyang building lucrative agentic tool businesses from scratch—but monetization, licensing, and distribution infrastructure is completely absent. Developers are selling skills and automations via WeChat groups, Stripe links, and GitHub sponsorships with no structured way to gate access, version-license their tools, or handle enterprise procurement. The OpenClaw/agentic tool ecosystem is at the exact moment the Shopify App Store or Salesforce AppExchange was in year one—before anyone built the commerce layer.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "SSHKeyVault",
+    "one_liner": "Team SSH key lifecycle manager with automated rotation, audit logging, and 1Password/Vault integration for small engineering teams tired of ad-hoc key sprawl.",
+    "date": "2026-03-13",
+    "the_problem": "The Lobsters 'How do you manage SSH keys?' thread reveals that even experienced developers have wildly inconsistent SSH key practices—mixing personal keys across hosts, unclear rotation policies, and no audit trail. For teams of 3-20 engineers, SSH key sprawl is a genuine security liability: ex-employees' keys linger, single keys grant access to everything, and there's no lightweight tool between 'manual ~/.ssh management' and enterprise PAM systems costing $10K+/year. Security incidents from abandoned SSH keys are common but preventable.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "AtlassianExitKit",
+    "one_liner": "Automated Atlassian-to-alternative migration toolkit that exports Jira/Confluence data and translates workflows to Linear, Notion, or GitHub Projects for teams fleeing post-layoff pricing hikes.",
+    "date": "2026-03-13",
+    "the_problem": "Atlassian just cut 1,600 people (10% of workforce) while funneling resources to AI—a move that historically precedes pricing increases, feature deprecations, and product consolidation that makes enterprise customers nervous. Teams using Jira and Confluence are already considering alternatives (Linear, Notion, GitHub Projects) but the migration is painful: custom workflows, thousands of tickets, wiki structures, and integrations don't map cleanly. Every Atlassian pricing shock triggers a wave of migration intent that dies on the complexity of actually doing it.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "GrainlessMind",
+    "one_liner": "Privacy-first writing assistant for journalists and authors that processes text entirely on-device using local LLMs, eliminating the consent and data-rights exposure that just got Grammarly sued.",
+    "date": "2026-03-13",
+    "the_problem": "Julia Angwin's class action lawsuit against Grammarly for using authors' writing to train AI models without consent exposes a massive structural vulnerability: every cloud-based writing AI tool is a potential class action target, and professional writers, journalists, and legal/medical content creators are waking up to the risk. Writers who need grammar, style, and clarity assistance now have no tool they can trust with sensitive or proprietary content—Grammarly, ProWritingAid, and similar tools all send text to cloud servers.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "MacroNutrientOS",
+    "one_liner": "White-label macro-tracking and personalized meal customization platform for fast-casual restaurants wanting to offer Matter-style nutritional transparency without building it from scratch.",
+    "date": "2026-03-13",
+    "the_problem": "Matter restaurant in NYC just validated that consumers will pay premium prices for macro-customized fast-casual meals — but the tech stack behind it (real-time macro calculation, plate builder, customer tracking) requires significant engineering investment that mid-size chains and emerging concepts can't afford to build. GLP-1 culture, fitness culture, and the protein trend are pushing every fast-casual operator to add nutritional transparency, but they're doing it with static PDF menus or clunky third-party nutrition apps that don't integrate with ordering.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "LaborFloor",
+    "one_liner": "Real-time labor cost scenario modeler that helps restaurant operators in minimum wage shock markets instantly see the margin impact of proposed wage hikes and model menu repricing, automation, and staffing adjustments.",
+    "date": "2026-03-13",
+    "the_problem": "NYC's proposed $30 minimum wage — the highest in the US — is creating immediate panic among restaurant operators who have no structured tool to model what this means for their P&L. A QSR with 20 employees at current wages faces a $400K+ annual cost increase at $30/hour, but operators have no fast way to model which combination of menu price increases, headcount reductions, automation, and hours changes keeps them solvent. They're doing this in Excel or calling their accountant, who charges $300/hour.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "SeniorStayCalc",
+    "one_liner": "Financial modeling tool that helps senior homeowners and their advisors compare the true cost of aging-in-place vs. selling and downsizing, factoring in property tax relief eligibility, reverse mortgage options, and long-term care costs.",
+    "date": "2026-03-13",
+    "the_problem": "HousingWire's senior housing bottleneck analysis and New Jersey's proposed property tax relief reduction reveal the same problem: seniors are making a $300K-$1M financial decision — stay or sell — without a comprehensive model. They're weighing mortgage freedom, property tax relief (now threatened in NJ), long-term care needs, home equity access, and emotional attachment simultaneously with no structured tool. Advisors charge $200-500/hour to build these models in Excel for individual clients.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "HomeWarrantyTransparencyKit",
+    "one_liner": "Home warranty comparison and claim success predictor that shows buyers and agents the true coverage gaps, exclusions, and real claim approval rates before selecting a plan.",
+    "date": "2026-03-13",
+    "the_problem": "Inman's 'exploding toilet' piece crystallizes the problem: home warranties are systematically sold to homebuyers without honest disclosure of claim denial rates, exclusion clauses, and out-of-pocket costs that make 'covered' repairs still cost hundreds of dollars. Agents recommend warranties without data on claim outcomes, and buyers discover the coverage gaps only when they need it. The average home warranty costs $500-1,200/year but consumer complaints about denied claims are among the highest in the home services category.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "LocalFranchiseOpsIQ",
+    "one_liner": "Localized operations playbook generator and performance benchmarking tool for Papa Johns-style 'mom-and-pop' pizza and QSR franchisees shifting to community-rooted operating models.",
+    "date": "2026-03-13",
+    "the_problem": "Papa Johns CEO Todd Penegor just publicly declared a strategic shift toward localized, mom-and-pop-style franchise operations — meaning thousands of Papa Johns franchisees need to operationalize 'local' without losing franchise system standards. Franchisees have no tool to identify local marketing opportunities, benchmark their performance against comparable community-focused operators, or build the community integration playbooks (local sponsorships, neighborhood partnerships, staff cultural alignment) that differentiate a mom-and-pop feel at scale. The guidance comes from the C-suite but the execution burden falls entirely on franchisees.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "InvestorLimitComply",
+    "one_liner": "Automated compliance tracking and portfolio management tool for real estate investors navigating the Senate's new 350-property single-family investor ownership cap.",
+    "date": "2026-03-13",
+    "the_problem": "The Senate just passed the ROAD to Housing Act with a hard 350-property cap on single-family investor ownership, with mandatory sale-within-7-years for excess properties. Institutional and large individual investors with 300-400+ properties need immediate portfolio auditing, compliance tracking, and disposition strategy tooling — and so do the property managers, title companies, and lenders serving them. The penalties for non-compliance are severe, but the portfolio management systems most investors use (Yardi, AppFolio) have no compliance module for this new rule type.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "SpouseIRA Optimizer",
+    "one_liner": "A spousal IRA and retirement contribution coordination calculator that shows dual-income and single-income couples exactly how to maximize overlooked tax breaks and employer matches together.",
+    "date": "2026-03-13",
+    "the_problem": "CNBC's advisor feature highlights that spousal IRAs are a widely overlooked tax break that most couples miss entirely. Every 401k and IRA calculator treats each spouse as an independent account, ignoring the cross-household coordination that unlocks thousands in additional tax-advantaged contributions. A couple missing the spousal IRA for even 10 years loses $40,000–$80,000 in tax-sheltered growth at typical market returns.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "DollarStoreSubscriptionKit",
+    "one_liner": "White-label subscription program design and analytics platform for value and discount retailers piloting membership models like Dollar General's new subscription program.",
+    "date": "2026-03-13",
+    "the_problem": "Dollar General just announced a new subscription program pilot alongside a new store format, validating that discount and value retailers are moving to recurring revenue models to stabilize traffic. But mid-market value retailers, regional dollar stores, and independent discount chains that want to replicate this have no affordable tool to design subscription tier structures, model the LTV and churn economics, build the member communication flows, or track whether the subscription is actually driving incremental basket size vs. just discounting existing buyers.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "OpenBankingConsentDash",
+    "one_liner": "A consumer-facing open banking data consent manager and financial data portability dashboard for customers of banks using Plaid, showing exactly which apps have access to their accounts and letting them revoke with one click.",
+    "date": "2026-03-13",
+    "the_problem": "Truist's Plaid partnership expands the number of banks sharing customer financial data with third-party apps via open banking rails — but consumers have no consolidated view of which apps currently have read or write access to their accounts across multiple bank-Plaid connections. The Lloyds Bank data exposure incident (users seeing strangers' accounts) and record UK fraud cases (444,000 in 2025) make this urgent: consumers whose open banking tokens are compromised or mistakenly shared face both privacy violations and fraud exposure. Banks provide buried, per-institution consent management; no tool aggregates and simplifies this across multiple bank connections.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "AITutoringCostAlert",
+    "one_liner": "Real-time AI tutoring and edtech cost monitor that alerts school districts when AI model pricing subsidies end and their per-student AI tool costs are about to spike.",
+    "date": "2026-03-13",
+    "the_problem": "Axios reports that AI companies like OpenAI and Google are currently subsidizing AI model costs and prices will rise significantly post-IPO. School districts have signed multi-year AI tutoring and edtech contracts (Khan Academy Khanmigo, Duolingo, AI writing tools) priced at today's subsidized rates. When AI inference costs rise, vendors will pass costs through in renewal pricing — and districts will have no early warning to renegotiate, budget, or evaluate alternatives before renewal deadlines. A district paying $3/student/month today could face $8-12/student/month at renewal.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "WonderPlayBuilder",
+    "one_liner": "A screen-free play curriculum and parent engagement platform for early childhood educators that generates unstructured play prompts and wonder-based learning activities rooted in child development research.",
+    "date": "2026-03-13",
+    "the_problem": "EdSurge's early education teacher Hema Khatri writes that children need help recapturing wonder in a screen-filled world — and early childhood educators are struggling to design unstructured, imagination-first play experiences with no structured curriculum resources. Pre-K and kindergarten teachers are pressured to show academic rigor, making it harder to justify open-ended play without research-backed rationale and parent communication that explains the developmental value. This creates a real tool gap: structured support for unstructured play.",
+    "primary_domain": "education_edtech"
   }
 ]
