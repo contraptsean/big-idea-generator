@@ -2814,5 +2814,96 @@
     "date": "2026-03-13",
     "the_problem": "EdSurge's early education teacher Hema Khatri writes that children need help recapturing wonder in a screen-filled world — and early childhood educators are struggling to design unstructured, imagination-first play experiences with no structured curriculum resources. Pre-K and kindergarten teachers are pressured to show academic rigor, making it harder to justify open-ended play without research-backed rationale and parent communication that explains the developmental value. This creates a real tool gap: structured support for unstructured play.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "AgentInfraAudit",
+    "one_liner": "Self-service data infrastructure readiness auditor that tells enterprise engineering teams exactly why their AI agents keep failing between pilot and production",
+    "date": "2026-03-14",
+    "the_problem": "MIT Tech Review confirms nearly two-thirds of enterprises are experimenting with AI agents but most stall between pilot and production due to data infrastructure gaps. Teams spend months in $50K consulting engagements to discover what a structured diagnostic tool could surface in hours. There is no affordable, self-service tool that maps agent failures to specific root causes: retrieval quality, context store design, pipeline latency, or governance gaps.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "PhysicalAIDevKit",
+    "one_liner": "SDK and simulation harness for embedded AI engineers building physical AI features into manufacturing, robotics, and consumer hardware without ML infrastructure expertise",
+    "date": "2026-03-14",
+    "the_problem": "MIT Tech Review's 'physical AI is manufacturing's next advantage' and the Pokémon Go/Niantic world model story signal that AI is moving from software to physical systems — but the tooling gap is massive. Product engineers designing AI-enhanced physical systems (factory robots, delivery robots, smart appliances) need to prototype, simulate, and validate AI behavior in physical contexts. They lack the ML background to use PyTorch or TensorFlow and existing embedded AI SDKs are hardware-vendor-locked.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "CrisisRebookPro",
+    "one_liner": "Self-serve flight rebooking and refund rights navigator for travelers stranded during geopolitical crises like the Iran war Middle East disruption.",
+    "date": "2026-03-14",
+    "the_problem": "Skift's coverage reveals airlines are giving inconsistent, chaotic rebooking experiences during the Iran war — long hold times, canceled rebookings, and policy contradictions that leave travelers stranded. OTAs and airlines have flexible policies on paper but customers can't access them without multi-hour waits. Travelers have no tool that tells them exactly what they're entitled to, which airline's policy applies, and how to self-serve a rebook or refund claim without calling a human agent.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "CateringLaunchKit",
+    "one_liner": "Turnkey catering channel setup and local marketing toolkit for independent and mid-size restaurant operators launching or scaling off-premise catering like IHOP.",
+    "date": "2026-03-14",
+    "the_problem": "IHOP is bolstering its catering channel with proprietary packaging and local store marketing toolkits — a move NRN covered because chains are finding catering is a high-margin, underutilized revenue stream. Independent and regional chain operators know catering is valuable but lack the operational playbooks, packaging specs, local marketing templates, and order management workflows to launch it without months of internal work. A failed catering launch leaves operators with unsold packaging inventory and no customers.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "LuxuryRerouteIQ",
+    "one_liner": "Proactive guest rerouting and rebooking intelligence platform for independent luxury lodges and boutique hotels serving travelers disrupted by Middle East conflict cancellations.",
+    "date": "2026-03-14",
+    "the_problem": "Beckons and Minor International's Skift coverage confirms luxury travelers aren't canceling — they're rerouting. But independent luxury lodge and boutique hotel operators lack the CRM intelligence to identify which upcoming guests have Middle East origin itineraries at risk, model which alternative destinations they might consider, and proactively reach out with rebooking offers before those guests land at a competitor property. Enterprise chains have crisis management systems; independent luxury operators are manually fielding cancellation calls.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "PermitPathIQ",
+    "one_liner": "AI-powered regulatory barrier audit and permit timeline tracker for small homebuilders trying to navigate Trump's new executive order reducing federal environmental and permitting restrictions.",
+    "date": "2026-03-14",
+    "the_problem": "Trump's executive order directs multiple federal agencies to reduce environmental, permitting, and programmatic restrictions on homebuilding — but small and mid-size homebuilders have no structured way to determine which specific federal regulations now apply to their jurisdiction, which restrictions have been eased, or how to update their permitting workflows to capitalize on the changes. The order creates opportunity but also compliance ambiguity: a builder who misinterprets the new rules faces project delays or legal exposure.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "GenZTravelIntel",
+    "one_liner": "Travel demand research and product repositioning platform that helps hospitality operators and DMOs adapt to Gen Z travel behavior shifts revealed by Skift's new research.",
+    "date": "2026-03-14",
+    "the_problem": "Skift's podcast and India summit coverage explicitly references new research showing Gen Z may force the travel industry to rethink major assumptions — but individual hotel operators, boutique travel brands, and destination marketers have no affordable tool to access and apply this research to their specific product. They're reading Skift headlines but can't translate 'Gen Z wants X' into specific room configuration, pricing, or marketing changes for their property. Poor Gen Z positioning means losing the highest-LTV traveler cohort of the next 20 years.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "TikTokShopLaunchKit",
+    "one_liner": "Turn-key TikTok Shop onboarding and catalog sync platform that helps beauty, fashion, and specialty retailers launch shoppable content in under 48 hours.",
+    "date": "2026-03-14",
+    "the_problem": "Ulta's TikTok Shop launch signals that the platform is now a serious retail channel — but mid-market and indie beauty/fashion brands have no streamlined way to sync their existing Shopify/WooCommerce catalog to TikTok Shop, comply with content moderation rules, and track which videos are driving actual purchases. Setting this up manually takes 2-3 weeks of dev time and constant re-syncing as inventory changes. The window to be an early-mover on TikTok Shop closes fast as major brands flood the platform.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "GreatWealthTransferAdvisor",
+    "one_liner": "Financial planning and investment coordination platform that helps women 55+ who are inheriting spousal assets navigate the Great Wealth Transfer without losing value to bad decisions in the first 12 months.",
+    "date": "2026-03-14",
+    "the_problem": "CNBC's coverage of the $54 trillion Great Wealth Transfer confirms most of it flows to widowed women — who statistically have lower financial literacy and fewer advisor relationships than their spouses had. The critical window is the first 12 months after inheriting: tax elections, RMD decisions, beneficiary designations, and rollover choices made in grief without guidance routinely cost inheritors $50,000-$200,000. No consumer tool is purpose-built for this transition moment, and fee-only advisors are expensive and often male-dominated.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "TaxRefundSpeedFixer",
+    "one_liner": "Automated IRS paper check delay resolver that helps the 830,000+ filers stuck with CP53E notices switch to direct deposit and track their refund status in under 5 minutes.",
+    "date": "2026-03-14",
+    "the_problem": "The IRS shift away from paper checks is causing refund delays for 830,000+ filers who chose paper check payment — but most don't understand what the CP53E notice means, what to do next, or how to update their payment method for future filings. Average IRS refunds are up 10.6% this year, meaning there's more money at stake. The IRS website is notoriously confusing, hold times are 45-90 minutes, and consumers are anxiously waiting on refunds they need to pay bills. The gap between the CP53E notice and actual resolution currently takes weeks.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "FraudScapeMonitor",
+    "one_liner": "Real-time UK business fraud risk monitor and employee identity verification toolkit that helps SMEs avoid becoming fraud victims in the record 444,000-case UK fraud environment.",
+    "date": "2026-03-14",
+    "the_problem": "Cifas reported 444,000 fraud cases in the UK National Fraud Database in 2025 — a record high. The majority of fraud now targets businesses through first-party fraud (employees using company credit, false insurance claims) and third-party application fraud. SMEs with 5-50 employees have no affordable tool to monitor their business accounts, verify new employee identities against the Cifas database, flag anomalous spending patterns, or receive alerts when their company details appear in fraud rings. Enterprise fraud tools like CIFAS Business Memberships cost £3,000-10,000/year and target large financial institutions.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "AITutoringCostAlert",
+    "one_liner": "Real-time AI edtech cost monitoring and renewal alert platform that warns K-12 districts before subsidized AI tool pricing expires and per-student costs spike at contract renewal.",
+    "date": "2026-03-14",
+    "the_problem": "AI companies are currently subsidizing model costs and prices will rise significantly post-IPO and post-growth phase. School districts have signed multi-year AI tutoring and edtech contracts priced at today's subsidized rates — Khanmigo, Duolingo, AI writing tools — with no visibility into true long-run cost exposure. When inference costs rise, vendors pass them through at renewal, and districts have no early warning system to renegotiate, budget alternatives, or evaluate substitutes before deadlines hit.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "StaffCoachOS",
+    "one_liner": "Coaching workflow and outcome-tracking platform for K-12 instructional coaches managing non-classroom staff and central office personnel.",
+    "date": "2026-03-14",
+    "the_problem": "NYC just invested heavily in coaching staff outside the classroom — central office workers, coordinators, and support staff — but the tools for managing these coaching relationships are borrowed from teacher coaching platforms that don't fit the use case. Coaches lack structured goal-setting, session logging, and outcome measurement tools for non-instructional staff, and districts have no way to prove ROI on these coaching investments to school boards and state agencies demanding accountability for every budget dollar.",
+    "primary_domain": "education_edtech"
   }
 ]
