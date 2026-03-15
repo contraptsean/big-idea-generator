@@ -2905,5 +2905,75 @@
     "date": "2026-03-14",
     "the_problem": "NYC just invested heavily in coaching staff outside the classroom — central office workers, coordinators, and support staff — but the tools for managing these coaching relationships are borrowed from teacher coaching platforms that don't fit the use case. Coaches lack structured goal-setting, session logging, and outcome measurement tools for non-instructional staff, and districts have no way to prove ROI on these coaching investments to school boards and state agencies demanding accountability for every budget dollar.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "NyneContext SDK",
+    "one_liner": "A drop-in personal and organizational context layer that enriches AI agent prompts with structured human context (goals, preferences, relationships, constraints) for developers building production agentic apps.",
+    "date": "2026-03-15",
+    "the_problem": "Nyne's $5.3M raise validates that AI agents systematically fail because they lack the human context needed to make good decisions — they know facts but not preferences, relationships, or intent. Developers building agents today have to manually stitch together user profile data, inject it into system prompts, and rebuild this from scratch for every project. There is no standard, reusable SDK for attaching structured human context to agent invocations across Claude, GPT, and open models.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "Slop Filter",
+    "one_liner": "A tree-style invite and reputation system SDK that helps developer communities, forums, and OSS projects reduce AI-generated low-quality content without banning AI outright.",
+    "date": "2026-03-15",
+    "the_problem": "The Lobsters 'tree-style invite systems reduce AI slop' post directly documents a real and growing problem: developer communities are being flooded with AI-generated low-quality posts, PRs, and comments that burn out maintainers and degrade signal quality. Existing moderation tools (keyword filters, spam classifiers) don't catch sophisticated AI slop. The matplotlib maintainer harassment case from MIT Tech Review shows this is escalating from annoyance to existential threat for OSS communities.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "AgentDockerKit",
+    "one_liner": "A zero-config scaffold and packaging toolkit that lets developers containerize and deploy OpenClaw/NanoClaw agentic AI tools to Docker Hub with automated sandboxing, permissions manifests, and version pinning.",
+    "date": "2026-03-15",
+    "the_problem": "NanoClaw's Docker partnership and the OpenClaw gold rush (MIT Tech Review) signal that agentic tool distribution via container registries is becoming the standard — but indie developers building these tools have no standardized way to package their agents with proper sandboxing, capability declarations, and security manifests. A poorly sandboxed OpenClaw tool running as root in a Docker container is a security incident waiting to happen, and Docker's default images have no agent-specific permission model.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "RustAICompat",
+    "one_liner": "Automated AI-assisted code audit and migration toolkit for Rust library maintainers assessing compatibility with free-threaded Python and evaluating AI coding tool safety for their codebase.",
+    "date": "2026-03-15",
+    "the_problem": "The Lobsters 'Rust Project Perspectives on AI' summary reveals active community debate: Rust maintainers are grappling with whether AI-generated code meets Rust's safety guarantees and how to evaluate AI contributions without burning out reviewers. Simultaneously, Python's free-threaded build (no GIL) is coming and Rust-backed Python extensions (PyO3-based packages) need thread-safety audits. Maintainers face two intertwined problems — AI code quality in a safety-critical language and thread-safety for the new Python build — with no automated tooling for either.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "RateVolatilityLock",
+    "one_liner": "A personalized mortgage rate lock timing tool that tells homebuyers exactly when to lock given real-time 10-year yield movements, spread widening signals, and their specific loan scenario.",
+    "date": "2026-03-15",
+    "the_problem": "Rates surged from sub-6.25% to 6.41% in a single week as Treasury spreads worsened — a move costing a borrower on a $500K loan roughly $30K over 30 years if they missed the window. Homebuyers and loan officers have no tool that translates 10-year yield movements, MBS spread data, and geopolitical volatility into a plain-English 'lock now vs. float' recommendation calibrated to their specific loan amount, rate, and close date. Generic rate alerts from Bankrate don't model spread compression, lock fees, or time-to-close risk.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "CasualDiningRecoveryOS",
+    "one_liner": "A restaurant turnaround intelligence and operational benchmarking platform that helps casual dining operators identify which recovery tactics are driving results across struggling chains and apply them to their own concept.",
+    "date": "2026-03-15",
+    "the_problem": "NRN's March 2026 issue dives into casual dining recovery as a central industry theme — P.F. Chang's, Cracker Barrel, and Golden Corral are all executing simultaneous turnaround strategies with no shared intelligence layer. Independent casual dining operators and small franchisees watching these chains are trying to identify which specific levers (menu simplification, snack tiers, loyalty changes, value anchoring) actually drive traffic recovery, but they're reading articles without a tool to synthesize patterns. A wrong turnaround bet costs $200K-$500K in menu reprinting, staffing changes, and wasted marketing spend.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "TariffRefundClaim OS",
+    "one_liner": "Automated IEEPA tariff overpayment claim filing and documentation assistant for e-commerce brands and importers navigating CBP's new 4-step refund process.",
+    "date": "2026-03-15",
+    "the_problem": "CBP just detailed a 4-step IEEPA tariff refund process, and a Costco customer class action is already seeking consumer-level tariff refunds — signaling a wave of claims activity. E-commerce brands, importers, and even individual retailers who passed tariff costs to consumers have no structured tool to document their overpayments, generate the required CBP evidence packages, and track refund claim status. Most are using spreadsheets and calling customs brokers at $300/hour to figure out eligibility.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "ChatGPTCreditCompare",
+    "one_liner": "White-label ChatGPT plugin and API toolkit that lets UK and US financial brands launch their own AI-native credit comparison and financial product discovery tools inside ChatGPT, following Experian's playbook.",
+    "date": "2026-03-15",
+    "the_problem": "Experian just launched a postcode-based credit score comparison tool directly inside ChatGPT, validating that financial brands can reach consumers at the point of conversational AI query. But only enterprise-tier credit bureaus have the engineering resources to build custom ChatGPT plugins — smaller fintechs, credit unions, mortgage lenders, and comparison platforms have no turnkey way to deploy their financial product data inside conversational AI interfaces. The consumer shift to asking ChatGPT for financial product recommendations is happening now, and brands without presence in that channel are invisible.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "ScreenPolicyOS",
+    "one_liner": "Implementation, compliance tracking, and parent communication platform that helps K-12 schools design and enforce screen-free and phone-free policies aligned with emerging state legislation.",
+    "date": "2026-03-15",
+    "the_problem": "State legislators are now pushing screen-free mandates that go beyond phone bans to cover all classroom devices — a far more complex policy to implement than phone confiscation. Schools must define 'screen-free' by subject, grade, and time of day, communicate policies to parents and staff, generate audit trails for state agencies, and handle IEP/ADA exceptions. Non-compliance risks loss of state funding, parent litigation, and regulatory scrutiny, yet no affordable tool manages this end-to-end.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "MindBridgeSchool",
+    "one_liner": "A FERPA-compliant AI mental health check-in platform that captures student emotional disclosures and routes at-risk teens to school counselors before crises escalate.",
+    "date": "2026-03-15",
+    "the_problem": "EdSurge confirms teens are already confiding in AI tools like ChatGPT for emotional support at massive scale, but schools have zero visibility into these interactions and no structured intake pathway. School counselors are overwhelmed and missing early warning signs entirely. There is no FERPA-compliant, school-deployable tool that bridges AI-assisted emotional disclosure and routes at-risk students to human intervention with documented triage trails that satisfy duty-of-care requirements.",
+    "primary_domain": "education_edtech"
   }
 ]
