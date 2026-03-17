@@ -1,80 +1,5 @@
 [
   {
-    "name": "ComplianceGuard",
-    "one_liner": "Automated robots.txt and copyright notice generator for news publishers blocking AI scrapers while preserving archive access",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "PromptPulse",
-    "one_liner": "Real-time collaborative prompt engineering workspace with version control and A/B testing for AI teams building LLM-powered products",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "RepoRadar",
-    "one_liner": "GitHub repository monitoring tool that tracks when your dependencies or starred projects get acquired, sunset, or relicense unexpectedly",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "ContactCenterAI Marketplace",
-    "one_liner": "Curated marketplace of pre-built AI agent scripts and workflows for contact centers using platforms like Scala, Zendesk, and Intercom",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "ShieldScope",
-    "one_liner": "AI-powered vulnerability scanner and compliance dashboard for defense tech startups navigating complex military procurement requirements",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "EmbedSearch",
-    "one_liner": "Embeddable semantic search widget for SaaS docs and help centers, powered by vector databases, that actually understands what users are asking",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "PitchForge",
-    "one_liner": "AI-powered pitch deck generator that creates investor-ready presentations in under 3 hours using proven templates and your startup data",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "SlackDigest",
-    "one_liner": "AI-powered Slack summarization tool that turns chaotic threads into structured daily digests for managers and remote teams",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "VideoVerify",
-    "one_liner": "Blockchain-timestamped video verification tool that proves footage hasn't been AI-manipulated, for journalists and legal teams",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "ArchiveMyData",
-    "one_liner": "Dead-simple personal data backup service that writes your photos, docs, and code to archival-grade M-Discs and ships them to you annually",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "ClawHub Scanner",
-    "one_liner": "Security scanner and marketplace reputation system for OpenClaw skills, preventing developers from installing malicious or credential-leaking agent extensions",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "M-Disc Backup Service",
-    "one_liner": "Managed archival backup service that writes your critical data to M-Disc optical media and ships it to you annually, offering 1,000-year durability for $199/year",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "FaceShield",
-    "one_liner": "Browser extension that detects when websites are using facial recognition or biometric tracking and lets you block it with one click",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "Indie Hacker CFO",
-    "one_liner": "AI-powered financial dashboard for indie SaaS founders that automates bookkeeping, cash flow forecasting, and investor-ready financials for $49/month",
-    "date": "2026-02-14"
-  },
-  {
-    "name": "TrumpToolkit",
-    "one_liner": "Pre-built compliance and monitoring tools for startups navigating Trump administration policy changes, from ICE risk assessment to FTC content review workflows",
-    "date": "2026-02-14"
-  },
-  {
     "name": "CerebrasCompare",
     "one_liner": "Real-time cost and latency comparison tool for AI inference providers that shows developers exactly which platform (Cerebras, Nvidia Blackwell, AMD, etc.) is cheapest and fastest for their specific workload",
     "date": "2026-02-15"
@@ -2974,6 +2899,125 @@
     "one_liner": "A FERPA-compliant AI mental health check-in platform that captures student emotional disclosures and routes at-risk teens to school counselors before crises escalate.",
     "date": "2026-03-15",
     "the_problem": "EdSurge confirms teens are already confiding in AI tools like ChatGPT for emotional support at massive scale, but schools have zero visibility into these interactions and no structured intake pathway. School counselors are overwhelmed and missing early warning signs entirely. There is no FERPA-compliant, school-deployable tool that bridges AI-assisted emotional disclosure and routes at-risk students to human intervention with documented triage trails that satisfy duty-of-care requirements.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "NemoClaw Security Auditor",
+    "one_liner": "Automated security policy scanner and compliance checker for enterprise AI agent deployments built on OpenClaw/NemoClaw/NanoClaw platforms",
+    "date": "2026-03-17",
+    "the_problem": "Nvidia's NemoClaw launch confirms that enterprise AI agent security is the critical unsolved problem — the original OpenClaw went viral precisely because it had no security model. Enterprise teams deploying agentic AI are flying blind: no tool audits what capabilities their agents have claimed, what data they can access, or whether their NemoClaw/OpenClaw configuration exposes sensitive systems. A misconfigured agent with broad device access is a serious security incident waiting to happen.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "AgentMarketKit",
+    "one_liner": "White-label AI agent marketplace infrastructure SDK that lets SaaS platforms (like Picsart) launch their own agent hiring and orchestration marketplace without building the commerce and orchestration layer from scratch",
+    "date": "2026-03-17",
+    "the_problem": "Picsart's agent marketplace launch signals that every major SaaS product will soon want to offer users a way to 'hire' AI agents for specialized tasks — but building the agent discovery, onboarding, payment metering, capability routing, and session management infrastructure is a 3-6 month engineering project per platform. The market is moving fast and second-movers will need turnkey infrastructure to avoid being left behind.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "SpecToCode Validator",
+    "one_liner": "Developer tool that automatically validates whether a natural language spec is sufficiently detailed to generate correct, deterministic code — catching ambiguity before an LLM produces wrong implementations",
+    "date": "2026-03-17",
+    "the_problem": "The Lobsters 'a sufficiently detailed spec is code' post crystallizes a real and growing developer pain: LLM code generation fails not because models are bad but because specs are ambiguous. Developers using Claude Code, Cursor, or GPT-5.4 for serious coding are discovering that underspecified prompts produce plausible-but-wrong implementations that pass superficial review. There is no tool that tells a developer 'your spec has 4 critical ambiguities that will produce divergent outputs' before they run it through an LLM.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "JobScamShield",
+    "one_liner": "Real-time job posting scam detection and employer verification tool for developers and tech workers actively job hunting",
+    "date": "2026-03-17",
+    "the_problem": "The Lobsters 'try not to get scammed while looking for work' post signals that developer job scams — fake recruiters, credential-harvesting interviews, fake offer letters — are epidemic in 2026 as mass tech layoffs (Atlassian cutting 10%, Block's 4,000 layoffs) flood the market with desperate job seekers. Scammers specifically target developers because they're highly paid and assume a technical interview process means the offer is legitimate. There is no browser extension or tool that automatically cross-references job postings, recruiter LinkedIn profiles, and company registration data against scam databases before a developer invests time in a fake opportunity.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "GalerapSentinel",
+    "one_liner": "Automated consistency and fault tolerance testing harness for MariaDB Galera Cluster deployments that replicates Jepsen-style analysis without requiring distributed systems PhD expertise",
+    "date": "2026-03-17",
+    "the_problem": "The Jepsen analysis of MariaDB Galera Cluster 12.1.2 published on Lobsters confirms ongoing real-world consistency bugs in one of the most widely deployed multi-primary database clusters — yet running a full Jepsen analysis requires significant expertise and infrastructure most teams don't have. Developers and DBAs running Galera in production have no affordable, automated way to continuously test their cluster's actual consistency behavior under failure scenarios before a production incident reveals the bugs Jepsen finds.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "InsurabilityIQ",
+    "one_liner": "Pre-listing home insurability score and quote aggregator that tells sellers, buyers, and agents whether a property is insurable before going under contract in climate-risk markets.",
+    "date": "2026-03-17",
+    "the_problem": "Rhino's DealShield launch in California confirms that uninsurable properties are killing real estate transactions—buyers discover insurability problems at the last mile, after spending on inspections, appraisals, and attorney fees. In California, Florida, and other high-climate-risk states, the inability to obtain homeowners insurance is now a top deal-killer that neither agents nor buyers anticipate. No affordable, pre-listing tool surfaces insurability risk before the transaction is in motion.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "LiveLocalOps",
+    "one_liner": "Zoning compliance and affordable housing development permit tracker for Florida developers and property owners navigating Live Local Act 4.0 pre-emption rules.",
+    "date": "2026-03-17",
+    "the_problem": "Florida's Live Local Act has now been rewritten three times in three years, with Live Local 4.0 expanding state pre-emption of local zoning rules in new ways. Developers, property owners, and housing advocates are confused about which provisions apply to which property types, what density bonuses are now available, and how to navigate conflicts between state pre-emption and local ordinances. Missing an applicable Live Local provision costs developers months of delay and tens of thousands in unnecessary permitting fees.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "ConsistencyOS for Agents",
+    "one_liner": "CRM-agnostic client touchpoint scheduler and accountability dashboard that helps real estate agents build the systematic follow-through habits that separate top producers from the pack.",
+    "date": "2026-03-17",
+    "the_problem": "HousingWire's research explicitly identifies that top agents are differentiated by consistent client systems and follow-through—not volume. Yet 80% of agents have no structured system for post-close follow-up, anniversary touches, market update cadences, or sphere-of-influence nurturing. They rely on memory or expensive CRMs they don't fully use, and the consistency gaps cost them repeat and referral business that should be their highest-ROI lead source.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "PreviewListingPulse",
+    "one_liner": "Private and pre-market listing intelligence dashboard for buyers and agents tracking Zillow Preview, Compass Private Exclusives, and Washington-state public marketing compliance in one feed.",
+    "date": "2026-03-17",
+    "the_problem": "Zillow Preview, Compass Private Exclusives, and Washington's new public marketing law are simultaneously fragmenting and restructuring how listings move to market. Buyers' agents have no consolidated tool to track pre-market listings across these competing platforms and simultaneously monitor compliance with state public-marketing requirements. Buyers lose deals to listings they never see; agents are confused about their legal obligations as state laws diverge.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "AIChatbotMenuPilot",
+    "one_liner": "White-label agentic AI chatbot platform for independent and mid-size restaurant operators to deploy Papa Johns/Burger King-style AI ordering, FAQ, and loyalty assistants without enterprise build costs.",
+    "date": "2026-03-17",
+    "the_problem": "NRN's Tech Tracker explicitly identifies AI chatbots as the next frontier in restaurant technology, with Burger King, Papa Johns, and Olo deploying agentic AI for ordering and operations. But these are enterprise builds costing $200K-$1M+ that independent operators and small chains can't replicate. Operators are losing customer engagement, order accuracy, and loyalty interaction opportunities to chains that have deployed AI assistants—with no affordable path to catch up.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "PyusdMerchantKit",
+    "one_liner": "Turn-key PYUSD and stablecoin payment acceptance toolkit for Shopify and WooCommerce merchants wanting to accept PayPal's stablecoin across 70 markets without custom dev work.",
+    "date": "2026-03-17",
+    "the_problem": "PayPal's PYUSD expansion to 70 markets and Mastercard's $1.8B BVNK acquisition mean stablecoin payments are becoming a real merchant channel within 12 months — but mid-market e-commerce merchants on Shopify, WooCommerce, and BigCommerce have zero plug-and-play tooling to accept PYUSD, reconcile stablecoin receipts against fiat ledgers, or handle cross-border stablecoin settlement reporting. Setting this up via raw API requires understanding wallet management, on-chain confirmation logic, fiat conversion timing, and tax treatment simultaneously — a 4-6 week dev project. Merchants who can't accept stablecoin will be invisible to the growing segment of crypto-native international buyers PayPal is explicitly targeting.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "RetailVoiceFraudShield",
+    "one_liner": "Real-time voice fraud detection and call authentication platform for e-commerce and retail contact centers that stops AI-cloned voice attacks before they drain accounts or approve fraudulent returns.",
+    "date": "2026-03-17",
+    "the_problem": "Retail Dive's sponsored coverage explicitly names voice fraud as retail's fastest-growing threat — fraudsters are using AI voice cloning to impersonate customers, approve fraudulent returns, and override account locks at scale. Mid-market retailers with phone-based customer service have no real-time tool to detect AI-generated voice calls, score call authenticity, or flag anomalous account-access patterns during a live call. Enterprise fraud platforms cost $50K+/year; a fraudulent return approval on a $500 item costs the retailer $600+ when factoring in shipping and restocking. At scale, voice fraud is destroying retail margins faster than shoplifting.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "StagflationPortfolioGuard",
+    "one_liner": "Personal finance scenario modeler that shows consumers exactly how stagflation, oil price shocks, and frozen Fed rates affect their specific savings, debt, and investment mix — with plain-English action steps.",
+    "date": "2026-03-17",
+    "the_problem": "CNBC is running explicit stagflation warnings tied to the Iran war oil spike, but the 167%+ surge in new retail investors since 2020 has no personalized tool to understand what stagflation actually means for their specific situation. Generic articles say 'stagflation is bad' without telling a user whether their 60/40 ETF portfolio is exposed, whether their variable-rate HELOC is about to spike, or whether their CD rate will underperform inflation for 3 years. Financial advisors charge $300/hour for this scenario analysis; robo-advisors rebalance silently without explaining why.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "SmartReturnsIQ",
+    "one_liner": "Returns inventory intelligence and VIP customer segmentation platform that helps mid-market e-commerce retailers implement tiered return policies that protect margins on high-value customers while reducing return fraud.",
+    "date": "2026-03-17",
+    "the_problem": "Retail Dive's coverage explicitly states returns are 'rewriting the rules of inventory agility' and that retailers are beginning to tailor return policies for highest-value customers — but mid-market retailers on Shopify and Magento have no affordable tool to identify which customers are high-LTV vs. return-abusers, model the margin impact of tiered return policies, or automate different return flows by customer segment. A single serial returner can cost a retailer $200-400/year in reverse logistics while appearing profitable on GMV alone. Enterprise retailers use custom RMS systems; indie retailers eat the losses.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "TariffDividendTracker",
+    "one_liner": "Automated tariff dividend check eligibility calculator and application assistant that tells consumers exactly how much they might receive and guides them through claiming it before the program launches.",
+    "date": "2026-03-17",
+    "the_problem": "CNBC reports a bipartisan push for $2,000 tariff dividend checks is gaining momentum, but the program mechanics — income thresholds, household eligibility, filing requirements — are still being debated and will be confusing when they land. Millions of eligible households will fail to claim or underclaim their dividend because there's no consumer-facing tool that calculates their specific household eligibility, estimates their payment amount, and guides them through the claim process. The Earned Income Tax Credit loses $15B+ per year in unclaimed benefits for the same reason — complexity and lack of guided tools.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "PathwayConnect",
+    "one_liner": "A community partnership and project management platform that helps K-12 districts build, track, and scale real-world career pathway programs with local employers.",
+    "date": "2026-03-17",
+    "the_problem": "Districts building real-world career pathways are managing employer partnerships, student project assignments, outcome tracking, and compliance reporting in spreadsheets and email threads. The coordination overhead between schools, community clients, and district administrators is enormous and unscalable. Without structured tooling, programs stay small pilots instead of district-wide initiatives — and federal CTE funding reporting requirements add compliance complexity.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "WonderPlayBuilder",
+    "one_liner": "A screen-free play curriculum and parent engagement platform for early childhood educators that generates unstructured play prompts and wonder-based learning activities rooted in child development research.",
+    "date": "2026-03-17",
+    "the_problem": "EdSurge's early education teacher Hema Khatri and neuroscientist Jared Cooney Horvath are building mainstream momentum for reducing classroom technology dependence — but early childhood educators who want to implement analog-first, wonder-based instruction have no structured resource to do so efficiently. Designing hands-on, screen-free activities from scratch takes 2-4 hours per lesson, and teachers are pressured to show academic rigor, making it hard to justify open-ended play without research-backed rationale and parent communication that explains developmental value.",
     "primary_domain": "education_edtech"
   }
 ]
