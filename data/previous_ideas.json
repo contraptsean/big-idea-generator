@@ -1,40 +1,5 @@
 [
   {
-    "name": "CerebrasCompare",
-    "one_liner": "Real-time cost and latency comparison tool for AI inference providers that shows developers exactly which platform (Cerebras, Nvidia Blackwell, AMD, etc.) is cheapest and fastest for their specific workload",
-    "date": "2026-02-15"
-  },
-  {
-    "name": "IoTHawk",
-    "one_liner": "Consumer security scanner that checks your smart home devices for open MQTT brokers and publicly exposed APIs, then guides you through fixing them before hackers find them",
-    "date": "2026-02-15"
-  },
-  {
-    "name": "BotBlocker",
-    "one_liner": "Automated CAPTCHA and bot-detection monitoring tool that alerts website owners when AI scrapers or malicious bots bypass their defenses",
-    "date": "2026-02-15"
-  },
-  {
-    "name": "WebMCP Studio",
-    "one_liner": "Visual tool that lets developers turn their website's JavaScript functions into AI-agent-callable tools by wrapping them in WebMCP schemas—no backend rewrite required",
-    "date": "2026-02-15"
-  },
-  {
-    "name": "SubpoenaShield",
-    "one_liner": "Automated GDPR/data request responder for social media users that generates legally compliant responses to government subpoenas asking platforms to reveal your identity",
-    "date": "2026-02-15"
-  },
-  {
-    "name": "BlackwellBench",
-    "one_liner": "AI inference cost calculator and ROI forecaster that tells enterprises whether switching to Nvidia Blackwell infrastructure will actually save them money based on their current workload and usage patterns",
-    "date": "2026-02-15"
-  },
-  {
-    "name": "FacialPrivacyMonitor",
-    "one_liner": "Browser extension and mobile app that detects when websites or apps are using facial recognition or biometric tracking and blocks it with one click—also alerts you when your face appears in publicly accessible facial recognition databases",
-    "date": "2026-02-15"
-  },
-  {
     "name": "MemoryChip",
     "one_liner": "Personal data backup service that writes your critical files to M-Disc optical media and ships them to you annually for 1,000-year storage",
     "date": "2026-02-16"
@@ -3018,6 +2983,97 @@
     "one_liner": "A screen-free play curriculum and parent engagement platform for early childhood educators that generates unstructured play prompts and wonder-based learning activities rooted in child development research.",
     "date": "2026-03-17",
     "the_problem": "EdSurge's early education teacher Hema Khatri and neuroscientist Jared Cooney Horvath are building mainstream momentum for reducing classroom technology dependence — but early childhood educators who want to implement analog-first, wonder-based instruction have no structured resource to do so efficiently. Designing hands-on, screen-free activities from scratch takes 2-4 hours per lesson, and teachers are pressured to show academic rigor, making it hard to justify open-ended play without research-backed rationale and parent communication that explains developmental value.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "BenchLock",
+    "one_liner": "A private, self-hostable LLM benchmarking and regression testing platform that lets AI product teams run their own Arena-style head-to-head model evaluations on proprietary tasks",
+    "date": "2026-03-18",
+    "the_problem": "The TechCrunch piece on Arena/LM Arena reveals that the entire AI industry's model selection decisions are being driven by PhD students running public preference benchmarks — but those benchmarks measure generic capability, not performance on a specific product's tasks. An enterprise choosing between GPT-5.4 and Claude for their legal document review tool has no structured way to run head-to-head evaluations on their actual data, with their actual prompts, and get statistical confidence in which model wins. They're making $100K+/year API spend decisions based on leaderboards built for generic chatbot vibes.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "LLMLeaderAssist",
+    "one_liner": "A private evaluation-as-a-service that helps AI product teams build custom human preference evaluation panels for their specific use case, replicating the Arena methodology on proprietary data",
+    "date": "2026-03-18",
+    "the_problem": "The TechCrunch Arena piece reveals that Arena's influence on funding, product launches, and PR cycles is massive — but its methodology (anonymous human preference voting) is being applied to generic conversational tasks. AI product teams building vertical applications (medical, legal, coding, customer support) can't run their own version of this because they lack the infrastructure to recruit domain-specific evaluators, manage blind A/B comparison sessions, and compute Elo ratings with statistical confidence. They're either using Arena's generic results or spending $50K+ on research firms.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "SelfHostStack",
+    "one_liner": "A curated, one-click self-hosting deployment platform that lets developers replace SaaS subscriptions with self-hosted open-source alternatives on their own VPS or homelab",
+    "date": "2026-03-18",
+    "the_problem": "The Lobsters 'Self-Host and Tech Independence' post and the Changelog's recurring self-hosting enthusiasm signal a genuine, growing movement of developers who want to reduce SaaS dependency — but the activation energy to actually self-host is high. Choosing the right tool, configuring Docker Compose correctly, setting up reverse proxies, managing backups, and handling upgrades takes 4-8 hours per app. Most developers who want to self-host get stuck at configuration and give up, returning to SaaS tools they philosophically reject. There is no opinionated, guided platform that makes the first self-hosted app as easy as clicking 'install' on the App Store.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "MediterraneanDemandPulse",
+    "one_liner": "Real-time alternative destination demand surge tracker and dynamic pricing advisor for independent hotels in Europe, Morocco, and Latin America capturing UAE travel displacement",
+    "date": "2026-03-18",
+    "the_problem": "Skift reports European Mediterranean, Morocco, and Latin American properties are absorbing a wave of diverted UAE-bound travelers — but independent hotels in Nice, Lisbon, Marrakech, and Cartagena have no tool to detect this demand surge arriving in their market in real time and reprice before the surge dissipates. They're watching occupancy spike reactively while chains with revenue management systems captured the yield days earlier.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "ThreePctPricer",
+    "one_liner": "AI-powered price cut timing and depth optimizer that tells sellers and listing agents exactly when and how much to reduce to hit the 3% sweet spot driving fastest absorption",
+    "date": "2026-03-18",
+    "the_problem": "HousingWire's data shows 3% price cuts on $350K-$650K homes are producing materially faster absorption than larger or smaller reductions — but agents advising sellers on price cuts are doing so with gut instinct and backward-looking CMAs, not real-time absorption data calibrated to this specific finding. Sellers who cut 5% instead of 3% leave equity on the table; those who cut 1% sit on the market. In a divergent spring market, mispriced reductions cost agents deals and sellers money.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "BuildToRentPerksOS",
+    "one_liner": "Bundled amenity and fee transparency management platform for build-to-rent operators replacing rent concessions with experience-based retention strategies",
+    "date": "2026-03-18",
+    "the_problem": "Inman's coverage shows BTR operators are pivoting from rent cuts to bundled services, smarter pricing, and fee transparency to retain renters — but executing this operationally requires managing dynamic amenity bundles, communicating fee structures clearly, and tracking which perks drive renewal intent across hundreds of units. Most operators are stitching this together in Excel and property management software not designed for amenity bundling.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "ApplebeeDigitalOS",
+    "one_liner": "AI-powered digital and social media marketing content platform for casual dining operators shifting budget from TV to digital for the first time",
+    "date": "2026-03-18",
+    "the_problem": "Applebee's just announced 2026 is the first year more of its marketing budget goes to digital and social than TV — a transition that is simultaneously happening at dozens of casual dining chains. But operators and their marketing teams have no muscle memory or tooling for digital-first restaurant marketing: they don't know how to build content calendars, allocate budget across platforms, measure ROAS on social spend, or create the volume of social content needed to replace TV's reach.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "LatAmTravelPricer",
+    "one_liner": "Dynamic pricing intelligence and demand forecasting platform for independent hotels and tour operators in Latin America capturing surging price-sensitive European and North American travelers",
+    "date": "2026-03-18",
+    "the_problem": "Skift's Latin America report confirms the region is a high-demand, high-price-sensitivity market where discovery and pricing precision determine occupancy — yet independent operators in Cartagena, Medellín, Buenos Aires, and Mexico City are pricing manually while European and UAE-displaced travelers are actively booking. A mispriced room in a demand surge costs independent operators $40-120/night in lost yield across hundreds of room nights per quarter.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "SurveillancePricingComply",
+    "one_liner": "Compliance monitoring and policy advisory tool that helps grocery chains and retailers track state-by-state 'surveillance pricing' legislation and assess their dynamic pricing and ESL exposure before bills pass.",
+    "date": "2026-03-18",
+    "the_problem": "Retail Dive reports a wave of state and federal bills targeting algorithmic 'surveillance pricing' and electronic shelf labels — but mid-market grocery chains and retailers using dynamic pricing tools have no structured way to monitor which bills are advancing, which states they operate in, and whether their specific pricing practices are at legal risk. A retailer caught violating a newly-passed ban on ESLs or algorithmic price discrimination faces regulatory fines, class action exposure, and reputational damage that a simple monitoring tool could prevent.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "FriendshipFraudShield",
+    "one_liner": "AI-powered romance and friendship fraud early-warning tool for banks and fintechs that detects grooming payment patterns before older and vulnerable customers lose their savings.",
+    "date": "2026-03-18",
+    "the_problem": "TSB's public warning about a surge in 'friendship fraud' — where scammers exploit loneliness to extract money from older and vulnerable customers — highlights a detection gap that existing fraud tools miss entirely. Unlike card fraud or account takeovers, friendship fraud involves the victim willingly authorizing payments over weeks or months in patterns that look like legitimate bill pay or gift transfers. Banks lack behavioral models trained on the grooming-to-payment timeline that characterizes these scams, and no affordable tool exists for community banks and credit unions to implement this detection layer.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "UnemploymentBenefitNavigator",
+    "one_liner": "Automated state unemployment benefit eligibility checker and maximum-benefit optimizer that helps laid-off workers claim every dollar they're owed before inadequate state systems run out.",
+    "date": "2026-03-18",
+    "the_problem": "CNBC's analysis confirms the US unemployment system is dangerously unprepared for a recession, with many states having maximum weekly benefits frozen for decades. Laid-off workers — now including thousands from fintech layoffs and AI-driven restructurings — don't know their state's exact benefit cap, how to maximize their claim, what disqualifying actions to avoid, or how to appeal a denial. With oil price shocks and Iran war economic fallout worsening the K-shaped economy, the number of workers who will need this guidance is accelerating. A missed UI appeal deadline or incorrectly filed claim can cost a worker $5,000–$15,000 in lost benefits.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "PathwayConnect",
+    "one_liner": "Community partnership and project management platform that helps K-12 districts build, track, and scale real-world career pathway programs with local employers.",
+    "date": "2026-03-18",
+    "the_problem": "Districts building real-world career pathways are managing employer partnerships, student project assignments, outcome tracking, and CTE funding compliance in spreadsheets and email threads. The coordination overhead between schools, community clients, and district administrators is enormous and unscalable. Without structured tooling, programs stay as small pilots instead of district-wide initiatives — and federal CTE Perkins funding reporting requirements add significant compliance complexity that generic project management tools don't address.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "StaffCoachOS",
+    "one_liner": "Coaching workflow and outcome-tracking platform for K-12 instructional coaches managing non-classroom staff and central office personnel.",
+    "date": "2026-03-18",
+    "the_problem": "NYC just invested heavily in coaching staff outside the classroom — central office workers, coordinators, and support staff — but the tools for managing these coaching relationships are borrowed from teacher coaching platforms that don't fit the use case. Coaches lack structured goal-setting, session logging, and outcome measurement tools for non-instructional staff, and districts have no way to prove ROI on these coaching investments to school boards and state agencies demanding accountability for every budget dollar.",
     "primary_domain": "education_edtech"
   }
 ]
