@@ -1,30 +1,5 @@
 [
   {
-    "name": "MemoryChip",
-    "one_liner": "Personal data backup service that writes your critical files to M-Disc optical media and ships them to you annually for 1,000-year storage",
-    "date": "2026-02-16"
-  },
-  {
-    "name": "AgentCostTracker",
-    "one_liner": "Real-time cost monitoring dashboard for AI agent deployments that alerts you before runaway agents drain your API budget",
-    "date": "2026-02-16"
-  },
-  {
-    "name": "ClawGuard",
-    "one_liner": "Security monitoring dashboard that detects malicious OpenClaw skills and credential leaks before they compromise your systems",
-    "date": "2026-02-16"
-  },
-  {
-    "name": "WebMCP Studio",
-    "one_liner": "Developer tool that converts existing website forms and workflows into WebMCP schemas in under 5 minutes with auto-generated test suites",
-    "date": "2026-02-16"
-  },
-  {
-    "name": "WorkflowMCP",
-    "one_liner": "Visual workflow builder that turns business processes into WebMCP tools that AI agents can execute without writing code",
-    "date": "2026-02-16"
-  },
-  {
     "name": "RetailSecWatch",
     "one_liner": "Automated security monitoring service that alerts e-commerce store owners when Chrome, payment gateway, or plugin vulnerabilities threaten their checkout flows.",
     "date": "2026-02-17"
@@ -3075,5 +3050,180 @@
     "date": "2026-03-18",
     "the_problem": "NYC just invested heavily in coaching staff outside the classroom — central office workers, coordinators, and support staff — but the tools for managing these coaching relationships are borrowed from teacher coaching platforms that don't fit the use case. Coaches lack structured goal-setting, session logging, and outcome measurement tools for non-instructional staff, and districts have no way to prove ROI on these coaching investments to school boards and state agencies demanding accountability for every budget dollar.",
     "primary_domain": "education_edtech"
+  },
+  {
+    "name": "AgentPermissionGuard",
+    "one_liner": "Runtime permissions auditor and data-access policy enforcer for production AI agent deployments that prevents rogue agent data exposure like Meta's recent incident.",
+    "date": "2026-03-19",
+    "the_problem": "Meta's rogue AI agent inadvertently exposed company and user data to unauthorized engineers — a failure mode that has no standard prevention tooling. As enterprises deploy more agentic AI systems, the risk of agents accessing, leaking, or acting on data outside their authorization scope is growing rapidly. Developers have no lightweight runtime layer to define, enforce, and audit what data an agent can see and act on without building custom access control from scratch.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "CompressedModelBench",
+    "one_liner": "Automated benchmarking and regression testing platform for compressed AI models that tells developers exactly what capability they sacrifice at each compression level before deploying.",
+    "date": "2026-03-19",
+    "the_problem": "Multiverse Computing's mainstream push for compressed AI models (of OpenAI, Meta, DeepSeek, Mistral) signals that compressed model deployment is going mainstream — but developers evaluating these models have no structured way to measure capability degradation across their specific tasks. A compressed model that scores fine on generic benchmarks may hallucinate 3x more on a team's specific legal document task. There is no affordable, task-specific benchmarking harness for compressed model evaluation.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "AstralMigrateKit",
+    "one_liner": "Automated dependency migration and compatibility audit toolkit that helps Python developers assess the impact of OpenAI acquiring Astral (uv, ruff) on their toolchain lock-in.",
+    "date": "2026-03-19",
+    "the_problem": "OpenAI's acquisition of Astral — makers of uv (the fastest Python package manager) and ruff (the fastest Python linter) — is causing immediate developer anxiety about toolchain independence. Teams who adopted uv and ruff specifically for their speed and open-source neutrality now face the same lock-in risk they had with pip/black under corporate stewardship. Developers need to quickly audit which parts of their CI/CD pipeline depend on Astral tools and model migration effort to alternatives like pixi, poetry, or flake8.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "WebBloatAudit",
+    "one_liner": "Automated web page asset audit and optimization report generator that identifies why pages are bloated (49MB+) and generates a prioritized fix plan for developers and site owners.",
+    "date": "2026-03-19",
+    "the_problem": "The Lobsters '49MB Web Page' post generated strong community engagement because web bloat is endemic — developers ship enormous pages without understanding exactly which assets, scripts, and third-party embeds are responsible. Performance audit tools like Lighthouse give scores but don't give prioritized, actionable fix plans with estimated load time and bandwidth savings per fix. Site owners making $50K-$500K/month in e-commerce revenue are losing 15-30% of mobile conversions to page weight they can't diagnose.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "ScraperPoisonShield",
+    "one_liner": "Automated AI scraper detection and content poisoning platform that helps developers and publishers protect their sites from unauthorized LLM training data harvesting.",
+    "date": "2026-03-19",
+    "the_problem": "The Supercazzola project (generate spam for web scrapers) on Lobsters signals clear developer interest in actively defending against AI training data scrapers — and the Patreon CEO's public 'fair use is bogus' argument confirms creators want to fight back. But Supercazzola is a manual, hacky tool. Developers and publishers need an automated, production-grade layer that detects scraper bot patterns, serves poisoned content to scrapers without affecting real users, and generates evidence of unauthorized scraping for potential legal action.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "AgentIntentMapper",
+    "one_liner": "Developer SDK that translates natural language user intent into structured, executable agent task graphs for teams building the AI-agent-replaces-apps future Nothing's CEO is describing.",
+    "date": "2026-03-19",
+    "the_problem": "Nothing CEO Carl Pei's prediction that AI agents will replace smartphone apps is directionally correct and already driving real product development decisions — but developers building intent-driven agent applications have no standard SDK for the intent-to-task-graph translation layer. Every team building an agent that 'understands intent and acts on behalf of users' is rebuilding the same NLU-to-action-graph pipeline from scratch. This translation layer is the hardest and most repeated engineering problem in agentic app development.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "MilSpec AI Readiness Audit",
+    "one_liner": "Self-service compliance and ethics posture auditor that tells AI startups whether their models, policies, and governance are compatible with Pentagon classified training environments before they pitch for defense contracts.",
+    "date": "2026-03-19",
+    "the_problem": "MIT Tech Review's reporting that the Pentagon is setting up secure environments for AI companies to train on classified data creates an immediate opportunity — and a new failure mode. AI startups pursuing defense contracts have no structured way to assess whether their model governance, data handling policies, ethical use positions, and security practices meet DoD classified training requirements before investing 12-18 months in contracting. The Anthropic Pentagon deal collapse (referenced in prior news) showed the cost of discovering incompatibility at the end.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "LoyaltyRealityScore",
+    "one_liner": "A hotel and airline loyalty program analytics tool that shows independent hoteliers and boutique operators which loyalty metrics actually drive revenue vs. vanity numbers, helping them make smarter partnership and program decisions.",
+    "date": "2026-03-19",
+    "the_problem": "Skift's explicit takedown of loyalty member counts as 'meaningless' exposes a crisis: hotel operators are investing in loyalty programs and co-brand deals based on member count metrics that have no proven connection to RevPAR or repeat bookings. Independent hotels and boutique operators signing Hilton Select-style affiliate deals or building their own loyalty programs have no tool to benchmark which metrics actually predict loyalty revenue vs. which are vanity numbers. A bad loyalty partnership costs $50K-$200K/year in fees and rate discounts with no measurable return.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "FactoryHomeFinder",
+    "one_liner": "Consumer-facing discovery and financing comparison platform that helps entry-level homebuyers evaluate factory-built and HUD-code homes like Clayton TRU Mini alongside site-built alternatives with honest cost and financing scenarios.",
+    "date": "2026-03-19",
+    "the_problem": "Clayton's TRU Mini launch signals a growing inventory of under-900-sq-ft factory-built homes targeting the entry-level buyer segment — but buyers searching on Zillow and Redfin can't easily find or compare these homes, and HUD-code manufactured home financing (chattel vs. real property loans) is confusing and stigmatized. Buyers who would qualify for and benefit from factory-built homes self-select out before getting accurate information. A buyer who doesn't understand the distinction between HUD-code and modular homes, or who gets stuck with a chattel loan instead of a real property loan, overpays by $30,000-$80,000 over the loan life.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "DualBrandOpsKit",
+    "one_liner": "Operational playbook and performance benchmarking platform for QSR and casual dining franchisees running dual-branded restaurant concepts like Applebee's/IHOP.",
+    "date": "2026-03-19",
+    "the_problem": "Doherty Enterprises just opened the first Applebee's/IHOP dual-branded location east of the Mississippi, and similar dual-brand experiments are accelerating across QSR (Taco Bell/KFC, Burger King/Popeyes). Franchisees operating dual-branded units face uniquely complex operational challenges: overlapping menus, split kitchen workflows, dual loyalty program management, shared labor scheduling, and separate franchisor reporting requirements. There is no affordable tool purpose-built for dual-brand franchisees to benchmark labor efficiency, track brand-specific guest satisfaction scores, and manage compliance with two sets of franchisor standards simultaneously.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "ZoningReformNavigator",
+    "one_liner": "AI-powered zoning reform tracker and permitting opportunity scanner that helps small developers, homebuilders, and property owners identify where state housing reform laws like Montana's unlock new development rights on their specific parcels.",
+    "date": "2026-03-19",
+    "the_problem": "Montana's Supreme Court just upheld its 2023 housing reform package, and Virginia's zoning reform battle shows this is a national pattern: state housing reform laws are passing, failing, and being litigated simultaneously across dozens of states. Small developers and property owners who own land in affected jurisdictions have no affordable tool to determine which state-level reforms apply to their specific parcel, what new density bonuses or by-right permissions they now have access to, or how to file the updated permit applications. Missing an applicable reform provision costs developers months of delay and tens of thousands in unnecessarily restricted project scope.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "PreviewListingAggregator",
+    "one_liner": "Unified pre-market and coming-soon listing intelligence dashboard that consolidates Zillow Preview, Compass Private Exclusives, and MLS coming-soon feeds into a single buyer and agent alert system.",
+    "date": "2026-03-19",
+    "the_problem": "Zillow Preview's launch and the ongoing debate about listing fragmentation confirm that pre-market listings are now split across multiple competing platforms — Zillow Preview, Compass Private Exclusives, broker-to-broker networks, and MLS coming-soon statuses — with no single consolidated view. Buyer's agents and serious buyers miss pre-market opportunities that competitors who monitor all channels catch first. In high-velocity Midwest markets where absorption is faster than new listings, missing a 3-day pre-market window means losing the deal entirely. No affordable tool aggregates these fragmented pre-market signals into a single daily digest.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "MidscaleHotelBrandAdvisor",
+    "one_liner": "Hotel brand affiliation comparison and financial modeling tool that helps independent and boutique hotel operators evaluate midscale brand partnerships like Hilton Select by Hilton vs. staying independent.",
+    "date": "2026-03-19",
+    "the_problem": "Hilton's launch of Select by Hilton — a new affiliate model that brings outside brands like Yotel into the Hilton system without acquisition — signals a major wave of new brand affiliation options for independent hotels. Simultaneously, Hyatt is pushing into non-luxury and smaller markets. Independent operators are being pitched these affiliations with slick brand decks and projected ADR lifts, but have no neutral tool to model the true financial impact: franchise fees, loyalty redemption costs, PIP requirements, distribution channel shift, and net RevPAR change. A bad affiliation decision locks an operator into a 20-year contract with $200K+ in renovation obligations.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "LatinaWellnessTracker",
+    "one_liner": "Culturally-adapted health and wellness tracking app for Latina and Latin American women that combines nutrition logging, fitness, and mental wellness check-ins with culturally resonant content and community.",
+    "date": "2026-03-19",
+    "the_problem": "Skift's Latin America travel growth coverage and the Indian government's airline passenger reform story both reveal the same underlying trend: emerging and underserved demographic groups are demanding products built for them, not adapted from majority-culture defaults. Existing wellness apps (MyFitnessPal, Noom, Headspace) are built around Anglo-American food databases, fitness norms, and mental health frameworks that fail Latina women — who have distinct dietary patterns, family-structure stress factors, and cultural relationships with body image. The result is poor adherence: Latina women abandon generic wellness apps at 2-3x the rate of the general population.",
+    "primary_domain": "health_wellness"
+  },
+  {
+    "name": "MortgageApplicationPulse",
+    "one_liner": "Real-time mortgage application volume and rate sensitivity monitor that tells lenders, loan officers, and real estate agents exactly when application activity is surging or collapsing and why — so they can act before the market moves.",
+    "date": "2026-03-19",
+    "the_problem": "Mortgage applications just plummeted more than 10% in a single week as rates climbed and Iran conflict uncertainty spread — but lenders and agents had no early warning. By the time the MBA weekly data publishes, the window to adjust marketing spend, staffing, or rate lock strategy has already closed. Loan officers who see the volume drop after the fact scramble reactively; those who caught the signal 3-5 days earlier could have shifted marketing budget, called hesitant clients to lock, or pre-loaded the pipeline with refi leads for when rates dip. No affordable tool gives individual LOs and small mortgage shops real-time application volume signals before the weekly MBA report.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "KlarnaReadyKit",
+    "one_liner": "A merchant BNPL optimization and Klarna onboarding toolkit that helps Shopify and WooCommerce stores maximize revenue from Klarna's 1M+ merchant network and AI agent BNPL flows.",
+    "date": "2026-03-19",
+    "the_problem": "Klarna surpassed 1 million merchants with 47% growth, and simultaneously announced BNPL for AI agent shopping — but most mid-market e-commerce merchants have no structured way to audit whether their Klarna integration is optimized for conversion, properly surfaced at checkout, or ready for agent-initiated BNPL purchases. A misconfigured or absent BNPL placement can reduce checkout conversion by 15-25%, and merchants don't know what they're leaving on the table until a competitor's conversion rate crushes theirs.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "StagflationShieldPF",
+    "one_liner": "A personalized stagflation scenario modeler that shows consumers exactly how oil price shocks, frozen Fed rates, and K-shaped inflation affect their specific debt, savings, and investment mix — with plain-English action steps.",
+    "date": "2026-03-19",
+    "the_problem": "Economists are now explicitly warning about stagflation risk tied to Iran war oil price surges, while the Fed held rates steady and the K-shaped economy is widening. The 167%+ surge in new retail investors since 2020 has no personalized tool to understand what stagflation means for their specific variable-rate HELOC, CD ladder, 60/40 ETF portfolio, or credit card debt. CNBC articles say 'stagflation is bad' without telling a user whether their holdings are exposed, whether to lock in a CD rate now, or whether to pay down variable debt immediately.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "DeMinimisLandedCost",
+    "one_liner": "A real-time de minimis policy monitor and landed cost calculator for e-commerce sellers and drop-shippers sourcing from China, updating pricing and margin models as tariff rulings change.",
+    "date": "2026-03-19",
+    "the_problem": "NRF forecasts 4.4% retail sales growth despite 'rising uncertainty' — a major driver of which is tariff volatility affecting import costs. The federal court ruling allowing the de minimis lawsuit to proceed means the exemption's fate could flip multiple times, leaving e-commerce sellers on Shopify who import from China, use Temu/Shein supply chains, or drop-ship directly to US customers completely blind to their true landed costs. Sellers are pricing products today at margins that could evaporate overnight when the exemption changes.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "ValueDiscountIntelligence",
+    "one_liner": "Competitive pricing and assortment intelligence platform that helps specialty and mid-market retailers track Five Below, Michaels, and Family Dollar pricing moves before they lose price-sensitive customers.",
+    "date": "2026-03-19",
+    "the_problem": "Five Below just posted 24%+ holiday sales growth via expanded pricing tiers, Michaels cut prices on 3,000 more items to grab share from collapsed competitors, and Family Dollar is piloting ultra-small urban formats — all simultaneously signaling that value retail is aggressively moving up-market and into new channels. Mid-market specialty retailers have no affordable tool to monitor which specific SKUs discount competitors are repricing, at what velocity, and which customer segments they're capturing before it shows up in their own same-store sales decline.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "GreatWealthTransferReady",
+    "one_liner": "A financial transition platform that helps women 55+ who are inheriting spousal assets navigate the critical first 12 months of the Great Wealth Transfer without costly mistakes.",
+    "date": "2026-03-19",
+    "the_problem": "CNBC's coverage confirms older women will inherit the majority of the $54 trillion Great Wealth Transfer due to longer life expectancy — but most arrive at this moment with less financial advisor experience than their spouses had. The first 12 months after inheriting are the highest-risk window: RMD elections, rollover decisions, beneficiary redesignations, and tax choices made in grief without guidance routinely cost inheritors $50,000-$200,000. No consumer tool is purpose-built for this transition moment, and the stagflation/K-shaped economy context makes investment decisions made at this juncture especially consequential.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "AITrustBadge",
+    "one_liner": "A consumer-facing AI disclosure and brand transparency tool that helps retailers signal and prove their human-first customer experience to the 50% of consumers who prefer brands that don't use generative AI.",
+    "date": "2026-03-19",
+    "the_problem": "Gartner just found that half of consumers prefer brands that don't use generative AI, and consumers who feel forced to use AI may walk away entirely — a finding that directly threatens the conversion rates of retailers deploying AI chatbots, AI-generated product descriptions, and AI customer service at scale. Mid-market retailers have no structured way to audit which touchpoints consumers perceive as AI-generated, signal their human-first commitments credibly, or measure the revenue impact of consumer AI distrust on their specific customer segments.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "StudentLoanBacklogNavigator",
+    "one_liner": "Automated status tracker and escalation toolkit for the 576,000+ student loan borrowers stuck in the affordable repayment plan application backlog.",
+    "date": "2026-03-19",
+    "the_problem": "A court filing revealed 576,000+ federal student loan borrowers remain in backlog for affordable repayment plans — these borrowers don't know where they are in the queue, what documentation is missing, what deadlines they must hit to preserve eligibility, or how to escalate. While the SAVE plan legal battle continues, borrowers in backlog are accruing interest and risk missing critical windows for forgiveness credit. No tool tracks backlog status, sends escalation letters to servicers, or calculates the financial cost of delay for a specific borrower's situation.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "ContactlessLimitPulse",
+    "one_liner": "A real-time UK payment limit monitoring and merchant advisory tool that tracks contactless limit policy changes and helps SMEs optimize checkout flows as bank policies diverge.",
+    "date": "2026-03-19",
+    "the_problem": "UK banks just rejected the option to raise the £100 contactless limit despite regulator permission — but this is a fragmented decision, with some banks potentially moving while others hold. UK merchants and payment consultants have no tool to monitor which banks change their limits when, how limit changes affect their specific average transaction value and checkout abandonment rates, or when to update their POS configuration and staff training. A merchant with a £120 average basket losing 15% of transactions to chip-and-PIN friction is leaving real money on the table with no monitoring mechanism.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "CyberPathwayOS",
+    "one_liner": "Employer-school co-design platform that helps K-12 districts build, manage, and scale cybersecurity career pathway programs with local employers and federal CTE compliance reporting built in.",
+    "date": "2026-03-19",
+    "the_problem": "EdSurge's coverage of employer co-designed cybersecurity classrooms reveals a structural gap: school districts want to build real-world cybersecurity pathways but managing employer partnerships, internship logistics, curriculum alignment, and Perkins CTE funding compliance is done in spreadsheets and email. Cybersecurity is explicitly a national workforce priority with federal funding attached, meaning districts that can't prove outcomes risk losing grants. The coordination overhead between schools, employer partners, and district CTE directors is enormous and unscalable without dedicated tooling.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "CTEPerkinsDashboard",
+    "one_liner": "Automated Perkins V CTE funding compliance tracker and outcome reporting platform that helps school districts document career pathway program results and avoid audit findings.",
+    "date": "2026-03-19",
+    "the_problem": "The EdSurge coverage of employer co-designed career pathways and real-world internship programs highlights a compliance blind spot: every program receiving Perkins V CTE federal funding must track specific performance indicators — graduation rates, credential attainment, placement rates, non-traditional participation — and submit them to state agencies annually. Districts managing these programs in spreadsheets routinely miss indicators, fail audits, and risk fund clawbacks. With Perkins V distributing $1.4 billion annually, the compliance burden is real and growing as districts expand career pathway programs.",
+    "primary_domain": "government_compliance"
   }
 ]
