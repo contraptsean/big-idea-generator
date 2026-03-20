@@ -1,160 +1,5 @@
 [
   {
-    "name": "RetailSecWatch",
-    "one_liner": "Automated security monitoring service that alerts e-commerce store owners when Chrome, payment gateway, or plugin vulnerabilities threaten their checkout flows.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "PhonePolicy Toolkit",
-    "one_liner": "Compliance and implementation software that helps K-12 schools design, deploy, and enforce phone-free policies aligned with new state legislation.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "Parent PLUS Rescue",
-    "one_liner": "Automated eligibility checker and application assistant for Parent PLUS borrowers to secure affordable repayment and loan forgiveness before policy changes eliminate access",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "EmergencySupplyLink",
-    "one_liner": "Instant emergency restaurant supply ordering platform that connects restaurants with local backup suppliers when their primary distributor runs out or delivers late.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "PatchAudit Pro",
-    "one_liner": "Automated compliance audit report generator for government agencies that proves they patched critical vulnerabilities like the Chrome CVE within regulatory deadlines.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "DrugShortageNavigator",
-    "one_liner": "Real-time hospital drug shortage tracker with automated alternative therapy protocols for pharmacists and clinicians",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "FinCEN Filing Copilot",
-    "one_liner": "Automated FinCEN beneficial ownership reporting service for title agents and small real estate law firms handling residential transactions.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "MagSafeCatalog",
-    "one_liner": "Curated marketplace and API for discovering, comparing, and integrating MagSafe-compatible accessories into e-commerce stores with automated product data feeds.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "CareerCompass AI",
-    "one_liner": "AI-powered career navigation platform that helps college students and recent grads identify AI-proof career paths and required skills based on real-time labor market data.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "QuantumShield",
-    "one_liner": "Quantum-readiness assessment and migration planner for financial institutions preparing for post-quantum cryptography before Q-day attacks",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "CoreMenuAI",
-    "one_liner": "AI-powered menu optimization tool that identifies when menu innovation is cannibalizing core offerings and recommends data-driven SKU rationalization for QSR and fast-casual chains.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "ZeroDayWatch",
-    "one_liner": "Real-time zero-day vulnerability monitoring and compliance tracking that alerts government IT teams the moment critical CVEs like Chrome zero-days are announced, with automated patch deployment workflows.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "DeepfakeDefender",
-    "one_liner": "Browser extension and mobile app that detects and flags deepfake medical influencers on social media before they can scam health consumers",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "IncomeVerifyNow",
-    "one_liner": "API-first income verification tool that gives mortgage lenders instant, accurate borrower income data on Day Zero instead of Day 28.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "ConsoleDropHub",
-    "one_liner": "Automated inventory monitoring and order routing system that helps gaming accessory retailers capitalize on console release cycles by predicting demand surges and optimizing stock levels.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "EdtechKidTest",
-    "one_liner": "Student user-testing marketplace connecting edtech companies with real K-12 students and teachers for rapid product feedback and iteration.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "CardSchemeArb",
-    "one_liner": "Payment routing optimization tool for UK/EU businesses that automatically switches transactions between Visa/Mastercard and emerging alternatives to minimize processing fees",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "FieldOpsHub",
-    "one_liner": "Mobile-first field operations management platform for restaurant chains to coordinate field managers, track store visits, and fix operational issues in real-time.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "SoftwareInventoryAI",
-    "one_liner": "AI-powered software asset discovery tool for government agencies that automatically identifies all installed software across networks to ensure compliance and vulnerability management.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "GLP-1 Monitor",
-    "one_liner": "Price tracking and safety monitoring dashboard for patients buying compounded GLP-1 drugs from telehealth providers",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "HomeEquityTracker",
-    "one_liner": "Personal finance app that tracks home equity growth over time and helps retirees model how to convert equity into retirement income.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "HigherThinkingLab",
-    "one_liner": "AI-powered higher-order thinking skills assessment and lesson plan generator that helps teachers design assignments requiring analysis, synthesis, and creativity beyond what AI can do.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "401k Emergency Link",
-    "one_liner": "White-label emergency savings account integration for 401k plan providers helping employers offer SECURE 2.0-compliant emergency savings tied to retirement plans",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "PersonalMenuAI",
-    "one_liner": "Customer data platform that helps restaurants deliver personalized menu recommendations, offers, and ordering experiences using purchase history and dietary preferences.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "MentalHealthFormularyNavigator",
-    "one_liner": "Insurance coverage prediction tool that tells psychiatrists and patients which mental health medications will be covered before prescribing",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "BaselMortgageHub",
-    "one_liner": "Compliance automation tool that helps community banks and credit unions navigate Basel capital rules for mortgage lending and servicing.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "CulturalLens Library",
-    "one_liner": "Curated marketplace of culturally relevant reading materials and lesson supplements for multilingual K-12 students, tagged by language, culture, and reading level.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "ComplianceGPT for Banks",
-    "one_liner": "AI-powered autonomous compliance and accounting agents for community banks that automate regulatory reporting and audit preparation using bank-specific LLMs",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "HotelImmigrationHub",
-    "one_liner": "Compliance and workforce management platform helping hotels navigate immigration enforcement, verify worker status, and build contingency staffing plans amid increased federal scrutiny.",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "AIScribeCostROI Calculator",
-    "one_liner": "Interactive ROI calculator that shows health systems exactly how much revenue they'll gain from deploying AI medical scribes like Suki",
-    "date": "2026-02-17"
-  },
-  {
-    "name": "AgentOS Dashboard",
-    "one_liner": "AI-powered daily workflow hub for real estate agents that unifies CRM, task automation, and market insights in one simple interface.",
-    "date": "2026-02-17"
-  },
-  {
     "name": "Tariff Impact Calculator",
     "one_liner": "Real-time tariff scenario modeling tool that shows e-commerce brands and retailers exactly how import duties affect profit margins and helps them optimize sourcing decisions.",
     "date": "2026-02-19"
@@ -3224,6 +3069,125 @@
     "one_liner": "Automated Perkins V CTE funding compliance tracker and outcome reporting platform that helps school districts document career pathway program results and avoid audit findings.",
     "date": "2026-03-19",
     "the_problem": "The EdSurge coverage of employer co-designed career pathways and real-world internship programs highlights a compliance blind spot: every program receiving Perkins V CTE federal funding must track specific performance indicators — graduation rates, credential attainment, placement rates, non-traditional participation — and submit them to state agencies annually. Districts managing these programs in spreadsheets routinely miss indicators, fail audits, and risk fund clawbacks. With Perkins V distributing $1.4 billion annually, the compliance burden is real and growing as districts expand career pathway programs.",
+    "primary_domain": "government_compliance"
+  },
+  {
+    "name": "AIDataTrainingMarketplace",
+    "one_liner": "White-label platform that lets any AI company recruit and pay gig workers to submit structured training data — video, audio, text annotations — following DoorDash's Tasks playbook.",
+    "date": "2026-03-20",
+    "the_problem": "DoorDash's launch of a 'Tasks' app paying couriers to film everyday activities for AI training validates that structured human-generated training data collection at scale is now a distinct product category. But only companies with large existing contractor networks (DoorDash, Scale AI, Appen) can run this efficiently. Mid-size AI companies and research labs that need domain-specific training data — medical gestures, regional language recordings, manufacturing defect videos — have no turnkey platform to recruit, task, and pay gig workers for custom data collection campaigns.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "ShellHistoryAI",
+    "one_liner": "AI-powered shell history search, command explainer, and workflow automation layer that builds on open-source tools like Atuin to add LLM-assisted command generation and team knowledge sharing.",
+    "date": "2026-03-20",
+    "the_problem": "Atuin v18.13 just added AI features to shell history search — validating that developers want LLM assistance directly in their terminal workflow. But Atuin is open-source with no monetization layer, and its AI features are nascent. The real opportunity is the gap between 'search your history' and 'generate the exact command I need right now based on my past patterns and current codebase context' — a workflow intelligence layer that solo Atuin can't build commercially.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "OpenAIResearchAgentBench",
+    "one_liner": "Developer evaluation harness and integration testing framework for teams building on or competing with OpenAI's new fully-automated AI researcher agent system.",
+    "date": "2026-03-20",
+    "the_problem": "OpenAI is throwing everything into building a fully automated AI researcher — an agent-based system that tackles large, complex problems autonomously. This creates two immediate developer needs: teams building on top of OpenAI's researcher API need evaluation frameworks to test its outputs against their domain-specific quality bars, and competing AI labs' developer tools teams need benchmark suites to compare their own agent research capabilities. Neither group has standardized tooling for this new agent category.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "ContentModerationAuditAPI",
+    "one_liner": "Independent AI content moderation accuracy auditing API that lets platforms benchmark Meta's and competitors' AI enforcement systems against their own community standards before deploying.",
+    "date": "2026-03-20",
+    "the_problem": "Meta is rolling out new AI content enforcement systems while reducing reliance on third-party vendors — claiming better accuracy and less over-enforcement. But platforms building their own AI moderation, or evaluating which third-party system to use, have no independent way to benchmark these claims against their specific content categories and community standards. A platform that over-enforces loses creators; one that under-enforces faces regulatory action and advertiser pullout. The stakes are enormous and the testing infrastructure is missing.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "DurableStreamDevKit",
+    "one_liner": "Developer SDK and hosted infrastructure for building durable, resumable real-time data streams for video conferencing, collaborative apps, and live AI agent workflows without re-architecting from scratch.",
+    "date": "2026-03-20",
+    "the_problem": "The Lobsters-featured 'Video Conferencing with Durable Streams' post demonstrates that durable stream architecture — where streams survive network interruptions and server restarts with no user-visible disruption — is now a real engineering requirement for video, collaboration, and AI agent coordination systems. But implementing durable streams from scratch requires deep expertise in sequence numbering, replay buffers, and idempotent delivery that most developers don't have. Teams reinvent this infrastructure for every project at a cost of weeks of engineering time.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "GLP-1 Wellness Companion",
+    "one_liner": "A symptom-tracking, meal-planning, and community app purpose-built for the 15M+ Americans on GLP-1 drugs like Ozempic and Wegovy who are navigating dramatic lifestyle changes with no structured support.",
+    "date": "2026-03-20",
+    "the_problem": "GLP-1 drug users experience severe appetite suppression, nausea, food aversions, and rapid weight loss that makes standard nutrition apps and meal plans irrelevant or counterproductive. They need micro-meal planning for 400-800 calorie daily targets, protein-density optimization to prevent muscle loss, and symptom logging to detect adverse events — none of which MyFitnessPal, Noom, or Cronometer address for this cohort. The FDA's repeated warnings to Novo Nordisk about unreported side effects confirm the surveillance gap is real and growing.",
+    "primary_domain": "health_wellness"
+  },
+  {
+    "name": "TipCreditOps",
+    "one_liner": "A labor cost modeling and compliance tracking platform that helps restaurant operators in tip-credit reversal markets like Chicago instantly recalculate staffing economics and update payroll configurations after tipped minimum wage law changes.",
+    "date": "2026-03-20",
+    "the_problem": "Chicago just voted to permanently restore the tip credit, reversing what operators had been planning for since 2023 — meaning thousands of restaurant operators now need to reverse their wage planning models, update payroll systems, and recalculate menu pricing assumptions based on a fundamentally different labor cost structure. This pattern is repeating across cities (NYC $30/hour proposals, Chicago tip credit reversal, state-by-state minimum wage divergence) and operators have no tool to model these changes quickly. A 20-location Chicago operator who already restructured staffing for no-tip-credit faces six-figure P&L reconstruction.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "VisaBondTrip",
+    "one_liner": "A real-time US visa bond requirement tracker and international travel insurance comparison platform that helps inbound travelers from affected nations understand bond obligations and book compliant coverage before their US trip.",
+    "date": "2026-03-20",
+    "the_problem": "The US just expanded visa bond requirements to 50 nations, creating immediate confusion for hundreds of thousands of inbound travelers who now face new financial compliance requirements they don't understand. Skift confirms this is hampering 2026 US tourism recovery at a critical moment for hotels, restaurants, and destination operators. Travelers from affected nations have no tool to check current bond requirements for their specific country, understand the financial instruments that satisfy bond requirements, or purchase appropriate travel insurance — they're relying on embassy websites that are weeks behind policy updates.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "MultifamilyDealFinder",
+    "one_liner": "A multifamily investment opportunity screener and underwriting automation tool for individual investors targeting the 2026 multifamily market resilience window with deal-level ROI modeling.",
+    "date": "2026-03-20",
+    "the_problem": "Inman's 2026 multifamily trends piece validates that smaller investors are increasingly looking at multifamily as the single-family market remains locked up by rate anchoring and low inventory — but individual investors underwriting 4-20 unit deals have no affordable tool to screen deals at scale. They're manually building Excel models for each deal, relying on outdated cap rate comps, and making $500K+ decisions without systematic vacancy, expense ratio, and debt coverage scenario modeling. New home sales falling 17.6% in January is pushing more capital toward income-producing property.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "TokenizedSecuritiesReady",
+    "one_liner": "Compliance readiness auditor and onboarding toolkit that helps registered investment advisors and broker-dealers prepare to trade tokenized securities on Nasdaq before they get left behind.",
+    "date": "2026-03-20",
+    "the_problem": "The SEC just approved Nasdaq's proposal to trade stocks as tokens — a structural shift that will require every broker-dealer, RIA, and custody platform to update their compliance workflows, client disclosures, and operational procedures. Most firms have no roadmap for what tokenized securities mean for their existing accounts, reporting obligations, and suitability frameworks. Early movers who get compliant first will capture clients from confused competitors.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "Agentic Money Guard",
+    "one_liner": "Consumer-facing oversight dashboard that lets users monitor, audit, and override what their bank's agentic AI money manager is doing on their behalf — triggered by Starling's rollout of the UK's first AI money manager.",
+    "date": "2026-03-20",
+    "the_problem": "Starling Bank just launched the UK's first agentic AI tool that autonomously manages personal finances — moving money, paying bills, and optimizing savings without per-action approval. Consumers who adopt this have no independent audit trail, no easy override mechanism, and no way to understand what the agent did and why. When an agent makes a mistake — wrong transfer, missed bill, surprise fee — users are left with no recourse and no log of agent actions outside the bank's own app.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "SocialSecurityGapCalc",
+    "one_liner": "Personalized Social Security benefit cut scenario modeler that shows Americans exactly how much they stand to lose under different trust fund depletion outcomes and what actions to take now.",
+    "date": "2026-03-20",
+    "the_problem": "Social Security's trust fund depletion in 6 years is widely reported but deeply misunderstood — experts say cuts won't affect all beneficiaries equally, but the public has no tool to model their personal exposure based on their age, income, benefit amount, and retirement timeline. The average person reading CNBC articles knows 'cuts are coming' but has no idea if they'll personally lose $200/month or $800/month, which reform scenarios would protect them, or what retirement savings rate would offset the gap. Bad decisions made now based on vague fear are costing people retirement security.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "HomeMaintenanceSubKit",
+    "one_liner": "White-label subscription home maintenance program builder that helps independent hardware stores, plumbers, and HVAC companies launch Lowe's HomeCare+-style recurring maintenance plans without enterprise build costs.",
+    "date": "2026-03-20",
+    "the_problem": "Lowe's just launched HomeCare+ at $99/year — validating that home maintenance subscriptions are a scalable retail model. But the 150,000+ independent hardware retailers, local plumbers, HVAC companies, and home services businesses that compete with Lowe's have no affordable way to launch their own branded subscription maintenance program. They're watching Lowe's capture recurring revenue and customer loyalty with no path to compete. Building a subscription program from scratch requires payment infrastructure, scheduling software, service tracking, and renewal management that costs $20,000-$50,000 to build.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "GLP1RetailAdaptIQ",
+    "one_liner": "AI-powered demand forecasting and assortment planning tool that helps apparel and specialty retailers adapt their buying and inventory strategy to GLP-1 drug-driven body size volatility.",
+    "date": "2026-03-20",
+    "the_problem": "Destination XL just reported Q4 sales down 6% and explicitly blamed 'the volatility of GLP-1 usage' disrupting their plus-size demand forecasting — a problem hitting every apparel retailer serving customers whose body sizes are changing unpredictably as Ozempic and Wegovy adoption accelerates. Traditional demand forecasting models built on historical size distribution curves are now generating systematic inventory errors: too much of the wrong sizes, stockouts in newly-demanded sizes, and markdown exposure on misfitting inventory. Retailers have no tool that incorporates GLP-1 adoption rates by geography and demographic into their size-run buying decisions.",
+    "primary_domain": "ecommerce_retail"
+  },
+  {
+    "name": "StagflationDebtOptimizer",
+    "one_liner": "Personal stagflation preparedness calculator that shows consumers the exact priority order for paying down debt, locking CDs, and rebalancing investments given their specific financial situation and the current Iran war/oil price environment.",
+    "date": "2026-03-20",
+    "the_problem": "Economists are now explicitly warning about stagflation — rising prices, slowing growth, frozen Fed rates — driven by Iran war oil shocks. The K-shaped economy means this hits middle-income households disproportionately: variable-rate credit card debt (avg 22% APR) becomes crushingly expensive when rates are frozen high, while savings rates underperform inflation and equity portfolios stagnate. The 167%+ surge in new retail investors since 2020 has no tool to model whether they should pay down their variable HELOC, lock a 12-month CD now, or hold equities. They're making fragmented decisions based on CNBC headlines with no integrated scenario model.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "CyberPathwayOS",
+    "one_liner": "Employer-school co-design platform that helps K-12 districts build, manage, and scale cybersecurity career pathway programs with employer partners and federal CTE compliance reporting built in.",
+    "date": "2026-03-20",
+    "the_problem": "School districts building employer co-designed cybersecurity classrooms are managing internship logistics, curriculum alignment, employer partner coordination, and Perkins V CTE funding compliance in spreadsheets and email threads. The coordination overhead between schools, employer partners, and district CTE directors is enormous and unscalable without dedicated tooling. Districts that can't document required Perkins V performance indicators — placement rates, credential attainment, non-traditional participation — risk losing federal grant funds in audits.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "CTEPerkinsDashboard",
+    "one_liner": "Automated Perkins V CTE funding compliance tracker and outcome reporting platform that helps school districts document career pathway results and avoid costly audit findings.",
+    "date": "2026-03-20",
+    "the_problem": "Every program receiving Perkins V CTE federal funding must track specific performance indicators — graduation rates, credential attainment, placement rates, non-traditional participation — and submit them annually to state agencies. Districts managing these programs in spreadsheets routinely miss indicators, fail audits, and face fund clawbacks. With Perkins V distributing $1.4 billion annually across thousands of districts, the compliance burden is real, growing, and entirely unaddressed by existing SIS or student data platforms.",
     "primary_domain": "government_compliance"
   }
 ]
