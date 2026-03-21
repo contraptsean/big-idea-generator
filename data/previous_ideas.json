@@ -3189,5 +3189,89 @@
     "date": "2026-03-20",
     "the_problem": "Every program receiving Perkins V CTE federal funding must track specific performance indicators — graduation rates, credential attainment, placement rates, non-traditional participation — and submit them annually to state agencies. Districts managing these programs in spreadsheets routinely miss indicators, fail audits, and face fund clawbacks. With Perkins V distributing $1.4 billion annually across thousands of districts, the compliance burden is real, growing, and entirely unaddressed by existing SIS or student data platforms.",
     "primary_domain": "government_compliance"
+  },
+  {
+    "name": "AstralForkGuard",
+    "one_liner": "Automated dependency audit and migration toolkit that helps Python teams assess OpenAI's Astral acquisition risk and plan transitions to uv/ruff alternatives.",
+    "date": "2026-03-21",
+    "the_problem": "OpenAI's acquisition of Astral (uv, ruff, ty) is causing immediate anxiety among Python developers who adopted these tools specifically for their independence from corporate AI interests. Teams need to quickly audit which CI/CD pipelines, pyproject.toml configs, and pre-commit hooks depend on Astral tools, understand the lock-in risk at each layer, and model the migration effort to alternatives like pixi, poetry, or flake8. Simon Willison's widely-shared post confirms this is a live and urgent concern across the Python ecosystem.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "BotTrafficShield",
+    "one_liner": "Real-time AI bot traffic detection and rate-limiting middleware for indie SaaS developers whose APIs and infrastructure are being hammered as bot traffic approaches parity with human traffic.",
+    "date": "2026-03-21",
+    "the_problem": "Cloudflare's CEO confirmed AI bot traffic will exceed human traffic by 2027, and it's already dramatically increasing infrastructure costs and distorting analytics for small SaaS products. Indie developers running Express, FastAPI, or Rails apps have no affordable, drop-in middleware that distinguishes LLM agent traffic from human traffic, enforces per-bot-agent rate limits, and surfaces a real-time dashboard showing bot-vs-human ratios and cost attribution. Enterprise CDN bot management costs $500+/month; nothing exists for the $20-100/month developer tier.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "CraftCodeSanctuary",
+    "one_liner": "A curated, invite-gated developer community platform with AI-slop detection that helps craft-focused developers protect creative technical spaces from LLM-generated low-quality contributions.",
+    "date": "2026-03-21",
+    "the_problem": "Three separate Lobsters threads this week — on AI ruining CTF events, craft-lovers losing their craft to LLMs, and the broader 'enshittifAIcation' of creative technical spaces — reveal a genuine and growing crisis. Developer communities, CTF events, open-source projects, and creative coding forums are being flooded with AI-generated content that destroys the signal quality, burns out maintainers, and eliminates the educational value for new participants. The matplotlib AI harassment case and broader OSS maintainer burnout make this existential.",
+    "primary_domain": "dev_tools"
+  },
+  {
+    "name": "TrumpAIFrameworkComply",
+    "one_liner": "Real-time tracker and product compliance checklist generator that alerts AI developers when Trump's federal AI framework preempts state laws affecting their product's data handling, age verification, or content moderation obligations.",
+    "date": "2026-03-21",
+    "the_problem": "Trump's new AI framework explicitly targets preemption of state AI laws and shifts child safety responsibility to parents — a policy shift with immediate, concrete implications for AI product developers who have been building compliance around California's CPPA, New York's AI bias audit law, and pending child safety bills in 15+ states. Developers building LLM-powered consumer products now face a rapidly shifting patchwork: some state laws are preempted, others are not, and the federal framework's actual legal force is ambiguous. A developer who over-complies with a now-preempted state law wastes engineering resources; one who under-complies with a surviving requirement faces regulatory action.",
+    "primary_domain": "ai_ml"
+  },
+  {
+    "name": "TravelThreatGuard",
+    "one_liner": "Real-time geopolitical travel threat monitor and alternative routing assistant for hospitality operators and frequent travelers when tourist sites and airspace become targets.",
+    "date": "2026-03-21",
+    "the_problem": "Iran has now officially warned that tourist sites worldwide could be targets — an unprecedented threat from a government entity that Skift calls 'rare indeed.' Independent hotels, DMOs, and tour operators in affected regions have no dedicated tool to monitor threat escalation, proactively communicate with guests, and trigger cancellation-waiver or rebooking workflows before mass cancellations overwhelm staff. The Iran war has also broken AI customer service systems and airport infrastructure simultaneously.",
+    "primary_domain": "food_hospitality"
+  },
+  {
+    "name": "EmployerHousingBenefitOS",
+    "one_liner": "A white-label employer housing benefit platform that helps mid-market companies launch tax-advantaged homebuying assistance programs now that the ROAD to Housing Act signals legislative momentum.",
+    "date": "2026-03-21",
+    "the_problem": "HousingWire's analysis of the ROAD to Housing Act explicitly calls out the bill's omission of employer housing benefits like tax-free savings and matching support as the central blind spot in US housing policy. Companies that want to offer housing benefits — a growing HR priority for talent retention — have no turnkey platform to design, administer, and comply with employer-assisted housing programs. HR teams are cobbling together down payment gift programs and relocation stipends with zero infrastructure.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "DisasterResilienceHomeScore",
+    "one_liner": "Pre-purchase home resilience scoring and insurance cost estimator that shows buyers the true climate and hurricane risk of any property before making an offer.",
+    "date": "2026-03-21",
+    "the_problem": "HousingWire's Deltec Homes story highlights that buyers in hurricane-prone markets have no structured way to evaluate structural resilience before purchase — they discover insurability problems and resilience gaps after inspection or after their first storm season. In Florida, Texas, and Carolinas markets, the gap between a 190mph-rated round home and a standard stick-built can mean $10,000+ in annual insurance costs and total loss vs. survival in a major hurricane. Buyers are making $400K+ decisions without this data.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "TitleFraudAlertSenior",
+    "one_liner": "Proactive title fraud monitoring and alert service for elderly homeowners that detects unauthorized liens, identity-based loan applications, and deed changes before they cause irreversible financial harm.",
+    "date": "2026-03-21",
+    "the_problem": "Inman reports a 'massive' title fraud conspiracy specifically targeting elderly homeowners — using their identities to secure millions in hard money loans with residential property as collateral. Most elderly homeowners have no monitoring service watching their property records for unauthorized changes, and discovery typically happens only after loans have been funded and damage is done. The FinCEN AML rule just being struck down in court removes one more compliance layer that could have caught these schemes earlier.",
+    "primary_domain": "real_estate_housing"
+  },
+  {
+    "name": "StudentLoanTreasuryAlert",
+    "one_liner": "Automated default prevention and rights protection platform that alerts student loan borrowers before Treasury Department wage garnishment and tax refund seizure hits them under the new Trump collection regime.",
+    "date": "2026-03-21",
+    "the_problem": "Trump officials just tasked the Treasury Department with collecting on defaulted student loans — activating Treasury's most powerful collection tools including wage garnishment, tax refund seizure, and Social Security benefit offsets with minimal due process notice. The 576,000+ borrowers already in backlog for affordable repayment plans and millions of recently defaulted borrowers don't know these tools are coming for them, what their rights are, or how to get out of default before Treasury acts. The window to rehabilitate or consolidate out of default before garnishment starts is narrow and most borrowers will miss it entirely.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "TaxRefundGapFinder",
+    "one_liner": "AI-powered tax refund optimizer that cross-validates filed returns against IRS rules to find missed deductions driving the gap between average refunds and individual filers' maximum entitlement.",
+    "date": "2026-03-21",
+    "the_problem": "Average IRS refunds are up 10.8% this season but CNBC simultaneously reports many filers are receiving smaller refunds than expected — signaling a persistent gap between what filers claim and what they're actually owed. With tax resistance gaining attention, AI tools like Grok being recommended for tax prep by Elon Musk despite hallucination risk, and higher-than-average refunds meaning more money at stake, filers need an independent verification layer. A missed deduction or miscalculated credit costs filers hundreds to thousands in unclaimed refunds with no post-filing recovery tool available.",
+    "primary_domain": "finance_personal_finance"
+  },
+  {
+    "name": "CyberPathwayOS",
+    "one_liner": "Employer-school co-design platform that helps K-12 districts build, manage, and scale cybersecurity career pathway programs with employer partners and federal CTE Perkins V compliance reporting built in.",
+    "date": "2026-03-21",
+    "the_problem": "EdSurge's cybersecurity classroom co-design coverage shows districts want real-world pathway programs but manage employer partnerships, internship logistics, curriculum alignment, and Perkins V CTE compliance entirely in spreadsheets and email. Districts that can't document required Perkins V performance indicators — placement rates, credential attainment, non-traditional participation — risk losing federal grant funds in audits. Cybersecurity is a national workforce priority with $1.4B in annual Perkins funding attached, making this a compliance problem with real financial consequences.",
+    "primary_domain": "education_edtech"
+  },
+  {
+    "name": "WonderPlayBuilder",
+    "one_liner": "Screen-free play curriculum and parent engagement platform for early childhood educators that generates unstructured play prompts and wonder-based learning activities rooted in child development research.",
+    "date": "2026-03-21",
+    "the_problem": "EdSurge's 'Restoring Wonder' piece and 'The First Screen My Daughter Ever Saw' together reveal that early childhood educators want to implement wonder-based, screen-free instruction but face two blockers: no structured curriculum resources, and parents who don't understand why unstructured play is developmentally valid. The screen-time debate is nuanced but teachers lack tools to generate research-backed activities quickly or communicate developmental rationale to skeptical parents. State Pre-K expansion is simultaneously increasing the number of early childhood programs that need this support.",
+    "primary_domain": "education_edtech"
   }
 ]
